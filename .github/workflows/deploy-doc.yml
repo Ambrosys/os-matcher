@@ -43,10 +43,8 @@ jobs:
       with:
         name: build
         path: build
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
+    - name: Display structure of downloaded files
+      run: ls -R
     - name: Create public folder
       run: |
         if [ ! -f build/install/doc/html/index.html ]; then
