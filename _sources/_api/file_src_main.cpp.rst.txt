@@ -1,0 +1,46 @@
+
+.. _file_src_main.cpp:
+
+File main.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src>` (``src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/main.cpp``)
+-----------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_main.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdlib``
+
+- ``foo.h`` (:ref:`file_src_foo.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_main_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089`
+

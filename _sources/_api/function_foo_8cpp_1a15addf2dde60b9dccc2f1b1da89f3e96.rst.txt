@@ -1,0 +1,13 @@
+.. _exhale_function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96:
+
+Function hello_world()
+======================
+
+- Defined in :ref:`file_src_foo.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: hello_world()

@@ -1,0 +1,22 @@
+
+Full API
+--------
+
+Functions
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_foo_8h_1a15addf2dde60b9dccc2f1b1da89f3e96.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_main_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089.rst
