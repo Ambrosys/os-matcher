@@ -26,7 +26,6 @@ jobs:
       with:
         name: build
         path: build
-jobs:
   pages:
     name: Copy documentation
     runs-on: ubuntu-latest
