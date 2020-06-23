@@ -22,7 +22,7 @@ jobs:
         cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_DOCS=ON
         ninja install
     - name: Upload build directory
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: build
         path: build
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download build directory
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v2
       with:
         name: build
     - name: Set up Python 3.8
