@@ -43,8 +43,6 @@ jobs:
       with:
         name: build
         path: build
-    - name: Display structure of downloaded files
-      run: ls -R
     - name: Create public folder
       run: |
         if [ ! -f build/install/doc/html/index.html ]; then
@@ -54,6 +52,7 @@ jobs:
           rm -rf public
           cp -r build/install/doc/html public
           rm -rf public/.doctrees
+          touch public/.nojekyll  # bypass Jekyll processing on GitHub Pages
         fi
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
