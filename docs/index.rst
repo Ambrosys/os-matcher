@@ -18,3 +18,10 @@ This is an example documentation.
    :caption: DEVELOPMENT
 
    _api/library_root
+   content/Routing
+
+.. toctree::
+   :hidden:
+   :caption: Adendum
+
+   content/Glossary
