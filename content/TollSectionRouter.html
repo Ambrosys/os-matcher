@@ -10,7 +10,7 @@
   <meta name="book-type" content="Manual"/>
 
   
-  <title>API documentation &mdash; OS-Matcher  documentation</title>
+  <title>Street map considerations &mdash; OS-Matcher  documentation</title>
   
 
   
@@ -43,9 +43,7 @@
   
         <link rel="index" title="Index" href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="OS-Matcher  documentation" href="#"/>
-        <link rel="next" title="Function hello_world()" href="function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.html"/>
-        <link rel="prev" title="OS-Matcher - Open Source Routing Framework" href="../index.html"/> 
+    <link rel="top" title="OS-Matcher  documentation" href="#"/> 
   <script src="../_static/js/modernizr.min.js"></script>
 </head>
 
@@ -83,12 +81,12 @@
           
           
               <p class="caption"><span class="caption-text">DEVELOPMENT</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_api/library_root.html">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../_api/library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_api/library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_api/library_root.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../_api/library_root.html#functions">Functions</a>
 </li>
 </ul>
 </li>
@@ -117,82 +115,34 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
-    <li>API documentation</li>
+    <li>Street map considerations</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/_api/library_root.rst.txt" rel="nofollow">
+            <a href="../_sources/content/TollSectionRouter.rst.txt" rel="nofollow">
                 <span class="fa fa-binoculars"/>&#32;View page source
             </a>
       </li>
   </ul>
   
-    <hr class="before-stealth-btn clear-both"/>
-    
-      <a href="function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
-          <span class="stealth-btn-text">Next</span>
-          <span class="fa fa-arrow-circle-right"/>
-      </a>
-    
-    
-      <a href="../index.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
-          <span class="fa fa-arrow-circle-left"/>
-          <span class="stealth-btn-text">Previous</span>
-      </a>
-    
+  <hr class="clear-both"/>
 
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody" class="toBeIndexed">
             
-  <div class="section" id="api-documentation">
-<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="class-hierarchy">
-<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h2>
-<ul class="treeView" id="class-treeView">
-  <li>
-    <ul class="collapsibleList">
-
-    </ul>
-  </li><!-- only tree view element -->
-</ul><!-- /treeView class-treeView --></div>
-<div class="section" id="file-hierarchy">
-<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
-<ul class="treeView" id="file-treeView">
-  <li>
-    <ul class="collapsibleList">
-      <li class="lastChild">Directory <a href="dir_src.html#dir-src">src</a><ul><li>File <a href="file_src_foo.cpp.html#file-src-foo.cpp">foo.cpp</a></li><li>File <a href="file_src_foo.h.html#file-src-foo.h">foo.h</a></li><li class="lastChild">File <a href="file_src_main.cpp.html#file-src-main.cpp">main.cpp</a></li></ul></li>
-    </ul>
-  </li><!-- only tree view element -->
-</ul><!-- /treeView file-treeView --></div>
-<div class="section" id="full-api">
-<h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.html">Function hello_world()</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.html#function-documentation">Function Documentation</a></li>
+  <div class="section" id="street-map-considerations">
+<h1>Street map considerations<a class="headerlink" href="#street-map-considerations" title="Permalink to this headline">¶</a></h1>
+<p>All streets of the OSM street map have a certain <cite>HighwayType</cite> (see <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Key:highway">osm wiki</a>). The <span class="xref std std-term">OS-Matcher</span> does only consider the following:</p>
+<ul class="simple">
+<li><p>motorway</p></li>
+<li><p>trunk</p></li>
+<li><p>primary</p></li>
+<li><p>secondary</p></li>
+<li><p>motorway_link</p></li>
+<li><p>trunk_link</p></li>
+<li><p>primary_link</p></li>
+<li><p>secondary_link</p></li>
 </ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="function_foo_8h_1a15addf2dde60b9dccc2f1b1da89f3e96.html">Function hello_world()</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_foo_8h_1a15addf2dde60b9dccc2f1b1da89f3e96.html#function-documentation">Function Documentation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="function_main_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089.html">Function main</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089.html#function-documentation">Function Documentation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<p>That means streets that link smaller towns and villages are not considered.</p>
 </div>
 
 
@@ -200,21 +150,12 @@
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="function_foo_8cpp_1a15addf2dde60b9dccc2f1b1da89f3e96.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo" class="contentinfo">
       <p class="show_source">
-        <a href="../_sources/_api/library_root.rst.txt" rel="nofollow">
+        <a href="../_sources/content/TollSectionRouter.rst.txt" rel="nofollow">
           <span class="fa fa-binoculars"/>&#32;View page source
         </a>
       </p>

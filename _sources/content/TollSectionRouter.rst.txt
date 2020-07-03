@@ -1,0 +1,17 @@
+
+
+Street map considerations
+-------------------------
+
+All streets of the OSM street map have a certain `HighwayType` (see `osm wiki <https://wiki.openstreetmap.org/wiki/Key:highway>`_). The :term:`OS-Matcher` does only consider the following:
+
+* motorway
+* trunk
+* primary
+* secondary
+* motorway_link
+* trunk_link
+* primary_link
+* secondary_link
+
+That means streets that link smaller towns and villages are not considered.

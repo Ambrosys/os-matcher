@@ -1,0 +1,94 @@
+==========================================
+OS-Matcher - Routing
+==========================================
+
+
+Routing vs. Matching
+====================
+
+| Routing and Matching seems sometimes interchangable, but they are not.
+| Routing is defined as a threefold-function :math:`R(a,b,m)` where :math:`m` is the map and :math:`a` and :math:`b`
+are start and endpoint of the map.
+
+:math:`R` returns a :term:`valid navigation route` from :math:`a` to :math:`b` on the map :math:`m`.
+
+The map :math:`m` in use is the `OSM map <https://www.openstreetmap.org>_`.
+Start and endpoint :math:`a` and :math:`b` are GPS locations, which not necessarily lay on the map.
+
+Algorithm
+=========
+
+Candidate Search
+---------------
+
+Since the start and endpoint are potentially unbound GPS locations, the algorithm starts with a candidate search
+(using :ref:`sampling_point_finder` with a definable search radius) to find nearby street segments from :math:`m`
+resulting in a set of street segments for both points, :math:`S_a` and :math:`S_b`.
+
+.. image:: images/Routing_01_candidates.png
+  :width: 800
+  :alt: Example of a Start and Endpoint for a routing on a map with candidates respectively
+
+The point is than projected onto each segment of the set resulting in a set of candidate points :math:`C^a` and :math:`C^b`
+with the candidates :math:`c_i_a` and :math:`c_j_b`.
+
+
+The candidates are ordered according to their distance (the streetSegmentDistance).
+However this might not be unique
+
+        streetSegmentHeadingDifference
+
+
+
+.. image:: images/Routing_02_candidates.png
+  :width: 400
+  :alt: Example of an ambigues candidate search only considering distance
+
+.. image:: images/Routing_03_candidates.png
+  :width: 400
+  :alt: Example of an determined candidate search including heading of the start and endpoint
+
+If even that is not enough to determine a priority ordering of candidates,
+there are three more optional categories to deal with that issue:
+
+* originId
+* originOffset + streetSegmentIndex
+* streetIndex (because originId is not necessarily unique)
+
+Routing
+-------
+
+For any pair :math:`(s,t)` with :math:`s \in C^a` and :math:`t \in C^b` a routing is performed.
+And the
+
+
+    /**
+     * |      sourceEdge       |      routed edge      |      routed edge      |      targetEdge       |
+     * +-----------------------+-----------------------+-----------------------+-----------------------+
+     * O  x     x o   x     x  O  .     .     .     .  O  .     .     .     .  O  x     x   o x     x  O
+     * +-----------------------+-----------------------+-----------------------+-----------------------+
+     *            ^            ^                       ^                       ^            ^
+     *            |            sourceNode                                      targetNode   |
+     *            sourceCandidate.streetSegmentProjectedPoint                               targetCandidate.streetSegmentProjectedPoint
+     *
+     *           [o   x     x  |  .     .     .     .  |  .     .     .     .  |  x     x   o]
+     *           generated routes
+     */
+
+
+
+    TrackIoFilter,
+    MapReaderWriterFilter,
+    PartialMapReaderFilter,
+    RouterFilter,
+    GraphBuilderFilter,
+    SamplingPointFinderFilter,
+    SamplingPointWriterFilter,
+    RouteWriterFilter,
+    RouteStatisticWriter,
+
+
+
+
+
+
