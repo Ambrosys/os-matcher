@@ -1,0 +1,15 @@
+FROM bibermann/os-matcher:gcc-sphinx
+
+WORKDIR /home
+
+COPY CMakeModules/ CMakeModules/
+COPY CMakeLists.txt .
+COPY README.md .
+COPY docs/ docs/
+COPY src/ src/
+
+CMD rm -rf build/ \
+    && mkdir build/ \
+    && echo "Test" \
+    && cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_DOCS=ON \
+    && ninja -C build install
