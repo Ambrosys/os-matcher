@@ -51,6 +51,11 @@ ambrosys_logo = 'theme/static/img/ambrosys.svg'
 ambrosys_logo_latex = 'theme/static/img/ambrosys.pdf'
 
 
+# -- Options for images -------------------------------------------------
+
+numfig = True
+
+
 # -- Options for syntax highlighting -------------------------------------------------
 
 # Tell sphinx what the primary language being documented is.
