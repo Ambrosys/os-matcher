@@ -13,6 +13,7 @@ This is an example documentation.
 
 .. program-output:: _binaries/OsMatcher --help
 
+.. include:: content/OperationalData/Index.rst
 .. include:: content/Algorithms/Index.rst
 
 .. toctree::
