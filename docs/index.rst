@@ -21,6 +21,7 @@ This is an example documentation.
 
    _api/library_root
    content/Routing
+   content/Matching
 
 .. toctree::
    :hidden:
