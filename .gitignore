@@ -2,4 +2,4 @@
 
 # JetBrains
 /.idea/
-/cmake-build-*/
+cmake-build-*/
