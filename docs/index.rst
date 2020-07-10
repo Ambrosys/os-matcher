@@ -13,6 +13,8 @@ This is an example documentation.
 
 .. program-output:: _binaries/OsMatcher --help
 
+.. include:: content/Algorithms/Index.rst
+
 .. toctree::
    :hidden:
    :caption: DEVELOPMENT
