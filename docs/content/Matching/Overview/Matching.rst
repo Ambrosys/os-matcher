@@ -18,7 +18,7 @@ In that way routing becomes applicable to the street matching problem which is c
 The OS-Matcher is challenging this problem by solving stepwise rather small routing steps of the matching and combines them to a routing solution.
 And the algorithm is an extension of the steps described in :ref:`routing`.
 
-First the track is processed to become a List of sampling points. That means for each track point a :ref:`candidate-search` is performed,
+First the track is processed to become a List of sampling points. That means for each track point a :ref:`candidate search <candidate-search>` is performed,
 identifying segments in the street map from which the data point might had originated.
 Only those track points with at least one candidate are considered later on
 since, without a candidate on the street map, the algorithm has no useful hints from the track point where to route to on the street map.
@@ -26,7 +26,7 @@ since, without a candidate on the street map, the algorithm has no useful hints 
 .. note::
    Some implemented optimizations are dependent on additional meta data for the track, like heading and velocity. Not providing those can lead to poor matchings.
 
-.. figure:: images/Matching_01_sample_point.png
+.. figure:: img/Matching_01_sample_point.png
    :name: matching_01_sample_point
    :width: 1200
    :class: with-shadow
@@ -40,7 +40,7 @@ However an iterative matching approach like that can lead into situations where 
 Let us take our example from :ref:`matching_01_sample_point` and add a one-way street at an unfortunate position, which makes the track point :math:`E` a sampling point with a candidate.
 Now our iterative approach will find a route connecting the candidates of sampling point :math:`A` until :math:`E` but cannot get further.
 
-.. figure:: images/Matching_02_dead_end.png
+.. figure:: img/Matching_02_dead_end.png
    :name: matching_02_dead_end
    :width: 1200
    :class: with-shadow
