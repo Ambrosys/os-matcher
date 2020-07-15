@@ -11,65 +11,18 @@ are start and endpoint of the street map. :math:`R` returns a :term:`valid navig
 The street map :math:`M` in use is the `OSM map <https://www.openstreetmap.org>`_.
 Start and endpoint :math:`A` and :math:`B` are GPS locations, which not necessarily lay on the street map.
 
-The routing algorithm falls apart into four parts:
+The routing algorithm falls apart into three parts:
 
-* `Candidate Search`_
 * `Routing`_
 * `Clustering`_
 * `Final Evaluation`_
-
-.. _routing_candidate-search:
-
-Candidate Search
-----------------
-
-Since the start and end points are potentially unbound GPS locations, the algorithm starts with a candidate search
-(using :class:`class SamplingPointFinder <AppComponents::Common::Filter::SamplingPointFinder>` with a definable search radius)
-to find nearby street segments from :math:`M`
-resulting in a set of street segments for both points, :math:`S_A` and :math:`S_B`.
-
-.. image:: img/Routing_01_candidates.png
-   :name: Routing_01_candidates
-   :width: 1000
-   :class: with-shadow
-   :alt: Start and Endpoint with candidates
-
-The point is than projected onto each segment of the set resulting in a set of candidate points :math:`C^A` and :math:`C^B`
-with the candidates :math:`c_i^A` and :math:`c_j^B`.
-
-The candidates are ordered according to their distance.
-However this might not be unique as you see in the following image.
-
-.. image:: img/Routing_02_candidates.png
-   :name: Routing_02_candidates
-   :width: 600
-   :class: with-shadow
-   :alt: Example for ambiguous candidate
-
-The track data may contain direction data as well, which is considered the next decision criteria
-(using :func:`function headingDifference() <AppComponents::Common::Filter::Routing::SamplingPointFinder::headingDifference>`).
-This would result in a distinct decision in our example.
-
-.. image:: img/Routing_03_candidates.png
-   :name: Routing_03_candidates
-   :width: 600
-   :class: with-shadow
-   :alt: Candidate rank with distance and heading
-
-If even that is not enough to determine a priority ordering of candidates,
-there are three more optional categories to deal with that issue:
-
-* **originId** of the street segment from the input street map data the candidate is laying on (for example the id a street segment has in the osm database)
-* **originOffset + streetSegmentIndex** (because it might arise that a street segment is divided in sub street segments)
-* **streetIndex** of the street segment as it was placed in the internal data structure
-  (as a last decision criteria which is guaranteed to be unique, for the rare cases when the input street map data has duplicate IDs)
 
 .. _routing_routing:
 
 Routing
 -------
 
-After the candidates are found, we have a list of pairs :math:`P = \{ (s,t) | s \in C^A, t \in C^B \}`.
+After the candidates are found (see :ref:`routing_candidate-search`), we have a list of pairs :math:`P = \{ (s,t) | s \in C^A, t \in C^B \}`.
 
 The street map :math:`M` is in its core a graph of nodes and edges (:math:`G(V,N)`),
 the candidates are points on the edges and therefore not part of the graph.
@@ -118,7 +71,7 @@ Clustering
 
 A cluster is a set of routes which are basically representing the same route, a meta route. All routes in a cluster are ranked by a comparison
 :class:`class BestSimilarRouteComparator <AppComponents::Common::Filter::Routing::Comparators::BestSimilarRouteComparator>`,
-which is comparing the candidates rank according to the system in `Candidate Search`_.
+which is comparing the candidates rank according to the system in :ref:`routing_candidate-search`.
 Any new route whcih shall be sorted into a cluster is compared to the highest ranked member of that cluster
 (the *role model* if you like) using a similarity function.
 
