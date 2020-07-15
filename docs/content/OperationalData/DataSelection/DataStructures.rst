@@ -15,7 +15,7 @@ Each processing component is designed as a filter with a well defined set of inp
 Example: Router
 ---------------
 
-The router mandatorily needs data about the street topology and the :term:`track` points, projected onto :ref:`street segments<street segment>`. The projections may suggest more than one :term:`candidate<sampling point candidate>`.
+The router mandatorily needs data about the street topology and the :term:`track` point projections onto :ref:`street segments<street segment>`. For each track point, there might exist more than one :term:`candidate<sampling point candidate>` (see `routing`_).
 
 It may optionally process the track point's timestamp and velocity, if present. In contrast, it does not need the track point's coordinates.
 
@@ -41,7 +41,7 @@ For each street segment:
 .. not used so far:
    - street kind, as :class:`HighwayList <AppComponents::Common::Types::Street::HighwayList>`
 
-Graph:
+Street graph:
    - street graph, as :class:`Graph <AppComponents::Common::Types::Graph::Graph>`
    - mapping from graph edge to street segment, as :class:`GraphEdgeMap <AppComponents::Common::Types::Graph::GraphEdgeMap>`
    - mapping from graph node to street junction, as :class:`NodeMap <AppComponents::Common::Types::Graph::NodeMap>`

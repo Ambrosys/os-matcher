@@ -2,7 +2,7 @@
 Input data
 ==========
 
-To be able to perform the routing, we need a minimum set of data which is provided by the input filters (intermediate filters could be used to reconstruct missing data though). More data can be provided to increase the accuracy.
+To be able to perform the routing, we need a minimum set of data. When the input filters are not able to provide all needed data intermediate filters could be used to reconstruct the missing entries if possible. Additional data can be provided to increase the accuracy.
 
 Data overview
 =============
@@ -10,7 +10,7 @@ Data overview
 Track
 -----
 
-To perform the routing, the filters have to provide at least two coordinate pairs (latitude and longitude; :class:`PointList <AppComponents::Common::Types::Track::PointList>`). If more are provided, a matching is performed.
+To perform the routing or matching, the filters have to provide at least two coordinate pairs (latitude and longitude; :class:`PointList <AppComponents::Common::Types::Track::PointList>`).
 
 If possible, the following data should be provided for each point, too:
 
