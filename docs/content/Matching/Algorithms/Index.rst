@@ -1,6 +1,6 @@
-================
-Routing overview
-================
+==========
+Algorithms
+==========
 
 The *OS-Matcher* uses a hierarchy of routers, each addressing a specific domain of routing targets at a different scale.
 

@@ -1,11 +1,9 @@
 
 .. _routing:
 
-====================
-OS-Matcher - Routing
-====================
-
-Routing and Matching seems sometimes interchangeable, but they are not.
+=======
+Routing
+=======
 
 Routing is defined as a threefold-function :math:`R(A,B,M) = r` where :math:`M` is the street map and :math:`A` and :math:`B`
 are start and endpoint of the street map. :math:`R` returns a :term:`valid navigation route` from :math:`A` to :math:`B` on the street map :math:`M`.
@@ -30,7 +28,7 @@ Since the start and end points are potentially unbound GPS locations, the algori
 to find nearby street segments from :math:`M`
 resulting in a set of street segments for both points, :math:`S_A` and :math:`S_B`.
 
-.. image:: images/Routing_01_candidates.png
+.. image:: img/Routing_01_candidates.png
    :name: Routing_01_candidates
    :width: 1000
    :class: with-shadow
@@ -42,7 +40,7 @@ with the candidates :math:`c_i^A` and :math:`c_j^B`.
 The candidates are ordered according to their distance.
 However this might not be unique as you see in the following image.
 
-.. image:: images/Routing_02_candidates.png
+.. image:: img/Routing_02_candidates.png
    :name: Routing_02_candidates
    :width: 600
    :class: with-shadow
@@ -52,7 +50,7 @@ The track data may contain direction data as well, which is considered the next 
 (using :func:`function headingDifference() <AppComponents::Common::Filter::Routing::SamplingPointFinder::headingDifference>`).
 This would result in a distinct decision in our example.
 
-.. image:: images/Routing_03_candidates.png
+.. image:: img/Routing_03_candidates.png
    :name: Routing_03_candidates
    :width: 600
    :class: with-shadow
@@ -77,7 +75,7 @@ The street map :math:`M` is in its core a graph of nodes and edges (:math:`G(V,N
 the candidates are points on the edges and therefore not part of the graph.
 To overcome that, the nodes of the edge a candidate is placed on, become the first selected nodes in the routing.
 
-.. image:: images/Routing_04_candidates.png
+.. image:: img/Routing_04_candidates.png
    :name: Routing_04_candidates
    :width: 600
    :class: with-shadow
@@ -99,7 +97,7 @@ Since the routes start from candidates of the same track points :math:`A` and :m
 often the resulting nodes will be very similar. And therefore the next step is clustering the routes to groups
 which are basically representing the same route.
 
-.. image:: images/Routing_05_routes.png
+.. image:: img/Routing_05_routes.png
    :name: Routing_05_routes
    :width: 800
    :class: with-shadow
@@ -107,7 +105,7 @@ which are basically representing the same route.
 
 However remember that this assumption is of course not always true:
 
-.. image:: images/Routing_06_diff_routes.png
+.. image:: img/Routing_06_diff_routes.png
    :name: Routing_06_diff_routes
    :width: 800
    :class: with-shadow
@@ -135,7 +133,7 @@ the route will be added to the cluster.
 
 Note that the second and third criteria does not need to be fulfilled by by both routes, but just by one.
 
-.. image:: images/Routing_07_similarity_wide.png
+.. image:: img/Routing_07_similarity_wide.png
    :name: Routing_07_similarity
    :width: 1600
    :class: with-shadow
@@ -154,7 +152,7 @@ Clustering is a way to overcome those and similar situations by filtering unlike
 which are just considered because of the candidate search. And the candidate hierarchy within a cluster
 assures that we get the most accurate starting point for the meta route represented by that cluster.
 
-.. figure:: images/Routing_08_clustering.png
+.. figure:: img/Routing_08_clustering.png
    :name: routing_08_clustering
    :width: 1000
    :class: with-shadow
