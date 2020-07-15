@@ -13,7 +13,7 @@ Start and endpoint :math:`A` and :math:`B` are GPS locations, which not necessar
 
 The routing algorithm falls apart into three parts:
 
-* `Routing`_
+* :ref:`routing_routing`
 * `Clustering`_
 * `Final Evaluation`_
 

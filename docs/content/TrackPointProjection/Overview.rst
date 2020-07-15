@@ -9,7 +9,7 @@ Start and endpoint :math:`A` and :math:`B` are GPS locations, which not necessar
 
 .. _routing_candidate-search:
 
-Candidate Search
+Candidate search
 ================
 
 Since the start and end points are potentially unbound GPS locations, the algorithm starts with a candidate search
