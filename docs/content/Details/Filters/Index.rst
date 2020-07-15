@@ -64,6 +64,7 @@ of all implemented filters of the os-matcher.
    :maxdepth: 1
 
    CsvTrackReader
+   GeoJsonTrackWriter
 
 
 
