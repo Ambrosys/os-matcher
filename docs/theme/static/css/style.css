@@ -107,6 +107,11 @@ a.reference.external::before {
     content: "\2197 ";
 }
 
+/* Remove shadow on links for images (wrongly visible when image has with-shadow class and transparent background) */
+a.image-reference.with-shadow {
+    box-shadow: none;
+}
+
 
 /*
  * Adjust main content
