@@ -39,7 +39,9 @@ Track
 
 .. figure:: img/track.png
    :name: trackfig
-   :alt: track
+   :class: with-shadow
+   :scale: 50
+   :alt: Track data
 
    Track data
 
@@ -113,7 +115,9 @@ Street Map
 
 .. figure:: img/streetmap.png
    :name: streetmapfig
-   :alt: streetmap
+   :class: with-shadow
+   :scale: 50
+   :alt: Street map data
 
    Street map data
 

@@ -7,8 +7,12 @@ Each processing step of an application is implemented as a *filter*.
 
 Here you can find the basic data flow (simplified filter pipeline):
 
-.. image:: ../../../img/dataflow.png
-   :alt: dataflow
+.. figure:: ../../OperationalData/DataSelection/img/dataflow.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Filter dataflow
+
+   Filter dataflow
 
 A filter is a functor which can read, process and write specific data.
 

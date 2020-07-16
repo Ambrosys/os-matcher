@@ -28,9 +28,11 @@ since, without a candidate on the street map, the algorithm has no useful hints 
 
 .. figure:: img/Matching_01_sample_point.png
    :name: matching_01_sample_point
-   :width: 1200
    :class: with-shadow
+   :scale: 50
    :alt: Track to sample points
+
+   Track to sample points
 
 Beginning with the first sampling point, a routing is performed to the subsequent one.
 After a successful routing we search from the end of our found routing to the next sampling point and perform the next routing.
@@ -42,9 +44,11 @@ Now our iterative approach will find a route connecting the candidates of sampli
 
 .. figure:: img/Matching_02_dead_end.png
    :name: matching_02_dead_end
-   :width: 1200
    :class: with-shadow
+   :scale: 50
    :alt: Matching leads into dead end
+
+   Matching leads into dead end
 
 The os-matcher idea is the usage of backtracking (see `backtracking <https://de.wikipedia.org/wiki/Backtracking>`_).
 

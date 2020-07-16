@@ -23,8 +23,12 @@ A
 
 In this example, the underlying router failed to route from sampling point **4** to sampling point **5**.
 
-.. image:: img/2-SkippingBacktrackRouter-A.png
-   :alt: SkippingBacktrackRouter (A)
+.. figure:: img/2-SkippingBacktrackRouter-A.png
+   :class: with-shadow
+   :scale: 50
+   :alt: No route triggers skip (A)
+
+   No route triggers skip (A)
 
 We now start skipping sampling points from both directions until we are able to find a route.
 
@@ -33,8 +37,12 @@ B
 
 We start in choosing our first sampling point to skip and consecutively repeat the selection process if we keep failing in finding a route.
 
-.. image:: img/2-SkippingBacktrackRouter-B.png
-   :alt: SkippingBacktrackRouter (B)
+.. figure:: img/2-SkippingBacktrackRouter-B.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Skipping candidates (B)
+
+   Skipping candidates (B)
 
 To decide whether we should skip a sampling point behind or ahead of us, we calculate the distance from our first route that failed to the next sampling point we:
 
@@ -44,17 +52,29 @@ To decide whether we should skip a sampling point behind or ahead of us, we calc
 C
 -
 
-.. image:: img/2-SkippingBacktrackRouter-C.png
-   :alt: SkippingBacktrackRouter (C)
+.. figure:: img/2-SkippingBacktrackRouter-C.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Allowed skip (C)
+
+   Allowed skip (C)
 
 D
 -
 
-.. image:: img/2-SkippingBacktrackRouter-D.png
-   :alt: SkippingBacktrackRouter (D)
+.. figure:: img/2-SkippingBacktrackRouter-D.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Disallowed skip (D)
+
+   Disallowed skip (D)
 
 E
 -
 
-.. image:: img/2-SkippingBacktrackRouter-E.png
-   :alt: SkippingBacktrackRouter (E)
+.. figure:: img/2-SkippingBacktrackRouter-E.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Successful skip (E)
+
+   Successful skip (E)
