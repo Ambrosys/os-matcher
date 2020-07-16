@@ -37,7 +37,7 @@ The data must be provided by one or more filters.
 Track
 -----
 
-.. figure:: ../../../img/track.png
+.. figure:: img/track.png
    :name: trackfig
    :alt: track
 
@@ -111,7 +111,7 @@ Example skeleton:
 Street Map
 ----------
 
-.. figure:: ../../../img/streetmap.png
+.. figure:: img/streetmap.png
    :name: streetmapfig
    :alt: streetmap
 
