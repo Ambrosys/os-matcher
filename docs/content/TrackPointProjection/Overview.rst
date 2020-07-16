@@ -17,11 +17,13 @@ Since the start and end points are potentially unbound GPS locations, the algori
 to find nearby street segments from :math:`M`
 resulting in a set of street segments for both points, :math:`S_A` and :math:`S_B`.
 
-.. image:: img/Routing_01_candidates.png
+.. figure:: img/Routing_01_candidates.png
    :name: Routing_01_candidates
-   :width: 1000
    :class: with-shadow
+   :scale: 50
    :alt: Start and Endpoint with candidates
+
+   Start and Endpoint with candidates
 
 The point is than projected onto each segment of the set resulting in a set of candidate points :math:`C^A` and :math:`C^B`
 with the candidates :math:`c_i^A` and :math:`c_j^B`.
@@ -29,21 +31,25 @@ with the candidates :math:`c_i^A` and :math:`c_j^B`.
 The candidates are ordered according to their distance.
 However this might not be unique as you see in the following image.
 
-.. image:: img/Routing_02_candidates.png
+.. figure:: img/Routing_02_candidates.png
    :name: Routing_02_candidates
-   :width: 600
    :class: with-shadow
-   :alt: Example for ambiguous candidate
+   :scale: 50
+   :alt: Example for ambiguous candidates
+
+   Example for ambiguous candidates
 
 The track data may contain direction data as well, which is considered the next decision criteria
 (using :func:`function headingDifference() <AppComponents::Common::Filter::Routing::SamplingPointFinder::headingDifference>`).
 This would result in a distinct decision in our example.
 
-.. image:: img/Routing_03_candidates.png
+.. figure:: img/Routing_03_candidates.png
    :name: Routing_03_candidates
-   :width: 600
    :class: with-shadow
+   :scale: 50
    :alt: Candidate rank with distance and heading
+
+   Candidate rank with distance and heading
 
 If even that is not enough to determine a priority ordering of candidates,
 there are three more optional categories to deal with that issue:

@@ -16,8 +16,12 @@ Example
 
 In this example we try to find a route from the sampling point **1** to the sampling point **7**.
 
-.. image:: img/1-Router.png
-   :alt: Router
+.. figure:: img/1-Router.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Router functionality
+
+   Router functionality
 
 Starting at sampling point **1**, the underlying router finds its longest route no farther than to sampling point **3**.
 

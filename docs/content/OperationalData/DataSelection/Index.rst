@@ -12,8 +12,12 @@ The resulting data gets passed to registered output filters to save, for example
 
 Basic data flow (simplified filter pipeline):
 
-.. image:: img/dataflow.png
-   :alt: dataflow
+.. figure:: img/dataflow.png
+   :class: with-shadow
+   :scale: 50
+   :alt: Filter dataflow
+
+   Filter dataflow
 
 .. toctree::
    :titlesonly:

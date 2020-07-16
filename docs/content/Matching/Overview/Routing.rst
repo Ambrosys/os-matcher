@@ -28,11 +28,13 @@ The street map :math:`M` is in its core a graph of nodes and edges (:math:`G(V,N
 the candidates are points on the edges and therefore not part of the graph.
 To overcome that, the nodes of the edge a candidate is placed on, become the first selected nodes in the routing.
 
-.. image:: img/Routing_04_candidates.png
+.. figure:: img/Routing_04_candidates.png
    :name: Routing_04_candidates
-   :width: 600
    :class: with-shadow
+   :scale: 50
    :alt: Candidates on one way streets
+
+   Candidates on one way streets
 
 Notice, if the used street map supports information on travel directions,
 here already a filtering step is done by only considering one node of the edge aka the street segment.
@@ -50,19 +52,23 @@ Since the routes start from candidates of the same track points :math:`A` and :m
 often the resulting nodes will be very similar. And therefore the next step is clustering the routes to groups
 which are basically representing the same route.
 
-.. image:: img/Routing_05_routes.png
+.. figure:: img/Routing_05_routes.png
    :name: Routing_05_routes
-   :width: 800
    :class: with-shadow
+   :scale: 50
    :alt: Several similar routes
+
+   Several similar routes
 
 However remember that this assumption is of course not always true:
 
-.. image:: img/Routing_06_diff_routes.png
+.. figure:: img/Routing_06_diff_routes.png
    :name: Routing_06_diff_routes
-   :width: 800
    :class: with-shadow
+   :scale: 50
    :alt: Differing routes for candidates of the same point.
+
+   Differing routes for candidates of the same point.
 
 .. _routing_clustering:
 
@@ -86,11 +92,13 @@ the route will be added to the cluster.
 
 Note that the second and third criteria does not need to be fulfilled by by both routes, but just by one.
 
-.. image:: img/Routing_07_similarity_wide.png
+.. figure:: img/Routing_07_similarity_wide.png
    :name: Routing_07_similarity
-   :width: 1600
    :class: with-shadow
+   :scale: 50
    :alt: Similarity criteria
+
+   Similarity criteria
 
 Clustering is a way to solve rather edgy scenarios which still arise to often to ignore them.
 The best candidate tends to deliver the real streetsegemnt from which the data of the track point originates but cannot assure that,
@@ -107,9 +115,11 @@ assures that we get the most accurate starting point for the meta route represen
 
 .. figure:: img/Routing_08_clustering.png
    :name: routing_08_clustering
-   :width: 1000
    :class: with-shadow
+   :scale: 50
    :alt: Clustering
+
+   Clustering
 
 Now we have set of clusters, each with a role model.
 
