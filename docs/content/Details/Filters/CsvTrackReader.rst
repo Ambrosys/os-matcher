@@ -4,13 +4,13 @@
 CsvTrackReader
 ==============
 
-This filter receives a track in form of a CSV file and produces an output which can be further processed by other filters,
+This filter receives a track in form of a CSV stream and produces an output which can be further processed by other filters,
 e.g. the routing filters.
 
 Input
 =====
 
-* CSV file with the following content of a row: `time, latitude, longitude, heading, velocity`
+* CSV stream with the following content of a row: `time, latitude, longitude, heading, velocity`
 * where the columns will need to have the following format:
 
    - time
@@ -21,7 +21,7 @@ Input
       - floating-point (interpretable by `std::stod <https://en.cppreference.com/w/cpp/string/basic_string/stof>`_)
    - heading
       - floating-point (interpretable by `std::stod <https://en.cppreference.com/w/cpp/string/basic_string/stof>`_)
-   - velocity
+   - velocity [m/s]
       - floating-point (interpretable by `std::stod <https://en.cppreference.com/w/cpp/string/basic_string/stof>`_)
 
 Output
