@@ -2,6 +2,35 @@
 Dijkstra
 ========
 
-.. todo::
+While building the route, it is essential to find the shortest path from one node on the :term:`street graph` (which corresponds to a node on the :term:`street map`) to another.
 
-   [...]
+To find the path, the `Dijkstra's algorithm <https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm>`_ is used.
+
+.. note::
+   The *cost function* is set to the length of the geometry, calculated with the `haversine formula <https://en.wikipedia.org/wiki/Haversine_formula>`_.
+
+Example
+=======
+
+In the following example (see :ref:`7-Dijkstra-Graph`), we want to find a path from node **Start** to node **Goal**.
+
+.. figure:: img/7-Dijkstra-Graph.png
+   :name: 7-Dijkstra-Graph
+   :alt: Street map and street graph
+   :class: with-shadow
+   :scale: 50
+
+After executing the Dijkstra's algorithm, we get the shortest route :math:`r` as illustrated in :ref:`7-Dijkstra-Route`.
+
+.. figure:: img/7-Dijkstra-Route.png
+   :name: 7-Dijkstra-Route
+   :alt: Street map and street graph
+   :class: with-shadow
+   :scale: 50
+
+.. note::
+   As noted in :ref:`matching`, the routes are in general very short.
+   Between two :term:`sampling points <sampling point>`, many different routes may get calculated
+   if the :term:`sampling point candidates <sampling point candidate>` were projected to different street segments.
+
+   In the following chapters we learn how the small routes between the street map nodes are used to build the final route.
