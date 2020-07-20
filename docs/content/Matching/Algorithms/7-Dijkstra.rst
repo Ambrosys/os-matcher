@@ -1,3 +1,5 @@
+.. _dijkstra_router:
+
 ========
 Dijkstra
 ========
