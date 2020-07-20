@@ -13,12 +13,12 @@ Input
 - feature:
    - **LineString** [[longitude, latitude], [longitude, latitude], ... ]
 - properties per feature:
-   - **Id** of the street segment
-   - **Offset** of the street segment **(was ist der offset?)**
-   - **SourceNode** of the street segment
-   - **TargetNode** of the street segment
-   - **TravelDirection** [Both, Forwards or Backwards]
-   - **Highway** [Motorway, Trunk, Primary, Secondary, Tertiary, MotorwayLink, TrunkLink, PrimaryLink, SecondaryLink, TertiaryLink or Unknown]
+   - **Id**: Original ID of the street, this segment originates from
+   - **Offset**: Node index at which this segment starts in the original street (see :term:`offset`)
+   - **SourceNode**: Node identifier for the first point of the segment
+   - **TargetNode**: Node identifier for the last point of the segment
+   - **TravelDirection**: Allowed travel direction; one of [Both, Forwards, Backwards]
+   - **Highway**: Highway type; one of [Motorway, Trunk, Primary, Secondary, Tertiary, MotorwayLink, TrunkLink, PrimaryLink, SecondaryLink, TertiaryLink, Unknown]
 - Example:
    .. code-block:: json
 
