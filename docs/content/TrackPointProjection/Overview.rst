@@ -1,3 +1,5 @@
+.. _track_point_projection:
+
 ========
 Overview
 ========
