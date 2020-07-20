@@ -69,5 +69,6 @@ of all implemented filters of the os-matcher.
 
    CsvTrackReader
    JsonTrackReader
+   OsmMapReader
    GeoJsonRouteWriter
    GeoJsonTrackWriter
