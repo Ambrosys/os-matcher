@@ -27,7 +27,7 @@ A GeoJson stream with the following content
 - properties per feature:
    - **Id** of the street segment
    - **entry_time** [ISO-8601] (example: ``2020-01-01T12:00:00``)
-   - **exit_time** [ISO-8601] (example: ``2020-01-01T12:00:00``)
+   - **exit_time** [ISO-8601] (example: ``2020-01-01T12:01:00``)
 - Example:
    .. code-block:: json
 
@@ -38,7 +38,7 @@ A GeoJson stream with the following content
                "type": "Feature",
                "geometry": {
                   "type": "LineString",
-                  "coordinates": [[52.52, 13.40], [52.405, 13.40], [52.30, 13.407], [52.562, 13.405]
+                  "coordinates": [[52.52, 13.40], [52.405, 13.40], [52.30, 13.407], [52.562, 13.405]]
                },
                "properties": {
                   "Id": "1234567",
