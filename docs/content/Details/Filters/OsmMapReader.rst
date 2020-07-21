@@ -13,16 +13,16 @@ Input
 - :class:`Connection <StreetMatcher::Common::Postgres::Connection>`
    - Provides the connection to the PostGIS database with the street map from OpenStreetMap.
 
-- :class:`PointList <Types::Track::PointList>`
+- :class:`PointList <AppComponents::Common::Types::Track::PointList>`
    - This PointList is an obligatory precondition for the OsmMapReader providing the track points. These track points are the basis to build a spatially limited street map to avoid the delivering of the complete street map.
 
 Output
 ======
 
-- :class:`SegmentList <Types::Street::SegmentList>`
-- :class:`NodePairList <Types::Street::NodePairList>`
-- :class:`TravelDirectionList <Types::Street::TravelDirectionList>`
-- :class:`HighwayList <Types::Street::HighwayList>`
+- :class:`SegmentList <AppComponents::Common::Types::Street::SegmentList>`
+- :class:`NodePairList <AppComponents::Common::Types::Street::NodePairList>`
+- :class:`TravelDirectionList <AppComponents::Common::Types::Street::TravelDirectionList>`
+- :class:`HighwayList <AppComponents::Common::Types::Street::HighwayList>`
 
 Configuration
 =============
@@ -44,3 +44,6 @@ Configuration
       Search within a big circle around the track.
       Its center is the midpoint of the line between the first and the last point of the :term:`track`,
       its radius is the (`distance of this two points`) / 2 + `fetchCorridor`.
+      If the distance between startpoint and endpoint is too small this can result in gaps (missing :term:`street segments <street segment>`).
+      Imagine the route between these two points would proceed partially out ot the circle. Then some necessary parts of the map (out of the circle)
+      would be missing and the matching cannot be complete.
