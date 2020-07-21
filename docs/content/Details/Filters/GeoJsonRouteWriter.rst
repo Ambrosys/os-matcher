@@ -23,11 +23,11 @@ Output
 A GeoJson stream with the following content
 
 - feature:
-   - **LineString** [[longitude, latitude], [longitude, latitude], ... ]
+   - **LineString**: [[longitude, latitude], [longitude, latitude], ... ]
 - properties per feature:
-   - **Id** of the street segment
-   - **entry_time** [ISO-8601] (example: ``2020-01-01T12:00:00``)
-   - **exit_time** [ISO-8601] (example: ``2020-01-01T12:01:00``)
+   - **Id**: Original ID of the street, this segment originates from
+   - **entry_time**: [ISO-8601] (example: ``2020-01-01T12:00:00``)
+   - **exit_time**: [ISO-8601] (example: ``2020-01-01T12:01:00``)
 - Example:
    .. code-block:: json
 

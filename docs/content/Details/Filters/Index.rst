@@ -73,5 +73,6 @@ of all implemented filters of the os-matcher.
    GraphBuilder
    GeoJsonRouteWriter
    GeoJsonTrackWriter
+   GeoJsonMapWriter
    CsvTrackWriter
    JsonRouteStatisticWriter
