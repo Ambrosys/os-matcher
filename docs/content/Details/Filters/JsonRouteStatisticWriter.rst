@@ -4,7 +4,7 @@
 JsonRouteStatisticWriter
 ========================
 
-Writes statistical dater obtained from the :ref:`filter_router` and the internal :term:`track` presentation to a JSON stream.
+Writes statistical data obtained from the :ref:`filter_router` and the internal :term:`track` presentation to a JSON stream.
 
 
 Input
@@ -28,7 +28,7 @@ A JSON stream which contains a JSON object. The JSON object has the following fo
    - **length**: decimal number, length of the geometry
    - **sub-routes-count**: integer number, amount of subroutes to fulfil the routing
 - **visited**: Array of JSON objects with the following elements:
-   - **successfull**: boolean value if the routing was successful
+   - **successfull**: boolean value; true, if the routing was successful
    - **source**: *SamplingPoint-JSON*
    - **target**: *SamplingPoint-JSON*
 
@@ -37,7 +37,7 @@ A JSON stream which contains a JSON object. The JSON object has the following fo
 Def: SamplingPoint-JSON
 -----------------------
 
-- **SamplingPoint-JSON**: JSON object representing a SamplingPoint with the following elements:
+- **SamplingPoint-JSON**: JSON object representing a sampling point with the following elements:
    - **index**: index of the representing :term:`track` point
    - **time**: [ISO-8601] time value of the corresponding :term:`track` point (example: ``2020-01-01T12:00:00``)
    - **candidate**: *SamplingPointCandidate-JSON*
@@ -47,9 +47,9 @@ Def: SamplingPointCandidate-JSON
 --------------------------------
 
 - **candidate**: JSON object representing the used candidate with the following elements:
-   - **index**: index in the list of candidates of the corresponding SemplingPoint
-   - **considered-forwards**: [boolean], to determine in which direction the candidate is considered on the street map/graph edge
-   - **distance**: [m], distance of the candidate to its SamplingPoint
+   - **index**: index in the list of candidates of the corresponding sampling point
+   - **considered-forwards**: [boolean], determines whether the candidate was, for this route, assumed to be orientated equally to the street map edge.
+   - **distance**: [m], distance of the candidate to its sampling point
 
 
 - Example of the JSON output stream:
