@@ -8,8 +8,6 @@ General
 .. glossary::
    :sorted:
 
-   candidate
-
    street map
        Refers to a data source with street map data or to the map itself as described by the data.
        A street map consist at least of a set of street segment geometries, connected by node points.
@@ -50,3 +48,7 @@ General
    originID
       To a street segment corresponding IDs from the original data source.
 
+   street graph
+      A *simple directed graph* representing the :term:`street map`.
+      The nodes and edges of the street graph are tightly coupled to the street map data.
+      Makes the street map applicable to routing algorithms.
