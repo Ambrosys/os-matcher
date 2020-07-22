@@ -6,10 +6,10 @@ CsvTrackWriter
 
 .. admonition:: Disclaimer: Not part of the open source repo
 
-   The CsvTrackWriter was designed for a specific use case with specific file layout and is therefore not usable in
-   different environments and not part included in the open source material.
-   If you are in dire need of a filter exporting to csv `contact us <mailto:info@ambrosys.de?subject="[OS-Matcher] Interest in the CsvTrackWriter filter">`_
-   and we will be glad to give you access or design a solution for your needs.
+   The *CsvTrackWriter* was designed for a specific use case with a specific file layout and may therefore not usable for the general public,
+   so it is not part of the open source material.
+   Feel free to `contact us <mailto:info@ambrosys.de?subject=[OS-Matcher]\ Interest\ in\ the\ CsvTrackWriter\ filter>`_
+   if you need support for a CSV writer for tracks.
 
 This filter writes the internal representation of the :term:`track`
 to a stream in `CSV <https://www.ietf.org/rfc/rfc4180.txt>`_ format.
@@ -28,7 +28,7 @@ Input
 Output
 ======
 
-A CSV stream with the following properties
+A CSV stream in the following format:
 
 - CSV columns and corresponding types:
    - **time**: date/time in the format "yyyy-MM-ddThh:mm:ss" [ISO-8601] (example: ``2020-01-01T12:00:00``)
@@ -38,15 +38,9 @@ A CSV stream with the following properties
    - **velocity**: [m/s] floating-point
 
 - CSV properties:
-   - **Separator**: comma/:code:`,`
+   - **Separator**: comma (:code:`,`)
    - **Floating point precision**: 14
    - **Column headers in first row**: Yes
-
-.. todo::
-
-    The writer writes the column names in the first row,
-    but the :ref:`filter_csvtrackreader` starts right away and would throw an exception, right?
-    Make an Issue?
 
 - Example Table
 
