@@ -25,7 +25,7 @@ A GeoJson stream with the following content
 - feature:
    - **LineString**: [[longitude, latitude], [longitude, latitude], ... ]
 - properties per feature:
-   - **Id**: Original ID of the street, this segment originates from
+   - **Id**: Original ID of the street from which this segment originates
    - **entry_time**: [ISO-8601] (example: ``2020-01-01T12:00:00``)
    - **exit_time**: [ISO-8601] (example: ``2020-01-01T12:01:00``)
 - Example:

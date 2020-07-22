@@ -24,7 +24,7 @@ A GeoJson stream with the following contents
    - **LineString** [[longitude, latitude], [longitude, latitude], ... ]
 - properties per feature:
    - **Id**: Original ID of the street from which this segment originates
-   - **Offset**: Node index at which this segment starts in the original street (see :term:`origin offset`)
+   - **Offset**: Node index at which this segment starts in the original street (see :term:`street segment origin offset`)
    - **SourceNode**: Node identifier for the first point of the segment
    - **TargetNode**: Node identifier for the last point of the segment
    - **TravelDirection**: Allowed travel direction; one of [Both, Forwards, Backwards] (:class:`TravelDirection <AppComponents::Common::Types::Street::TravelDirection>`)
