@@ -50,3 +50,6 @@ General
    originID
       To a street segment corresponding IDs from the original data source.
 
+   street graph
+      Formalized graph representation of a :term:`street map` including mappings to and from the street map data.
+      Makes the street map applicable to routing algorithms.
