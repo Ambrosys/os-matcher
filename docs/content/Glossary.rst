@@ -19,7 +19,10 @@ General
 
    route
       A route is the result of a map matching algorithm with given :term:`track` and :term:`street map`.
-      The route consists of a set of subroutes. A subroute consists of a geo linestring, an edge, cost and length.
+      The route consists of a set of subroutes (see :term:`subroute`).
+
+   subroute
+      A subroute consists of a geo linestring, an edge, cost and length.
 
    valid navigation route
       A valid navigation route is a route which you could navigate.
