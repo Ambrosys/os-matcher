@@ -20,6 +20,7 @@ This is an example documentation.
 
 .. toctree::
    :hidden:
-   :caption: Adendum
+   :caption: Addendum
 
    content/Glossary
+   content/Specification
