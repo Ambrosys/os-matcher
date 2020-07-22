@@ -8,8 +8,6 @@ General
 .. glossary::
    :sorted:
 
-   candidate
-
    street map
        Refers to a data source with street map data or to the map itself as described by the data.
        A street map consist at least of a set of street segment geometries, connected by node points.
