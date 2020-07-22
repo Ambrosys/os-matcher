@@ -45,10 +45,10 @@ General
 
       Candidates are ordered according to several criteria (see :ref:`routing_candidate-search`).
 
-   originID
-      To a street segment corresponding IDs from the original data source.
-
    street graph
       A *simple directed graph* representing the :term:`street map`.
       The nodes and edges of the street graph are tightly coupled to the street map data.
       Makes the street map applicable to routing algorithms.
+
+   street segment
+      A minimal street segment without intersections (nodes) inbetween. May consist of more than two point. The corresponding linestring of the street map may have been cutted to satisfy this requirement.
