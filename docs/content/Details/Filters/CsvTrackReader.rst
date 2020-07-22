@@ -14,7 +14,7 @@ Input
 * where the columns will need to have the following format:
 
    - time
-      - date/time in the format "YYYY-MM-DDTHH:MM:SS"
+      - date/time in the format "yyyy-MM-ddThh:mm:ss" [ISO-8601] (example: ``2020-01-01T12:00:00``)
    - latitude
       - floating-point (interpretable by `std::stod <https://en.cppreference.com/w/cpp/string/basic_string/stof>`_)
    - longitude
