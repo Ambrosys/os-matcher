@@ -74,6 +74,7 @@ of all implemented filters of the |os-matcher|.
    OsmMapReader
    SamplingPointFinder
    GraphBuilder
+   Router
    CsvRouteWriter
    CsvSubRouteWriter
    GeoJsonRouteWriter
