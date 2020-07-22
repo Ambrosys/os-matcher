@@ -73,8 +73,9 @@ of all implemented filters of the os-matcher.
    OsmMapReader
    GraphBuilder
    CsvRouteWriter
+   CsvSubRouteWriter
    GeoJsonRouteWriter
+   CsvTrackWriter
    GeoJsonTrackWriter
    GeoJsonMapWriter
-   CsvTrackWriter
    JsonRouteStatisticWriter
