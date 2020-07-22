@@ -71,10 +71,11 @@ of all implemented filters of the os-matcher.
    JsonTrackReader
    GeoJsonMapReader
    OsmMapReader
+   SamplingPointFinder
    GraphBuilder
    CsvRouteWriter
    GeoJsonRouteWriter
+   CsvTrackWriter
    GeoJsonTrackWriter
    GeoJsonMapWriter
-   CsvTrackWriter
    JsonRouteStatisticWriter
