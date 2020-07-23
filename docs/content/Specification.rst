@@ -8,6 +8,11 @@ General
 .. glossary::
    :sorted:
 
+   heading
+   track point heading
+      The heading of a track point is the nautical or geographical Azimuth, the clockwise in degrees measured angle between North and the heading direction.
+      (North = heading of 0°; East = heading of 90°; South = heading of 180°; West = heading of 270°)
+
    street segment origin offset
       It can be necessary to split a street given by a data source into multiple street segments, e.g. because of junctions.
       We explain the idea of the offset by the following example.
