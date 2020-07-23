@@ -1,5 +1,7 @@
+.. include:: makros.rst
+
 ==========================================
-OS-Matcher - Open Source Routing Framework
+|os-matcher| - Open Source Routing Framework
 ==========================================
 
 .. note::

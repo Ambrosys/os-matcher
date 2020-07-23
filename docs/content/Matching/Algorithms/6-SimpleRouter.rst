@@ -1,3 +1,5 @@
+.. include:: ../../../makros.rst
+
 ============
 SimpleRouter
 ============

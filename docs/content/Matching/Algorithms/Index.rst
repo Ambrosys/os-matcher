@@ -1,8 +1,10 @@
+.. include:: ../../../makros.rst
+
 ==========
 Algorithms
 ==========
 
-The *OS-Matcher* uses a hierarchy of routers, each addressing a specific domain of routing targets at a different scale.
+The |os-matcher| uses a hierarchy of routers, each addressing a specific domain of routing targets at a different scale.
 
 The innermost router is responsible for routing on the street graph while the outermost tries to find routes as continuously as possible with the help of its underlying routers.
 

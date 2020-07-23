@@ -1,10 +1,13 @@
+.. include:: ../../../makros.rst
 .. _data_structures:
+
 
 ===============
 Data structures
 ===============
 
-The core processing component of the *OS-Matcher* is, of course, the router. To perform the routing it needs data which it gets from input :term:`filters<filter>` and intermediate filters.
+
+The core processing component of the |os-matcher| is, of course, the router. To perform the routing it needs data which it gets from input :term:`filters<filter>` and intermediate filters.
 The input filters may also depend on each other. An example: to be able to load the map from a database, the track is needed to define the boundaries.
 
 Processed data

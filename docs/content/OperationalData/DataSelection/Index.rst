@@ -1,8 +1,10 @@
+.. include:: ../../../makros.rst
+
 ==============
 Data selection
 ==============
 
-The *OS-Matcher* supports various input and output formats and can easily be extended to support your own formats.
+The |os-matcher| supports various input and output formats and can easily be extended to support your own formats.
 
 The core algorithms work on well-defined data structures which are processed by various :term:`filters<filter>`.
 The source data is either completely provided by the input filters (coordinate/track and street map readers)
