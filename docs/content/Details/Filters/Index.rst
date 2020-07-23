@@ -1,3 +1,4 @@
+.. include:: ../../../makros.rst
 
 =======
 Filters
@@ -59,7 +60,7 @@ by adding the filters to the *pipeline* (see below).
 
 You may adapt the definition of OsmMapReader to your needs or write your own filter and apply the above concept analogously.
 In this chapter we are providing descriptions for input, output and the available configuration parameters
-of all implemented filters of the os-matcher.
+of all implemented filters of the |os-matcher|.
 
 
 **List of filters**

@@ -1,3 +1,4 @@
+.. include:: ../../../makros.rst
 .. _matching:
 
 ========
@@ -5,7 +6,7 @@ Matching
 ========
 
 While :ref:`routing <routing>` is the solution to find a route in a graph for a given start and end point,
-matching can be understood as the generalization of that approach towards a list of track points. In os-matcher this list consists of geo points and the graph is a street map.
+matching can be understood as the generalization of that approach towards a list of track points. In |os-matcher| this list consists of geo points and the graph is a street map.
 In that way routing becomes applicable to the street matching problem which is common today especially in the tolling industry.
 
 .. note::
@@ -15,7 +16,7 @@ In that way routing becomes applicable to the street matching problem which is c
 
 .. seealso:: See :ref:`data_structures` for information of the track and map data.
 
-The OS-Matcher is challenging this problem by solving stepwise rather small routing steps of the matching and combines them to a routing solution.
+The |os-matcher| is challenging this problem by solving stepwise rather small routing steps of the matching and combines them to a routing solution.
 And the algorithm is an extension of the steps described in :ref:`routing`.
 
 First the track is processed to become a List of sampling points. That means for each track point a :ref:`candidate search <candidate-search>` is performed,
@@ -50,11 +51,11 @@ Now our iterative approach will find a route connecting the candidates of sampli
 
    Matching leads into dead end
 
-The os-matcher idea is the usage of backtracking (see `backtracking <https://de.wikipedia.org/wiki/Backtracking>`_).
+The |os-matcher| idea is the usage of backtracking (see `backtracking <https://de.wikipedia.org/wiki/Backtracking>`_).
 
 .. note::
 
-   One of the major assumptions is that the os-matcher is only routing between two points which are relatively near to each other.
+   One of the major assumptions is that the |os-matcher| is only routing between two points which are relatively near to each other.
    Like that routing for each possible candidates pair as described in :ref:`routing` remains cheap since the routes are short considering only some street segments sometimes only one.
    However, if a track has many big holes (e.g. due to connection loss for an GPS vehicle track)
    this can lead to an increase in computing complexity if the edge points just before and after the hole have several to many candidates.

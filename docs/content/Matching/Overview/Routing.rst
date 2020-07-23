@@ -1,4 +1,4 @@
-
+.. include:: ../../../makros.rst
 .. _routing:
 
 =======
@@ -42,7 +42,7 @@ By that already reducing computation time.
 
 For each combination of the one or two possible first nodes of :math:`A` and :math:`B`
 now a routing is done on the graph of the street map using a routing algorithm.
-The default algorithm in *OS-Matcher* is Dijkstra's algorithm with the geographical length of a edge as its cost function.
+The default algorithm in |os-matcher| is Dijkstra's algorithm with the geographical length of a edge as its cost function.
 
 So we end up with a list of routes, one for each pair :math:`(s,t)` and for each combination of
 possible nodes (:math:`n_i^s` and :math:`n_j^t`) for the edges (:math:`e_s` and :math:`e_t`)
