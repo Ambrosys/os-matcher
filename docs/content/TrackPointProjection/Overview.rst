@@ -41,7 +41,7 @@ However this might not be unique as you see in the following image.
 
    Example for ambiguous candidates
 
-The track data may contain direction data as well, which is considered the next decision criteria
+The track data may contain direction data as well, which is considered as the next decision criteria
 (using :func:`function headingDifference() <AppComponents::Common::Filter::Routing::SamplingPointFinder::headingDifference>`).
 This would result in a distinct decision in our example.
 
@@ -56,7 +56,7 @@ This would result in a distinct decision in our example.
 If even that is not enough to determine a priority ordering of candidates,
 there are three more optional categories to deal with that issue:
 
-* **originId** of the street segment from the input street map data the candidate is laying on (for example the id a street segment has in the osm database)
+* **originId** of the street segment from the input street map data the candidate is laying on (for example the ID a street segment has in the osm database)
 * **originOffset + streetSegmentIndex** (because it might arise that a street segment is divided in sub street segments)
 * **streetIndex** of the street segment as it was placed in the internal data structure
   (as a last decision criteria which is guaranteed to be unique, for the rare cases when the input street map data has duplicate IDs)
