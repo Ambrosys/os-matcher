@@ -1,3 +1,4 @@
+.. include:: ../../../makros.rst
 .. _filter_router:
 
 ======
@@ -6,9 +7,9 @@ Router
 
 This filter creates the :term:`route` representation from the :term:`track`, :term:`street map` and its :term:`street graph` representation.
 It further creates statistical data about the routing.
-It is therefore the core filter os the |os-matcher|.
+It is therefore the core filter of the |os-matcher|.
 
-For further explanation of its functionality refer to the :ref:`algorithms` chapter.
+For further explanation of its functionality we refer to the :ref:`algorithms` chapter.
 
 Input
 =====
@@ -32,16 +33,27 @@ Output
 Configuration
 =============
 
-- routeRestrictions: :class:`RouteRestrictions <AppComponents::Common::Filter::Routing::RouteRestrictions>`, consists of three fields:
-   - maxVelocityDifference: [m/s] floating-point; how much the velocity values in the track points and the calculated velocity from the time values in the track points and the route length are allowed to differ
-   - allowSelfIntersection: boolean; flag to either include or filter routes that are self intersecting
-   - maxAngularDeviation: [degree] floating-point; maximum heading difference allowed between a used candidate in the routing and its corresponding sampling point
-- maxSamplingPointSkippingDistance: [<unit>] floating-point
-   - ?
-- maxCandidateBacktrackingDistance: [<unit>] floating-point
-   - ?
-- maxClusteredRoutesLengthDifference: [<unit>] floating-point
+- routeRestrictions: :class:`RouteRestrictions <AppComponents::Common::Filter::Routing::RouteRestrictions>`
+   - maxVelocityDifference: [m/s] ``double``
+      Based on the time stamps in the :term:`track` data and the length of the route,
+      it gets calculated how fast the vehicle must have been driven.
+      This then gets compared with the mean velocity of the start and end points (ignoring the points inbetween).
+      If the difference is greater than the one given, the route gets discarded.
+   - allowSelfIntersection: ``bool``
+      - ``false``: Discards routes, whose start or end point occurs one more time within the route.
+   - maxAngularDeviation: [degree] ``double``
+      - ``360``: Deactivates this restriction.
+      - Other values: Discards routes which have a greater :term:`heading` difference between a used candidate and its corresponding sampling point.
+        The algorithm to determine this is rather complex, see
+        :func:`function checkMaxAngularDeviation <AppComponents::Common::Filter::Routing::checkMaxAngularDeviation>`
+        for the implementation.
+- maxSamplingPointSkippingDistance: [m] ``double``
+   - maximal allowed distance to jump forwards or backwards
+- maxCandidateBacktrackingDistance: [m] ``double``
+   - maximal allowed distance to go back to search for other ways
+- maxClusteredRoutesLengthDifference: [m] ``double``
    - length difference that is allowed for a route to become part of a route cluster (see :ref:`routing_clustering`)
-- routeClusterPreference: :class:`RouteClusterPreference <AppComponents::Common::Filter::Routing::RouteClusterPreference>`, one of [cheapest, shortest] (see :ref:`routing_clustering`)
-   - cheapest: the route with the lowest costs becomes the cluster representing route
-   - shortest: the route with the shortest path becomes the cluster representing route
+   - should be 4 times :ref:`Sampling Point Finder’s<filter_samplingpointfinder>` searchRadius
+- routeClusterPreference: :class:`enum RouteClusterPreference <AppComponents::Common::Filter::Routing::RouteClusterPreference>`, (see :ref:`routing_clustering`)
+   - ``cheapest``: Chooses from all best routes of the clusters the route with the lowest routing costs.
+   - ``shortest``: Chooses from all best routes of the clusters the shortest route.
