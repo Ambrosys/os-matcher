@@ -5,7 +5,7 @@ Matching
 ========
 
 While :ref:`routing <routing>` is the solution to find a route in a graph for a given start and end point,
-matching can be understood as the generalization of that approach towards a list of track points. In os-matcher this list consist of geo points and the graph is a street map.
+matching can be understood as the generalization of that approach towards a list of track points. In os-matcher this list consists of geo points and the graph is a street map.
 In that way routing becomes applicable to the street matching problem which is common today especially in the tolling industry.
 
 .. note::

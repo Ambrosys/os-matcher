@@ -78,19 +78,19 @@ Clustering
 A cluster is a set of routes which are basically representing the same route, a meta route. All routes in a cluster are ranked by a comparison
 :class:`class BestSimilarRouteComparator <AppComponents::Common::Filter::Routing::Comparators::BestSimilarRouteComparator>`,
 which is comparing the candidates rank according to the system in :ref:`routing_candidate-search`.
-Any new route whcih shall be sorted into a cluster is compared to the highest ranked member of that cluster
+Any new route which shall be sorted into a cluster is compared to the highest ranked member of that cluster
 (the *role model* if you like) using a similarity function.
 
 The :func:`function isSimilar() <AppComponents::Common::Filter::Routing::Comparators::isSimilar>`
 compares two routes :math:`r_0` and :math:`r_1` by several criteria and only when all of them are met
 the route will be added to the cluster.
 
-* **maxLenghtDifference**, the outermost two routes may differ in length, the default recommendation is to set this value 4 times the candidate search radius.
+* **maxLengthDifference**, the outermost two routes may differ in length, the default recommendation is to set this value 4 times the candidate search radius.
 * **The source node of one is contained by the other**, :math:`n^s_{r_1} \in r_0` or :math:`n^s_{r_0} \in r_1`
 * **The target node of one is contained by the other**, :math:`n^t_{r_1} \in r_0` or :math:`n^t_{r_0} \in r_1`
 * **Source and target node are not visited twice**
 
-Note that the second and third criteria does not need to be fulfilled by by both routes, but just by one.
+Note that the second and third criteria does not need to be fulfilled by both routes, but just by one.
 
 .. figure:: img/Routing_07_similarity_wide.png
    :name: Routing_07_similarity
@@ -101,11 +101,11 @@ Note that the second and third criteria does not need to be fulfilled by by both
    Similarity criteria
 
 Clustering is a way to solve rather edgy scenarios which still arise to often to ignore them.
-The best candidate tends to deliver the real streetsegemnt from which the data of the track point originates but cannot assure that,
+The best candidate tends to deliver the real street segment from which the data of the track point originates but cannot assure that,
 on the other hand is the shortest route between two candidates not necessarily the correct one.
 
 As an example scenario: In :ref:`Routing_08_clustering` the track point :math:`A` originates indeed from the roundabout.
-But due to the offset (either by the data noise or the rundabout is just wider than the line segment implies)
+But due to the offset (either by the data noise or the roundabout is just wider than the line segment implies)
 the best candidate on a one way at the side. The best (shortest) route however starts at the worst candidate,
 while the real route starts at the intermediate one.
 
@@ -121,7 +121,7 @@ assures that we get the most accurate starting point for the meta route represen
 
    Clustering
 
-Now we have set of clusters, each with a role model.
+Now we have a set of clusters, each with a role model.
 
 .. _routing_final_evaluation:
 
@@ -132,9 +132,9 @@ From each cluster the role model is chosen and all of those role models are comp
 :class:`class BestRouteComparator <AppComponents::Common::Filter::Routing::Comparators::BestRouteComparator>`.
 The Comparator has three criteria:
 
-* **lenght**, which selects the shortest route
+* **length**, which selects the shortest route
 * **cost**, which selects the route with the lowest routing costs
-* **number of points**, which selects the route with the least number of nodes``
+* **number of points**, which selects the route with the least number of nodes
 
 The comparator comes in two flavors of criteria preference:
 
