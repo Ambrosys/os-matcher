@@ -1,4 +1,4 @@
-.. include:: ../../../makros.rst
+.. include:: ../../../content/substitutions.rst
 
 ==============
 Data selection
