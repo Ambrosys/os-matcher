@@ -1,5 +1,7 @@
 .. include:: ../../../content/substitutions.rst
 
+.. _simple_router:
+
 ============
 SimpleRouter
 ============
@@ -12,7 +14,7 @@ between :term:`sampling point candidates <sampling point candidate>`, which is d
    and have no corresponding nodes on the street map/graph (see :ref:`Track point projection <track_point_projection>`).
 
 To be able to calculate a single route and to simplify this router,
-direction information is required, additionally to the two sampling point candidates, as an input.
+direction information is required, additionally to the two sampling point candidates, as an input - the *sampling points selection*.
 
 The router then tries to find the shortest route between these two points. Depending on the topology, it may use the underlying :ref:`dijkstra_router` router.
 
