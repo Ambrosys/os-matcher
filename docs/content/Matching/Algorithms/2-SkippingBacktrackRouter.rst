@@ -1,3 +1,5 @@
+.. _skipping_router:
+
 =======================
 SkippingBacktrackRouter
 =======================

@@ -1,3 +1,5 @@
+.. _outermost_router:
+
 ======
 Router
 ======
