@@ -102,10 +102,10 @@ the route will be added to the cluster.
 
 The criteria are:
 
-* **Max length difference**, the outermost two routes may differ in length (it is recommended to set this value to :math:`4 \cdot candidate\ search\ radius`).
-* **The source node of one is contained by the other**, :math:`n^s_{r_1} \in r_0` or :math:`n^s_{r_0} \in r_1`
-* **The target node of one is contained by the other**, :math:`n^t_{r_1} \in r_0` or :math:`n^t_{r_0} \in r_1`
-* **Source and target node are not visited twice**
+* **max length difference**, the outermost two routes may differ in length (it is recommended to set this value to :math:`4 \cdot candidate\ search\ radius`)
+* **the source node of one is contained by the other**, :math:`n^s_{r_1} \in r_0` or :math:`n^s_{r_0} \in r_1`
+* **the target node of one is contained by the other**, :math:`n^t_{r_1} \in r_0` or :math:`n^t_{r_0} \in r_1`
+* **source and target node are not visited twice**
 
 Note that the second and third criteria do not need to be fulfilled by both routes, only by one.
 
