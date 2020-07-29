@@ -4,12 +4,16 @@
 SkippingRouter
 ==============
 
-This router consecutively routes from each sampling point to its successor with the :ref:`underlying router <candidate_backtrack_router>`.
+This router tries to find the :term:`farthest route <farthest navigation route>` with the :ref:`underlying router <candidate_backtrack_router>`.
+If beneficial, specific :term:`sampling points <sampling point>` are requested to be ignored by the underlying routers.
 
-If, at some point, it is not able to find a :term:`valid navigation route`, the router starts to skip sampling points consecutively in a specific, distance-dependant order.
-The underlying routers are requested to ignores these points.
+Each time the underlying router has found its farthest route and this route does not reach the sampling point **Goal**,
+the probability is high that some of the last sampling points's track positions were recorded with an inaccurate GPS source or due to street map errors.
+The router therefore starts to skip sampling points consecutively in a specific, distance-dependant order,
+starting with the last sampling point of the farthest route or the following.
+The underlying routers then try to route farther by ignoring these sampling points.
 
-If the distance to skip reaches some threshold before finding a route, the router returnes no route.
+If the distance to skip reaches some threshold before finding a route, the router returns the farthest route without skipping sampling points.
 
 Example
 =======
@@ -19,27 +23,28 @@ In this example, the underlying router failed to route beyond sampling point **4
 .. figure:: img/2-SkippingBacktrackRouter-A.png
    :class: with-shadow
    :scale: 50
-   :alt: No route triggers skip (A)
+   :alt: Farthest route does not reach Goal
 
-   No route triggers skip (A)
+   Farthest route does not reach Goal
 
-The router now starts skipping sampling points consecutively from both directions until we are able to find a route.
+The router now starts skipping sampling points consecutively from both directions until it is able to find a route.
 
-To decide whether we should skip over a sampling point from behind or from ahead,
-we calculate the linear distances that need to be skipped and choose the option where this is minimal.
+To decide whether it should skip over a sampling point from behind or from ahead,
+it calculates the linear distances that need to be skipped and chooses the option where this is minimal.
 This selection process is illustrated in :numref:`2-SkippingBacktrackRouter-B`.
 
 .. note::
-   The linear distance is always measured from the first two sampling points causing the router to start the skipping process.
+   The distance is always measured as a linear distance,
+   beginning at one of the first two sampling points causing the router to start the skipping process (in our example **4** and **5**).
    It is calculated using the `haversine formula <https://en.wikipedia.org/wiki/Haversine_formula>`_.
 
 .. figure:: img/2-SkippingBacktrackRouter-B.png
    :name: 2-SkippingBacktrackRouter-B
    :class: with-shadow
    :scale: 50
-   :alt: Skipping candidates (B)
+   :alt: Choosing sampling point to skip
 
-   Skipping candidates (B)
+   Choosing sampling point to skip
 
 In our example the router choosed to skip sampling point **4**.
 
@@ -50,9 +55,9 @@ So the selection process is repeated, as shown in :numref:`2-SkippingBacktrackRo
    :name: 2-SkippingBacktrackRouter-C
    :class: with-shadow
    :scale: 50
-   :alt: Allowed skip (C)
+   :alt: Skipped sampling point 4
 
-   Allowed skip (C)
+   Skipped sampling point 4
 
 Now sampling points **4** and **5** are requested to be skipped.
 
@@ -65,7 +70,7 @@ and selection process is repeated, as shown in :numref:`2-SkippingBacktrackRoute
    :scale: 50
    :alt: Disallowed skip (D)
 
-   Disallowed skip (D)
+   Skipped sampling points 4 and 5
 
 Now sampling points **3** to **5** are requested to be skipped.
 
@@ -75,8 +80,8 @@ Finally, the routing proceeds, illustrated in :numref:`2-SkippingBacktrackRouter
    :name: 2-SkippingBacktrackRouter-E
    :class: with-shadow
    :scale: 50
-   :alt: Successful skip (E)
+   :alt: Routed farther by skipping 3 sampling points
 
-   Successful skip (E)
+   Routed farther by skipping 3 sampling points
 
 Sampling points **3**, **4** and **5** are ignored now. However, the route is still consecutive.
