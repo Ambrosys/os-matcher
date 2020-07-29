@@ -4,9 +4,9 @@
 Piecewise router
 ================
 
-This router is responsible for finding consecutive :term:`routes <valid navigation route>` as long as possible until reaching the :term:`sampling point` **Goal**.
+This router is responsible for finding consecutive :term:`routes as far as possible <farthest navigation route>` until reaching the :term:`sampling point` **Goal**.
 
-Starting at the sampling point **Start**, it uses the underlying :ref:`skipping_router` to find the longest consecutive route.
+Starting at the sampling point **Start**, it uses the underlying :ref:`skipping_router` to find the farthest consecutive route.
 If the target sampling point could not been reached, it starts a new route and repeats the process, until the route is complete.
 
 .. note::
@@ -25,7 +25,7 @@ In this example we try to find a route from the sampling point **1** to the samp
 
    Router functionality
 
-Starting at sampling point **1**, the underlying router finds its longest route no farther than to sampling point **3**.
+Starting at sampling point **1**, the underlying router finds its "longest" route no farther than to sampling point **3**.
 
 A new route is then searched, starting at sampling point **4**.
 

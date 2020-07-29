@@ -4,10 +4,7 @@
 Backtrack router
 ================
 
-This router shall find the farthest route possible beginning at :term:`sampling point` **Start**.
-
-.. note::
-   The *farthest route* is a :term:`valid navigation route` with its last sampling point index as high as possible.
+This router shall find the :term:`farthest route possible <farthest navigation route>` beginning at :term:`sampling point` **Start**.
 
 Basically, it does so by successively routing from one sampling point to the next with its underlying :ref:`candidate_router`.
 
