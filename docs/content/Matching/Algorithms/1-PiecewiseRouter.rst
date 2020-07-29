@@ -1,12 +1,12 @@
 .. _outermost_router:
 
-======
-Router
-======
+================
+Piecewise router
+================
 
-This router is responsible for finding consecutive :term:`routes <valid navigation route>` as long as possible.
+This router is responsible for finding consecutive :term:`routes <valid navigation route>` as long as possible until reaching the :term:`sampling point` **Goal**.
 
-Starting at the source :term:`sampling point`, it uses the underlying router to find the longest consecutive route.
+Starting at the sampling point **Start**, it uses the underlying :ref:`skipping_router` to find the longest consecutive route.
 If the target sampling point could not been reached, it starts a new route and repeats the process, until the route is complete.
 
 .. note::
@@ -18,7 +18,7 @@ Example
 
 In this example we try to find a route from the sampling point **1** to the sampling point **7**.
 
-.. figure:: img/1-Router.png
+.. figure:: img/1-PiecewiseRouter.png
    :class: with-shadow
    :scale: 50
    :alt: Router functionality
@@ -35,3 +35,8 @@ A new route is then searched, starting at sampling point **4**.
    In the case we have in our example, it is indeed not possible for the subsequent routers to route any further without having to skip too many sampling points and reaching some threshold.
 
 As no consecutive route could be found here, the next route is then searched from sampling point **5** and finally reaches its goal at sampling point **7**.
+
+Development
+===========
+
+This router is implemented in the :class:`Router class <AppComponents::Common::Filter::Router>`.

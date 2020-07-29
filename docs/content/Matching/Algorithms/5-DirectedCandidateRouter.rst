@@ -2,9 +2,9 @@
 
 .. _simple_router:
 
-============
-SimpleRouter
-============
+=========================
+Directed candidate router
+=========================
 
 The |os-matcher| needs to find :term:`valid navigation routes <valid navigation route>`
 between :term:`sampling point candidates <sampling point candidate>`, which is done by this router.
@@ -16,7 +16,7 @@ between :term:`sampling point candidates <sampling point candidate>`, which is d
 To be able to calculate a single route and to simplify this router,
 direction information is required, additionally to the two sampling point candidates, as an input - the *sampling points selection*.
 
-The router then tries to find the shortest route between these two points. Depending on the topology, it may use the underlying :ref:`dijkstra_router` router.
+The router then tries to find the shortest route between these two points. Depending on the topology, it may use the underlying :ref:`dijkstra_router`.
 
 Finally, the configuration options given in :ref:`routeRestrictions <router_filter_configuration>` are evaluated and may discard the found route.
 Another route may then be choosen by the next-outer routers.
@@ -32,10 +32,10 @@ Single edge, simple case
 ------------------------
 
 In the case that both candidates lay on the same street map/graph edge and :math:`C_1^A` is headed towards :math:`C_1^B` while both having the same orientation,
-no street map/graph node needs to be traversed, as shown in :numref:`6-SimpleRouter-SingleEdge`.
+no street map/graph node needs to be traversed, as shown in :numref:`5-DirectedCandidateRouter-SingleEdge`.
 
-.. figure:: img/6-SimpleRouter-SingleEdge.png
-   :name: 6-SimpleRouter-SingleEdge
+.. figure:: img/5-DirectedCandidateRouter-SingleEdge.png
+   :name: 5-DirectedCandidateRouter-SingleEdge
    :alt: Single edge
    :class: with-shadow
    :scale: 50
@@ -57,10 +57,10 @@ The following examples show the two possible outcomes.
 Identical nodes
 ---------------
 
-It may happen, that the nodes are identical, as illustrated by the blue-ish circle in :numref:`6-SimpleRouter-NeighboringEdge`.
+It may happen, that the nodes are identical, as illustrated by the blue-ish circle in :numref:`5-DirectedCandidateRouter-NeighboringEdge`.
 
-.. figure:: img/6-SimpleRouter-NeighboringEdge.png
-   :name: 6-SimpleRouter-NeighboringEdge
+.. figure:: img/5-DirectedCandidateRouter-NeighboringEdge.png
+   :name: 5-DirectedCandidateRouter-NeighboringEdge
    :alt: Neighboring edge
    :class: with-shadow
    :scale: 50
@@ -72,19 +72,24 @@ No further routing is necessary to construct the route, similar to the first exa
 Different nodes
 ---------------
 
-In the last example, the nodes are not identical (blue-ish circles in :numref:`6-SimpleRouter-FarEdge`).
+In the last example, the nodes are not identical (blue-ish circles in :numref:`5-DirectedCandidateRouter-FarEdge`).
 
 .. note::
    This case with different nodes would also apply in our first example, if at least one of the sampling point candidates were oriented differently.
    Note that this orientation is not derived from the heading of the track but rather an experiment of the next-outer router
    (all four possibilities may be tried, but in general the orientation of the first sampling point is fixed due to the preceding route).
 
-.. figure:: img/6-SimpleRouter-FarEdge.png
-   :name: 6-SimpleRouter-FarEdge
+.. figure:: img/5-DirectedCandidateRouter-FarEdge.png
+   :name: 5-DirectedCandidateRouter-FarEdge
    :alt: FarEdge
    :class: with-shadow
    :scale: 50
 
    Far edge
 
-To complete the route from and to the blue-ish nodes, this scenario requires routing over street map/graph edges via the :ref:`dijkstra_router` router.
+To complete the route from and to the blue-ish nodes, this scenario requires routing over street map/graph edges via the :ref:`dijkstra_router`.
+
+Development
+===========
+
+This router is implemented in the :class:`SimpleRouter class <AppComponents::Common::Filter::Routing::SimpleRouter>`.
