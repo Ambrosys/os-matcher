@@ -19,9 +19,9 @@ In the following sections, we describe and illustrate all the routers, beginning
 .. toctree::
    :titlesonly:
 
-   7-Dijkstra
-   6-SimpleRouter
-   5-CandidateRouter
-   4-CandidateBacktrackRouter
-   2-SkippingRouter
-   1-Router
+   6-DijkstraRouter
+   5-DirectedCandidateRouter
+   4-SamplingPointRouter
+   3-BacktrackRouter
+   2-SkipRouter
+   1-PiecewiseRouter

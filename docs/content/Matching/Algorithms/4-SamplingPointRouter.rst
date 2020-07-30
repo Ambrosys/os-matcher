@@ -1,8 +1,8 @@
 .. _candidate_router:
 
-===============
-CandidateRouter
-===============
+=====================
+Sampling point router
+=====================
 
 This router is responsible for finding the best route between two given :term:`sampling points <sampling point>` :math:`Start` and :math:`Goal`.
 
@@ -12,17 +12,17 @@ It is composed of the following three operations.
 ==============================
 
 Because a sampling point may have more than one candidate and a driver can cross the projected point in two directions,
-there are many possible options how to begin the routing between the two sampling points, as we see in :numref:`5-CandidateRouter-Motivation`.
+there are many possible options how to begin the routing between the two sampling points, as we see in :numref:`4-SamplingPointRouter-Motivation`.
 
-.. figure:: img/5-CandidateRouter-Motivation.png
-   :name: 5-CandidateRouter-Motivation
+.. figure:: img/4-SamplingPointRouter-Motivation.png
+   :name: 4-SamplingPointRouter-Motivation
    :class: with-shadow
    :scale: 50
    :alt: Motivation
 
    Motivation
 
-The :ref:`underlying router <simple_router>` needs a single *sampling points selection* which consists of the following data:
+The underlying :ref:`simple_router` needs a single *sampling points selection* which consists of the following data:
 
 * The two :term:`sampling point candidates <sampling point candidate>` :math:`Start` and :math:`Goal`.
 * Direction information for each sampling point candidate.
@@ -41,26 +41,26 @@ Example
 
 In the following example, the current route ends at sampling point candidate :math:`C_2^{Start}`, that's why routes from other candidates (here :math:`C_1^{Start}`) are not considered:
 
-.. figure:: img/5-CandidateRouter-Overview.png
+.. figure:: img/4-SamplingPointRouter-Overview.png
    :class: with-shadow
    :scale: 50
    :alt: Overview
 
    Overview
 
-In :numref:`5-CandidateRouter-PossibleRoute1` and :numref:`5-CandidateRouter-PossibleRoute2` two possible routes have been calculated by the underlying router
+In :numref:`4-SamplingPointRouter-PossibleRoute1` and :numref:`4-SamplingPointRouter-PossibleRoute2` two possible routes have been calculated by the underlying router
 for two possible directions of :math:`C_2^{Goal}`.
 
-.. figure:: img/5-CandidateRouter-PossibleRoute1.png
-   :name: 5-CandidateRouter-PossibleRoute1
+.. figure:: img/4-SamplingPointRouter-PossibleRoute1.png
+   :name: 4-SamplingPointRouter-PossibleRoute1
    :class: with-shadow
    :scale: 50
    :alt: Possible route 1
 
    Possible route 1
 
-.. figure:: img/5-CandidateRouter-PossibleRoute2.png
-   :name: 5-CandidateRouter-PossibleRoute2
+.. figure:: img/4-SamplingPointRouter-PossibleRoute2.png
+   :name: 4-SamplingPointRouter-PossibleRoute2
    :class: with-shadow
    :scale: 50
    :alt: Possible route 2
@@ -69,8 +69,8 @@ for two possible directions of :math:`C_2^{Goal}`.
 
 If :ref:`Router filter's <filter_router>` ``allowSelfIntersection`` is set to ``true``, also the following route would be possible:
 
-.. figure:: img/5-CandidateRouter-PossibleRoute3.png
-   :name: 5-CandidateRouter-PossibleRoute3
+.. figure:: img/4-SamplingPointRouter-PossibleRoute3.png
+   :name: 4-SamplingPointRouter-PossibleRoute3
    :class: with-shadow
    :scale: 50
    :alt: Possible route 3
@@ -87,3 +87,8 @@ All found routes are now clustered as described in :ref:`routing_clustering`.
 ==================
 
 The role model of all clusters are then sorted as described in :ref:`routing_final_evaluation` determining the final, most realistic route.
+
+Development
+===========
+
+This router is implemented in the :class:`CandidateRouter class <AppComponents::Common::Filter::Routing::CandidateRouter>`.

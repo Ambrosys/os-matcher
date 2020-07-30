@@ -25,7 +25,7 @@ General
       A subroute consists of a geo linestring, an edge, cost and length.
 
    valid navigation route
-      A valid navigation route is a route which you could navigate.
+      A valid navigation route is a consecutive route which you could navigate.
 
       Currently the following constraints are considered:
          - Allowed travel direction
@@ -35,6 +35,9 @@ General
          - Angular deviation (optional; for street matching)
 
       .. seealso:: :class:`struct RouteRestrictions <AppComponents::Common::Filter::Routing::RouteRestrictions>`
+
+   farthest navigation route
+      The farthest route is a :term:`valid navigation route` with its last :term:`sampling point` index as high as possible.
 
    sampling point
       A track point, which at least has one :term:`candidate<sampling point candidate>` on a :term:`street segment`.
