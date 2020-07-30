@@ -4,7 +4,7 @@
 CsvSubRouteWriter
 =================
 
-This filter writes the internal representation of the :term:`subroutes <subroute>`
+This filter writes the internal representation of the calculated :term:`route` with some additional data
 to a stream in `CSV <https://www.ietf.org/rfc/rfc4180.txt>`_ format.
 
 Input

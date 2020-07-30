@@ -9,7 +9,7 @@ This filter creates the :term:`route` representation from the :term:`track`, :te
 It further creates statistical data about the routing.
 It is therefore the core filter of the |os-matcher|.
 
-For further explanation of its functionality we refer to the :ref:`algorithms` chapter.
+For further explanation of its functionality, please refer to the :ref:`algorithms` chapter.
 
 Input
 =====

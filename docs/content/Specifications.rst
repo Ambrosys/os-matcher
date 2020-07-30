@@ -1,6 +1,6 @@
-=============
+==============
 Specifications
-=============
+==============
 
 General
 =======
@@ -10,14 +10,20 @@ General
 
    heading
    track point heading
-      The heading of a track point is the nautical or geographical Azimuth, the clockwise in degrees measured angle between North and the heading direction.
-      (North = heading of 0°; East = heading of 90°; South = heading of 180°; West = heading of 270°)
+      The heading of a track point is the nautical or geographical azimuth, the clockwise in degrees measured angle between the north and the heading direction.
+
+      .. figure:: img/Specifications_Heading.png
+         :class: with-shadow
+         :scale: 50
+         :alt: Heading
+
+         Heading
 
    street segment origin offset
       It can be necessary to split a street given by a data source into multiple street segments, e.g. because of junctions.
       We explain the idea of the offset by the following example.
 
-      .. figure:: img/Specification_Offset_1.png
+      .. figure:: img/Specifications_Offset_1.png
          :class: with-shadow
          :scale: 50
          :alt: Original street map
@@ -26,8 +32,7 @@ General
 
       By splitting the original street segment 3 at the junctions with the original street segments 1 and 2 we created three street segments corresponding to the original street segment 3, all starting at a different offset.
 
-      .. figure:: img/Specification_Offset_2.png
-         :name: Specification_Offset_2
+      .. figure:: img/Specifications_Offset_2.png
          :class: with-shadow
          :scale: 50
          :alt: Original street map

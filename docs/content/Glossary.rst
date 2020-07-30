@@ -18,14 +18,10 @@ General
       The track might consist of additional data like velocity, heading, timestamp etc.
 
    route
-      A route is the result of a map matching algorithm with given :term:`track` and :term:`street map`.
-      The route consists of a set of subroutes (see :term:`subroute`).
-
-   subroute
-      A subroute consists of a geo linestring, an edge, cost and length.
+      A route usually is the result of a map matching process and is snapped to the geometry of the streets on a :term:`street map`.
 
    valid navigation route
-      A valid navigation route is a consecutive route which you could navigate.
+      A valid navigation route is a consecutive :term:`route` which you could navigate.
 
       Currently the following constraints are considered:
          - Allowed travel direction
@@ -34,17 +30,12 @@ General
          - Velocity difference (optional; for street matching)
          - Angular deviation (optional; for street matching)
 
-      .. seealso:: :class:`struct RouteRestrictions <AppComponents::Common::Filter::Routing::RouteRestrictions>`
-
    farthest navigation route
       The farthest route is a :term:`valid navigation route` with its last :term:`sampling point` index as high as possible.
 
    sampling point
       A track point, which at least has one :term:`candidate<sampling point candidate>` on a :term:`street segment`.
 
-      .. seealso:: :ref:`sampling_point_finder`
-
-   candidate
    sampling point candidate
       A track point projected on a :term:`street segment`.
       The projection has to meet specific requirements in order to be considered a candidate.
@@ -57,4 +48,28 @@ General
       Makes the street map applicable to routing algorithms.
 
    street segment
-      A minimal street segment without intersections (nodes) inbetween. May consist of more than two point. The corresponding linestring of the street map may have been cutted to satisfy this requirement.
+      A minimal street segment without intersections (nodes) inbetween. May consist of more than two point. The corresponding linestring of the :term:`street map` may have been cutted to satisfy this requirement.
+
+Operational data details
+========================
+
+.. seealso::
+   :ref:`type_listing`
+
+.. glossary::
+   :sorted:
+
+   street index
+      Shared index for :term:`street map` data (f.ex. for ``SegmentList``, ``NodePairList``, ``TravelDirectionList``).
+
+   street segment index
+      Index of a sub segment (consisting of two points) of a :term:`street segment`.
+
+   track index
+      Shared index for :term:`track` data (f.ex. for ``TimeList``, ``PointList``, ``HeadingList``).
+
+   sampling point index
+      Index for :term:`sampling points<sampling point>`.
+
+   sampling point candidate index
+      Index for :term:`sampling point candidates<sampling point candidate>`.
