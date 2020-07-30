@@ -25,4 +25,4 @@ This is an example documentation.
    :caption: Addendum
 
    content/Glossary
-   content/Specification
+   content/Specifications

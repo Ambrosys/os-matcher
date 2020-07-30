@@ -1,6 +1,6 @@
 .. include:: ../../../content/substitutions.rst
-.. _data_structures:
 
+.. _data_structures:
 
 ===============
 Data structures
@@ -25,6 +25,8 @@ The router mandatorily needs data about the street topology and the :term:`track
 It may optionally process the track point's timestamp and velocity, if present. In contrast, it does not need the track point's coordinates.
 
 The output is the route along with additional data to help reason about the found route.
+
+.. _type_listing:
 
 Type listing
 ============
