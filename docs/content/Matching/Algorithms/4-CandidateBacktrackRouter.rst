@@ -1,3 +1,5 @@
+.. _candidate_backtrack_router:
+
 ========================
 CandidateBacktrackRouter
 ========================

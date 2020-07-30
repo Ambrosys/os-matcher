@@ -23,6 +23,5 @@ In the following sections, we describe and illustrate all the routers, beginning
    6-SimpleRouter
    5-CandidateRouter
    4-CandidateBacktrackRouter
-   3-SkippingRouter
-   2-SkippingBacktrackRouter
+   2-SkippingRouter
    1-Router
