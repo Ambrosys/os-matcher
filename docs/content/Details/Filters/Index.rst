@@ -8,7 +8,7 @@ Each processing step of an application is implemented as a *filter*.
 
 Here you can find the basic data flow (simplified filter pipeline):
 
-.. figure:: ../../OperationalData/DataSelection/img/dataflow.png
+.. figure:: ../../OperationalData/DataSelection/img/generated/DataFlow.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Filter dataflow

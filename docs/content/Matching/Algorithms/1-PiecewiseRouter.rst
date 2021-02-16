@@ -18,7 +18,7 @@ Example
 
 In this example we try to find a route from the sampling point **1** to the sampling point **7**.
 
-.. figure:: img/1-PiecewiseRouter.png
+.. figure:: img/generated/1-PiecewiseRouter.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Router functionality

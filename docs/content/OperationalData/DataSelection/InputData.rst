@@ -37,15 +37,15 @@ The data must be provided by one or more filters.
 Track
 -----
 
-.. figure:: img/track.png
-   :name: trackfig
+.. figure:: img/generated/Track.drawio.png
+   :name: TrackFig
    :class: with-shadow
    :scale: 50
    :alt: Track data
 
    Track data
 
-In :numref:`Fig. %s Track data <trackfig>` you see an example track and the representing data lists which have to be filled by the filters.
+In :numref:`Fig. %s Track data <TrackFig>` you see an example track and the representing data lists which have to be filled by the filters.
 
 For a track to be complete, the following requirements have to be fulfilled by one or more filters:
 
@@ -113,15 +113,15 @@ Example skeleton:
 Street Map
 ----------
 
-.. figure:: img/streetmap.png
-   :name: streetmapfig
+.. figure:: img/generated/StreetMap.drawio.png
+   :name: StreetMapFig
    :class: with-shadow
    :scale: 50
    :alt: Street map data
 
    Street map data
 
-In :numref:`Fig. %s Street map data <streetmapfig>` you see an example street map and the representing data lists which have to be filled by the filters.
+In :numref:`Fig. %s Street map data <StreetMapFig>` you see an example street map and the representing data lists which have to be filled by the filters.
 
 For a street map to be complete, the following requirements have to be fulfilled by one or more filters:
 

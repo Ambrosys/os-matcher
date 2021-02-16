@@ -22,7 +22,7 @@ In this example the driver takes a freeway exit ramp,
 but the GPS tracker has poor signal and does not catch the turn fast enough.
 As a consequence the best candidates are sitting next to the main freeway lane, as illustrated below.
 
-.. figure:: img/3-BacktrackRouter-overview.png
+.. figure:: img/generated/3-BacktrackRouter-Overview.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Freeway exit ramp example
@@ -31,7 +31,7 @@ As a consequence the best candidates are sitting next to the main freeway lane, 
 
 As a consequence the routers will route on the main freeway lane and will not be able to continue at some point. Then backtracking starts.
 
-.. figure:: img/3-BacktrackRouter-backtrack-1.png
+.. figure:: img/generated/3-BacktrackRouter-1NeedBacktracking.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Needs backtracking
@@ -41,21 +41,21 @@ As a consequence the routers will route on the main freeway lane and will not be
 While backtracking, already passed sampling points are considered again while choosing different candidates.
 In the following three images we see the algorithm going back and trying out other candidates.
 
-.. figure:: img/3-BacktrackRouter-backtrack-2.png
+.. figure:: img/generated/3-BacktrackRouter-2BacktrackingTrial.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Backtracking trial 1 failed
 
    Backtracking trial 1 failed
 
-.. figure:: img/3-BacktrackRouter-backtrack-3.png
+.. figure:: img/generated/3-BacktrackRouter-3BacktrackingTrial2.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Backtracking trial 2 failed
 
    Backtracking trial 2 failed
 
-.. figure:: img/3-BacktrackRouter-backtrack-4.png
+.. figure:: img/generated/3-BacktrackRouter-4BacktrackingTrial3.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Backtracking trial 3 failed
@@ -65,7 +65,7 @@ In the following three images we see the algorithm going back and trying out oth
 As you see in the next image, the router finally finds a valid navigation route
 by choosing a different candidate for the southernmost sampling point.
 
-.. figure:: img/3-BacktrackRouter-backtrack-5.png
+.. figure:: img/generated/3-BacktrackRouter-5BacktrackingWorked.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Backtracking successful

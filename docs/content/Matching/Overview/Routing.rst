@@ -29,8 +29,8 @@ The street map :math:`M` is in its core a graph of nodes and edges (:math:`G(V,N
 the candidates are points on the edges and therefore not part of the graph.
 To overcome that, the nodes of the edge a candidate is placed on, become the first selected nodes in the routing.
 
-.. figure:: img/Routing_04_candidates.png
-   :name: Routing_04_candidates
+.. figure:: img/generated/Routing-1Directions.drawio.png
+   :name: Routing-1Directions
    :class: with-shadow
    :scale: 50
    :alt: Candidates on one way streets
@@ -51,20 +51,20 @@ possible nodes (:math:`n_i^s` and :math:`n_j^t`) for the edges (:math:`e_s` and 
 Since all the routes are starting from candidates of the same track point :math:`A` and likewise are ending on candidates of the same track point :math:`B`,
 often the resulting routes are very similar.
 
-.. figure:: img/Routing_05_routes.png
-   :name: Routing_05_routes
+.. figure:: img/generated/Routing-2Similar.drawio.png
+   :name: Routing-2Similar
    :class: with-shadow
    :scale: 50
    :alt: Basically similar routes
 
    Basically similar routes
 
-In :numref:`Routing_05_routes` we see two *basically similar* routes like that.
+In :numref:`Routing-2Similar` we see two *basically similar* routes like that.
 
-Contrary, in :numref:`Routing_06_diff_routes` we see two *basically different* routes.
+Contrary, in :numref:`Routing-3Different` we see two *basically different* routes.
 
-.. figure:: img/Routing_06_diff_routes.png
-   :name: Routing_06_diff_routes
+.. figure:: img/generated/Routing-3Different.drawio.png
+   :name: Routing-3Different
    :class: with-shadow
    :scale: 50
    :alt: Basically different routes.
@@ -74,15 +74,15 @@ Contrary, in :numref:`Routing_06_diff_routes` we see two *basically different* r
 When very similar and very different routes are likewise found for the same start and end points, as we see in the following example,
 mathematically justifying how to choose the most realistic route is very difficult:
 
-.. figure:: img/Routing_clustering_motivation.png
-   :name: Routing_clustering_motivation
+.. figure:: img/generated/Routing-ClusteringMotivation.drawio.png
+   :name: Routing-ClusteringMotivation
    :class: with-shadow
    :scale: 50
    :alt: Finding the most realistic route
 
    Finding the most realistic route
 
-In :numref:`Routing_clustering_motivation`, :math:`C_1^A` is the best candidate and :math:`C_3^A` produces the shortest route, but both are not correct - :math:`C_2^A` leads to the actual route.
+In :numref:`Routing-ClusteringMotivation`, :math:`C_1^A` is the best candidate and :math:`C_3^A` produces the shortest route, but both are not correct - :math:`C_2^A` leads to the actual route.
 
 To solve the problem, the routes are getting clustered, where each cluster represents a set of *basically similar* routes.
 
@@ -109,15 +109,15 @@ The criteria are:
 
 Note that the second and third criteria do not need to be fulfilled by both routes, only by one.
 
-.. figure:: img/Routing_07_similarity_wide.png
-   :name: Routing_07_similarity
+.. figure:: img/generated/Routing-4SimilarityWide.drawio.png
+   :name: Routing-4SimilarityWide
    :class: with-shadow
    :scale: 50
    :alt: Similarity criteria
 
    Similarity criteria
 
-Let's recap the example illustrated by :numref:`Routing_clustering_motivation`. The track point :math:`A` originates indeed from the roundabout.
+Let's recap the example illustrated by :numref:`Routing-ClusteringMotivation`. The track point :math:`A` originates indeed from the roundabout.
 But due to the drift of :math:`A` (may be induced due to data noise or inaccurate map data),
 the best candidate sits on a one-way street to the south (:math:`C_1^A`). The best (shortest) route however starts at the most unlikely candidate (:math:`C_3^A`),
 while the actual route starts at (:math:`C_2^A`).
@@ -126,8 +126,8 @@ Clustering is a way to overcome those and similar situations by filtering out un
 which are just considered because of its candidate rank.
 Within a cluster, however, the candidate's rank assures that we get the most accurate starting point from all the *basically similar* routes.
 
-.. figure:: img/Routing_08_clustering.png
-   :name: routing_08_clustering
+.. figure:: img/generated/Routing-5Clustering.drawio.png
+   :name: Routing-5Clustering
    :class: with-shadow
    :scale: 50
    :alt: Clustering

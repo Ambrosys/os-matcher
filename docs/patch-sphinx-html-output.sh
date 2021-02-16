@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
+# Note: Used in CMakeLists.txt
+
 HTML_DIR=$1
 
 shopt -s globstar

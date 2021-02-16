@@ -20,7 +20,7 @@ Example
 
 In this example, the underlying router failed to route beyond sampling point **4**, as shown below.
 
-.. figure:: img/2-SkipRouter-A.png
+.. figure:: img/generated/2-SkipRouter-A.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Farthest route does not reach Goal
@@ -38,7 +38,7 @@ This selection process is illustrated in :numref:`2-SkipRouter-B`.
    beginning at one of the first two sampling points causing the router to start the skipping process (in our example **4** and **5**).
    It is calculated using the `haversine formula <https://en.wikipedia.org/wiki/Haversine_formula>`_.
 
-.. figure:: img/2-SkipRouter-B.png
+.. figure:: img/generated/2-SkipRouter-B.drawio.png
    :name: 2-SkipRouter-B
    :class: with-shadow
    :scale: 50
@@ -51,7 +51,7 @@ In our example the router choosed to skip sampling point **4**.
 Now the routing continues, but the underlying router still does not find a route to go on.
 So the selection process is repeated, as shown in :numref:`2-SkipRouter-C`.
 
-.. figure:: img/2-SkipRouter-C.png
+.. figure:: img/generated/2-SkipRouter-C.drawio.png
    :name: 2-SkipRouter-C
    :class: with-shadow
    :scale: 50
@@ -64,7 +64,7 @@ Now sampling points **4** and **5** are requested to be skipped.
 Again, the underlying router failes to find a route
 and selection process is repeated, as shown in :numref:`2-SkipRouter-D`.
 
-.. figure:: img/2-SkipRouter-D.png
+.. figure:: img/generated/2-SkipRouter-D.drawio.png
    :name: 2-SkipRouter-D
    :class: with-shadow
    :scale: 50
@@ -76,7 +76,7 @@ Now sampling points **3** to **5** are requested to be skipped.
 
 Finally, the routing proceeds, illustrated in :numref:`2-SkipRouter-E`.
 
-.. figure:: img/2-SkipRouter-E.png
+.. figure:: img/generated/2-SkipRouter-E.drawio.png
    :name: 2-SkipRouter-E
    :class: with-shadow
    :scale: 50

@@ -14,7 +14,7 @@ The resulting data gets passed to registered output filters to save, for example
 
 Basic data flow (simplified filter pipeline):
 
-.. figure:: img/dataflow.png
+.. figure:: img/generated/DataFlow.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Filter dataflow
