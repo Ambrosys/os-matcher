@@ -92,10 +92,6 @@ add_custom_command(OUTPUT ${SPHINX_HTML_FILE}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DEPENDS
     ${SPHINX_HTML_PATCH_SCRIPT}
-    #${SPHINX_PDF_FILE}  # TODO: Does not really depend on this, but they both
-                        #       are not allowed to run in parallel, because
-                        #       they both run Exhale with the common _api
-                        #       directory they write to.
     #${DRAWIO_OUTPUT_FILES}
     ${DOC_OTHER_DEPENDENCIES}
     MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
@@ -107,6 +103,10 @@ add_custom_command(OUTPUT ${SPHINX_LATEX_FILE}
     ${SPHINX_SOURCE} ${SPHINX_BUILD}/latex
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DEPENDS
+    ${SPHINX_HTML_FILE}  # TODO: Does not really depend on this, but they both
+                         #       are not allowed to run in parallel, because
+                         #       they both run Exhale with the common _api
+                         #       directory they write to.
     #${DRAWIO_OUTPUT_FILES}
     ${DOC_OTHER_DEPENDENCIES}
     MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
