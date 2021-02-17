@@ -40,8 +40,3 @@ After executing the Dijkstra's algorithm, we get the shortest route :math:`r` as
    if the :term:`sampling point candidates <sampling point candidate>` were projected to different street segments.
 
    In the following chapters we learn how the small routes between the street map nodes are used to build the final route.
-
-Development
-===========
-
-This router is implemented in the :class:`Dijkstra class <StreetMatcher::Graph::Routing::Dijkstra>`.

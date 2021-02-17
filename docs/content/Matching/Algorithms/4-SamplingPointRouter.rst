@@ -87,8 +87,3 @@ All found routes are now clustered as described in :ref:`routing_clustering`.
 ==================
 
 The role model of all clusters are then sorted as described in :ref:`routing_final_evaluation` determining the final, most realistic route.
-
-Development
-===========
-
-This router is implemented in the :class:`CandidateRouter class <AppComponents::Common::Filter::Routing::CandidateRouter>`.

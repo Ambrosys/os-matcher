@@ -88,8 +88,3 @@ In the last example, the nodes are not identical (blue-ish circles in :numref:`5
    Far edge
 
 To complete the route from and to the blue-ish nodes, this scenario requires routing over street map/graph edges via the :ref:`dijkstra_router`.
-
-Development
-===========
-
-This router is implemented in the :class:`SimpleRouter class <AppComponents::Common::Filter::Routing::SimpleRouter>`.
