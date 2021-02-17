@@ -34,7 +34,7 @@ Single edge, simple case
 In the case that both candidates lay on the same street map/graph edge and :math:`C_1^A` is headed towards :math:`C_1^B` while both having the same orientation,
 no street map/graph node needs to be traversed, as shown in :numref:`5-DirectedCandidateRouter-SingleEdge`.
 
-.. figure:: img/5-DirectedCandidateRouter-SingleEdge.png
+.. figure:: img/generated/5-DirectedCandidateRouter-SingleEdge.drawio.png
    :name: 5-DirectedCandidateRouter-SingleEdge
    :alt: Single edge
    :class: with-shadow
@@ -59,7 +59,7 @@ Identical nodes
 
 It may happen, that the nodes are identical, as illustrated by the blue-ish circle in :numref:`5-DirectedCandidateRouter-NeighboringEdge`.
 
-.. figure:: img/5-DirectedCandidateRouter-NeighboringEdge.png
+.. figure:: img/generated/5-DirectedCandidateRouter-NeighboringEdge.drawio.png
    :name: 5-DirectedCandidateRouter-NeighboringEdge
    :alt: Neighboring edge
    :class: with-shadow
@@ -79,7 +79,7 @@ In the last example, the nodes are not identical (blue-ish circles in :numref:`5
    Note that this orientation is not derived from the heading of the track but rather an experiment of the next-outer router
    (all four possibilities may be tried, but in general the orientation of the first sampling point is fixed due to the preceding route).
 
-.. figure:: img/5-DirectedCandidateRouter-FarEdge.png
+.. figure:: img/generated/5-DirectedCandidateRouter-FarEdge.drawio.png
    :name: 5-DirectedCandidateRouter-FarEdge
    :alt: FarEdge
    :class: with-shadow
@@ -88,8 +88,3 @@ In the last example, the nodes are not identical (blue-ish circles in :numref:`5
    Far edge
 
 To complete the route from and to the blue-ish nodes, this scenario requires routing over street map/graph edges via the :ref:`dijkstra_router`.
-
-Development
-===========
-
-This router is implemented in the :class:`SimpleRouter class <AppComponents::Common::Filter::Routing::SimpleRouter>`.

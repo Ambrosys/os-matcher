@@ -14,7 +14,7 @@ It is composed of the following three operations.
 Because a sampling point may have more than one candidate and a driver can cross the projected point in two directions,
 there are many possible options how to begin the routing between the two sampling points, as we see in :numref:`4-SamplingPointRouter-Motivation`.
 
-.. figure:: img/4-SamplingPointRouter-Motivation.png
+.. figure:: img/generated/4-SamplingPointRouter-Motivation.drawio.png
    :name: 4-SamplingPointRouter-Motivation
    :class: with-shadow
    :scale: 50
@@ -41,7 +41,7 @@ Example
 
 In the following example, the current route ends at sampling point candidate :math:`C_2^{Start}`, that's why routes from other candidates (here :math:`C_1^{Start}`) are not considered:
 
-.. figure:: img/4-SamplingPointRouter-Overview.png
+.. figure:: img/generated/4-SamplingPointRouter-Overview.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Overview
@@ -51,7 +51,7 @@ In the following example, the current route ends at sampling point candidate :ma
 In :numref:`4-SamplingPointRouter-PossibleRoute1` and :numref:`4-SamplingPointRouter-PossibleRoute2` two possible routes have been calculated by the underlying router
 for two possible directions of :math:`C_2^{Goal}`.
 
-.. figure:: img/4-SamplingPointRouter-PossibleRoute1.png
+.. figure:: img/generated/4-SamplingPointRouter-PossibleRoute1.drawio.png
    :name: 4-SamplingPointRouter-PossibleRoute1
    :class: with-shadow
    :scale: 50
@@ -59,7 +59,7 @@ for two possible directions of :math:`C_2^{Goal}`.
 
    Possible route 1
 
-.. figure:: img/4-SamplingPointRouter-PossibleRoute2.png
+.. figure:: img/generated/4-SamplingPointRouter-PossibleRoute2.drawio.png
    :name: 4-SamplingPointRouter-PossibleRoute2
    :class: with-shadow
    :scale: 50
@@ -69,7 +69,7 @@ for two possible directions of :math:`C_2^{Goal}`.
 
 If :ref:`Router filter's <filter_router>` ``allowSelfIntersection`` is set to ``true``, also the following route would be possible:
 
-.. figure:: img/4-SamplingPointRouter-PossibleRoute3.png
+.. figure:: img/generated/4-SamplingPointRouter-PossibleRoute3.drawio.png
    :name: 4-SamplingPointRouter-PossibleRoute3
    :class: with-shadow
    :scale: 50
@@ -87,8 +87,3 @@ All found routes are now clustered as described in :ref:`routing_clustering`.
 ==================
 
 The role model of all clusters are then sorted as described in :ref:`routing_final_evaluation` determining the final, most realistic route.
-
-Development
-===========
-
-This router is implemented in the :class:`CandidateRouter class <AppComponents::Common::Filter::Routing::CandidateRouter>`.

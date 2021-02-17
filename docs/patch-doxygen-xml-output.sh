@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
+# Note: Used in CMakeLists.txt
+
 XML_DIR=$1
 
 REPLACE_IN_FILENAME_ARRAY=(

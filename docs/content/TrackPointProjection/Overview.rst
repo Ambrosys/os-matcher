@@ -19,8 +19,8 @@ Since the start and end points are potentially unbound GPS locations, the algori
 to find nearby street segments from :math:`M`
 resulting in a set of street segments for both points, :math:`S_A` and :math:`S_B`.
 
-.. figure:: img/Routing_01_candidates.png
-   :name: Routing_01_candidates
+.. figure:: img/generated/Overview-1CandidateSearch.drawio.png
+   :name: Overview-1CandidateSearch
    :class: with-shadow
    :scale: 50
    :alt: Start and Endpoint with candidates
@@ -33,8 +33,8 @@ with the candidates :math:`c_i^A` and :math:`c_j^B`.
 The candidates are ordered according to their distance.
 However this might not be unique as you see in the following image.
 
-.. figure:: img/Routing_02_candidates.png
-   :name: Routing_02_candidates
+.. figure:: img/generated/Overview-2CandidatesDistance.drawio.png
+   :name: Overview-2CandidatesDistance
    :class: with-shadow
    :scale: 50
    :alt: Example for ambiguous candidates
@@ -45,8 +45,8 @@ The track data may contain direction data as well, which is considered as the ne
 (using :func:`function headingDifference() <AppComponents::Common::Filter::Routing::SamplingPointFinder::headingDifference>`).
 This would result in a distinct decision in our example.
 
-.. figure:: img/Routing_03_candidates.png
-   :name: Routing_03_candidates
+.. figure:: img/generated/Overview-3CandidatesHeading.drawio.png
+   :name: Overview-3CandidatesHeading
    :class: with-shadow
    :scale: 50
    :alt: Candidate rank with distance and heading

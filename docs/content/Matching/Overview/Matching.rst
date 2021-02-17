@@ -27,8 +27,8 @@ since, without a candidate on the street map, the algorithm has no useful hints 
 .. note::
    Some implemented optimizations are dependent on additional meta data for the track, like heading and velocity. Not providing those can lead to poor matchings.
 
-.. figure:: img/Matching_01_sample_point.png
-   :name: matching_01_sample_point
+.. figure:: img/generated/Matching-1SamplingPoints.drawio.png
+   :name: Matching-1SamplingPoints
    :class: with-shadow
    :scale: 50
    :alt: Track to sample points
@@ -40,11 +40,11 @@ After a successful routing we search from the end of our found routing to the ne
 Iteratively like that we get a matching of our whole track.
 
 However an iterative matching approach like that can lead into situations where no routing can be performed even thou the real world track might would have been plausible.
-Let us take our example from :ref:`matching_01_sample_point` and add a one-way street at an unfortunate position, which makes the track point :math:`E` a sampling point with a candidate.
+Let us take our example from :ref:`Matching-1SamplingPoints` and add a one-way street at an unfortunate position, which makes the track point :math:`E` a sampling point with a candidate.
 Now our iterative approach will find a route connecting the candidates of sampling point :math:`A` until :math:`E` but cannot get further.
 
-.. figure:: img/Matching_02_dead_end.png
-   :name: matching_02_dead_end
+.. figure:: img/generated/Matching-2DeadEnd.drawio.png
+   :name: Matching-2DeadEnd
    :class: with-shadow
    :scale: 50
    :alt: Matching leads into dead end

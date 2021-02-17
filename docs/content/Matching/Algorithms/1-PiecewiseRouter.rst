@@ -18,7 +18,7 @@ Example
 
 In this example we try to find a route from the sampling point **1** to the sampling point **7**.
 
-.. figure:: img/1-PiecewiseRouter.png
+.. figure:: img/generated/1-PiecewiseRouter.drawio.png
    :class: with-shadow
    :scale: 50
    :alt: Router functionality
@@ -35,8 +35,3 @@ A new route is then searched, starting at sampling point **4**.
    In the case we have in our example, it is indeed not possible for the subsequent routers to route any further without having to skip too many sampling points and reaching some threshold.
 
 As no consecutive route could be found here, the next route is then searched from sampling point **5** and finally reaches its goal at sampling point **7**.
-
-Development
-===========
-
-This router is implemented in the :class:`Router class <AppComponents::Common::Filter::Router>`.

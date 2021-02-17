@@ -2,6 +2,7 @@
 
 set(DOC_CONTENT ${CMAKE_CURRENT_SOURCE_DIR}/content)
 file(GLOB_RECURSE DOC_FILES CONFIGURE_DEPENDS ${DOC_CONTENT}/*.rst)
+file(GLOB_RECURSE DRAWIO_FILES CONFIGURE_DEPENDS ${DOC_CONTENT}/*.drawio)
 
 set(DOXYGEN_INPUT_DIR "${PROJECT_SOURCE_DIR}/src")
 set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
@@ -63,6 +64,15 @@ add_custom_command(OUTPUT ${APPLICATIONS_SYMLINK}
     COMMENT "Generating applications symlink"
     VERBATIM)
 
+#set(DRAWIO_OUTPUT_FILES "")
+#foreach(DRAWIO_FILE ${DRAWIO_FILES})
+#    string(REPLACE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} OUTPUT_FILE "${DRAWIO_FILE}.png")
+#    set(DRAWIO_OUTPUT_FILES ${DRAWIO_OUTPUT_FILES} ${OUTPUT_FILE})
+#    add_custom_command(
+#        COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/convert-drawio.sh \"${DRAWIO_FILE}\" \"${OUTPUT_FILE}\"
+#        OUTPUT ${OUTPUT_FILE})
+#endforeach()
+
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR})
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/sphinx)
 set(SPHINX_HTML_FILE ${SPHINX_BUILD}/html/index.html)
@@ -82,11 +92,11 @@ add_custom_command(OUTPUT ${SPHINX_HTML_FILE}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DEPENDS
     ${SPHINX_HTML_PATCH_SCRIPT}
-    ${SPHINX_PDF_FILE}  # TODO: Does not really depend on this, but they both
+    #${SPHINX_PDF_FILE}  # TODO: Does not really depend on this, but they both
                         #       are not allowed to run in parallel, because
                         #       they both run Exhale with the common _api
                         #       directory they write to.
-    # Other docs files you want to track should go here (or in some variable)
+    #${DRAWIO_OUTPUT_FILES}
     ${DOC_OTHER_DEPENDENCIES}
     MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
     COMMENT "Generating HTML documentation with Sphinx")
@@ -97,7 +107,7 @@ add_custom_command(OUTPUT ${SPHINX_LATEX_FILE}
     ${SPHINX_SOURCE} ${SPHINX_BUILD}/latex
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     DEPENDS
-    # Other docs files you want to track should go here (or in some variable)
+    #${DRAWIO_OUTPUT_FILES}
     ${DOC_OTHER_DEPENDENCIES}
     MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
     COMMENT "Generating LaTeX documentation with Sphinx")

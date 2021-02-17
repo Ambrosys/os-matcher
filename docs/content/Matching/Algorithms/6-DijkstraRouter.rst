@@ -14,20 +14,20 @@ To find the path, the `Dijkstra's algorithm <https://en.wikipedia.org/wiki/Dijks
 Example
 =======
 
-In the following example (see :numref:`6-DijkstraRouter-Graph`), we want to find a path from node **Start** to node **Goal**.
+In the following example (see :numref:`6-DijkstraRouter-StreetGraph`), we want to find a path from node **Start** to node **Goal**.
 
-.. figure:: img/6-DijkstraRouter-Graph.png
-   :name: 6-DijkstraRouter-Graph
+.. figure:: img/generated/6-DijkstraRouter-StreetGraph.drawio.png
+   :name: 6-DijkstraRouter-StreetGraph
    :alt: Street map and street graph
    :class: with-shadow
    :scale: 50
 
    Street map and street graph
 
-After executing the Dijkstra's algorithm, we get the shortest route :math:`r` as illustrated in :numref:`6-DijkstraRouter-Route`.
+After executing the Dijkstra's algorithm, we get the shortest route :math:`r` as illustrated in :numref:`6-DijkstraRouter-ShortestRoute`.
 
-.. figure:: img/6-DijkstraRouter-Route.png
-   :name: 6-DijkstraRouter-Route
+.. figure:: img/generated/6-DijkstraRouter-ShortestRoute.drawio.png
+   :name: 6-DijkstraRouter-ShortestRoute
    :alt: Shortest route
    :class: with-shadow
    :scale: 50
@@ -40,8 +40,3 @@ After executing the Dijkstra's algorithm, we get the shortest route :math:`r` as
    if the :term:`sampling point candidates <sampling point candidate>` were projected to different street segments.
 
    In the following chapters we learn how the small routes between the street map nodes are used to build the final route.
-
-Development
-===========
-
-This router is implemented in the :class:`Dijkstra class <StreetMatcher::Graph::Routing::Dijkstra>`.
