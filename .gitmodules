@@ -1,0 +1,6 @@
+[submodule "ThirdParty/libosmium"]
+	path = ThirdParty/libosmium
+	url = https://github.com/osmcode/libosmium.git
+[submodule "ThirdParty/lemon"]
+	path = ThirdParty/lemon
+	url = ssh://git@gl.ambrosys.de:422/ambrosys/thirdparty/lemon.git

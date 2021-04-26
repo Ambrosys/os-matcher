@@ -2,4 +2,12 @@
 
 # JetBrains
 /.idea/
-cmake-build-*/
+/cmake-build-*/
+
+# Visual Studio Code
+/.vscode/
+
+# KDevelop
+/.kdev4/
+*.kdev4
+

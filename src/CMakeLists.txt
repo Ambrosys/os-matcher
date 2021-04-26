@@ -1,17 +1,8 @@
-set( SOURCES
-    main.cpp
-    foo.cpp
-    )
+add_subdirectory( AppComponents )
+add_subdirectory( Core )
+add_subdirectory( Generic )
 
-add_executable ( OsMatcher ${SOURCES} )
-
-if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" )
-    target_link_libraries( OsMatcher PUBLIC c++experimental )
-else()
-    target_link_libraries( OsMatcher PUBLIC stdc++fs )
+option( BUILD_UNITTESTS "Enable if you want to build unit tests" ON )
+if( ${BUILD_UNITTESTS} )
+    add_subdirectory( UnitTest )
 endif()
-
-install(
-    TARGETS OsMatcher RUNTIME
-    DESTINATION bin
-)

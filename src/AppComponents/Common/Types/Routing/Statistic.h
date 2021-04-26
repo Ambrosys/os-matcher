@@ -1,0 +1,25 @@
+
+#pragma once
+
+#include <AppComponents/Common/Filter/Routing/Types.h>
+
+#include <unordered_map>
+#include <unordered_set>
+
+namespace AppComponents::Common::Types::Routing {
+
+struct CalculatedRouteStatistic
+{
+    // TODO: consider keeping whole Route
+    double cost;
+    double length;
+    size_t subRoutesCount;
+};
+
+struct RoutingStatistic
+{
+    std::unordered_map<Filter::Routing::SamplingPointsSelection, CalculatedRouteStatistic> calculated;
+    std::vector<std::pair<Filter::Routing::SamplingPointsSelection, bool>> visited;
+};
+
+}  // namespace AppComponents::Common::Types::Routing

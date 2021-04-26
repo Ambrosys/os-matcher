@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Applying clang-format to committed files."
+python3 GitHooks/clang-format.py
