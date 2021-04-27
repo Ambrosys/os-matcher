@@ -1,4 +1,4 @@
-.. include:: ../../../content/substitutions.rst
+.. include:: ../../substitutions.rst
 
 .. _data_structures:
 
