@@ -1,6 +1,6 @@
 FROM bibermann/os-matcher:gcc-sphinx
 
-WORKDIR /home
+WORKDIR /root
 
 COPY CMakeModules/ CMakeModules/
 COPY CMakeLists.txt .
@@ -8,8 +8,13 @@ COPY README.md .
 COPY docs/ docs/
 COPY src/ src/
 
-CMD rm -rf build/ \
-    && mkdir build/ \
-    && echo "Test" \
-    && cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_DOCS=ON \
-    && ninja -C build install
+RUN rm -rf build/ \
+ && mkdir build/ \
+ && echo "Test" \
+ && cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON \
+ && ninja -C build install
+
+FROM nginx
+
+COPY --from=0 /root/build/install/doc/html /usr/share/nginx/html
+COPY --from=0 /root/build/install/doc/os-matcher.pdf /usr/share/nginx/html/os-matcher.pdf

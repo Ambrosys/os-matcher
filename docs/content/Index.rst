@@ -11,9 +11,9 @@
 
 This is an example documentation.
 
-``$ OsMatcher --help``
+``$ ExampleMatcher --help``
 
-.. program-output:: _binaries/OsMatcher --help
+.. program-output:: _binaries/ExampleMatcher --help
 
 .. include:: content/OperationalData/Index.rst
 .. include:: content/TrackPointProjection/Index.rst
