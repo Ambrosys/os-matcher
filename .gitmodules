@@ -3,4 +3,4 @@
 	url = https://github.com/osmcode/libosmium.git
 [submodule "ThirdParty/lemon"]
 	path = ThirdParty/lemon
-	url = ssh://git@gl.ambrosys.de:422/ambrosys/thirdparty/lemon.git
+	url = https://github.com/Ambrosys/lemon.git
