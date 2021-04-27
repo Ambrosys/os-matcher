@@ -1,4 +1,4 @@
-TARGETS=lemon libosmium
+TARGETS=lemon
 BOOST_TOOLSET=gcc
 ifeq ($(findstring clang,${CXX}),clang)
         BOOST_TOOLSET=clang
@@ -64,15 +64,8 @@ lemon:
 	$(MAKE) -j4 -C "$@/build" install
 
 
-libosmium: export CXXFLAGS:=${CXXFLAGS}
-libosmium:
-	@mkdir -p ${INSTALL_DIR}/include || true
-	cp -r libosmium/include/* ${INSTALL_DIR}/include
-
-
 clean:
 	$(MAKE) -C lemon/build clean
-	$(MAKE) -C libpqxx/build clean
 	rm -rf "${INSTALL_DIR}" ; mkdir "${INSTALL_DIR}"
 
 gitclean:
