@@ -74,16 +74,16 @@ IncludeBlocks:   Regroup
 IncludeCategories:
   - Regex:           '^"'
     Priority:        1
-  - Regex:           '^<(AppComponents|OsMatcher)/'
+  - Regex:           '^<(AppComponents|OsMatcher|UnitTest)/'
     Priority:        2
-  - Regex:           '^<Generic/'
-    Priority:        4
   - Regex:           '^<Core/'
     Priority:        3
-  - Regex:           '^<(amblog|ambgraph|cliapp|ambthread|ambpipeline)/'
-    Priority:        5
-  - Regex:           '^<boost/'
+  - Regex:           '^<Generic/'
+    Priority:        4
+  - Regex:           '^<(boost|experimental)/'
     Priority:        6
+  - Regex:           '^<.*/'
+    Priority:        5
   - Regex:           '^<'
     Priority:        7
 IncludeIsMainRegex: '(Test|_test)?$'

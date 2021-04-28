@@ -2,6 +2,7 @@
 #include <Core/Graph/LemonDigraph.h>
 
 #include <catch2/catch.hpp>
+
 #include <memory>
 
 using namespace Core::Graph;

@@ -3,6 +3,7 @@
 #include <Core/Common/Geometry/Types.h>
 
 #include <catch2/catch.hpp>
+
 #include <sstream>
 #include <string>
 

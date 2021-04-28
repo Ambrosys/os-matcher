@@ -3,6 +3,7 @@
 #include <Core/Common/Geometry/Types.h>
 
 #include <nlohmann/json.hpp>
+
 #include <string>
 
 namespace Core::Common::Geometry {
