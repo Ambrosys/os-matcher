@@ -1,20 +1,19 @@
 .. include:: content/substitutions.rst
 
-==========================================
+============================================
 |os-matcher| - Open Source Routing Framework
-==========================================
+============================================
 
 .. note::
    .. mdinclude:: ../../README.md
       :start-line: 1
-      :end-line: 3
+      :end-line: 4
 
-This is an example documentation.
+.. ``$ ExampleMatcher --help``
+..
+.. .. program-output:: _binaries/ExampleMatcher --help
 
-``$ OsMatcher --help``
-
-.. program-output:: _binaries/OsMatcher --help
-
+.. include:: content/Usage/Index.rst
 .. include:: content/OperationalData/Index.rst
 .. include:: content/TrackPointProjection/Index.rst
 .. include:: content/Matching/Index.rst

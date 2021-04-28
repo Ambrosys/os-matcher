@@ -1,6 +1,3 @@
-[submodule "ThirdParty/libosmium"]
-	path = ThirdParty/libosmium
-	url = https://github.com/osmcode/libosmium.git
 [submodule "ThirdParty/lemon"]
 	path = ThirdParty/lemon
 	url = https://github.com/Ambrosys/lemon.git
