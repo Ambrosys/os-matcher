@@ -15,5 +15,4 @@ target_include_directories( Helpers
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
     )
 
-add_subdirectory( Generic )
 add_subdirectory( Graph )
