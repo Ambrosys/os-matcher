@@ -57,7 +57,6 @@ unit-test:
     image: gcc:10.2.0
     stage: test
     script:
-        - build/bin/UnitTestsGeneric
         - build/bin/UnitTestsGraph
     dependencies: 
         - os-matcher-app-build
