@@ -1,4 +1,5 @@
 #include <UnitTest/Helpers.h>
+
 #include <nlohmann/json.hpp>
 
 void require_close(Core::Common::Geometry::Point const & p1, Core::Common::Geometry::Point const & p2, double eps)

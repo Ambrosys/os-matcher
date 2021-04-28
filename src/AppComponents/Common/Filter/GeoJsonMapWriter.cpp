@@ -3,9 +3,9 @@
 #include <Core/Common/Geometry/Conversion.h>
 
 #include <amblog/global.h>
+#include <nlohmann/json.hpp>
 
 #include <cassert>
-#include <nlohmann/json.hpp>
 #include <string>
 
 namespace AppComponents::Common::Filter {

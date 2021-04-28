@@ -8,6 +8,7 @@
 #include <Generic/String/Split.h>
 
 #include <amblog/global.h>
+#include <pqxx/pqxx>
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/function_output_iterator.hpp>
@@ -15,7 +16,6 @@
 
 #include <iomanip>
 #include <iterator>
-#include <pqxx/pqxx>
 #include <unordered_map>
 #include <vector>
 

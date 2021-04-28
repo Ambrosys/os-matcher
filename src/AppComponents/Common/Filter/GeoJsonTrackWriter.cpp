@@ -4,7 +4,6 @@
 #include <Core/Common/Time/Helper.h>
 
 #include <amblog/global.h>
-
 #include <nlohmann/json.hpp>
 
 namespace AppComponents::Common::Filter {

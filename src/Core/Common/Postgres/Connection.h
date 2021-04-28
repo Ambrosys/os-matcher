@@ -1,9 +1,10 @@
 
 #pragma once
 
+#include <pqxx/pqxx>
+
 #include <memory>
 #include <mutex>
-#include <pqxx/pqxx>
 #include <string>
 
 namespace Core::Common::Postgres {

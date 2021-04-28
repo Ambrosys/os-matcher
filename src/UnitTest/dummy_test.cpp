@@ -1,4 +1,5 @@
 #include <catch2/catch.hpp>
+
 #include <vector>
 
 unsigned int Factorial(unsigned int number)

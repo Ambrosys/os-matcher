@@ -1,6 +1,7 @@
 #pragma once
 
 #include <pqxx/pqxx>
+
 #include <utility>
 
 namespace Core::Common::Postgres {

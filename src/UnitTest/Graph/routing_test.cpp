@@ -3,6 +3,7 @@
 #include <Core/Graph/Routing/Dijkstra.h>
 
 #include <catch2/catch.hpp>
+
 #include <memory>
 #include <unordered_map>
 

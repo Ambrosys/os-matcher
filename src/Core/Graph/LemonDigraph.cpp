@@ -1,7 +1,8 @@
 #include <Core/Graph/LemonDigraph.h>
 
-#include <cassert>
 #include <lemon/dijkstra.h>
+
+#include <cassert>
 #include <utility>
 
 namespace Core::Graph {
