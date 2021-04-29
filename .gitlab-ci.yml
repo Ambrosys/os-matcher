@@ -6,15 +6,9 @@ stages:
 
 build g++:
     stage: build
-    before_script:
-        - rm -rf build/install
-        - rm -rf build/docs/sphinx
-        - rm -rf docs/_api
     script:
-        - mkdir -p build/install
-        - cd build
-        - cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_DOCS=ON
-        - ninja install
+        - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
+        - ninja -C build install
     artifacts:
         paths:
             - build
@@ -25,6 +19,26 @@ pages:
     stage: deploy
     variables:
         GIT_STRATEGY: none
+        GITHUB_REPO: git@github.com:Ambrosys/os-matcher.git
+    before_script:
+        - apt-get update
+        - apt-get install -y git-all
+        - git --version
+        - mkdir /root/.ssh
+        - cp $GITHUB_DEPLOY_KEY /root/.ssh/id_github
+        - cp $GITHUB_DEPLOY_KEY_PUB ~/.ssh/id_github.pub
+        - chmod 600 /root/.ssh/id_github
+        - |
+            cat >>/etc/ssh/ssh_config <<EOL
+            Host github.com
+                Hostname github.com
+                User git
+                Port 22
+                IdentityFile /root/.ssh/id_github
+                IdentitiesOnly yes
+                StrictHostKeyChecking no
+            EOL
+        - cat /etc/ssh/ssh_config
     script:
         - |
             if [ ! -f build/install/doc/html/index.html ]; then
@@ -33,8 +47,16 @@ pages:
             else
                 rm -rf public
                 cp -r build/install/doc/html public
+                cp build/install/doc/os-matcher.pdf public/
                 rm -rf public/.doctrees
             fi
+        - git clone -b gh-pages $GITHUB_REPO github_repo
+        - cd github_repo
+        - git rm -r .
+        - cp -r --no-target-directory ../public .
+        - git add .
+        - git commit -m "Deploying to gh-pages testing" || true
+        - git push $GITHUB_REPO
     dependencies:
         - build g++
     artifacts:
