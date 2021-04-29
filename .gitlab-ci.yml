@@ -1,10 +1,73 @@
-image: bibermann/os-matcher:gcc-sphinx
-
 stages:
+    - lint
+    - test-build
+    - test
     - build
     - deploy
 
-build g++:
+clang-format: # TODO: Use clang format 11, currently the image install clang-format 7.0
+    image: gcc:10.2.0
+    stage: lint
+    before_script: 
+        - apt update && apt install -y clang-format
+    script:
+        - |
+            for f in $(find . -regex '.*\.\(h\|hpp\|tpp\|c\|cpp\)'); 
+                do clang-format -style=file $f; 
+            done
+    allow_failure: true
+    only:
+        refs:
+            - master
+            - merge_requests
+
+os-matcher-app-build:
+    image: gcc:10.2.0
+    stage: test-build
+    before_script:
+        - |
+            apt update \
+            && apt install -y cmake ninja-build python-pip pv \
+            && rm -rf /var/lib/apt/lists/*
+        - pip install conan
+        - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+        - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
+        - echo https://$GITHUB_HTTPS_USERNAME:$GITHUB_HTTPS_PASSWORD@github.com > ~/.git-credentials
+        - git config --global credential.helper store
+        - git submodule update --init
+        - NJOBS=$(nproc) make -C ThirdParty
+    script:
+        - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
+        - ninja -C build test-if-git-HEAD-has-changed
+        - ninja -C build install
+        - build/install/bin/ExampleMatcher -h
+    cache:
+        paths:
+            - ~/.conan/
+    artifacts:
+        paths:
+            - build
+        expire_in: 1 day
+    only:
+        refs:
+            - master
+            - merge_requests
+
+unit-test:
+    image: gcc:10.2.0
+    stage: test
+    script:
+        - build/bin/UnitTestsGeneric
+        - build/bin/UnitTestsGraph
+    dependencies: 
+        - os-matcher-app-build
+    only:
+        refs:
+            - master
+            - merge_requests
+
+build doc:
+    image: bibermann/os-matcher:gcc-sphinx
     stage: build
     script:
         - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
@@ -13,6 +76,10 @@ build g++:
         paths:
             - build
         expire_in: 1 day
+    only:
+        refs:
+            - master
+            - merge_requests
 
 pages:
     image: python:3-slim
@@ -58,10 +125,13 @@ pages:
         - git commit -m "Deploying to gh-pages testing" || true
         - git push $GITHUB_REPO
     dependencies:
-        - build g++
+        - build doc
     artifacts:
         paths:
             - public
     only:
         refs:
             - master
+
+
+
