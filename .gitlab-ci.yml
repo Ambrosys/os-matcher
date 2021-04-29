@@ -1,45 +1,70 @@
 image: bibermann/os-matcher:gcc-sphinx
 
 stages:
-    - build
-    - deploy
+    - lint
+    - test-build
+    - test
 
-build g++:
-    stage: build
-    before_script:
-        - rm -rf build/install
-        - rm -rf build/docs/sphinx
-        - rm -rf docs/_api
+clang-format: # TODO: Use clang format 11, currently the image install clang-format 7.0
+    image: gcc:10.2.0
+    stage: lint
+    before_script: 
+        - apt update && apt install -y clang-format
     script:
-        - mkdir -p build/install
-        - cd build
-        - cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_DOCS=ON
-        - ninja install
+        - |
+            for f in $(find . -regex '.*\.\(h\|hpp\|tpp\|c\|cpp\)'); 
+                do clang-format -style=file $f; 
+            done
+    allow_failure: true
+    only:
+        refs:
+            - master
+            - merge_requests
+
+os-matcher-app-build:
+    image: gcc:10.2.0
+    stage: test-build
+    before_script:
+        - |
+            apt update \
+            && apt install -y cmake ninja-build python-pip pv \
+            && rm -rf /var/lib/apt/lists/*
+        - pip install conan
+        - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+        - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
+        - echo https://$GITHUB_HTTPS_USERNAME:$GITHUB_HTTPS_PASSWORD@github.com > ~/.git-credentials
+        - git config --global credential.helper store
+        - git submodule update --init
+        - NJOBS=$(nproc) make -C ThirdParty
+    script:
+        - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
+        - ninja -C build test-if-git-HEAD-has-changed
+        - ninja -C build install
+        - build/install/bin/ExampleMatcher -h
+    cache:
+        paths:
+            - ~/.conan/
     artifacts:
         paths:
             - build
         expire_in: 1 day
-
-pages:
-    image: python:3-slim
-    stage: deploy
-    variables:
-        GIT_STRATEGY: none
-    script:
-        - |
-            if [ ! -f build/install/doc/html/index.html ]; then
-                mkdir -p public
-                echo "Build-error." > public/index.html
-            else
-                rm -rf public
-                cp -r build/install/doc/html public
-                rm -rf public/.doctrees
-            fi
-    dependencies:
-        - build g++
-    artifacts:
-        paths:
-            - public
     only:
         refs:
             - master
+            - merge_requests
+
+
+
+unit-test:
+    image: gcc:10.2.0
+    stage: test
+    script:
+        - build/bin/UnitTestsGeneric
+        - build/bin/UnitTestsGraph
+    dependencies: 
+        - os-matcher-app-build
+    only:
+        refs:
+            - master
+            - merge_requests
+
