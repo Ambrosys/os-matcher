@@ -1,5 +1,4 @@
 set( SOURCE
-    GeometricGraphBuilder.cpp
     Filter/GeoJsonTrackWriter.cpp
     Filter/GeoJsonMapWriter.cpp
     Filter/GeoJsonMapReader.cpp
