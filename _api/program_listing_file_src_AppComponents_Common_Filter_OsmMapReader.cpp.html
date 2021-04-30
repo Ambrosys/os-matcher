@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>Program Listing for File OsmMapReader.cpp &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/> 
+  <script src="../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#building-third-party-code">Building third party code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#track">Track</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#execution">Execution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/OperationalData/DataSelection/Index.html">Data selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">DETAILS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Details/Filters/Index.html">Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html">CsvTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html">JsonTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html">GeoJsonMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html">OsmMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html">CsvRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html">CsvSubRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html">GeoJsonRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html">CsvTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html">GeoJsonTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html">GeoJsonMapWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html">JsonRouteStatisticWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#output">Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#def-samplingpoint-json">Def: SamplingPoint-JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#def-samplingpointcandidate-json">Def: SamplingPointCandidate-JSON</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    <li>Program Listing for File OsmMapReader.cpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_api/program_listing_file_src_AppComponents_Common_Filter_OsmMapReader.cpp.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+  <hr class="clear-both"/>
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="program-listing-for-file-osmmapreader-cpp">
+<span id="program-listing-file-src-appcomponents-common-filter-osmmapreader-cpp"/><h1>Program Listing for File OsmMapReader.cpp<a class="headerlink" href="#program-listing-for-file-osmmapreader-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_src_AppComponents_Common_Filter_OsmMapReader.cpp.html#file-src-appcomponents-common-filter-osmmapreader-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src/AppComponents/Common/Filter/OsmMapReader.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span/><span class="cp">#include</span> <span class="cpf">&lt;AppComponents/Common/Filter/Osm/Conversion.h&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;AppComponents/Common/Filter/OsmMapReader.h&gt;</span><span class="cp"/>
+
+<span class="cp">#include</span> <span class="cpf">&lt;Core/Common/Geometry/Conversion.h&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;Core/Common/Geometry/Helper.h&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;Core/Common/Postgres/Helper.h&gt;</span><span class="cp"/>
+
+<span class="cp">#include</span> <span class="cpf">&lt;Generic/String/Split.h&gt;</span><span class="cp"/>
+
+<span class="cp">#include</span> <span class="cpf">&lt;amblog/global.h&gt;</span><span class="cp"/>
+
+<span class="cp">#include</span> <span class="cpf">&lt;boost/algorithm/string/replace.hpp&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/function_output_iterator.hpp&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/geometry/index/rtree.hpp&gt;</span><span class="cp"/>
+
+<span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;iterator&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;pqxx/pqxx&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"/>
+
+<span class="k">namespace</span> <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Filter</span> <span class="p">{</span>
+
+<span class="k">namespace</span> <span class="p">{</span>
+
+    <span class="k">struct</span> <span class="n">PointLocation</span>
+    <span class="p">{</span>
+        <span class="kt">size_t</span> <span class="n">osmLineId</span><span class="p">;</span>
+        <span class="kt">size_t</span> <span class="n">pointIndex</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">UniquePoint</span>
+    <span class="p">{</span>
+        <span class="kt">size_t</span> <span class="n">id</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PointLocation</span><span class="o">&gt;</span> <span class="n">locations</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">OsmPointCandidate</span>
+    <span class="p">{</span>
+        <span class="kt">size_t</span> <span class="n">id</span><span class="p">;</span>
+        <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">;</span>
+        <span class="c1">//std::string layer;</span>
+        <span class="c1">//std::string level;</span>
+        <span class="c1">//std::string location;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">OsmLineCandidate</span>
+    <span class="p">{</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">Segment</span> <span class="n">segment</span><span class="p">;</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirection</span> <span class="n">travelDirection</span><span class="p">;</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">Highway</span> <span class="n">highway</span><span class="p">;</span>
+        <span class="c1">//std::string layer;</span>
+        <span class="c1">//std::string level;</span>
+        <span class="c1">//std::string location;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">Candidate</span>
+    <span class="p">{</span>
+        <span class="n">OsmLineCandidate</span> <span class="n">segment</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">osmPointIds</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">using</span> <span class="n">PointGeoindexValue</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Point</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">UniquePoint</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">PointGeoindexAlgorithm</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">index</span><span class="o">::</span><span class="n">quadratic</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">PointGeoindex</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">index</span><span class="o">::</span><span class="n">rtree</span><span class="o">&lt;</span><span class="n">PointGeoindexValue</span><span class="p">,</span> <span class="n">PointGeoindexAlgorithm</span><span class="o">&gt;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">UniquePoint</span><span class="o">&gt;</span> <span class="n">getUniquePoint</span><span class="p">(</span><span class="n">PointGeoindex</span> <span class="o">&amp;</span> <span class="n">geoindex</span><span class="p">,</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Point</span> <span class="n">point</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">unsigned</span> <span class="k">const</span> <span class="n">k_nearest</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="k">const</span> <span class="n">maxDistanceInMeters</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+        <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">PointGeoindexValue</span><span class="o">&gt;</span><span class="p">{};</span>
+        <span class="k">auto</span> <span class="n">inserter</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">PointGeoindexValue</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">geoDistance</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">maxDistanceInMeters</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="n">geoindex</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">index</span><span class="o">::</span><span class="n">nearest</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">k_nearest</span><span class="p">),</span> <span class="n">boost</span><span class="o">::</span><span class="n">make_function_output_iterator</span><span class="p">(</span><span class="n">inserter</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">result</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">PointGeoindexValue</span><span class="p">{</span><span class="n">point</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">UniquePoint</span><span class="o">&gt;</span><span class="p">()};</span>
+            <span class="n">geoindex</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Candidate</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">OsmPointCandidate</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">PointGeoindex</span><span class="o">&gt;</span> <span class="n">getCandidates</span><span class="p">(</span><span class="n">pqxx</span><span class="o">::</span><span class="n">result</span> <span class="o">&amp;</span> <span class="n">records</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">using</span> <span class="k">namespace</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="p">;</span>
+        <span class="k">using</span> <span class="k">namespace</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Postgres</span><span class="p">;</span>
+        <span class="k">using</span> <span class="k">namespace</span> <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Filter</span><span class="o">::</span><span class="n">Osm</span><span class="p">;</span>
+
+        <span class="k">auto</span> <span class="n">candidates</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Candidate</span><span class="o">&gt;</span><span class="p">{};</span>
+        <span class="k">auto</span> <span class="n">osmPointMap</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">OsmPointCandidate</span><span class="o">&gt;</span><span class="p">{};</span>
+        <span class="k">auto</span> <span class="n">geoindex</span> <span class="o">=</span> <span class="n">PointGeoindex</span><span class="p">{};</span>
+
+        <span class="k">auto</span> <span class="n">currentSegment</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">OsmLineCandidate</span><span class="o">&gt;</span><span class="p">{};</span>
+        <span class="k">auto</span> <span class="n">currentNodes</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">{};</span>
+
+        <span class="kt">size_t</span> <span class="n">nextPointId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">auto</span> <span class="n">addCurrentStreet</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span>
+        <span class="p">{</span>
+            <span class="n">assert</span><span class="p">(</span><span class="n">currentSegment</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">currentSegment</span><span class="o">-&gt;</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">uniquePoint</span> <span class="o">=</span> <span class="o">*</span><span class="n">getUniquePoint</span><span class="p">(</span><span class="n">geoindex</span><span class="p">,</span> <span class="n">currentSegment</span><span class="o">-&gt;</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="n">uniquePoint</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">nextPointId</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// TODO: only increment if a new UniquePoint was created?</span>
+                <span class="n">uniquePoint</span><span class="p">.</span><span class="n">locations</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">PointLocation</span><span class="p">{</span><span class="n">currentSegment</span><span class="o">-&gt;</span><span class="n">segment</span><span class="p">.</span><span class="n">originId</span><span class="p">,</span> <span class="n">i</span><span class="p">});</span>
+            <span class="p">}</span>
+            <span class="n">candidates</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Candidate</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="o">*</span><span class="n">currentSegment</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">currentNodes</span><span class="p">)});</span>
+            <span class="n">currentSegment</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+            <span class="n">currentNodes</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">row</span> <span class="p">:</span> <span class="n">records</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">auto</span> <span class="n">segmentIdRaw</span> <span class="o">=</span> <span class="n">row</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">&quot;line_id&quot;</span><span class="p">).</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="kt">size_t</span> <span class="n">segmentId</span> <span class="o">=</span> <span class="n">segmentIdRaw</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">segmentIdRaw</span><span class="p">)</span> <span class="o">:</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="o">-</span><span class="n">segmentIdRaw</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">currentSegment</span> <span class="o">||</span> <span class="n">currentSegment</span><span class="o">-&gt;</span><span class="n">segment</span><span class="p">.</span><span class="n">originId</span> <span class="o">!=</span> <span class="n">segmentId</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">currentSegment</span><span class="p">)</span>
+                    <span class="n">addCurrentStreet</span><span class="p">();</span>
+                <span class="k">auto</span> <span class="n">way</span> <span class="o">=</span> <span class="n">row</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">&quot;line_way&quot;</span><span class="p">).</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+                <span class="k">auto</span> <span class="n">oneway</span> <span class="o">=</span> <span class="n">getOptional</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">&quot;line_oneway&quot;</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{});</span>
+                <span class="n">currentSegment</span> <span class="o">=</span> <span class="n">OsmLineCandidate</span><span class="p">{</span>
+                    <span class="p">{</span><span class="n">segmentId</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">toLineString</span><span class="p">(</span><span class="n">way</span><span class="p">)},</span> <span class="n">toTravelDirection</span><span class="p">(</span><span class="n">oneway</span><span class="p">),</span> <span class="n">toHighway</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">&quot;line_highway&quot;</span><span class="p">).</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">())</span>
+                    <span class="c1">//getOptional( row.at( &quot;line_layer&quot; ), std::string{} ),</span>
+                    <span class="c1">//getOptional( row.at( &quot;line_level&quot; ), std::string{} ),</span>
+                    <span class="c1">//getOptional( row.at( &quot;line_location&quot; ), std::string{} )</span>
+                <span class="p">};</span>
+            <span class="p">}</span>
+            <span class="cm">/*</span>
+<span class="cm">            auto osmPointId = getOptional&lt;size_t&gt;( row.at( &quot;point_id&quot; ) );</span>
+<span class="cm">            if( osmPointId )</span>
+<span class="cm">            {</span>
+<span class="cm">                if( osmPointMap.find( *osmPointId ) == osmPointMap.end() )</span>
+<span class="cm">                {</span>
+<span class="cm">                    auto pointway = getOptional&lt;std::string&gt;( row.at( &quot;point_way&quot; ) );</span>
+<span class="cm">                    if( !pointway )</span>
+<span class="cm">                    {</span>
+<span class="cm">                        APP_LOG( error ) &lt;&lt; &quot;planet_osm_point.way is null where planet_osm_point.osm_id is not&quot;;</span>
+<span class="cm">                        APP_THROW_LOGGED_EXCEPTION();</span>
+<span class="cm">                    }</span>
+
+<span class="cm">                    osmPointMap.emplace( *osmPointId, OsmPointCandidate{</span>
+<span class="cm">                        *osmPointId,</span>
+<span class="cm">                        toPoint( *pointway )</span>
+<span class="cm">                        //getOptional( row.at( &quot;point_layer&quot; ), std::string{} ),</span>
+<span class="cm">                        //getOptional( row.at( &quot;point_level&quot; ), std::string{} ),</span>
+<span class="cm">                        //getOptional( row.at( &quot;point_location&quot; ), std::string{} )</span>
+<span class="cm">                    } );</span>
+<span class="cm">                }</span>
+<span class="cm">                currentNodes.emplace_back( *osmPointId );</span>
+<span class="cm">            }</span>
+<span class="cm">            */</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentSegment</span><span class="p">)</span>
+            <span class="n">addCurrentStreet</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">candidates</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">osmPointMap</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">geoindex</span><span class="p">)};</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">SegmentList</span><span class="p">,</span> <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">NodePairList</span><span class="p">,</span> <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirectionList</span><span class="p">,</span> <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">HighwayList</span><span class="o">&gt;</span>
+    <span class="n">processCandidates</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Candidate</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">OsmPointCandidate</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">osmPointMap</span> <span class="p">[[</span><span class="n">gnu</span><span class="o">::</span><span class="n">unused</span><span class="p">]],</span> <span class="n">PointGeoindex</span> <span class="o">&amp;</span> <span class="n">geoindex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">SegmentList</span> <span class="n">segmentList</span><span class="p">;</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">NodePairList</span> <span class="n">nodePairList</span><span class="p">;</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirectionList</span> <span class="n">travelDirectionList</span><span class="p">;</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">HighwayList</span> <span class="n">highwayList</span><span class="p">;</span>
+
+        <span class="k">auto</span> <span class="n">addStreet</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">OsmLineCandidate</span> <span class="n">segmentCandidate</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">firstPointIndex</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">lastPointIndex</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">firstPointId</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">lastPointId</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">Segment</span> <span class="n">segment</span><span class="p">;</span>
+            <span class="n">segment</span><span class="p">.</span><span class="n">originId</span> <span class="o">=</span> <span class="n">segmentCandidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">originId</span><span class="p">;</span>
+            <span class="n">segment</span><span class="p">.</span><span class="n">originOffset</span> <span class="o">=</span> <span class="n">firstPointIndex</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">firstPointIndex</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">lastPointIndex</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">segmentCandidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="n">segmentList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">segment</span><span class="p">);</span>
+            <span class="n">nodePairList</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">firstPointId</span><span class="p">,</span> <span class="n">lastPointId</span><span class="p">);</span>
+            <span class="n">travelDirectionList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">segmentCandidate</span><span class="p">.</span><span class="n">travelDirection</span><span class="p">);</span>
+            <span class="n">highwayList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">segmentCandidate</span><span class="p">.</span><span class="n">highway</span><span class="p">);</span>
+        <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="nl">candidate</span> <span class="p">:</span> <span class="n">candidates</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">size_t</span> <span class="n">firstPointIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="kt">size_t</span> <span class="n">firstPointId</span> <span class="o">=</span> <span class="n">getUniquePoint</span><span class="p">(</span><span class="n">geoindex</span><span class="p">,</span> <span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">[</span><span class="n">firstPointIndex</span><span class="p">])</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">uniquePoint</span> <span class="o">=</span> <span class="o">*</span><span class="n">getUniquePoint</span><span class="p">(</span><span class="n">geoindex</span><span class="p">,</span> <span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">uniquePoint</span><span class="p">.</span><span class="n">locations</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">// split street on junction</span>
+                <span class="p">{</span>
+                    <span class="n">addStreet</span><span class="p">(</span><span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">,</span> <span class="n">firstPointIndex</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">firstPointId</span><span class="p">,</span> <span class="n">uniquePoint</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+                    <span class="n">firstPointIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                    <span class="n">firstPointId</span> <span class="o">=</span> <span class="n">uniquePoint</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kt">size_t</span> <span class="n">lastPointIndex</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">size_t</span> <span class="n">lastPointId</span> <span class="o">=</span> <span class="n">getUniquePoint</span><span class="p">(</span><span class="n">geoindex</span><span class="p">,</span> <span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">geometry</span><span class="p">[</span><span class="n">lastPointIndex</span><span class="p">])</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+            <span class="n">addStreet</span><span class="p">(</span><span class="n">candidate</span><span class="p">.</span><span class="n">segment</span><span class="p">,</span> <span class="n">firstPointIndex</span><span class="p">,</span> <span class="n">lastPointIndex</span><span class="p">,</span> <span class="n">firstPointId</span><span class="p">,</span> <span class="n">lastPointId</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">segmentList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">nodePairList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">travelDirectionList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">highwayList</span><span class="p">)};</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>  <span class="c1">// namespace</span>
+
+<span class="n">OsmMapReader</span><span class="o">::</span><span class="n">OsmMapReader</span><span class="p">(</span>
+    <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Postgres</span><span class="o">::</span><span class="n">Connection</span> <span class="o">&amp;</span> <span class="n">connection</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">HighwayType</span><span class="o">&gt;</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">highwaySelection</span><span class="p">,</span>
+    <span class="kt">double</span> <span class="k">const</span> <span class="n">fetchCorridor</span><span class="p">,</span>
+    <span class="kt">bool</span> <span class="k">const</span> <span class="n">useSingleSearchCircle</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">Filter</span><span class="p">(</span><span class="s">&quot;OsmMapReader&quot;</span><span class="p">),</span> <span class="n">connection_</span><span class="p">(</span><span class="n">connection</span><span class="p">),</span> <span class="n">highwaySelection_</span><span class="p">(</span><span class="n">highwaySelection</span><span class="p">),</span> <span class="n">fetchCorridor_</span><span class="p">(</span><span class="n">fetchCorridor</span><span class="p">),</span> <span class="n">useSingleSearchCircle_</span><span class="p">(</span><span class="n">useSingleSearchCircle</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">setRequirements</span><span class="p">({</span><span class="s">&quot;PointList&quot;</span><span class="p">});</span>
+    <span class="n">setOptionals</span><span class="p">({});</span>
+    <span class="n">setFulfillments</span><span class="p">({</span><span class="s">&quot;SegmentList&quot;</span><span class="p">,</span> <span class="s">&quot;NodePairList&quot;</span><span class="p">,</span> <span class="s">&quot;TravelDirectionList&quot;</span><span class="p">,</span> <span class="s">&quot;HighwayList&quot;</span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">OsmMapReader</span><span class="o">::</span><span class="k">operator</span><span class="p">()(</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">pointList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">SegmentList</span> <span class="o">&amp;</span> <span class="n">segmentList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">NodePairList</span> <span class="o">&amp;</span> <span class="n">nodePairList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirectionList</span> <span class="o">&amp;</span> <span class="n">travelDirectionList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">HighwayList</span> <span class="o">&amp;</span> <span class="n">highwayList</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="p">;</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Filter</span><span class="o">::</span><span class="n">Osm</span><span class="p">;</span>
+
+    <span class="kt">size_t</span> <span class="k">const</span> <span class="n">eachNth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">APP_LOG_TAG_MS</span><span class="p">(</span><span class="n">noise</span><span class="p">,</span> <span class="s">&quot;DB&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sending each &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">eachNth</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;th of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pointList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; points to database...&quot;</span><span class="p">;</span>
+
+    <span class="kt">double</span> <span class="n">searchRadius</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pointsString</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">useSingleSearchCircle_</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">searchRadius</span> <span class="o">=</span> <span class="n">fetchCorridor_</span><span class="p">;</span>
+        <span class="n">pointsString</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">toWkt</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">flattened_simple</span><span class="p">(</span><span class="n">pointList</span><span class="p">,</span> <span class="n">eachNth</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pointList</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">searchRadius</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">pointsString</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">toWkt</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">{});</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pointList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">searchRadius</span> <span class="o">=</span> <span class="n">fetchCorridor_</span><span class="p">;</span>
+            <span class="n">pointsString</span> <span class="o">=</span> <span class="n">toWkt</span><span class="p">(</span><span class="n">pointList</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="kt">double</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">geoDistance</span><span class="p">(</span><span class="n">pointList</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pointList</span><span class="p">[</span><span class="n">pointList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+            <span class="kt">double</span> <span class="n">heading</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">heading</span><span class="p">(</span><span class="n">pointList</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pointList</span><span class="p">[</span><span class="n">pointList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+            <span class="k">auto</span> <span class="n">center</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">reverseHaversine</span><span class="p">(</span><span class="n">pointList</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">heading</span><span class="p">,</span> <span class="n">distance</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">);</span>
+
+            <span class="n">searchRadius</span> <span class="o">=</span> <span class="n">distance</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="n">fetchCorridor_</span><span class="p">;</span>
+            <span class="n">pointsString</span> <span class="o">=</span> <span class="n">toWkt</span><span class="p">(</span><span class="n">center</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">auto</span> <span class="n">dbConnection</span> <span class="o">=</span> <span class="n">connection_</span><span class="p">.</span><span class="n">getConnection</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">dbTransaction</span> <span class="o">=</span> <span class="n">pqxx</span><span class="o">::</span><span class="n">work</span><span class="p">{</span><span class="o">*</span><span class="n">dbConnection</span><span class="p">};</span>
+
+    <span class="c1">// Occurences germany 2018-07-18:</span>
+    <span class="c1">//   count highway</span>
+    <span class="c1">// 2624300 track</span>
+    <span class="c1">// 2059463 service</span>
+    <span class="c1">// 1694021 residential</span>
+    <span class="c1">// 1287753 footway</span>
+    <span class="c1">//  996774 path</span>
+    <span class="c1">//  363015 secondary</span>
+    <span class="c1">//  339168 unclassified</span>
+    <span class="c1">//  329683 tertiary</span>
+    <span class="c1">//  184903 steps</span>
+    <span class="c1">//  181721 primary</span>
+    <span class="c1">//  123117 living_street</span>
+    <span class="c1">//  106666 cycleway</span>
+    <span class="c1">//   62585 motorway</span>
+    <span class="c1">//   38529 motorway_link</span>
+    <span class="c1">//   28494 trunk</span>
+    <span class="c1">//   26718 pedestrian</span>
+    <span class="c1">//   18351 trunk_link</span>
+    <span class="c1">//   17649 primary_link</span>
+    <span class="c1">//    9541 secondary_link</span>
+    <span class="c1">//    8937 construction</span>
+    <span class="c1">//    8931 platform</span>
+    <span class="c1">//    6581 bridleway</span>
+    <span class="c1">//    6264 proposed</span>
+    <span class="c1">//    4243 tertiary_link</span>
+    <span class="c1">//    3104 road</span>
+    <span class="c1">//    1929 corridor</span>
+    <span class="c1">//    1443 raceway</span>
+    <span class="c1">//     920 elevator</span>
+    <span class="c1">//     739 bus_stop</span>
+    <span class="c1">//     424 rest_area</span>
+    <span class="c1">//    1460 [53 different types]</span>
+
+    <span class="cm">/* // TODO: This is the query with layer data from lines and points.</span>
+<span class="cm">    auto query = std::string{ R&quot;sql(</span>
+<span class="cm">        select</span>
+<span class="cm">            line.osm_id     line_id,</span>
+<span class="cm">            line.oneway     line_oneway,</span>
+<span class="cm">            line.layer      line_layer,</span>
+<span class="cm">            line.level      line_level,</span>
+<span class="cm">            line.location   line_location,</span>
+<span class="cm">            point.osm_id    point_id,</span>
+<span class="cm">            point.layer     point_layer,</span>
+<span class="cm">            point.level     point_level,</span>
+<span class="cm">            point.location  point_location,</span>
+<span class="cm">            ST_AsText( ST_Transform( line.way, 4326 ) )   line_way,</span>
+<span class="cm">            ST_AsText( ST_Transform( point.way, 4326 ) )  point_way</span>
+<span class="cm">        from</span>
+<span class="cm">            planet_osm_line   line</span>
+<span class="cm">        left outer join</span>
+<span class="cm">            planet_osm_point  point</span>
+<span class="cm">            on</span>
+<span class="cm">                ST_Touches( line.way, point.way )</span>
+<span class="cm">                and (point.layer is not null or point.level is not null or point.location is not null)</span>
+<span class="cm">        where</span>
+<span class="cm">            (</span>
+<span class="cm">                line.highway = &#39;motorway&#39;</span>
+<span class="cm">                or line.highway = &#39;trunk&#39;</span>
+<span class="cm">                or line.highway = &#39;primary&#39;</span>
+<span class="cm">                or line.highway = &#39;secondary&#39;</span>
+<span class="cm">                or line.highway = &#39;motorway_link&#39;</span>
+<span class="cm">                or line.highway = &#39;trunk_link&#39;</span>
+<span class="cm">                or line.highway = &#39;primary_link&#39;</span>
+<span class="cm">                or line.highway = &#39;secondary_link&#39;</span>
+<span class="cm">            )</span>
+<span class="cm">            and ST_DWithin( ST_Transform( ST_GeomFromText( $1, 4326 ), 32632 ), line.way, $2 )</span>
+<span class="cm">        )sql&quot; };</span>
+<span class="cm">    */</span>
+    <span class="k">auto</span> <span class="n">query</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">sql(</span><span class="s"/>
+<span class="s">        select</span>
+<span class="s">            line.osm_id  line_id,</span>
+<span class="s">            line.oneway  line_oneway,</span>
+<span class="s">            line.highway line_highway,</span>
+<span class="s">            ST_AsText( ST_Transform( line.way, 4326 ) )  line_way</span>
+<span class="s">        from</span>
+<span class="s">            planet_osm_line  line</span>
+<span class="s">        where</span>
+<span class="s">            ( $HIGHWAY_CONDITION )</span>
+<span class="s">            and ST_DWithin( ST_Transform( ST_GeomFromText( $1, 4326 ), 32632 ), line.way, $2 )</span>
+<span class="s">        </span><span class="dl">)sql</span><span class="s">&quot;</span><span class="p">};</span>
+    <span class="n">boost</span><span class="o">::</span><span class="n">replace_all</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s">&quot;$HIGHWAY_CONDITION&quot;</span><span class="p">,</span> <span class="n">toHighwaySelectionSql</span><span class="p">(</span><span class="n">highwaySelection_</span><span class="p">,</span> <span class="s">&quot;line&quot;</span><span class="p">));</span>
+    <span class="n">dbConnection</span><span class="o">-&gt;</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;wayquery&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+    <span class="n">pqxx</span><span class="o">::</span><span class="n">result</span> <span class="n">records</span> <span class="o">=</span> <span class="n">dbTransaction</span><span class="p">.</span><span class="n">prepared</span><span class="p">(</span><span class="s">&quot;wayquery&quot;</span><span class="p">)(</span><span class="n">pointsString</span><span class="p">)(</span><span class="n">searchRadius</span><span class="p">).</span><span class="n">exec</span><span class="p">();</span>
+
+    <span class="n">APP_LOG_TAG_MS</span><span class="p">(</span><span class="n">noise</span><span class="p">,</span> <span class="s">&quot;DB&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">records</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; records were read&quot;</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="p">[</span><span class="n">candidates</span><span class="p">,</span> <span class="n">osmPointMap</span><span class="p">,</span> <span class="n">geoindex</span><span class="p">]</span> <span class="o">=</span> <span class="n">getCandidates</span><span class="p">(</span><span class="n">records</span><span class="p">);</span>
+
+    <span class="n">APP_LOG_TAG_MS</span><span class="p">(</span><span class="n">noise</span><span class="p">,</span> <span class="s">&quot;DB&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">candidates</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; lines, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">osmPointMap</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; points and &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">geoindex</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; coordinates fetched&quot;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">tie</span><span class="p">(</span><span class="n">segmentList</span><span class="p">,</span> <span class="n">nodePairList</span><span class="p">,</span> <span class="n">travelDirectionList</span><span class="p">,</span> <span class="n">highwayList</span><span class="p">)</span> <span class="o">=</span> <span class="n">processCandidates</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">osmPointMap</span><span class="p">,</span> <span class="n">geoindex</span><span class="p">);</span>
+
+    <span class="n">APP_LOG_MS</span><span class="p">(</span><span class="n">noise</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">segmentList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; street segments created&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>  <span class="c1">// namespace AppComponents::Common::Filter</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../_sources/_api/program_listing_file_src_AppComponents_Common_Filter_OsmMapReader.cpp.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2020, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

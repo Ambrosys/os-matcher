@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1a2fe8eabf7fc79f09e7501a677055f270:
+
+Function Core::Common::Geometry::project
+========================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::project(Point const&, Segment const&)

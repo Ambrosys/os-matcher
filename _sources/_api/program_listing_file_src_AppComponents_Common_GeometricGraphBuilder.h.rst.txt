@@ -1,0 +1,40 @@
+
+.. _program_listing_file_src_AppComponents_Common_GeometricGraphBuilder.h:
+
+Program Listing for File GeometricGraphBuilder.h
+================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_GeometricGraphBuilder.h>` (``src/AppComponents/Common/GeometricGraphBuilder.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <Core/Common/Geometry/Types.h>
+   #include <Core/Graph/Graph.h>
+   
+   #include <boost/geometry/index/rtree.hpp>
+   
+   namespace AppComponents::Common {
+   
+   class GeometricGraphBuilder
+   {
+   public:
+       explicit GeometricGraphBuilder(Core::Graph::Graph & graph, double maxDistanceInMeters = 0.1f);
+       void operator()(Core::Common::Geometry::LineString const & lineString);
+   
+   private:
+       using Value = std::pair<Core::Common::Geometry::Point, Core::Graph::Node>;
+       using Algorithm = boost::geometry::index::quadratic<16>;
+       using GeoIndex = boost::geometry::index::rtree<Value, Algorithm>;
+   
+       Core::Graph::Node getOrCreateNode(Core::Common::Geometry::Point point);
+   
+       Core::Graph::Graph & graph_;
+       double maxDistanceInMeters_;
+       GeoIndex geoIndex_;
+   };
+   
+   }  // namespace AppComponents::Common

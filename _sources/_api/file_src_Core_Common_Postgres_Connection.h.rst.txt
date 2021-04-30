@@ -1,0 +1,63 @@
+
+.. _file_src_Core_Common_Postgres_Connection.h:
+
+File Connection.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common_Postgres>` (``src/Core/Common/Postgres``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Common/Postgres/Connection.h``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Common_Postgres_Connection.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``memory``
+
+- ``mutex``
+
+- ``pqxx/pqxx``
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Filter_OsmMapReader.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Postgres`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classCore_1_1Common_1_1Postgres_1_1Connection`
+

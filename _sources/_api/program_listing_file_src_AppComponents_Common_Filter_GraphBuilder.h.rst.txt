@@ -1,0 +1,37 @@
+
+.. _program_listing_file_src_AppComponents_Common_Filter_GraphBuilder.h:
+
+Program Listing for File GraphBuilder.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Filter_GraphBuilder.h>` (``src/AppComponents/Common/Filter/GraphBuilder.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <AppComponents/Common/Types/Graph/EdgeMap.h>
+   #include <AppComponents/Common/Types/Graph/Graph.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   namespace AppComponents::Common::Filter {
+   
+   class GraphBuilder : public ambpipeline::Filter
+   {
+   public:
+       GraphBuilder();
+       bool operator()(
+           Types::Street::NodePairList const &,
+           Types::Street::TravelDirectionList const &,
+           Types::Graph::Graph &,
+           Types::Graph::GraphEdgeMap &,
+           Types::Graph::StreetIndexMap &,
+           Types::Graph::NodeMap &);
+   };
+   
+   }  // namespace AppComponents::Common::Filter

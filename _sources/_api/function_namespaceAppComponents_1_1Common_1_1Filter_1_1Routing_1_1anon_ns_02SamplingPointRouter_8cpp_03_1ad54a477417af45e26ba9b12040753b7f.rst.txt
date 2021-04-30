@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ad54a477417af45e26ba9b12040753b7f:
+
+Function AppComponents::Common::Filter::Routing::anonymous_namespace_SamplingPointRouter.cpp::routeCached
+=========================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Filter::Routing::anonymous_namespace_SamplingPointRouter.cpp::routeCached(SamplingPointsSelection const, DirectedCandidateRouter const&, SamplingPointRouter::RouteMap&)

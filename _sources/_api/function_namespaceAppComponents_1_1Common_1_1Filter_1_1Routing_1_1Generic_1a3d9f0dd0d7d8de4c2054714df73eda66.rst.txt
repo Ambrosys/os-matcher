@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1Generic_1a3d9f0dd0d7d8de4c2054714df73eda66:
+
+Function AppComponents::Common::Filter::Routing::Generic::findNextAllowed
+=========================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_Generic_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Filter::Routing::Generic::findNextAllowed(size_t, size_t, std::unordered_set<size_t> const&)

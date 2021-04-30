@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1a5d1bdd46e4867fc326106762634266c4:
+
+Function Core::Common::Geometry::operator"" _lat
+================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::operator"" _lat(long double)

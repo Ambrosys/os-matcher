@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1df610600fe9764d367a2e621f30002c:
+
+Function Core::Common::Geometry::angleBetweenSegments
+=====================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::angleBetweenSegments(Segment const&, Segment const&)

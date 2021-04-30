@@ -1,0 +1,36 @@
+
+.. _program_listing_file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.h:
+
+Program Listing for File GeoJsonTrackWriter.h
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.h>` (``src/AppComponents/Common/Filter/GeoJsonTrackWriter.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <AppComponents/Common/Types/Track/Heading.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   #include <AppComponents/Common/Types/Track/Time.h>
+   #include <AppComponents/Common/Types/Track/Velocity.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <ostream>
+   
+   namespace AppComponents::Common::Filter {
+   
+   class GeoJsonTrackWriter : public ambpipeline::Filter
+   {
+   public:
+       GeoJsonTrackWriter(std::ostream & output);
+       bool operator()(Types::Track::TimeList const &, Types::Track::PointList const &, Types::Track::HeadingList const &, Types::Track::VelocityList const &);
+   
+   private:
+       std::ostream & output_;
+   };
+   
+   }  // namespace AppComponents::Common::Filter

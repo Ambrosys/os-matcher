@@ -1,0 +1,17 @@
+.. _exhale_struct_structTestCandidate:
+
+Struct TestCandidate
+====================
+
+- Defined in :ref:`file_src_UnitTest_Graph_graph_test.cpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: TestCandidate
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

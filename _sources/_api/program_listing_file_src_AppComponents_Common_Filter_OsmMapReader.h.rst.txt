@@ -1,0 +1,44 @@
+
+.. _program_listing_file_src_AppComponents_Common_Filter_OsmMapReader.h:
+
+Program Listing for File OsmMapReader.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Filter_OsmMapReader.h>` (``src/AppComponents/Common/Filter/OsmMapReader.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   
+   #include <Core/Common/Postgres/Connection.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <unordered_set>
+   
+   namespace AppComponents::Common::Filter {
+   
+   class OsmMapReader : public ambpipeline::Filter
+   {
+   public:
+       OsmMapReader(
+           Core::Common::Postgres::Connection & connection, std::unordered_set<Types::Street::HighwayType> const & highwaySelection, double fetchCorridor, bool useSingleSearchCircle);
+       bool
+       operator()(Types::Track::PointList const &, Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+   
+   private:
+       Core::Common::Postgres::Connection & connection_;
+       std::unordered_set<Types::Street::HighwayType> const highwaySelection_;
+       double const fetchCorridor_;
+       bool const useSingleSearchCircle_;
+   };
+   
+   }  // namespace AppComponents::Common::Filter

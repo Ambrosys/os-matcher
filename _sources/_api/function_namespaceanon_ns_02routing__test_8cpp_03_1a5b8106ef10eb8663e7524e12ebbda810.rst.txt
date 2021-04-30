@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceanon_ns_02routing__test_8cpp_03_1a5b8106ef10eb8663e7524e12ebbda810:
+
+Function anonymous_namespace_routing_test.cpp::tail_equal
+=========================================================
+
+- Defined in :ref:`file_src_UnitTest_Graph_routing_test.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: anonymous_namespace_routing_test.cpp::tail_equal(PathView, std::vector<Edge> const&)

@@ -1,0 +1,13 @@
+.. _exhale_function_Helpers_8h_1a75ead81f1ff5f0b3aad03d777807108f:
+
+Function require_close(Core::Common::Geometry::Point const&, Core::Common::Geometry::Point const&, double)
+==========================================================================================================
+
+- Defined in :ref:`file_src_UnitTest_Helpers.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: require_close(Core::Common::Geometry::Point const&, Core::Common::Geometry::Point const&, double)

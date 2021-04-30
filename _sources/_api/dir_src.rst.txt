@@ -1,0 +1,19 @@
+.. _dir_src:
+
+
+Directory src
+=============
+
+
+*Directory path:* ``src``
+
+Subdirectories
+--------------
+
+- :ref:`dir_src_AppComponents`
+- :ref:`dir_src_Core`
+- :ref:`dir_src_Generic`
+- :ref:`dir_src_UnitTest`
+
+
+

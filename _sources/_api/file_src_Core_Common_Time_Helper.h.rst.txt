@@ -1,0 +1,81 @@
+
+.. _file_src_Core_Common_Time_Helper.h:
+
+File Helper.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common_Time>` (``src/Core/Common/Time``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Common/Time/Helper.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Common_Time_Helper.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``chrono``
+
+- ``string``
+
+- ``utility``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_JsonRouteStatisticWriter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_SkipRouter.cpp`
+
+- :ref:`file_src_AppComponents_ExampleMatcher_Filter_CsvTrackReader.cpp`
+
+- :ref:`file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.cpp`
+
+- :ref:`file_src_Core_Common_Time_Helper.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Time`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Time_1a57ee7d6ea665eb25cdc85b267848d98f`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Time_1aa9513c375cf8c5336ab33ff703d443df`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Time_1ae53115c52904ccdd6aa8f7bc97c22539`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Time_1a20dd5b7c65d061a4982043c8f4191ecb`
+

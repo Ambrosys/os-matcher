@@ -1,0 +1,27 @@
+.. _dir_src_AppComponents_Common:
+
+
+Directory Common
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents>` (``src/AppComponents``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``src/AppComponents/Common``
+
+Subdirectories
+--------------
+
+- :ref:`dir_src_AppComponents_Common_Filter`
+- :ref:`dir_src_AppComponents_Common_Types`
+
+
+Files
+-----
+
+- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.cpp`
+- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.h`
+
+

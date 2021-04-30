@@ -1,0 +1,24 @@
+
+.. _namespace_Core__Common:
+
+Namespace Core::Common
+======================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Geometry`
+
+- :ref:`namespace_Core__Common__Postgres`
+
+- :ref:`namespace_Core__Common__Time`

@@ -1,0 +1,69 @@
+
+.. _file_src_Core_Common_Geometry_Conversion.cpp:
+
+File Conversion.cpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common_Geometry>` (``src/Core/Common/Geometry``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Common/Geometry/Conversion.cpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Common_Geometry_Conversion.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Common/Geometry/Conversion.h`` (:ref:`file_src_Core_Common_Geometry_Conversion.h`)
+
+- ``Generic/String/Split.h`` (:ref:`file_src_Generic_String_Split.h`)
+
+- ``sstream``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Geometry`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a54876e03d20fc050a6518dc12e75ed3f`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a8b190f4f0c4d64455f8aa30b647da6bf`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a6a0017078b285b59298c96370339d830`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a312ff322c3ac5cd0b1062380f1b7cd2f`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ab22e06d68f78e54525991c50d7ce78a7`
+

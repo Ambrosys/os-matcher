@@ -1,0 +1,17 @@
+.. _exhale_struct_structCore_1_1Common_1_1Geometry_1_1LineStringProjectionResult:
+
+Struct LineStringProjectionResult
+=================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: Core::Common::Geometry::LineStringProjectionResult
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

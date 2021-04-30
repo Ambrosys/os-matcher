@@ -1,0 +1,13 @@
+
+.. _namespace_ambgraph:
+
+Namespace ambgraph
+==================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+

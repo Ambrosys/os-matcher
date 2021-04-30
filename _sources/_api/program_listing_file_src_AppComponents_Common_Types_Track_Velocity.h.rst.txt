@@ -1,0 +1,26 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Track_Velocity.h:
+
+Program Listing for File Velocity.h
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Track_Velocity.h>` (``src/AppComponents/Common/Types/Track/Velocity.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <vector>
+   
+   namespace AppComponents::Common::Types::Track {
+   
+   using Velocity = double;
+   
+   struct VelocityList : public std::vector<Velocity>
+   {
+   };
+   
+   }  // namespace AppComponents::Common::Types::Track

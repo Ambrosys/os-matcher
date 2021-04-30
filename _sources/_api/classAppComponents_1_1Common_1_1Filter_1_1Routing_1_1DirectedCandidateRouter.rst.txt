@@ -1,0 +1,27 @@
+.. _exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter:
+
+Class DirectedCandidateRouter
+=============================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.h`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: AppComponents::Common::Filter::Routing::DirectedCandidateRouter
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

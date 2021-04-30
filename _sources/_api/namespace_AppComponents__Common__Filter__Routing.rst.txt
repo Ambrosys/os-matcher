@@ -1,0 +1,94 @@
+
+.. _namespace_AppComponents__Common__Filter__Routing:
+
+Namespace AppComponents::Common::Filter::Routing
+================================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing__anonymous_namespace_Comparators.cpp`
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing__anonymous_namespace_SamplingPointRouter.cpp`
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing__Generic`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter_1_1Configuration`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter_1_1Session`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BestRouteComparator`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BestSimilarRouteComparator`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointRouter_1_1Configuration`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointsSelection`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter_1_1Configuration`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter_1_1Session`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1PiecewiseRouter`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointRouter`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a918f66e5dfc2dad0437f12663044c993`
+
+- :ref:`exhale_enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a7bef97a0a43af1463a5e60437b82aa9a`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1acf340bc178601f17d06b1aab309ad4d0`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a2de4e81ab509bdcdc1d04876e4a303b8`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ab35d28963e7324b0416c1932ee77c131`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a448615760e276bc263d0202cc6eb9860`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a3dcaff1e06371bde3201ed1076b6e40c`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a50cc4678932aa5dd799509e6c3dcab4b`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ac6211c4b31819049e7e346f1ba6d7531`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a629e147a952c5b3693abaaf6f8b0bd25`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ae366f6b6b7cb440b9213186e307cc7b1`

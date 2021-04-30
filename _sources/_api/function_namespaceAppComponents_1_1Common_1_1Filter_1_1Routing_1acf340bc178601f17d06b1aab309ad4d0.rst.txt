@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1acf340bc178601f17d06b1aab309ad4d0:
+
+Function AppComponents::Common::Filter::Routing::attachToPreviousRoute
+======================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Filter::Routing::attachToPreviousRoute(Types::Routing::RouteList&, size_t)

@@ -1,0 +1,633 @@
+:orphan:
+
+
+Full API
+========
+
+Directories
+***********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Filter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Filter_Osm.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Filter_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Filter_Routing_Generic.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Graph.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Street.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Track.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_ExampleMatcher.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_ExampleMatcher_Filter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Geometry.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Postgres.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Time.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Graph.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Graph_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Extension.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Hash.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Map.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Progress.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_String.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_UnitTest.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_UnitTest_Generic.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_UnitTest_Graph.rst
+
+Files
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Algorithm.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Altitude.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Comparators.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Comparators.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Postgres_Connection.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Osm_Conversion.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Conversion.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Osm_Conversion.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Conversion.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Csv.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_ExampleMatcher_Filter_CsvTrackReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_ExampleMatcher_Filter_CsvTrackReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Generic_DependencyGraph_test.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Dijkstra.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Dijkstra.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_dummy_test.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_Edge.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_EdgeMap.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Map_FlipMap.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonMapReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonMapReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonMapWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonMapWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_GeometricGraphBuilder.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_GeometricGraphBuilder.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_Graph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Graph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Graph_graph_test.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GraphBuilder.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_GraphBuilder.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Heading.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Generic_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Time_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Generic_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Postgres_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Time_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Helpers.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Helpers.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_Highway.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_JsonRouteStatisticWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_JsonRouteStatisticWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_LemonDigraph.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_LemonDigraph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_LemonDigraph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Generic_main.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Graph_main.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Hash_MakeHashable.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_NodePair.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_NumericConstants.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_OsmMapReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_OsmMapReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_PathView.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_PathView.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Point.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Progress_Progress.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Progress_Progress.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Router.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Router.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Graph_routing_test.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_SamplingPoint.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_SamplingPointFinder.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_Segment.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Generic_Skipper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Generic_Skipper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_SkipRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_SkipRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Split.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_Statistic.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Extension_Thread.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_UnitTest_Generic_ThreadPool_test.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Time.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_TravelDirection.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Trim.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Types.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Filter_Routing_Types.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Types.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Velocity.h.rst

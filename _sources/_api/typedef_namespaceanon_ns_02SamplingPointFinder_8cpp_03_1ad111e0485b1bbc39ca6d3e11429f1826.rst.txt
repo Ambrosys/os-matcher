@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1ad111e0485b1bbc39ca6d3e11429f1826:
+
+Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexValue
+=============================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexValue

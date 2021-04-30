@@ -1,0 +1,26 @@
+.. _exhale_class_classCore_1_1Graph_1_1Routing_1_1PathViewImpl:
+
+Class PathViewImpl
+==================
+
+- Defined in :ref:`file_src_Core_Graph_Routing_PathView.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public Core::Graph::Routing::Dijkstra::PathNode`` (:ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Core::Graph::Routing::PathViewImpl
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

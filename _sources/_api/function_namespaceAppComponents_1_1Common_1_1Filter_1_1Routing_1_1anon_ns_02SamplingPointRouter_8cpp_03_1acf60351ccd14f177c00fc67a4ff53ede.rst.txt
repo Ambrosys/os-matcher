@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1acf60351ccd14f177c00fc67a4ff53ede:
+
+Function AppComponents::Common::Filter::Routing::anonymous_namespace_SamplingPointRouter.cpp::getBestRoute
+==========================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Filter::Routing::anonymous_namespace_SamplingPointRouter.cpp::getBestRoute(std::shared_ptr<ClusteredRouteMatrix> const&, RouteClusterPreference const)

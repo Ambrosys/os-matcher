@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a7bef97a0a43af1463a5e60437b82aa9a:
+
+Enum RouteResult
+================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_Helper.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: AppComponents::Common::Filter::Routing::RouteResult

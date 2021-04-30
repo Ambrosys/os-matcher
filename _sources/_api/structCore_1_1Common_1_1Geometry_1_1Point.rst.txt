@@ -1,0 +1,28 @@
+.. _exhale_struct_structCore_1_1Common_1_1Geometry_1_1Point:
+
+Struct Point
+============
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.h`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structCore_1_1Common_1_1Geometry_1_1Point_1_1Latitude`
+- :ref:`exhale_struct_structCore_1_1Common_1_1Geometry_1_1Point_1_1Longitude`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: Core::Common::Geometry::Point
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

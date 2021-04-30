@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1a2151fbc364765276e10915d74d986d7a:
+
+Function Core::Common::Geometry::reverseHaversine
+=================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::reverseHaversine(Point const&, double, double)

@@ -1,0 +1,50 @@
+
+.. _file_src_AppComponents_Common_GeometricGraphBuilder.cpp:
+
+File GeometricGraphBuilder.cpp
+==============================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common>` (``src/AppComponents/Common``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/GeometricGraphBuilder.cpp``)
+-------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_GeometricGraphBuilder.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/GeometricGraphBuilder.h`` (:ref:`file_src_AppComponents_Common_GeometricGraphBuilder.h`)
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+- ``boost/function_output_iterator.hpp``
+
+- ``optional``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common`
+

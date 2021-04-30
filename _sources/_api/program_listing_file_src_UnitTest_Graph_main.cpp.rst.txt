@@ -1,0 +1,14 @@
+
+.. _program_listing_file_src_UnitTest_Graph_main.cpp:
+
+Program Listing for File main.cpp
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_UnitTest_Graph_main.cpp>` (``src/UnitTest/Graph/main.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+   #include <catch2/catch.hpp>

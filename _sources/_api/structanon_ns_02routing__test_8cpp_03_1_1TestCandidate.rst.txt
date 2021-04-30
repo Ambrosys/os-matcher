@@ -1,0 +1,17 @@
+.. _exhale_struct_structanon_ns_02routing__test_8cpp_03_1_1TestCandidate:
+
+Struct TestCandidate
+====================
+
+- Defined in :ref:`file_src_UnitTest_Graph_routing_test.cpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: anonymous_namespace_routing_test.cpp::TestCandidate
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

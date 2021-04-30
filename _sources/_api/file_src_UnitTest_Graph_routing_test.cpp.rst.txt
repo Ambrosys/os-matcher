@@ -1,0 +1,98 @@
+
+.. _file_src_UnitTest_Graph_routing_test.cpp:
+
+File routing_test.cpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_UnitTest_Graph>` (``src/UnitTest/Graph``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/UnitTest/Graph/routing_test.cpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_UnitTest_Graph_routing_test.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Graph/LemonDigraph.h`` (:ref:`file_src_Core_Graph_LemonDigraph.h`)
+
+- ``Core/Graph/Routing/Algorithm.h`` (:ref:`file_src_Core_Graph_Routing_Algorithm.h`)
+
+- ``Core/Graph/Routing/Dijkstra.h`` (:ref:`file_src_Core_Graph_Routing_Dijkstra.h`)
+
+- ``catch2/catch.hpp``
+
+- ``memory``
+
+- ``unordered_map``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_anonymous_namespace_routing_test.cpp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structanon_ns_02routing__test_8cpp_03_1_1TestCandidate`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceanon_ns_02routing__test_8cpp_03_1af64ead3d21f52927dfa24a3f02e2156e`
+
+- :ref:`exhale_function_namespaceanon_ns_02routing__test_8cpp_03_1a3bcc8bec4f09715ecac66244b4cad0da`
+
+- :ref:`exhale_function_namespaceanon_ns_02routing__test_8cpp_03_1a5b8106ef10eb8663e7524e12ebbda810`
+
+- :ref:`exhale_function_routing__test_8cpp_1ac597998843e0caa5e4b29ee026d8de91`
+
+- :ref:`exhale_function_routing__test_8cpp_1a97592d5713dd82ff6abaa76e701f1db5`
+
+- :ref:`exhale_function_routing__test_8cpp_1ace117cb56f6475afc5d6f90bb78b1ebe`
+
+- :ref:`exhale_function_routing__test_8cpp_1af95430b8ce8cc8add5c086f87883ad32`
+
+- :ref:`exhale_function_routing__test_8cpp_1ae7c3e48832532122ea7f99d10c909eab`
+
+- :ref:`exhale_function_routing__test_8cpp_1ad39d70db3b0294ec0d9e51f017ae3914`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceanon_ns_02routing__test_8cpp_03_1a2ea80dcb1272538e3bd4cff51c74a888`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceanon_ns_02routing__test_8cpp_03_1addbe74af399ffadac721767fca11163b`
+

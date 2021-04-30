@@ -1,0 +1,39 @@
+
+.. _program_listing_file_src_AppComponents_Common_Filter_Routing_Comparators.h:
+
+Program Listing for File Comparators.h
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Filter_Routing_Comparators.h>` (``src/AppComponents/Common/Filter/Routing/Comparators.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <AppComponents/Common/Filter/Routing/Types.h>
+   #include <AppComponents/Common/Types/Graph/EdgeMap.h>
+   #include <AppComponents/Common/Types/Routing/Edge.h>
+   
+   #include <memory>
+   
+   namespace AppComponents::Common::Filter::Routing {
+   
+   struct BestRouteComparator
+   {
+       BestRouteComparator(RouteClusterPreference routeClusterPreference) : routeClusterPreference_(routeClusterPreference) {}
+       bool operator()(std::shared_ptr<Types::Routing::Route> const & a, std::shared_ptr<Types::Routing::Route> const & b) const;
+   
+   private:
+       RouteClusterPreference routeClusterPreference_;
+   };
+   
+   struct BestSimilarRouteComparator
+   {
+       bool operator()(std::shared_ptr<Types::Routing::Route> const & a, std::shared_ptr<Types::Routing::Route> const & b) const;
+   };
+   
+   bool isSimilar(Types::Routing::Route const & a, Types::Routing::Route const & b, double const maxLengthDifference, Types::Graph::GraphEdgeMap const & graphEdgeMap);
+   
+   }  // namespace AppComponents::Common::Filter::Routing

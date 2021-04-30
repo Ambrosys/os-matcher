@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1aba18ee25c17adb7cd68ea50bc15f34e0:
+
+Function anonymous_namespace_SamplingPointFinder.cpp::getStreetIndices
+======================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: anonymous_namespace_SamplingPointFinder.cpp::getStreetIndices(StreetIndexGeoindex&, Core::Common::Geometry::Point)

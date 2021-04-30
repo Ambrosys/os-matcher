@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1af8e55770f3a5ec102fa3a71591732388:
+
+Typedef AppComponents::Common::Types::Street::Highway
+=====================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Street_Highway.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Types::Street::Highway

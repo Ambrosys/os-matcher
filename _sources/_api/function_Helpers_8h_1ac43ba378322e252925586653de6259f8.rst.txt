@@ -1,0 +1,13 @@
+.. _exhale_function_Helpers_8h_1ac43ba378322e252925586653de6259f8:
+
+Function require_close(Core::Common::Geometry::LineString const&, Core::Common::Geometry::LineString const&, double)
+====================================================================================================================
+
+- Defined in :ref:`file_src_UnitTest_Helpers.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: require_close(Core::Common::Geometry::LineString const&, Core::Common::Geometry::LineString const&, double)

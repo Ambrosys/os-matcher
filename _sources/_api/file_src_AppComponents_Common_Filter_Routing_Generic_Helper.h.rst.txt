@@ -1,0 +1,58 @@
+
+.. _file_src_AppComponents_Common_Filter_Routing_Generic_Helper.h:
+
+File Helper.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Filter_Routing_Generic>` (``src/AppComponents/Common/Filter/Routing/Generic``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Filter/Routing/Generic/Helper.h``)
+-------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Filter_Routing_Generic_Helper.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``optional``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_Generic_Helper.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_Generic_Skipper.cpp`
+
+- :ref:`file_src_AppComponents_Common_Filter_Routing_SkipRouter.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing__Generic`
+

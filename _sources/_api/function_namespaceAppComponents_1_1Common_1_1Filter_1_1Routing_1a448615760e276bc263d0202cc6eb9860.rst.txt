@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a448615760e276bc263d0202cc6eb9860:
+
+Function AppComponents::Common::Filter::Routing::findPreviousConnectedRoute
+===========================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Filter::Routing::findPreviousConnectedRoute(size_t, Types::Routing::RouteList const&)

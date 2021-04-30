@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1a4e85ebd2ad1d56da1928e2ac8c60bb4e:
+
+Typedef AppComponents::Common::Filter::anonymous_namespace_OsmMapReader.cpp::PointGeoindex
+==========================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Filter_OsmMapReader.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Filter::anonymous_namespace_OsmMapReader.cpp::PointGeoindex

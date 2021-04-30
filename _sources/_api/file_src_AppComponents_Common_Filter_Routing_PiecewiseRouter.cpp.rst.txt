@@ -1,0 +1,54 @@
+
+.. _file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.cpp:
+
+File PiecewiseRouter.cpp
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Filter_Routing>` (``src/AppComponents/Common/Filter/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Filter/Routing/PiecewiseRouter.cpp``)
+----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Filter/Routing/Comparators.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_Comparators.h`)
+
+- ``AppComponents/Common/Filter/Routing/Helper.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_Helper.h`)
+
+- ``AppComponents/Common/Filter/Routing/PiecewiseRouter.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.h`)
+
+- ``AppComponents/Common/Filter/Routing/SkipRouter.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_SkipRouter.h`)
+
+- ``Core/Common/Time/Helper.h`` (:ref:`file_src_Core_Common_Time_Helper.h`)
+
+- ``amblog/global.h``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing`
+

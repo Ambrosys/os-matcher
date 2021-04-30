@@ -1,0 +1,28 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Track_Point.h:
+
+Program Listing for File Point.h
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Track_Point.h>` (``src/AppComponents/Common/Types/Track/Point.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <Core/Common/Geometry/Types.h>
+   
+   #include <vector>
+   
+   namespace AppComponents::Common::Types::Track {
+   
+   using Point = Core::Common::Geometry::Point;
+   
+   struct PointList : public std::vector<Point>
+   {
+   };
+   
+   }  // namespace AppComponents::Common::Types::Track

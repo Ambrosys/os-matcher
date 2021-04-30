@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1ac7d06d0d8528b109628fdce9c271e8bb:
+
+Template Function Core::Common::Geometry::degree
+================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::degree(T)

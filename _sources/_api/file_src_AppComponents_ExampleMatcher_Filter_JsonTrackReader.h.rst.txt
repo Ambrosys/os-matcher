@@ -1,0 +1,67 @@
+
+.. _file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.h:
+
+File JsonTrackReader.h
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_ExampleMatcher_Filter>` (``src/AppComponents/ExampleMatcher/Filter``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/ExampleMatcher/Filter/JsonTrackReader.h``)
+--------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Track/Heading.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Heading.h`)
+
+- ``AppComponents/Common/Types/Track/Point.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Point.h`)
+
+- ``AppComponents/Common/Types/Track/Time.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Time.h`)
+
+- ``AppComponents/Common/Types/Track/Velocity.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Velocity.h`)
+
+- ``ambpipeline/Filter.h``
+
+- ``istream``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__ExampleMatcher__Filter`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1ExampleMatcher_1_1Filter_1_1JsonTrackReader`
+

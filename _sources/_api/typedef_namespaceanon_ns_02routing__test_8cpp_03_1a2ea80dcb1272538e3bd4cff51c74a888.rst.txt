@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceanon_ns_02routing__test_8cpp_03_1a2ea80dcb1272538e3bd4cff51c74a888:
+
+Typedef anonymous_namespace_routing_test.cpp::FactoryFunction
+=============================================================
+
+- Defined in :ref:`file_src_UnitTest_Graph_routing_test.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: anonymous_namespace_routing_test.cpp::FactoryFunction

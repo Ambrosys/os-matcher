@@ -1,0 +1,13 @@
+.. _exhale_function_dummy__test_8cpp_1a8b87b3b81943ffacdda33f2b0204bdbb:
+
+Function SCENARIO("vectors can be sized and resized", "")
+=========================================================
+
+- Defined in :ref:`file_src_UnitTest_dummy_test.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: SCENARIO("vectors can be sized and resized", "")

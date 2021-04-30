@@ -1,0 +1,61 @@
+
+.. _file_src_Core_Common_Postgres_Helper.h:
+
+File Helper.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common_Postgres>` (``src/Core/Common/Postgres``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Common/Postgres/Helper.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Common_Postgres_Helper.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``pqxx/pqxx``
+
+- ``utility``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Filter_OsmMapReader.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Postgres`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Postgres_1a63cee6281541db418598e5ef65d6a76c`
+

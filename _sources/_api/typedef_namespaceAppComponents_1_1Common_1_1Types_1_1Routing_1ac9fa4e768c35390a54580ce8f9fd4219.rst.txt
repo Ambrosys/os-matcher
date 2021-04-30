@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ac9fa4e768c35390a54580ce8f9fd4219:
+
+Typedef AppComponents::Common::Types::Routing::Edge
+===================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Routing_Edge.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Types::Routing::Edge

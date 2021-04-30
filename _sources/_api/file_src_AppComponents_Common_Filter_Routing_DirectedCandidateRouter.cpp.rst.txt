@@ -1,0 +1,46 @@
+
+.. _file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.cpp:
+
+File DirectedCandidateRouter.cpp
+================================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Filter_Routing>` (``src/AppComponents/Common/Filter/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Filter/Routing/DirectedCandidateRouter.cpp``)
+------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Filter/Routing/DirectedCandidateRouter.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.h`)
+
+- ``AppComponents/Common/Filter/Routing/Helper.h`` (:ref:`file_src_AppComponents_Common_Filter_Routing_Helper.h`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Filter__Routing`
+

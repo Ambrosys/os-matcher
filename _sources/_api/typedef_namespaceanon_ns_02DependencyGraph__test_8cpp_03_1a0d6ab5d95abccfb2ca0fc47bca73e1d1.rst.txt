@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a0d6ab5d95abccfb2ca0fc47bca73e1d1:
+
+Typedef anonymous_namespace_DependencyGraph_test.cpp::PointerSet
+================================================================
+
+- Defined in :ref:`file_src_UnitTest_Generic_DependencyGraph_test.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: anonymous_namespace_DependencyGraph_test.cpp::PointerSet

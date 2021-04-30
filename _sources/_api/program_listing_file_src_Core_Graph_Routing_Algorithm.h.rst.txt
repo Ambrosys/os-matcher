@@ -1,0 +1,54 @@
+
+.. _program_listing_file_src_Core_Graph_Routing_Algorithm.h:
+
+Program Listing for File Algorithm.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_Core_Graph_Routing_Algorithm.h>` (``src/Core/Graph/Routing/Algorithm.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <Core/Graph/Graph.h>
+   #include <Core/Graph/Routing/PathView.h>
+   
+   #include <functional>
+   
+   namespace Core::Graph::Routing {
+   
+   using CostFunction = std::function<double(Core::Graph::Edge)>;
+   
+   using FilterFunction = std::function<bool(PathView const &)>;
+   
+   class RoutingAlgorithm
+   {
+   public:
+       RoutingAlgorithm() : costFunction_{[](Core::Graph::Edge) { return 1.0f; }}, filterFunction_{[](PathView const &) { return true; }} {}
+   
+       virtual ~RoutingAlgorithm() {}
+   
+       virtual PathView operator()(Core::Graph::Node source, Core::Graph::Node destination) = 0;
+   
+       virtual PathView run(Core::Graph::Node source, Core::Graph::Node destination) { return this->operator()(source, destination); }
+   
+       virtual RoutingAlgorithm & setCost(CostFunction costFuncton)
+       {
+           costFunction_ = costFuncton;
+           return *this;
+       }
+   
+       virtual RoutingAlgorithm & setFilter(FilterFunction filterFunction)
+       {
+           filterFunction_ = filterFunction;
+           return *this;
+       }
+   
+   protected:
+       CostFunction costFunction_;
+       FilterFunction filterFunction_;
+   };
+   
+   }  // namespace Core::Graph::Routing

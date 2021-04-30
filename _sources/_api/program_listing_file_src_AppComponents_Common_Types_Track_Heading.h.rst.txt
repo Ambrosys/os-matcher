@@ -1,0 +1,26 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Track_Heading.h:
+
+Program Listing for File Heading.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Track_Heading.h>` (``src/AppComponents/Common/Types/Track/Heading.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <vector>
+   
+   namespace AppComponents::Common::Types::Track {
+   
+   using Heading = double;
+   
+   struct HeadingList : public std::vector<Heading>
+   {
+   };
+   
+   }  // namespace AppComponents::Common::Types::Track
