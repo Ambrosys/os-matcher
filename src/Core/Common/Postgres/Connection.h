@@ -15,10 +15,18 @@
 
 namespace Core::Common::Postgres {
 
+/**
+ * This class holds connection credentials and the strategy on how to deal with multiple connections.
+ * A PostgreSQL connection can then be opened using those credentials with getConnection().
+ */
 class Connection
 {
 public:
-    enum class Strategy { globalLocked, globalUnlocked, local };
+    enum class Strategy {
+        globalLocked,    ///< open a global connection (next connection request will block until the current connection is no longer used)
+        globalUnlocked,  ///< open a global connection (without locking) (should be preferred if you only need a single connection)
+        local,           ///< open a new local connection
+    };
 
     Connection(Strategy strategy, std::string const host, unsigned short const port, std::string const dbName, std::string const dbUser, std::string const dbPass)
       : strategy_(strategy), host_(host), port_(port), dbName_(dbName), dbUser_(dbUser), dbPass_(dbPass)

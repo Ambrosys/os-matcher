@@ -12,6 +12,9 @@
 
 namespace AppComponents::Common::Types::Track {
 
+/**
+ * Represents the timestamp.
+ */
 using Time = std::chrono::system_clock::time_point;
 
 struct TimeList : public std::vector<Time>

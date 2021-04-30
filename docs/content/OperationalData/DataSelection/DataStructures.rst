@@ -20,7 +20,7 @@ Each processing component is designed as a filter with a well defined set of inp
 Example: Router
 ---------------
 
-The router mandatorily needs data about the street topology and the :term:`track` point projections onto :ref:`street segments<street segment>`. For each track point, there might exist more than one :term:`candidate<sampling point candidate>` (see `routing`_).
+The router mandatorily needs data about the street topology and the :term:`track` point projections onto :ref:`street segments<street segment>`. For each track point, there might exist more than one :term:`candidate<sampling point candidate>` (see :ref:`routing_candidate-search` or :ref:`sampling_point_router`).
 
 It may optionally process the track point's timestamp and velocity, if present. In contrast, it does not need the track point's coordinates.
 

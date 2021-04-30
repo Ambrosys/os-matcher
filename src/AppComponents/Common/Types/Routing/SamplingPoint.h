@@ -30,6 +30,9 @@ struct SamplingPointCandidate
     Street::TravelDirection streetSegmentTravelDirection;
 };
 
+/**
+ * Represents a projected track point.
+ */
 struct SamplingPoint
 {
     size_t trackIndex;

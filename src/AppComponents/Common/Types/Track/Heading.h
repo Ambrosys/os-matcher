@@ -11,6 +11,9 @@
 
 namespace AppComponents::Common::Types::Track {
 
+/**
+ * Represents the heading (in degrees, 0 is north, clockwise direction).
+ */
 using Heading = double;
 
 struct HeadingList : public std::vector<Heading>

@@ -11,7 +11,9 @@
 
 namespace AppComponents::Common::Types::Track {
 
-/// height above ground
+/**
+ * Represents the height above ground.
+ */
 using Altitude = double;
 
 struct AltitudeList : public std::vector<Altitude>
