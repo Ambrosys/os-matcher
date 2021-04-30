@@ -22,7 +22,7 @@ import sphinx  # only for Options for m2r extension
 # -- Project information -----------------------------------------------------
 
 project = 'OS-Matcher'
-copyright = '2020, Ambrosys GmbH'
+copyright = '2018, Ambrosys GmbH'
 author = 'Fabian Sandoval Saldias, Julien Gout, Markus Abel'
 
 

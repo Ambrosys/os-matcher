@@ -1,3 +1,11 @@
+/*
+ * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+ *
+ * SPDX-FileContributor: Fabian Sandoval Saldias <fabianvss@gmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #include <AppComponents/Common/Filter/Routing/Generic/Helper.h>
 
 namespace AppComponents::Common::Filter::Routing::Generic {
