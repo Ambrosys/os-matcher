@@ -1,7 +1,9 @@
-
 /*
- * Author: Fabian Sandoval Saldias (fabianvss@gmail.com)
- * Date: 2017-08-07
+ * SPDX-FileCopyrightText: © 2017 Ambrosys GmbH
+ *
+ * SPDX-FileContributor: Fabian Sandoval Saldias <fabianvss@gmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <Generic/Progress/Progress.h>

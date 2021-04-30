@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #include <AppComponents/Common/Filter/GeoJsonMapWriter.h>
 
 #include <Core/Common/Geometry/Conversion.h>

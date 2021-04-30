@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #include <Core/Common/Geometry/Helper.h>
 
 #include <boost/geometry/strategies/spherical/distance_haversine.hpp>
