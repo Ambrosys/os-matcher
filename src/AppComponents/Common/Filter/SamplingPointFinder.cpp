@@ -26,8 +26,8 @@ using StreetIndexGeoindexAlgorithm = boost::geometry::index::quadratic<16>;
 using StreetIndexGeoindex = boost::geometry::index::rtree<StreetIndexGeoindexValue, StreetIndexGeoindexAlgorithm>;
 
 /**
-     * Add street index and all segment indices to spatial index.
-     */
+ * Add street index and all segment indices to spatial index.
+ */
 void addStreetIndex(StreetIndexGeoindex & geoindex, size_t const index, Core::Common::Geometry::LineString const & lineString, double const searchRadius)
 {
     for (size_t i = 0; i < lineString.size() - 1; ++i)
@@ -40,8 +40,8 @@ void addStreetIndex(StreetIndexGeoindex & geoindex, size_t const index, Core::Co
 }
 
 /**
-     * @return vector of { streetIndex, streetSegmentIndex }
-     */
+ * @return vector of { streetIndex, streetSegmentIndex }
+ */
 std::vector<std::pair<size_t, size_t>> getStreetIndices(StreetIndexGeoindex & geoindex, Core::Common::Geometry::Point point)
 {
     std::vector<std::pair<size_t, size_t>> indices;
@@ -52,12 +52,12 @@ std::vector<std::pair<size_t, size_t>> getStreetIndices(StreetIndexGeoindex & ge
 }
 
 /**
-     *
-     * @param trackHeading Heading of the track point.
-     * @param segmentHeading Heading in forwards-direction of the segment. The reversed `segmentHeading` may be considered for the difference-calculation.
-     * @param travelDirection If `TravelDirection::both`, the direction nearest to the `trackHeading` is considered. If `TravelDirection::backwards` the `segmentHeading` is considered reversed.
-     * @return { headingDifference, trackTravelDirection } `trackTravelDirection` is `TravelDirection::both` if `travelDirection` is also `TravelDirection::both` and the heading difference is nearly 90 degrees.
-     */
+ *
+ * @param trackHeading Heading of the track point.
+ * @param segmentHeading Heading in forwards-direction of the segment. The reversed `segmentHeading` may be considered for the difference-calculation.
+ * @param travelDirection If `TravelDirection::both`, the direction nearest to the `trackHeading` is considered. If `TravelDirection::backwards` the `segmentHeading` is considered reversed.
+ * @return { headingDifference, trackTravelDirection } `trackTravelDirection` is `TravelDirection::both` if `travelDirection` is also `TravelDirection::both` and the heading difference is nearly 90 degrees.
+ */
 std::pair<double, AppComponents::Common::Types::Street::TravelDirection>
 headingDifference(double const trackHeading, double segmentHeading, AppComponents::Common::Types::Street::TravelDirection const travelDirection)
 {

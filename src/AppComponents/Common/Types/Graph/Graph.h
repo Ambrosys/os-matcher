@@ -11,6 +11,9 @@
 
 namespace AppComponents::Common::Types::Graph {
 
+/**
+ * Represents the street graph.
+ */
 using Graph = Core::Graph::Graph;
 
 }  // namespace AppComponents::Common::Types::Graph

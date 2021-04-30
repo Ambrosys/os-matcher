@@ -11,6 +11,9 @@
 
 namespace AppComponents::Common::Types::Track {
 
+/**
+ * Represents the velocity [m/s].
+ */
 using Velocity = double;
 
 struct VelocityList : public std::vector<Velocity>

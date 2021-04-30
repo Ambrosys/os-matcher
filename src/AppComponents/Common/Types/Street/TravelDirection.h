@@ -11,7 +11,11 @@
 
 namespace AppComponents::Common::Types::Street {
 
-enum class TravelDirection { both, forwards, backwards };
+enum class TravelDirection {
+    both,       ///< Travelling allowed in both directions
+    forwards,   ///< Travelling allowed in the direction the coordinates are defined.
+    backwards,  ///< Travelling allowed in reverse of the direction the coordinates are defined.
+};
 
 using TravelDirectionList = std::vector<TravelDirection>;
 

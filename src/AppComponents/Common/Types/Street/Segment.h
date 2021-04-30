@@ -13,6 +13,9 @@
 
 namespace AppComponents::Common::Types::Street {
 
+/**
+ * Represents a street segment.
+ */
 struct Segment
 {
     size_t originId;

@@ -22,6 +22,9 @@ struct CalculatedRouteStatistic
     size_t subRoutesCount;
 };
 
+/**
+ * Holds additional routing data per sampling point route data.
+ */
 struct RoutingStatistic
 {
     std::unordered_map<Filter::Routing::SamplingPointsSelection, CalculatedRouteStatistic> calculated;

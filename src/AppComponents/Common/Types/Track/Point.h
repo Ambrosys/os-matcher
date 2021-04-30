@@ -13,6 +13,9 @@
 
 namespace AppComponents::Common::Types::Track {
 
+/**
+ * Represents a coordinate pair.
+ */
 using Point = Core::Common::Geometry::Point;
 
 struct PointList : public std::vector<Point>

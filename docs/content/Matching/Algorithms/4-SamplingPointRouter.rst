@@ -1,4 +1,4 @@
-.. _candidate_router:
+.. _sampling_point_router:
 
 =====================
 Sampling point router

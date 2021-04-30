@@ -13,6 +13,9 @@
 
 namespace AppComponents::Common::Types::Street {
 
+/**
+ * Represents a junction between two street segments.
+ */
 using NodePair = std::pair<size_t, size_t>;
 
 struct NodePairList : public std::vector<NodePair>
