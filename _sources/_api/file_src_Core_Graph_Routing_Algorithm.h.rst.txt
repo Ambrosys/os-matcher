@@ -47,8 +47,6 @@ Included By
 
 - :ref:`file_src_Core_Graph_Routing_Dijkstra.h`
 
-- :ref:`file_src_UnitTest_Graph_routing_test.cpp`
-
 
 
 

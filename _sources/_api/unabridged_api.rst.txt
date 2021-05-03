@@ -9,27 +9,12 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
-   namespace_ambgraph.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   namespace_anonymous_namespace_DependencyGraph_test.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
    namespace_anonymous_namespace_FlipMap.h.rst
 
 .. toctree::
    :maxdepth: 5
 
    namespace_anonymous_namespace_MakeHashable.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   namespace_anonymous_namespace_routing_test.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -184,11 +169,6 @@ Namespaces
 Classes and Structs
 *******************
 
-
-.. toctree::
-   :maxdepth: 5
-
-   structanon_ns_02routing__test_8cpp_03_1_1TestCandidate.rst
 
 .. toctree::
    :maxdepth: 5
@@ -393,11 +373,6 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   structTestCandidate.rst
-
-.. toctree::
-   :maxdepth: 5
-
    classAppComponents_1_1Common_1_1Filter_1_1GeoJsonMapReader.rst
 
 .. toctree::
@@ -559,39 +534,9 @@ Enums
 
    enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a7a375e97caedc6f873ad02af0ed023ac.rst
 
-.. toctree::
-   :maxdepth: 5
-
-   enum_graph__test_8cpp_1aa14854a4443dee8572687c6cb6b6d5eb.rst
-
 Functions
 *********
 
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1ab50e17438076742fdf899e27721b6c79.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a9ab97bec4ece55b4a850ef01592768f7.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a1cf1728158169c1adcce8dc07af10eb8.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1aa445e6d9ee7fb8c480102ae29f7c3685.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1abdd1901d23ac50c4cb111cb5e098d25c.rst
 
 .. toctree::
    :maxdepth: 5
@@ -607,21 +552,6 @@ Functions
    :maxdepth: 5
 
    function_namespaceanon_ns_02MakeHashable_8h_03_1a41e403ee3a1a00e25d7d9d2e486deaa7.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02routing__test_8cpp_03_1af64ead3d21f52927dfa24a3f02e2156e.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02routing__test_8cpp_03_1a3bcc8bec4f09715ecac66244b4cad0da.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_namespaceanon_ns_02routing__test_8cpp_03_1a5b8106ef10eb8663e7524e12ebbda810.rst
 
 .. toctree::
    :maxdepth: 5
@@ -772,26 +702,6 @@ Functions
    :maxdepth: 5
 
    function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a629e147a952c5b3693abaaf6f8b0bd25.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8cpp_1a262d3af2192ee8b330e5e48845cc998c.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8cpp_1afc76a37de886d8ca43955845d818ddf9.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8h_1a262d3af2192ee8b330e5e48845cc998c.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8h_1afc76a37de886d8ca43955845d818ddf9.rst
 
 .. toctree::
    :maxdepth: 5
@@ -1011,21 +921,6 @@ Functions
 .. toctree::
    :maxdepth: 5
 
-   function_graph__test_8cpp_1a8db020fced5df10481845500e66f8249.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_dummy__test_8cpp_1a2660e74adb084fa0f68d029f3bd5f1f5.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_graph__test_8cpp_1a53ca6b3a8999347957f16a1098ed7d8c.rst
-
-.. toctree::
-   :maxdepth: 5
-
    function_namespaceGeneric_1ad94e0ffe681fde0af0eb924a16ad6021.rst
 
 .. toctree::
@@ -1068,99 +963,9 @@ Functions
 
    function_namespaceGeneric_1_1String_1ab3dcb33deeccc5fdeed185170bcc9769.rst
 
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8cpp_1ae3c97902825b4589a0a4c693b559983d.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8cpp_1aa98592eb56380717f80e3d1750247c0b.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8h_1a75ead81f1ff5f0b3aad03d777807108f.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_Helpers_8h_1ac43ba378322e252925586653de6259f8.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1ac597998843e0caa5e4b29ee026d8de91.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1a97592d5713dd82ff6abaa76e701f1db5.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1ace117cb56f6475afc5d6f90bb78b1ebe.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1af95430b8ce8cc8add5c086f87883ad32.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1ae7c3e48832532122ea7f99d10c909eab.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_dummy__test_8cpp_1a8b87b3b81943ffacdda33f2b0204bdbb.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_graph__test_8cpp_1accb9960553af664a15ce64a97f70ff8c.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_routing__test_8cpp_1ad39d70db3b0294ec0d9e51f017ae3914.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_dummy__test_8cpp_1aab83b61870b4c74481e713004e4fe5d3.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_DependencyGraph__test_8cpp_1a73cd18d19f9383c2b60449f2034e637e.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_DependencyGraph__test_8cpp_1a109a6cd98a8d5f47ee9eafe1cfb1efa2.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_DependencyGraph__test_8cpp_1a1f04d6c9f35ff884383347ccfeb756c5.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_ThreadPool__test_8cpp_1a9db0c64b3c7b147bceefcca41bae07e7.rst
-
 Variables
 *********
 
-
-.. toctree::
-   :maxdepth: 5
-
-   variable_namespaceanon_ns_02routing__test_8cpp_03_1addbe74af399ffadac721767fca11163b.rst
 
 .. toctree::
    :maxdepth: 5
@@ -1182,24 +987,9 @@ Variables
 
    variable_namespaceCore_1_1Common_1_1Geometry_1ae3862da37616371c70fa87fce68bf314.rst
 
-.. toctree::
-   :maxdepth: 5
-
-   variable_graph__test_8cpp_1a82fc1166a6151b949e547d8edb0dce97.rst
-
 Defines
 *******
 
-
-.. toctree::
-   :maxdepth: 5
-
-   define_Generic_2main_8cpp_1a656eb5868e824d59f489f910db438420.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   define_Graph_2main_8cpp_1a656eb5868e824d59f489f910db438420.rst
 
 .. toctree::
    :maxdepth: 5
@@ -1209,26 +999,6 @@ Defines
 Typedefs
 ********
 
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a6c69da404a85ea13a2188c22845a4fff.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a9226289def97db776e9791e517c3ff99.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespaceanon_ns_02DependencyGraph__test_8cpp_03_1a0d6ab5d95abccfb2ca0fc47bca73e1d1.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   typedef_namespaceanon_ns_02routing__test_8cpp_03_1a2ea80dcb1272538e3bd4cff51c74a888.rst
 
 .. toctree::
    :maxdepth: 5

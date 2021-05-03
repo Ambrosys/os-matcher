@@ -57,8 +57,6 @@ Included By
 
 - :ref:`file_src_Core_Common_Geometry_Types.cpp`
 
-- :ref:`file_src_UnitTest_Helpers.h`
-
 
 
 

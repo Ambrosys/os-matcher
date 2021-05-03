@@ -55,8 +55,6 @@ Included By
 
 - :ref:`file_src_Core_Graph_Routing_PathView.h`
 
-- :ref:`file_src_UnitTest_Graph_graph_test.cpp`
-
 
 
 

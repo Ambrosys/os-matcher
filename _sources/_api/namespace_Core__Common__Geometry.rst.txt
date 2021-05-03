@@ -40,11 +40,11 @@ Functions
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c`
 
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693`
+
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afc42fb42e0c128af4bbd9a6ff0a2f1fb`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5`
-
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a5ab9eedc4334c568a4668caad23b06a2`
 

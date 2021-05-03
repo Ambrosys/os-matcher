@@ -143,21 +143,6 @@ Directories
 
    dir_src_Generic_String.rst
 
-.. toctree::
-   :maxdepth: 5
-
-   dir_src_UnitTest.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir_src_UnitTest_Generic.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir_src_UnitTest_Graph.rst
-
 Files
 *****
 
@@ -235,11 +220,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_UnitTest_Generic_DependencyGraph_test.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_src_Core_Graph_Routing_Dijkstra.cpp.rst
 
 .. toctree::
@@ -256,11 +236,6 @@ Files
    :maxdepth: 5
 
    file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_UnitTest_dummy_test.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -330,11 +305,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_UnitTest_Graph_graph_test.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_src_AppComponents_Common_Filter_GraphBuilder.cpp.rst
 
 .. toctree::
@@ -395,16 +365,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_UnitTest_Helpers.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_UnitTest_Helpers.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_src_AppComponents_Common_Types_Street_Highway.h.rst
 
 .. toctree::
@@ -441,16 +401,6 @@ Files
    :maxdepth: 5
 
    file_src_Core_Graph_LemonDigraph.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_UnitTest_Generic_main.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_UnitTest_Graph_main.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -525,11 +475,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_UnitTest_Graph_routing_test.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_src_AppComponents_Common_Types_Routing_SamplingPoint.h.rst
 
 .. toctree::
@@ -591,11 +536,6 @@ Files
    :maxdepth: 5
 
    file_src_Generic_Extension_Thread.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_UnitTest_Generic_ThreadPool_test.cpp.rst
 
 .. toctree::
    :maxdepth: 5
