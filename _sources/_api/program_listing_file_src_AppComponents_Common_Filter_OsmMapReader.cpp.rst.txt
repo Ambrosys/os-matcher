@@ -10,6 +10,14 @@ Program Listing for File OsmMapReader.cpp
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-FileContributor: Fabian Sandoval Saldias <fabianvss@gmail.com>
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #include <AppComponents/Common/Filter/Osm/Conversion.h>
    #include <AppComponents/Common/Filter/OsmMapReader.h>
    
@@ -20,6 +28,7 @@ Program Listing for File OsmMapReader.cpp
    #include <Generic/String/Split.h>
    
    #include <amblog/global.h>
+   #include <pqxx/pqxx>
    
    #include <boost/algorithm/string/replace.hpp>
    #include <boost/function_output_iterator.hpp>
@@ -27,7 +36,6 @@ Program Listing for File OsmMapReader.cpp
    
    #include <iomanip>
    #include <iterator>
-   #include <pqxx/pqxx>
    #include <unordered_map>
    #include <vector>
    

@@ -10,6 +10,12 @@ Program Listing for File Dijkstra.h
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #pragma once
    
    #include <Core/Graph/Routing/Algorithm.h>

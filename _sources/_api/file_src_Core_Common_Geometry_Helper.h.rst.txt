@@ -63,8 +63,6 @@ Included By
 
 - :ref:`file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp`
 
-- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.cpp`
-
 - :ref:`file_src_Core_Common_Geometry_Helper.cpp`
 
 

@@ -41,8 +41,6 @@ Included By
 -----------
 
 
-- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.h`
-
 - :ref:`file_src_AppComponents_Common_Types_Graph_EdgeMap.h`
 
 - :ref:`file_src_AppComponents_Common_Types_Graph_Graph.h`

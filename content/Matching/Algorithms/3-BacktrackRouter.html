@@ -368,7 +368,7 @@
   <div class="section" id="backtrack-router">
 <span id="candidate-backtrack-router"/><h1>Backtrack router<a class="headerlink" href="#backtrack-router" title="Permalink to this headline">¶</a></h1>
 <p>This router shall find the <a class="reference internal" href="../../Glossary.html#term-farthest-navigation-route"><span class="xref std std-term">farthest route possible</span></a> beginning at <a class="reference internal" href="../../Glossary.html#term-sampling-point"><span class="xref std std-term">sampling point</span></a> <strong>Start</strong>.</p>
-<p>Basically, it does so by successively routing from one sampling point to the next with its underlying <a class="reference internal" href="4-SamplingPointRouter.html#candidate-router"><span class="std std-ref">Sampling point router</span></a>.</p>
+<p>Basically, it does so by successively routing from one sampling point to the next with its underlying <span class="xref std std-ref">candidate_router</span>.</p>
 <p>But if it at any point is not able to find a valid navigation route,
 it is able to go back to previous sampling points in history (up to the configured maximum, <a class="reference internal" href="../../Details/Filters/Router.html#router-filter-configuration"><span class="std std-ref">maxCandidateBacktrackingDistance</span></a>) and re-route from other candidates.
 That means it tries out other routes that were not considered optimal in the first place.</p>
@@ -445,7 +445,7 @@ by choosing a different candidate for the southernmost sampling point.</p>
         </a>
       </p>
       <p class="show_copyright">
-            &copy; Copyright 2020, Ambrosys GmbH
+            &copy; Copyright 2018, Ambrosys GmbH
       </p>
       <p class="show_sphinx">
         Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and

@@ -10,14 +10,20 @@ Program Listing for File GeoJsonMapWriter.cpp
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #include <AppComponents/Common/Filter/GeoJsonMapWriter.h>
    
    #include <Core/Common/Geometry/Conversion.h>
    
    #include <amblog/global.h>
+   #include <nlohmann/json.hpp>
    
    #include <cassert>
-   #include <nlohmann/json.hpp>
    #include <string>
    
    namespace AppComponents::Common::Filter {

@@ -10,6 +10,12 @@ Program Listing for File Conversion.cpp
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #include <Core/Common/Geometry/Conversion.h>
    
    #include <Generic/String/Split.h>

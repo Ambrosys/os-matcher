@@ -10,13 +10,18 @@ Program Listing for File GeoJsonMapReader.cpp
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #include <AppComponents/Common/Filter/GeoJsonMapReader.h>
    
    #include <Core/Common/Geometry/Conversion.h>
    #include <Core/Common/Geometry/Helper.h>
    
    #include <amblog/global.h>
-   
    #include <nlohmann/json.hpp>
    
    namespace AppComponents::Common::Filter {

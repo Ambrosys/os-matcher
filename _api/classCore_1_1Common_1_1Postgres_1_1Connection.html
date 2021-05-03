@@ -375,7 +375,8 @@
 <dl class="class">
 <dt id="_CPPv4N4Core6Common8Postgres10ConnectionE">
 <span id="_CPPv3N4Core6Common8Postgres10ConnectionE"/><span id="_CPPv2N4Core6Common8Postgres10ConnectionE"/><span id="Core::Common::Postgres::Connection"/><span class="target" id="classCore_1_1Common_1_1Postgres_1_1Connection"/><em class="property">class </em><code class="sig-name descname">Connection</code><a class="headerlink" href="#_CPPv4N4Core6Common8Postgres10ConnectionE" title="Permalink to this definition">¶</a><br/></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>This class holds connection credentials and the strategy on how to deal with multiple connections. A PostgreSQL connection can then be opened using those credentials with <a class="reference internal" href="#classCore_1_1Common_1_1Postgres_1_1Connection_1a5ab04b2f1f4f18e2133f787fd3fb1f6d"><span class="std std-ref">getConnection()</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="enum">
 <dt id="_CPPv4N4Core6Common8Postgres10Connection8StrategyE">
@@ -384,17 +385,20 @@
 <dl class="enumerator">
 <dt id="_CPPv4N4Core6Common8Postgres10Connection12globalLockedE">
 <span id="_CPPv3N4Core6Common8Postgres10Connection12globalLockedE"/><span id="_CPPv2N4Core6Common8Postgres10Connection12globalLockedE"/><span class="target" id="classCore_1_1Common_1_1Postgres_1_1Connection_1a74a979857a4a55ff6a2408270334f87ea7a50d319105a6db58303fa63b94a1d52"/><code class="sig-name descname">globalLocked</code><a class="headerlink" href="#_CPPv4N4Core6Common8Postgres10Connection12globalLockedE" title="Permalink to this definition">¶</a><br/></dt>
-<dd/></dl>
+<dd><p>open a global connection (next connection request will block until the current connection is no longer used) </p>
+</dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv4N4Core6Common8Postgres10Connection14globalUnlockedE">
 <span id="_CPPv3N4Core6Common8Postgres10Connection14globalUnlockedE"/><span id="_CPPv2N4Core6Common8Postgres10Connection14globalUnlockedE"/><span class="target" id="classCore_1_1Common_1_1Postgres_1_1Connection_1a74a979857a4a55ff6a2408270334f87eaa4dc12383d5b3093b32024a39738d601"/><code class="sig-name descname">globalUnlocked</code><a class="headerlink" href="#_CPPv4N4Core6Common8Postgres10Connection14globalUnlockedE" title="Permalink to this definition">¶</a><br/></dt>
-<dd/></dl>
+<dd><p>open a global connection (without locking) (should be preferred if you only need a single connection) </p>
+</dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv4N4Core6Common8Postgres10Connection5localE">
 <span id="_CPPv3N4Core6Common8Postgres10Connection5localE"/><span id="_CPPv2N4Core6Common8Postgres10Connection5localE"/><span class="target" id="classCore_1_1Common_1_1Postgres_1_1Connection_1a74a979857a4a55ff6a2408270334f87eaf5ddaf0ca7929578b408c909429f68f2"/><code class="sig-name descname">local</code><a class="headerlink" href="#_CPPv4N4Core6Common8Postgres10Connection5localE" title="Permalink to this definition">¶</a><br/></dt>
-<dd/></dl>
+<dd><p>open a new local connection </p>
+</dd></dl>
 
 </dd></dl>
 
@@ -492,7 +496,7 @@
         </a>
       </p>
       <p class="show_copyright">
-            &copy; Copyright 2020, Ambrosys GmbH
+            &copy; Copyright 2018, Ambrosys GmbH
       </p>
       <p class="show_sphinx">
         Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and

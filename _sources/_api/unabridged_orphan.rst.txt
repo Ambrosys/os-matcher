@@ -121,11 +121,6 @@ Directories
 .. toctree::
    :maxdepth: 5
 
-   dir_src_Generic_Extension.rst
-
-.. toctree::
-   :maxdepth: 5
-
    dir_src_Generic_Hash.rst
 
 .. toctree::
@@ -281,16 +276,6 @@ Files
    :maxdepth: 5
 
    file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_AppComponents_Common_GeometricGraphBuilder.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_AppComponents_Common_GeometricGraphBuilder.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -531,11 +516,6 @@ Files
    :maxdepth: 5
 
    file_src_AppComponents_Common_Types_Routing_Statistic.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_src_Generic_Extension_Thread.h.rst
 
 .. toctree::
    :maxdepth: 5

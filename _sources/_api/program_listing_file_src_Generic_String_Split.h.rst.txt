@@ -10,10 +10,12 @@ Program Listing for File Split.h
 
 .. code-block:: cpp
 
-   
    /*
-    * Author: Fabian Sandoval Saldias (fabianvss@gmail.com)
-    * Date: 2017-04-03
+    * SPDX-FileCopyrightText: © 2017 Ambrosys GmbH
+    *
+    * SPDX-FileContributor: Fabian Sandoval Saldias <fabianvss@gmail.com>
+    *
+    * SPDX-License-Identifier: Apache-2.0
     */
    
    #pragma once

@@ -448,11 +448,6 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1GeometricGraphBuilder.rst
-
-.. toctree::
-   :maxdepth: 5
-
    classAppComponents_1_1ExampleMatcher_1_1Filter_1_1CsvTrackReader.rst
 
 .. toctree::

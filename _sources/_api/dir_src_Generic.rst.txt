@@ -14,7 +14,6 @@ Directory Generic
 Subdirectories
 --------------
 
-- :ref:`dir_src_Generic_Extension`
 - :ref:`dir_src_Generic_Hash`
 - :ref:`dir_src_Generic_Map`
 - :ref:`dir_src_Generic_Progress`

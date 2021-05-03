@@ -11,11 +11,18 @@ Program Listing for File Connection.h
 .. code-block:: cpp
 
    
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #pragma once
+   
+   #include <pqxx/pqxx>
    
    #include <memory>
    #include <mutex>
-   #include <pqxx/pqxx>
    #include <string>
    
    namespace Core::Common::Postgres {
@@ -23,7 +30,11 @@ Program Listing for File Connection.h
    class Connection
    {
    public:
-       enum class Strategy { globalLocked, globalUnlocked, local };
+       enum class Strategy {
+           globalLocked,    
+           globalUnlocked,  
+           local,           
+       };
    
        Connection(Strategy strategy, std::string const host, unsigned short const port, std::string const dbName, std::string const dbUser, std::string const dbPass)
          : strategy_(strategy), host_(host), port_(port), dbName_(dbName), dbUser_(dbUser), dbPass_(dbPass)

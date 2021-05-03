@@ -10,10 +10,17 @@ Program Listing for File LemonDigraph.cpp
 
 .. code-block:: cpp
 
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
    #include <Core/Graph/LemonDigraph.h>
    
-   #include <cassert>
    #include <lemon/dijkstra.h>
+   
+   #include <cassert>
    #include <utility>
    
    namespace Core::Graph {

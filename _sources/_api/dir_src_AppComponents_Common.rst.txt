@@ -18,10 +18,4 @@ Subdirectories
 - :ref:`dir_src_AppComponents_Common_Types`
 
 
-Files
------
-
-- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.cpp`
-- :ref:`file_src_AppComponents_Common_GeometricGraphBuilder.h`
-
 
