@@ -28,9 +28,9 @@ os-matcher-app-build:
     before_script:
         - |
             apt update \
-            && apt install -y cmake ninja-build python-pip pv \
+            && apt install -y cmake ninja-build python3-pip pv \
             && rm -rf /var/lib/apt/lists/*
-        - pip install conan
+        - pip3 install conan
         - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
         - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
         - echo https://$GITHUB_HTTPS_USERNAME:$GITHUB_HTTPS_PASSWORD@github.com > ~/.git-credentials
