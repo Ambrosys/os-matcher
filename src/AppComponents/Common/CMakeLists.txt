@@ -21,10 +21,12 @@ set( SOURCE
 
 add_core_library( AppComponents ${SOURCE} )
 
+find_package( Boost 1.76.0 REQUIRED )
+
 target_link_libraries( AppComponents
     PUBLIC Core::Common
     PUBLIC Core::Graph
-    PUBLIC CONAN_PKG::boost_geometry
+    PUBLIC Boost::boost
     PUBLIC CONAN_PKG::libpqxx
     PUBLIC pq
     )

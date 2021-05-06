@@ -23,12 +23,11 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/Gl
 project( OS-Matcher LANGUAGES C CXX ) # The version information is pulled from hte git tag.
 
 if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" )
-    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++" )  # Due to https://bugs.llvm.org/show_bug.cgi?id=33222
+    add_compile_options( -stdlib=libc++ )  # Due to https://bugs.llvm.org/show_bug.cgi?id=33222
 endif()
 
 enable_cpp17()
-add_compile_options( -Wall -Wextra  )  # Set strict compiler options.
-add_compile_options( -fdiagnostics-color=always )
+add_compile_options( -Wall -Wextra  )
 
 set ( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
 
@@ -41,34 +40,24 @@ if ( ${BUILD_LIBRARY} )
 
     include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-    conan_add_remote(
-        NAME bincrafters
-        URL https://api.bintray.com/conan/bincrafters/public-conan
-    )
-
     conan_cmake_run(
         REQUIRES
 
-            # amb libraries
-            amb-graph/0.2@ambrosys/stable
-            amb-log/0.4@ambrosys/stable
-            amb-thread/0.2@ambrosys/stable
-            amb-pipeline/0.3@ambrosys/stable
-            cli-app/0.3@ambrosys/stable
+            # Ambrosys libraries
+            amb-log/0.5.0@amb/stable
+            amb-pipeline/0.4.0@amb/stable
+            cli-app/0.4.0@amb/stable
 
             # A modern, C++-native, header-only, framework for unit-tests.
-            catch2/2.11.0
+            catch2/2.13.6
 
             # JSON for Modern C++.
-            nlohmann_json/3.7.3
+            nlohmann_json/3.9.1
 
             # Boost C++ libraries.
-            boost_geometry/1.69.0@bincrafters/stable
-            boost_iterator/1.69.0@bincrafters/stable
-            boost_algorithm/1.69.0@bincrafters/stable
+            boost/1.76.0
 
-            clara/1.1.5
-            libpqxx/6.4.5@bincrafters/stable  # TODO: migrate to 7.0.1 (needs code changes)
+            libpqxx/7.5.0
 
 
         BASIC_SETUP
@@ -85,8 +74,8 @@ if ( ${BUILD_LIBRARY} )
     include_directories( ThirdParty/install/include )
     link_directories( ThirdParty/install/lib )
 
-    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__CMAKE_BINARY_DIR__='\"${CMAKE_BINARY_DIR}\"'" )
-    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__CMAKE_SOURCE_DIR__='\"${CMAKE_SOURCE_DIR}\"'" )
+    add_compile_options( -D__CMAKE_BINARY_DIR__=\"${CMAKE_BINARY_DIR}\" )
+    add_compile_options( -D__CMAKE_SOURCE_DIR__=\"${CMAKE_SOURCE_DIR}\" )
 
     add_subdirectory( src )
 

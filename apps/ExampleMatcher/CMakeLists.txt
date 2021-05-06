@@ -13,10 +13,15 @@ target_link_libraries( ExampleMatcher
     PUBLIC amb-thread
     PUBLIC cli-app
     )
-if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" )
-    target_link_libraries( ExampleMatcher PUBLIC c++experimental )
+
+if( CMAKE_CXX_COMPILER_ID STREQUAL "Clang" )
+    if( CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
+        target_link_libraries( ExampleMatcher PRIVATE c++fs )
+    endif()
 else()
-    target_link_libraries( ExampleMatcher PUBLIC stdc++fs )
+    if( CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1")
+        target_link_libraries( ExampleMatcher PRIVATE stdc++fs )
+    endif()
 endif()
 
 install(
