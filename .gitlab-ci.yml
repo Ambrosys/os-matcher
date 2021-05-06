@@ -20,6 +20,7 @@ clang-format: # TODO: Use clang format 11, currently the image install clang-for
         refs:
             - master
             - merge_requests
+            - external_pull_requests
 
 os-matcher-app-build:
     image: gcc:10.2.0
@@ -52,6 +53,7 @@ os-matcher-app-build:
         refs:
             - master
             - merge_requests
+            - external_pull_requests
 
 unit-test:
     image: gcc:10.2.0
@@ -64,6 +66,7 @@ unit-test:
         refs:
             - master
             - merge_requests
+            - external_pull_requests
 
 build doc:
     image: bibermann/os-matcher:gcc-sphinx
@@ -79,6 +82,7 @@ build doc:
         refs:
             - master
             - merge_requests
+            - external_pull_requests
 
 pages:
     image: python:3-slim
