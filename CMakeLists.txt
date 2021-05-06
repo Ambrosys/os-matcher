@@ -58,6 +58,7 @@ if ( ${BUILD_LIBRARY} )
             boost/1.76.0
 
             libpqxx/7.5.0
+            lemon/1.3.2@amb/stable
 
 
         BASIC_SETUP
@@ -71,8 +72,6 @@ if ( ${BUILD_LIBRARY} )
     conan_basic_setup()
 
     include_directories( ${CMAKE_BINARY_DIR}/GeneratedIncludes )
-    include_directories( ThirdParty/install/include )
-    link_directories( ThirdParty/install/lib )
 
     add_compile_options( -D__CMAKE_BINARY_DIR__=\"${CMAKE_BINARY_DIR}\" )
     add_compile_options( -D__CMAKE_SOURCE_DIR__=\"${CMAKE_SOURCE_DIR}\" )

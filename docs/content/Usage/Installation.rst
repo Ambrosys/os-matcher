@@ -6,7 +6,7 @@
 Installation
 ============
 
-The |os-matcher| uses some third party repositories in Git submodules as well as Conan repositories.
+The |os-matcher| uses Conan for installing third-party libraries.
 Some Conan packages aren't in any public registry yet and have to be made available in your company's infrastructure or through a local registry. We will use the latter approach in this guide.
 
 Requirements
@@ -47,16 +47,6 @@ Change into some workspace directory and then clone the repository.
 .. code:: bash
 
    git clone https://github.com/Ambrosys/os-matcher.git
-
-Building third party code
-=========================
-
-We need to build third party libraries which are not available as Conan packages.
-
-.. code:: bash
-
-  git submodule update --init
-  NJOBS=$(nproc) make -C ThirdParty
 
 Provision Conan packages
 ========================

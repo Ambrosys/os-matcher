@@ -1,3 +1,0 @@
-[submodule "ThirdParty/lemon"]
-	path = ThirdParty/lemon
-	url = https://github.com/Ambrosys/lemon.git
