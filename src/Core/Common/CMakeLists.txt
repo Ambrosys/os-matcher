@@ -10,8 +10,9 @@ add_core_library( Common ${SOURCES} )
 
 set( THREADS_PREFER_PTHREAD_FLAG ON )
 find_package( Threads REQUIRED )
+find_package( Boost 1.76.0 REQUIRED )
 target_link_libraries( Common
-    PUBLIC CONAN_PKG::boost_geometry
+    PUBLIC Boost::boost
     PUBLIC CONAN_PKG::nlohmann_json
     )
 

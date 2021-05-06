@@ -86,7 +86,10 @@ Now we can download, build and publish packages into our local registry.
    mkdir conan/repositories
    for package in amb-graph amb-log amb-thread amb-pipeline cli-app; do
        git clone https://github.com/Ambrosys/$package.git conan/repositories/$package
-       conan create conan/repositories/$package ambrosys/stable --build missing
+       conan remove --force "$package/*" --src --builds --packages
+       conan remove --force "$package/*" --system-reqs
+       conan remove --force "$package/*" --remote ambrosys
+       conan create conan/repositories/$package amb/stable --build $package --build missing
        conan upload "$package/*" --confirm --all --remote ambrosys
    done
 

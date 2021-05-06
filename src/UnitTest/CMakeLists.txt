@@ -1,3 +1,6 @@
+# TODO: uncomment the following line when the CI uses cmake 19+
+# cmake_policy( SET CMP0110 NEW )
+
 set( SOURCES
     Helpers.cpp
     )

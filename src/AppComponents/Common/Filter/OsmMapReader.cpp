@@ -19,7 +19,7 @@
 #include <pqxx/pqxx>
 
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/function_output_iterator.hpp>
+#include <boost/iterator/function_output_iterator.hpp>
 #include <boost/geometry/index/rtree.hpp>
 
 #include <iomanip>
@@ -365,7 +365,7 @@ bool OsmMapReader::operator()(
         )sql"};
     boost::replace_all(query, "$HIGHWAY_CONDITION", toHighwaySelectionSql(highwaySelection_, "line"));
     dbConnection->prepare("wayquery", query);
-    pqxx::result records = dbTransaction.prepared("wayquery")(pointsString)(searchRadius).exec();
+    pqxx::result records = dbTransaction.exec_prepared("wayquery", pointsString, searchRadius);
 
     APP_LOG_TAG_MS(noise, "DB") << records.size() << " records were read";
 

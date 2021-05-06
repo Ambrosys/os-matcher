@@ -27,7 +27,7 @@
 #include <ambpipeline/Pipeline.h>
 #include <cliapp/CliApp.h>
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <fstream>
 #include <memory>
@@ -157,28 +157,19 @@ struct UserOptions : public cliapp::UserOptionsBase
 
 int app(UserOptions options)
 {
-    //@{
-    /// Necessary due to immatureness of Clara
-    if (options.fspIn.empty())
-    {
-        APP_LOG(fatal) << "Error in command line:\n--fsp-in is required";
-        return EXIT_FAILURE;
-    }
-    //@}
-
     if (not options.mapIn.empty() and options.mapSource != "auto")
     {
         APP_LOG(fatal) << "Error in command line:\n--map-source has to be \"auto\" when specifying --map-in";
         return EXIT_FAILURE;
     }
 
-    if (not std::experimental::filesystem::exists(options.fspIn))
+    if (not std::filesystem::exists(options.fspIn))
     {
         APP_LOG(fatal) << "Fsp file does not exist: " << options.fspIn;
         return EXIT_FAILURE;
     }
 
-    if (not options.mapIn.empty() and not std::experimental::filesystem::exists(options.mapIn))
+    if (not options.mapIn.empty() and not std::filesystem::exists(options.mapIn))
     {
         APP_LOG(fatal) << "Map file does not exist: " << options.mapIn;
         return EXIT_FAILURE;
@@ -201,7 +192,7 @@ int app(UserOptions options)
 
     auto fspIn = std::ifstream{options.fspIn};
     {
-        auto extension = std::experimental::filesystem::path(options.fspIn).extension();
+        auto extension = std::filesystem::path(options.fspIn).extension();
         if (extension == ".csv" || extension == ".txt")
             pipeline.add(AppComponents::ExampleMatcher::Filter::CsvTrackReader{fspIn});
         else if (extension == ".json")
@@ -240,7 +231,7 @@ int app(UserOptions options)
     else
     {
         mapIn = std::ifstream{options.mapIn};
-        auto extension = std::experimental::filesystem::path(options.mapIn).extension();
+        auto extension = std::filesystem::path(options.mapIn).extension();
         if (extension == ".geojson")
             pipeline.add(AppComponents::Common::Filter::GeoJsonMapReader{mapIn});
         else
@@ -321,16 +312,16 @@ int app(UserOptions options)
 int main(int argc, char * argv[])
 {
     UserOptions options;
-    auto cli = clara::Opt(options.fspIn, "file")["--fsp-in"]("fahrspur input").required() | clara::Opt(options.mapSource, "auto")["--map-source"]("map source").optional()
-             | clara::Opt(options.mapIn, "file")["--map-in"]("map input").optional() | clara::Opt(options.mapOut, "file")["--map-out"]("map output").optional()
-             | clara::Opt(options.routeCsvOut, "file")["--route"]("route output").optional()
-             | clara::Opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
-             | clara::Opt(options.routeGeoJsonOut, "file")["--route-geojson"]("route output").optional()
-             | clara::Opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
-             | clara::Opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional()
-             | clara::Opt(options.dbHost, "db host")["--host"]("db host name").optional() | clara::Opt(options.dbPort, "db port")["--port"]("db host port").optional()
-             | clara::Opt(options.dbName, "db name")["--db"]("database").optional() | clara::Opt(options.dbUser, "db user")["--dbuser"]("db user").optional()
-             | clara::Opt(options.dbPass, "db password")["--dbpasswd"]("db password").optional();
+    auto cli = lyra::opt(options.fspIn, "file")["--fsp-in"]("fahrspur input").required() | lyra::opt(options.mapSource, "auto")["--map-source"]("map source").optional()
+             | lyra::opt(options.mapIn, "file")["--map-in"]("map input").optional() | lyra::opt(options.mapOut, "file")["--map-out"]("map output").optional()
+             | lyra::opt(options.routeCsvOut, "file")["--route"]("route output").optional()
+             | lyra::opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
+             | lyra::opt(options.routeGeoJsonOut, "file")["--route-geojson"]("route output").optional()
+             | lyra::opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
+             | lyra::opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional()
+             | lyra::opt(options.dbHost, "db host")["--host"]("db host name").optional() | lyra::opt(options.dbPort, "db port")["--port"]("db host port").optional()
+             | lyra::opt(options.dbName, "db name")["--db"]("database").optional() | lyra::opt(options.dbUser, "db user")["--dbuser"]("db user").optional()
+             | lyra::opt(options.dbPass, "db password")["--dbpasswd"]("db password").optional();
 
-    return cliapp::main(argc, argv, cli, options, "ExampleMatcher", "v" + std::string{OSMATCHER_VERSION_SHORT}, app);
+    return cliapp::main(argc, argv, cli, options, "ExampleMatcher", "v" + std::string{OSMATCHER_VERSION_SHORT}, "Example matcher application.", app);
 }
