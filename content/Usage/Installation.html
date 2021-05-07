@@ -87,7 +87,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-the-code">Getting the code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-third-party-code">Building third party code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#provision-conan-packages">Provision Conan packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-os-matcher">Building <em>OS-Matcher</em></a></li>
 </ul>
@@ -365,7 +364,7 @@
             
   <div class="section" id="installation">
 <span id="id1"/><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>The <em>OS-Matcher</em> uses some third party repositories in Git submodules as well as Conan repositories.
+<p>The <em>OS-Matcher</em> uses Conan for installing third-party libraries.
 Some Conan packages aren’t in any public registry yet and have to be made available in your company’s infrastructure or through a local registry. We will use the latter approach in this guide.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
@@ -398,14 +397,6 @@ conan profile update settings.compiler.libcxx<span class="o">=</span>libstdc++11
 <h2>Getting the code<a class="headerlink" href="#getting-the-code" title="Permalink to this headline">¶</a></h2>
 <p>Change into some workspace directory and then clone the repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span/>git clone https://github.com/Ambrosys/os-matcher.git
-</pre></div>
-</div>
-</div>
-<div class="section" id="building-third-party-code">
-<h2>Building third party code<a class="headerlink" href="#building-third-party-code" title="Permalink to this headline">¶</a></h2>
-<p>We need to build third party libraries which are not available as Conan packages.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span/>git submodule update --init
-<span class="nv">NJOBS</span><span class="o">=</span><span class="k">$(</span>nproc<span class="k">)</span> make -C ThirdParty
 </pre></div>
 </div>
 </div>

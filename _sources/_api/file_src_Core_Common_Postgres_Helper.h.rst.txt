@@ -55,7 +55,7 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c`
-
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Postgres_1a63cee6281541db418598e5ef65d6a76c`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c`
 
