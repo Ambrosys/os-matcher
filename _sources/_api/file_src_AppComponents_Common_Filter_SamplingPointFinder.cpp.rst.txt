@@ -35,9 +35,9 @@ Includes
 
 - ``amblog/global.h``
 
-- ``boost/function_output_iterator.hpp``
-
 - ``boost/geometry/index/rtree.hpp``
+
+- ``boost/iterator/function_output_iterator.hpp``
 
 - ``cassert``
 

@@ -45,9 +45,9 @@ Includes
 
 - ``boost/algorithm/string/replace.hpp``
 
-- ``boost/function_output_iterator.hpp``
-
 - ``boost/geometry/index/rtree.hpp``
+
+- ``boost/iterator/function_output_iterator.hpp``
 
 - ``iomanip``
 

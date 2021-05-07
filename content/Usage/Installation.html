@@ -429,7 +429,10 @@ conan user --remote ambrosys <span class="nv">$username</span> -p <span class="n
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span/>mkdir conan/repositories
 <span class="k">for</span> package in amb-graph amb-log amb-thread amb-pipeline cli-app<span class="p">;</span> <span class="k">do</span>
     git clone https://github.com/Ambrosys/<span class="nv">$package</span>.git conan/repositories/<span class="nv">$package</span>
-    conan create conan/repositories/<span class="nv">$package</span> ambrosys/stable --build missing
+    conan remove --force <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --src --builds --packages
+    conan remove --force <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --system-reqs
+    conan remove --force <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --remote ambrosys
+    conan create conan/repositories/<span class="nv">$package</span> amb/stable --build <span class="nv">$package</span> --build missing
     conan upload <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --confirm --all --remote ambrosys
 <span class="k">done</span>
 </pre></div>

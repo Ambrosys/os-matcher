@@ -373,7 +373,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;pqxx/pqxx&gt;</span><span class="cp"/>
 
 <span class="cp">#include</span> <span class="cpf">&lt;boost/algorithm/string/replace.hpp&gt;</span><span class="cp"/>
-<span class="cp">#include</span> <span class="cpf">&lt;boost/function_output_iterator.hpp&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/iterator/function_output_iterator.hpp&gt;</span><span class="cp"/>
 <span class="cp">#include</span> <span class="cpf">&lt;boost/geometry/index/rtree.hpp&gt;</span><span class="cp"/>
 
 <span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp"/>
@@ -708,7 +708,7 @@
 <span class="s">        </span><span class="dl">)sql</span><span class="s">&quot;</span><span class="p">};</span>
     <span class="n">boost</span><span class="o">::</span><span class="n">replace_all</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s">&quot;$HIGHWAY_CONDITION&quot;</span><span class="p">,</span> <span class="n">toHighwaySelectionSql</span><span class="p">(</span><span class="n">highwaySelection_</span><span class="p">,</span> <span class="s">&quot;line&quot;</span><span class="p">));</span>
     <span class="n">dbConnection</span><span class="o">-&gt;</span><span class="n">prepare</span><span class="p">(</span><span class="s">&quot;wayquery&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
-    <span class="n">pqxx</span><span class="o">::</span><span class="n">result</span> <span class="n">records</span> <span class="o">=</span> <span class="n">dbTransaction</span><span class="p">.</span><span class="n">prepared</span><span class="p">(</span><span class="s">&quot;wayquery&quot;</span><span class="p">)(</span><span class="n">pointsString</span><span class="p">)(</span><span class="n">searchRadius</span><span class="p">).</span><span class="n">exec</span><span class="p">();</span>
+    <span class="n">pqxx</span><span class="o">::</span><span class="n">result</span> <span class="n">records</span> <span class="o">=</span> <span class="n">dbTransaction</span><span class="p">.</span><span class="n">exec_prepared</span><span class="p">(</span><span class="s">&quot;wayquery&quot;</span><span class="p">,</span> <span class="n">pointsString</span><span class="p">,</span> <span class="n">searchRadius</span><span class="p">);</span>
 
     <span class="n">APP_LOG_TAG_MS</span><span class="p">(</span><span class="n">noise</span><span class="p">,</span> <span class="s">&quot;DB&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">records</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; records were read&quot;</span><span class="p">;</span>
 

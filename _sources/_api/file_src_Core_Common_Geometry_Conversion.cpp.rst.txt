@@ -51,13 +51,13 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123`
-
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a54876e03d20fc050a6518dc12e75ed3f`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596`
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a8b190f4f0c4d64455f8aa30b647da6bf`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea`
 
