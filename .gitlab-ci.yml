@@ -22,28 +22,38 @@ clang-format: # TODO: Use clang format 11, currently the image install clang-for
             - merge_requests
             - external_pull_requests
 
-os-matcher-app-build:
+build apps:
     image: gcc:10.2.0
     stage: test-build
+    variables:
+        CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+        CONAN_USERNAME: ci_user
+        CONAN_PASSWORD: $CI_JOB_TOKEN
     before_script:
         - |
             apt update \
-            && apt install -y cmake ninja-build python3-pip pv \
-            && rm -rf /var/lib/apt/lists/*
+              && apt install --no-install-recommends -y cmake ninja-build iwyu python3-pip python3-setuptools \
+              && rm -rf /var/lib/apt/lists/*
         - pip3 install conan
-        - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
-        - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
+        - rm -f ~/.conan/profiles/default
+        - conan profile new default --detect
+        - conan profile update settings.compiler.libcxx=libstdc++11 default
+        - conan remote add --force ambrosys $CONAN_REMOTE_URL
+        - conan user --remote ambrosys $CONAN_USERNAME --password $CONAN_PASSWORD
     script:
-        - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
+        - |
+            cmake -Bbuild -H. -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ \
+              -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install \
+              -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
         - ninja -C build test-if-git-HEAD-has-changed
         - ninja -C build install
-        - build/install/bin/AmbRouter -h
+        - install/bin/AmbRouter -h
     cache:
         paths:
             - ~/.conan/
     artifacts:
         paths:
-            - build
+            - install
         expire_in: 1 day
     only:
         refs:
@@ -55,24 +65,58 @@ unit-test:
     image: gcc:10.2.0
     stage: test
     script:
-        - build/bin/UnitTestsGraph
+        - install/bin/UnitTestsGraph
     dependencies: 
-        - os-matcher-app-build
+        - build apps
     only:
         refs:
             - master
             - merge_requests
             - external_pull_requests
 
-build doc:
-    image: bibermann/os-matcher:gcc-sphinx
+build apps image:
+    image: docker:latest
     stage: build
+    services:
+        - docker:dind
+    variables:
+        REPOSITORY_URL: ambrosys/os-matcher
+        TAG: latest
+        CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+        CONAN_USERNAME: ci_user
+        CONAN_PASSWORD: $CI_JOB_TOKEN
+    before_script:
+        - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
     script:
-        - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
+        - |
+            docker build \
+              --build-arg CONAN_REMOTE_URL \
+              --build-arg CONAN_USERNAME \
+              --build-arg CONAN_PASSWORD \
+              -f Dockerfile.apps
+              -t $REPOSITORY_URL:$TAG .
+        - docker run --rm -it $REPOSITORY_URL:$TAG
+        - docker push $REPOSITORY_URL:$TAG
+    only:
+        refs:
+            - master
+
+build docs:
+    image: sphinxdoc/sphinx-latexpdf:4.1.2
+    stage: build
+    before_script:
+        - |
+            python3 -m pip install --no-cache-dir \
+              docutils==0.16 breathe exhale t3SphinxThemeRtd m2r2 sphinxcontrib-programoutput cloud_sptheme
+        - |
+            apt-get update && apt-get install --no-install-recommends -y \
+              g++ cmake ninja-build doxygen moreutils html-xml-utils
+    script:
+        - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
         - ninja -C build install
     artifacts:
         paths:
-            - build
+            - install
         expire_in: 1 day
     only:
         refs:
@@ -109,13 +153,13 @@ pages:
         - cat /etc/ssh/ssh_config
     script:
         - |
-            if [ ! -f build/install/doc/html/index.html ]; then
+            if [ ! -f install/doc/html/index.html ]; then
                 mkdir -p public
                 echo "Build-error." > public/index.html
             else
                 rm -rf public
-                cp -r build/install/doc/html public
-                cp build/install/doc/os-matcher.pdf public/
+                cp -r install/doc/html public
+                cp install/doc/os-matcher.pdf public/
                 rm -rf public/.doctrees
             fi
         - git clone -b gh-pages $GITHUB_REPO github_repo
@@ -126,7 +170,7 @@ pages:
         - git commit -m "Deploying to gh-pages testing" || true
         - git push $GITHUB_REPO
     dependencies:
-        - build doc
+        - build docs
     artifacts:
         paths:
             - public

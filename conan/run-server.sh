@@ -4,11 +4,11 @@ set -euo pipefail
 
 stop_container() {
     echo "Stopping conan server..."
-    docker stop $container >/dev/null
+    sudo docker stop $container >/dev/null
 }
 
 container=$(
-  docker run \
+  sudo docker run \
     --rm -d \
     -p 9300:9300 \
     -v $PWD/server.conf:/root/.conan_server/server.conf:ro \
@@ -17,6 +17,6 @@ container=$(
 )
 trap stop_container EXIT
 
-echo Conan server logs: docker logs -f $container
-echo Conan remote: http://localhost:9300/
+echo Conan server logs: sudo docker logs -f $container
+echo Conan remote URL: http://localhost:9300/
 read -p "Press any key to stop conan server "

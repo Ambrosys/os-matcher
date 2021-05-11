@@ -1,13 +1,12 @@
 .. include:: ../substitutions.rst
 
-.. _installation:
-
-============
-Installation
-============
+=====
+Build
+=====
 
 The |os-matcher| uses Conan for installing third-party libraries.
-Some Conan packages aren't in any public registry yet and have to be made available in your company's infrastructure or through a local registry. We will use the latter approach in this guide.
+Some Conan packages aren't in any public registry yet and have to be made available in your company's infrastructure or through a local registry.
+We will use the latter approach in this guide.
 
 Requirements
 ============
@@ -20,7 +19,7 @@ Requirements
 
    - Git
    - GCC 5+
-   - Python 3
+   - Python
 
 We need additional build tools and the PostgreSQL library.
 
@@ -67,7 +66,7 @@ Configure Conan to use this registry when refering to ``ambrosys``.
    password=demo
 
    conan remote add ambrosys $remote_url
-   conan user --remote ambrosys $username -p $password
+   conan user --remote ambrosys $username --password $password
 
 Now we can download, build and publish packages into our local registry.
 
@@ -83,7 +82,19 @@ Now we can download, build and publish packages into our local registry.
        conan upload "$package/*" --confirm --all --remote ambrosys
    done
   
-In case that does not work, use  git@github.com:Ambrosys/$package.git instead of https://github.com/Ambrosys/$package.git
+In case that does not work, use ``git@github.com:Ambrosys/$package.git``
+instead of ``https://github.com/Ambrosys/$package.git``.
+
+Building for Docker
+===================
+
+Now that the conan registry is available and filled, we can build a docker image.
+
+.. code:: bash
+
+   ./build-apps.sh
+
+The image built is tagged ``ambrosys/os-matcher:latest``.
 
 Building |os-matcher|
 =====================
@@ -93,11 +104,10 @@ Now that all dependencies are at hand, we can finally build the |os-matcher| cod
 .. code:: bash
 
    mkdir build
-   cmake -Bbuild -H. -GNinja \
+   cmake -Bbuild -H. -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ \
        -DCMAKE_BUILD_TYPE=Release \
-       -DCMAKE_INSTALL_PREFIX=install
+       -DCMAKE_INSTALL_PREFIX=build/install
    ninja -C build test-if-git-HEAD-has-changed
    ninja -C build install
 
 You will find the binaries now in ``build/install``.
-git@github.com:Ambrosys/$package.git

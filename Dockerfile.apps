@@ -1,0 +1,57 @@
+FROM gcc:10.2.0 AS builder
+
+RUN apt update \
+ && apt install --no-install-recommends -y \
+      cmake \
+      ninja-build \
+      iwyu \
+      python3-pip \
+      python3-setuptools \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install conan
+
+ARG CONAN_REMOTE_URL=http://localhost:9300/
+ARG CONAN_USERNAME=demo
+ARG CONAN_PASSWORD=demo
+
+RUN conan profile new default --detect \
+ && conan profile update settings.compiler.libcxx=libstdc++11 default \
+ && conan remote add --force ambrosys $CONAN_REMOTE_URL \
+ && conan user --remote ambrosys $CONAN_USERNAME --password $CONAN_PASSWORD
+
+COPY CMakeModules /src/CMakeModules
+COPY examples /src/examples
+COPY src /src/src
+COPY .git /src/.git
+COPY CMakeLists.txt /src/CMakeLists.txt
+
+RUN cd src \
+ && cmake -Bbuild -H. -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ \
+      -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install \
+      -DCMAKE_INSTALL_RPATH=/app/lib \
+      -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF -DBUILD_UNITTESTS=OFF \
+ && ninja -C build test-if-git-HEAD-has-changed \
+ && ninja -C build install \
+ && rm -rf build \
+ && rm -rf ~/.conan
+
+RUN rm /src/install/lib/*.a \
+ && cp $(ldd /src/install/bin/AmbRouter | awk '{ print $3 }' | grep /usr/local/lib64) /src/install/lib
+
+
+FROM debian:buster
+
+COPY --from=builder /src/install /app
+
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
+RUN addgroup --gid $GROUP_ID user \
+ && adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+
+USER user
+WORKDIR /app/workspace
+ENTRYPOINT ["../bin/AmbRouter"]
+CMD ["-h"]
+VOLUME /app/workspace
