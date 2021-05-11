@@ -42,7 +42,7 @@ Execution
 
    export LD_LIBRARY_PATH=build/lib
    build/bin/ExampleMatcher \
-       --fsp-in in/track.csv \
+       --track-in in/track.csv \
        --map-out out/map.geojson \
        --route out/route.csv \
        --sub-route out/sub-route.csv \
