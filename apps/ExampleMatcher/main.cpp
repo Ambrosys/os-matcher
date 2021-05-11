@@ -139,7 +139,7 @@ using Pipeline = ambpipeline::Pipeline<
 
 struct UserOptions : public cliapp::UserOptionsBase
 {
-    std::string fspIn;
+    std::string trackIn;
     std::string mapSource{"auto"};
     std::string mapIn;
     std::string mapOut;
@@ -163,9 +163,9 @@ int app(UserOptions options)
         return EXIT_FAILURE;
     }
 
-    if (not std::filesystem::exists(options.fspIn))
+    if (not std::filesystem::exists(options.trackIn))
     {
-        APP_LOG(fatal) << "Fsp file does not exist: " << options.fspIn;
+        APP_LOG(fatal) << "Track file does not exist: " << options.trackIn;
         return EXIT_FAILURE;
     }
 
@@ -190,16 +190,16 @@ int app(UserOptions options)
     auto visitor = FilterVisitor{context};
     auto ensure = std::vector<std::string>{};
 
-    auto fspIn = std::ifstream{options.fspIn};
+    auto trackIn = std::ifstream{options.trackIn};
     {
-        auto extension = std::filesystem::path(options.fspIn).extension();
+        auto extension = std::filesystem::path(options.trackIn).extension();
         if (extension == ".csv" || extension == ".txt")
-            pipeline.add(AppComponents::ExampleMatcher::Filter::CsvTrackReader{fspIn});
+            pipeline.add(AppComponents::ExampleMatcher::Filter::CsvTrackReader{trackIn});
         else if (extension == ".json")
-            pipeline.add(AppComponents::ExampleMatcher::Filter::JsonTrackReader{fspIn});
+            pipeline.add(AppComponents::ExampleMatcher::Filter::JsonTrackReader{trackIn});
         else
         {
-            APP_LOG(fatal) << "Fsp input file extension unknown: " << extension;
+            APP_LOG(fatal) << "Track input file extension unknown: " << extension;
             return EXIT_FAILURE;
         }
     }
@@ -312,7 +312,7 @@ int app(UserOptions options)
 int main(int argc, char * argv[])
 {
     UserOptions options;
-    auto cli = lyra::opt(options.fspIn, "file")["--fsp-in"]("fahrspur input").required() | lyra::opt(options.mapSource, "auto")["--map-source"]("map source").optional()
+    auto cli = lyra::opt(options.trackIn, "file")["--track-in"]("track input").required() | lyra::opt(options.mapSource, "auto")["--map-source"]("map source").optional()
              | lyra::opt(options.mapIn, "file")["--map-in"]("map input").optional() | lyra::opt(options.mapOut, "file")["--map-out"]("map output").optional()
              | lyra::opt(options.routeCsvOut, "file")["--route"]("route output").optional()
              | lyra::opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
