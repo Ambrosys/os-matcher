@@ -36,7 +36,7 @@ master_doc = 'index'
 extensions = [
     'breathe',
     'exhale',
-    'm2r',
+    'm2r2',
     'sphinxcontrib.programoutput',
     'cloud_sptheme.ext.table_styling',  # see https://cloud-sptheme.readthedocs.io/en/latest/lib/cloud_sptheme.ext.table_styling.html
     'sphinx.ext.todo',
@@ -207,28 +207,6 @@ exhale_args = {
         specifications_for_kind
     ),
 }
-
-
-# -- Options for m2r extension -------------------------------------------------
-
-# https://github.com/miyakogi/m2r/issues/51#issuecomment-618285433
-
-def monkeypatch(cls):
-    """ decorator to monkey-patch methods """
-    def decorator(f):
-        method = f.__name__
-        old_method = getattr(cls, method)
-        setattr(cls, method, lambda self, *args, **kwargs: f(old_method, self, *args, **kwargs))
-    return decorator
-
-# workaround until https://github.com/miyakogi/m2r/pull/55 is merged
-@monkeypatch(sphinx.registry.SphinxComponentRegistry)
-def add_source_parser(_old_add_source_parser, self, *args, **kwargs):
-    # signature is (parser: Type[Parser], **kwargs), but m2r expects
-    # the removed (str, parser: Type[Parser], **kwargs).
-    if isinstance(args[0], str):
-        args = args[1:]
-    return _old_add_source_parser(self, *args, **kwargs)
 
 
 # -- Options for sphinx.ext.todo extension -------------------------------------------------
