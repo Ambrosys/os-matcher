@@ -10,7 +10,7 @@ Routing is defined as a threefold-function :math:`R(A,B,M) = r` where :math:`M` 
 are start and endpoint of the street map. :math:`R` returns a :term:`valid navigation route` from :math:`A` to :math:`B` on the street map :math:`M`.
 
 The street map :math:`M` in use is the `OSM map <https://www.openstreetmap.org>`_.
-Start and endpoint :math:`A` and :math:`B` are GPS locations, which not necessarily lay on the street map.
+Start and endpoint :math:`A` and :math:`B` are GPS locations, which may not necessarily lay on the street map.
 
 The routing algorithm falls apart into three parts:
 

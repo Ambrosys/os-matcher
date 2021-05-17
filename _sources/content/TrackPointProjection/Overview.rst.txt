@@ -7,7 +7,7 @@ Overview
 Let :math:`M` be the street map and :math:`A` and :math:`B` two track points.
 
 The street map :math:`M` in use is the `OSM map <https://www.openstreetmap.org>`_.
-Start and endpoint :math:`A` and :math:`B` are GPS locations, which not necessarily lay on the street map.
+Start and end points :math:`A` and :math:`B` are GPS locations, which not necessarily lay on the street map.
 
 .. _routing_candidate-search:
 

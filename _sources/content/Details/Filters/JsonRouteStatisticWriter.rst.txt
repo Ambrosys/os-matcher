@@ -32,8 +32,6 @@ A JSON stream which contains a JSON object. The JSON object has the following fo
    - **source**: *SamplingPoint-JSON*
    - **target**: *SamplingPoint-JSON*
 
-.. todo:: typo in successfull -> successful
-
 Def: SamplingPoint-JSON
 -----------------------
 

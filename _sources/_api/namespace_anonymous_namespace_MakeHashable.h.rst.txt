@@ -17,6 +17,6 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespaceanon_ns_02MakeHashable_8h_03_1af96987ed806b5c0246cfd0ba5260cd6c`
-
 - :ref:`exhale_function_namespaceanon_ns_02MakeHashable_8h_03_1a41e403ee3a1a00e25d7d9d2e486deaa7`
+
+- :ref:`exhale_function_namespaceanon_ns_02MakeHashable_8h_03_1af96987ed806b5c0246cfd0ba5260cd6c`
