@@ -13,7 +13,7 @@ The router therefore starts to skip consecutive sampling points in a specific, s
 starting with the last sampling point of the farthest route or the following.
 The underlying routers then try to route farther by ignoring these sampling points.
 
-If it is able to route farther, the skipping is considered successfull and it continues as usual.
+If it is able to route farther, the skipping is considered successful and it continues as usual.
 It then may start a new skipping session, if necessary.
 
 If the distance to skip reaches some threshold before finding a route,

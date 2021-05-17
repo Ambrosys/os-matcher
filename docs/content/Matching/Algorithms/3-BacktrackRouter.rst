@@ -12,10 +12,10 @@ But if it at any point is not able to find a valid navigation route,
 it is able to go back to previous sampling points in history (up to the configured maximum, :ref:`maxCandidateBacktrackingDistance <router_filter_configuration>`) and re-route from other candidates.
 That means it tries out other routes that were not considered optimal in the first place.
 
-If it is able to route farther, the backtracking is considered successfull and it continues as usual.
+If it is able to route farther, the backtracking is considered successful and it continues as usual.
 It then may start a new backtracking session, if necessary.
 
-When backtracking is not successfull,
+When backtracking is not successful,
 the router returns the route before the last backtracking session has begun.
 
 Example
