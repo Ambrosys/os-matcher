@@ -1,6 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
 rm -rf build/
 
-docker build --no-cache -f Dockerfile-build -t ambrosys/os-matcher:docs .
+docker build -f Dockerfile.docs -t ambrosys/os-matcher:docs .
 
 echo ==========================
 echo Open http://localhost:8080

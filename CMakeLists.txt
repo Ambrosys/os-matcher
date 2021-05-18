@@ -29,8 +29,6 @@ endif()
 enable_cpp17()
 add_compile_options( -Wall -Wextra  )
 
-set ( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
-
 if ( ${BUILD_LIBRARY} )
     if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
         message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")

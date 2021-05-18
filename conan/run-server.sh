@@ -18,5 +18,5 @@ container=$(
 trap stop_container EXIT
 
 echo Conan server logs: docker logs -f $container
-echo Conan remote: http://localhost:9300/
+echo Conan remote URL: http://localhost:9300/
 read -p "Press any key to stop conan server "
