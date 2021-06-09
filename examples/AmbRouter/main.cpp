@@ -18,6 +18,7 @@
 #include <AppComponents/Common/Reader/JsonTrackReader.h>
 #include <AppComponents/Common/Reader/OsmMapReader.h>
 #include <AppComponents/Common/Writer/GeoJsonMapWriter.h>
+#include <AppComponents/Common/Writer/GeoJsonTrackWriter.h>
 #include <AppComponents/Common/Writer/JsonRouteStatisticWriter.h>
 #include <OsMatcher/OsMatcherVersion.h>
 
@@ -91,6 +92,7 @@ struct UserOptions : public cliapp::UserOptionsBase
     std::string subRouteCsvOut;
     std::string routeGeoJsonOut;
     std::string routeStatisticJsonOut;
+    std::string trackGeoJsonOut;
     std::string pipelineOut;
     std::string dbHost{"localhost"};
     std::string dbUser{"docker"};
@@ -272,6 +274,14 @@ int app(UserOptions options)
         ensure.emplace_back("GeoJsonRouteWriter");
     }
 
+    auto trackGeoJsonOut = std::unique_ptr<std::ofstream>{};
+    if (!options.trackGeoJsonOut.empty())
+    {
+        trackGeoJsonOut = std::make_unique<std::ofstream>(options.trackGeoJsonOut);
+        AppComponents::Common::Writer::GeoJsonTrackWriter{*trackGeoJsonOut}(context.track.timeList, context.track.pointList, context.track.headingList, context.track.velocityList);
+        ensure.emplace_back("GeoJsonTrackWriter");
+    }
+
     auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
     if (!options.routeStatisticJsonOut.empty())
     {
@@ -295,6 +305,7 @@ int main(int argc, char * argv[])
         | lyra::opt(options.routeCsvOut, "file")["--route"]("route output").optional() | lyra::opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
         | lyra::opt(options.routeGeoJsonOut, "file")["--route-geojson"]("route output").optional()
         | lyra::opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
+        | lyra::opt(options.trackGeoJsonOut, "file")["--track-geojson"]("track output").optional()
         | lyra::opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional() | lyra::opt(options.dbHost, "db host")["--host"]("db host name").optional()
         | lyra::opt(options.dbPort, "db port")["--port"]("db host port").optional() | lyra::opt(options.dbName, "db name")["--db"]("database").optional()
         | lyra::opt(options.dbUser, "db user")["--dbuser"]("db user").optional() | lyra::opt(options.dbPass, "db password")["--dbpasswd"]("db password").optional()
