@@ -365,8 +365,8 @@ Program Listing for File OsmMapReader.cpp
                and ST_DWithin( ST_Transform( ST_GeomFromText( $1, 4326 ), 32632 ), line.way, $2 )
            )sql"};
        boost::replace_all(query, "$HIGHWAY_CONDITION", toHighwaySelectionSql(highwaySelection_, "line"));
-       dbConnection->prepare("wayquery", query);
-       pqxx::result records = dbTransaction.exec_prepared("wayquery", pointsString, searchRadius);
+       dbConnection->prepare("", query);
+       pqxx::result records = dbTransaction.exec_prepared("", pointsString, searchRadius);
    
        APP_LOG_TAG_MS(noise, "DB") << records.size() << " records were read";
    
