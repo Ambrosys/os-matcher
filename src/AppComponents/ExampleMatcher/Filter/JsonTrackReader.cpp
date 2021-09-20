@@ -50,7 +50,7 @@ bool JsonTrackReader::operator()(
             headingList.emplace_back(data.at("course").get<Types::Track::Heading>());
         else
             headingList.emplace_back(NAN);
-        velocityList.emplace_back(data.at("speed").get<Types::Track::Velocity>() / 3.6);
+        velocityList.emplace_back(data.at("speed").get<Types::Track::Velocity>());
     }
 
     return true;

@@ -16,7 +16,7 @@ If possible, the following data should be provided for each point, too:
 
 - heading (does not have to be complete, points without a heading are allowed) (:class:`HeadingList <AppComponents::Common::Types::Track::HeadingList>`)
 - timestamp (:class:`TimeList <AppComponents::Common::Types::Track::TimeList>`)
-- velocity (:class:`VelocityList <AppComponents::Common::Types::Track::VelocityList>`)
+- velocity ( in m/s; :class:`VelocityList <AppComponents::Common::Types::Track::VelocityList>`)
 
 Street Map
 ----------

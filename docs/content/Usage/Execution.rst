@@ -26,10 +26,10 @@ You need a CSV file containing a track. The track file needs to have the followi
 The fields are:
 
 - date/time
-- latitude
-- longitude
+- latitude (same CRS as used street map)
+- longitude (same CRS as used street map)
 - heading
-- velocity
+- velocity (in m/s)
 
 We reference the file as ``in/track.csv`` in the following.
 

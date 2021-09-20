@@ -13,7 +13,7 @@ Input
 A JSON stream which contains a list with JSON objects. The JSON objects are having the following format:
 
    - pos_time
-      - text in the format "YYYY-MM-DDTHH:MM:SSZ"
+      - date/time text in the format "YYYY-MM-DDTHH:MM:SSZ"
    - latitude
       - decimal number
    - longitude
@@ -22,10 +22,9 @@ A JSON stream which contains a list with JSON objects. The JSON objects are havi
       - decimal number
       - describes the heading
       - if available
-   - speed [km/h]
+   - speed [m/s]
       - decimal number
       - describes the velocity
-      - will be converted to [m/s]
 
 - Example of the JSON stream:
 
