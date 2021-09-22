@@ -74,7 +74,7 @@ Now we can download, build and publish packages into our local registry.
 .. code:: bash
 
    mkdir conan/repositories
-   for package in amb-graph amb-log amb-thread amb-pipeline cli-app; do
+   for package in amb-graph amb-log amb-thread amb-pipeline cli-app lemon; do
        git clone https://github.com/Ambrosys/$package.git conan/repositories/$package
        conan remove --force "$package/*" --src --builds --packages
        conan remove --force "$package/*" --system-reqs
