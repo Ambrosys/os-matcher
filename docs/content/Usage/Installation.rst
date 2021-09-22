@@ -82,6 +82,8 @@ Now we can download, build and publish packages into our local registry.
        conan create conan/repositories/$package amb/stable --build $package --build missing
        conan upload "$package/*" --confirm --all --remote ambrosys
    done
+  
+In case that does not work, use  git@github.com:Ambrosys/$package.git instead of https://github.com/Ambrosys/$package.git
 
 Building |os-matcher|
 =====================
@@ -98,3 +100,4 @@ Now that all dependencies are at hand, we can finally build the |os-matcher| cod
    ninja -C build install
 
 You will find the binaries now in ``build/install``.
+git@github.com:Ambrosys/$package.git
