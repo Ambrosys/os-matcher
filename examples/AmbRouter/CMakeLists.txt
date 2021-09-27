@@ -3,12 +3,15 @@ set( SOURCES
         )
 
 add_executable( AmbRouter ${SOURCES} )
+# TODO: Needed workaround to make the examples conan buildable
+add_dependencies( AmbRouter test-if-git-HEAD-has-changed )
 
 target_link_libraries( AmbRouter
+        PUBLIC os-matcher
         PUBLIC Core::AppComponents
-        PUBLIC amb-log
-        PUBLIC amb-thread
-        PUBLIC cli-app
+        PUBLIC CONAN_PKG::amb-log
+        PUBLIC CONAN_PKG::amb-thread
+        PUBLIC CONAN_PKG::cli-app
         PUBLIC Progress
         )
 

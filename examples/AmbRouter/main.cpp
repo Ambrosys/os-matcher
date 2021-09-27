@@ -5,24 +5,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "AppComponents/Common/Writer/CsvRouteWriter.h"
-#include "AppComponents/Common/Writer/CsvSubRouteWriter.h"
-#include "AppComponents/Common/Writer/GeoJsonRouteWriter.h"
 #include "Context.h"
 
-#include <AppComponents/Common/Reader/CsvTrackReader.h>
-#include <AppComponents/Common/Reader/GeoJsonMapReader.h>
-#include <AppComponents/Common/Writer/GeoJsonMapWriter.h>
-#include <AppComponents/Common/Matcher/GraphBuilder.h>
-#include <AppComponents/Common/Writer/JsonRouteStatisticWriter.h>
-#include <AppComponents/Common/Reader/JsonTrackReader.h>
-#include <AppComponents/Common/Reader/OsmMapReader.h>
-#include <AppComponents/Common/Matcher/Router.h>
-#include <AppComponents/Common/Matcher/SamplingPointFinder.h>
 #include <OsMatcher/OsMatcherVersion.h>
 
-#include <Core/Common/Postgres/Connection.h>
-
+//#include <Core/Common/Postgres/Connection.h>
+#include <OsMatcher.h>
 #include <amblog/global.h>
 #include <ambpipeline/Filter.h>
 #include <ambpipeline/Pipeline.h>
@@ -35,7 +23,7 @@
 
 namespace {
 
-    using namespace AppComponents::Common;
+    using namespace osmatcher;
 
 //@{
 /// Filter signature definitions
@@ -158,7 +146,7 @@ namespace {
             auto extension = std::filesystem::path(options.fspIn).extension();
             if (extension == ".csv" || extension == ".txt")
             {
-                AppComponents::Common::Reader::CsvTrackReader{fspIn}(
+                Reader::CsvTrackReader{fspIn}(
                     context.track.timeList,
                     context.track.pointList,
                     context.track.headingList,
@@ -167,7 +155,7 @@ namespace {
                 APP_LOG(info) << "len(context.track.timeList) = " << context.track.timeList.size();
             }
             else if (extension == ".json")
-                AppComponents::Common::Reader::JsonTrackReader{fspIn}(
+                Reader::JsonTrackReader{fspIn}(
                     context.track.timeList,
                     context.track.pointList,
                     context.track.headingList,
@@ -215,7 +203,7 @@ namespace {
             mapIn = std::ifstream{options.mapIn};
             auto extension = std::filesystem::path(options.mapIn).extension();
             if (extension == ".geojson")
-                AppComponents::Common::Reader::GeoJsonMapReader{mapIn}(
+                Reader::GeoJsonMapReader{mapIn}(
                     context.street.segmentList,
                     context.street.nodePairList,
                     context.street.travelDirectionList,
@@ -290,7 +278,7 @@ namespace {
         if (!options.routeCsvOut.empty())
         {
             routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
-            AppComponents::Common::Writer::CsvRouteWriter{*routeCsvOut}(
+            Writer::CsvRouteWriter{*routeCsvOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -305,7 +293,7 @@ namespace {
         if (!options.subRouteCsvOut.empty())
         {
             subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
-            AppComponents::Common::Writer::CsvSubRouteWriter{*subRouteCsvOut}(
+            Writer::CsvSubRouteWriter{*subRouteCsvOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -320,7 +308,7 @@ namespace {
         if (!options.routeGeoJsonOut.empty())
         {
             routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
-            AppComponents::Common::Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
+            Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -335,7 +323,7 @@ namespace {
         if (!options.routeStatisticJsonOut.empty())
         {
             routeStatisticJsonOut = std::make_unique<std::ofstream>(options.routeStatisticJsonOut);
-            AppComponents::Common::Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
+            Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
                 context.routing.routingStatistic,
                 context.routing.samplingPointList,
                 context.track.timeList

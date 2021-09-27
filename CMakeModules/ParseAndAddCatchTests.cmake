@@ -12,7 +12,7 @@
 #    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake.modules/")              #
 # 2. make sure that you've enabled testing option for the project by the call:                     #
 #    enable_testing()                                                                              #
-# 3. add the lines to the script for testing target (sample CMakeLists.txt):                       #
+# 3. add the lines to the script for testing target (sample basic-setup.cmake):                       #
 #        project(testing_target)                                                                   #
 #        set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake.modules/")          #
 #        enable_testing()                                                                          #
@@ -33,7 +33,7 @@
 #                                                                                                  #
 #==================================================================================================#
 
-cmake_minimum_required(VERSION 2.8.8)
+cmake_minimum_required(VERSION 2.8.12)
 
 option(PARSE_CATCH_TESTS_VERBOSE "Print Catch to CTest parser debug messages" OFF)
 

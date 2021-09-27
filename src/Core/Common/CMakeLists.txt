@@ -5,8 +5,8 @@ set( SOURCES
     Time/Helper.cpp
     )
 
-add_core_library( Common ${SOURCES} )
-
+add_object_core_library( Common ${SOURCES} )
+target_compile_definitions(Common PUBLIC OBJ)
 
 set( THREADS_PREFER_PTHREAD_FLAG ON )
 find_package( Threads REQUIRED )
@@ -20,8 +20,14 @@ target_include_directories( Common
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
     )
 
+add_core_interface_library( CommonInterface )
+target_sources( CommonInterface INTERFACE $<TARGET_OBJECTS:Common>)
+target_include_directories(CommonInterface INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
+        $<INSTALL_INTERFACE:include/Common>
+        )
 
 install(
-    TARGETS Common
+    TARGETS Common CommonInterface
     ARCHIVE DESTINATION lib
 )

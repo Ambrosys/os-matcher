@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "map",
+"features": [
+{ "type": "Feature", "properties": { "Highway": "MotorwayLink", "Id": 255533610, "Offset": 0, "SourceNode": 33, "TargetNode": 81, "TravelDirection": "Forwards" }, "geometry": { "type": "LineString", "coordinates": [ [ 12.2573818, 52.2478026 ], [ 12.2576088, 52.2478396 ], [ 12.2578341, 52.2479096 ], [ 12.2580391, 52.248037 ], [ 12.258206, 52.2481594 ], [ 12.2584714, 52.2483771 ], [ 12.2586422, 52.2484897 ], [ 12.258878, 52.2485831 ], [ 12.2590848, 52.2486466 ], [ 12.2593417, 52.2486957 ], [ 12.2596512, 52.248717 ], [ 12.2600123, 52.248705 ], [ 12.2606444, 52.2486477 ], [ 12.2609493, 52.2486817 ] ] } },
+{ "type": "Feature", "properties": { "Highway": "Motorway", "Id": 184173406, "Offset": 0, "SourceNode": 47, "TargetNode": 81, "TravelDirection": "Forwards" }, "geometry": { "type": "LineString", "coordinates": [ [ 12.2568627, 52.2490353 ], [ 12.2609493, 52.2486817 ] ] } },
+{ "type": "Feature", "properties": { "Highway": "Motorway", "Id": 67407742, "Offset": 0, "SourceNode": 81, "TargetNode": 85, "TravelDirection": "Forwards" }, "geometry": { "type": "LineString", "coordinates": [ [ 12.2609493, 52.2486817 ], [ 12.2630089, 52.2484984 ] ] } }
+]
+}
