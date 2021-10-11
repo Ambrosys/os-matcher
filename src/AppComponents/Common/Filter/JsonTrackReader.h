@@ -15,7 +15,7 @@
 
 #include <istream>
 
-namespace AppComponents::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 class JsonTrackReader : public ambpipeline::Filter
 {
@@ -31,4 +31,4 @@ private:
     std::istream & input_;
 };
 
-}  // namespace AppComponents::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

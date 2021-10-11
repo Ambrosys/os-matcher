@@ -16,7 +16,7 @@
 
 #include <ostream>
 
-namespace Applications::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 class CsvSubRouteWriter : public ambpipeline::Filter
 {
@@ -34,4 +34,4 @@ private:
     std::ostream & output_;
 };
 
-}  // namespace Applications::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

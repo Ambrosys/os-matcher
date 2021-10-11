@@ -5,30 +5,30 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include "AppComponents/Common/Filter/CsvRouteWriter.h"
+#include "AppComponents/Common/Filter/CsvSubRouteWriter.h"
+#include "AppComponents/Common/Filter/GeoJsonRouteWriter.h"
 #include "Context.h"
-#include "Filter/CsvRouteWriter.h"
-#include "Filter/CsvSubRouteWriter.h"
-#include "Filter/GeoJsonRouteWriter.h"
 
+#include <AppComponents/Common/Filter/CsvTrackReader.h>
 #include <AppComponents/Common/Filter/GeoJsonMapReader.h>
 #include <AppComponents/Common/Filter/GeoJsonMapWriter.h>
 #include <AppComponents/Common/Filter/GraphBuilder.h>
 #include <AppComponents/Common/Filter/JsonRouteStatisticWriter.h>
+#include <AppComponents/Common/Filter/JsonTrackReader.h>
 #include <AppComponents/Common/Filter/OsmMapReader.h>
 #include <AppComponents/Common/Filter/Router.h>
 #include <AppComponents/Common/Filter/SamplingPointFinder.h>
-#include <AppComponents/ExampleMatcher/Filter/CsvTrackReader.h>
-#include <AppComponents/ExampleMatcher/Filter/JsonTrackReader.h>
 #include <OsMatcher/OsMatcherVersion.h>
 
 #include <Core/Common/Postgres/Connection.h>
 
+#include <amblog/global.h>
 #include <ambpipeline/Filter.h>
 #include <ambpipeline/Pipeline.h>
 #include <cliapp/CliApp.h>
 
 #include <filesystem>
-
 #include <fstream>
 #include <memory>
 #include <unordered_set>
@@ -194,9 +194,9 @@ int app(UserOptions options)
     {
         auto extension = std::filesystem::path(options.fspIn).extension();
         if (extension == ".csv" || extension == ".txt")
-            pipeline.add(AppComponents::ExampleMatcher::Filter::CsvTrackReader{fspIn});
+            pipeline.add(AppComponents::Common::Filter::CsvTrackReader{fspIn});
         else if (extension == ".json")
-            pipeline.add(AppComponents::ExampleMatcher::Filter::JsonTrackReader{fspIn});
+            pipeline.add(AppComponents::Common::Filter::JsonTrackReader{fspIn});
         else
         {
             APP_LOG(fatal) << "Fsp input file extension unknown: " << extension;
@@ -253,7 +253,7 @@ int app(UserOptions options)
     if (!options.routeCsvOut.empty())
     {
         routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
-        pipeline.add(Applications::ExampleMatcher::Filter::CsvRouteWriter{*routeCsvOut});
+        pipeline.add(AppComponents::Common::Filter::CsvRouteWriter{*routeCsvOut});
         ensure.emplace_back("CsvRouteWriter");
     }
 
@@ -261,7 +261,7 @@ int app(UserOptions options)
     if (!options.subRouteCsvOut.empty())
     {
         subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
-        pipeline.add(Applications::ExampleMatcher::Filter::CsvSubRouteWriter{*subRouteCsvOut});
+        pipeline.add(AppComponents::Common::Filter::CsvSubRouteWriter{*subRouteCsvOut});
         ensure.emplace_back("CsvSubRouteWriter");
     }
 
@@ -269,7 +269,7 @@ int app(UserOptions options)
     if (!options.routeGeoJsonOut.empty())
     {
         routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
-        pipeline.add(Applications::ExampleMatcher::Filter::GeoJsonRouteWriter{*routeGeoJsonOut});
+        pipeline.add(AppComponents::Common::Filter::GeoJsonRouteWriter{*routeGeoJsonOut});
         ensure.emplace_back("GeoJsonRouteWriter");
     }
 

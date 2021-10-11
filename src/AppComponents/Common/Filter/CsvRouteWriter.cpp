@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <sstream>
 
-namespace Applications::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 CsvRouteWriter::CsvRouteWriter(std::ostream & output) : Filter("CsvRouteWriter"), output_(output)
 {
@@ -81,4 +81,4 @@ bool CsvRouteWriter::operator()(
     return true;
 }
 
-}  // namespace Applications::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

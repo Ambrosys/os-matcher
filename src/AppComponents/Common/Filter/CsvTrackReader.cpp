@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <AppComponents/ExampleMatcher/Filter/CsvTrackReader.h>
+#include <AppComponents/Common/Filter/CsvTrackReader.h>
 
 #include <Core/Common/Time/Helper.h>
 
@@ -17,7 +17,7 @@
 #include <fstream>
 #include <locale>
 
-namespace AppComponents::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 CsvTrackReader::CsvTrackReader(std::istream & input) : Filter("CsvTrackReader"), input_(input)
 {
@@ -60,4 +60,4 @@ bool CsvTrackReader::operator()(
     return true;
 }
 
-}  // namespace AppComponents::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

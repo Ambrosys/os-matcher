@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <AppComponents/ExampleMatcher/Filter/JsonTrackReader.h>
+#include <AppComponents/Common/Filter/JsonTrackReader.h>
 
 #include <Core/Common/Time/Helper.h>
 
 #include <amblog/global.h>
 #include <nlohmann/json.hpp>
 
-namespace AppComponents::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 JsonTrackReader::JsonTrackReader(std::istream & input) : Filter("JsonTrackReader"), input_(input)
 {
@@ -56,4 +56,4 @@ bool JsonTrackReader::operator()(
     return true;
 }
 
-}  // namespace AppComponents::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

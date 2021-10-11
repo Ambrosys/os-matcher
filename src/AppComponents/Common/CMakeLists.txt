@@ -1,4 +1,9 @@
 set( SOURCE
+    Filter/CsvRouteWriter.cpp
+    Filter/CsvSubRouteWriter.cpp
+    Filter/CsvTrackReader.cpp
+    Filter/GeoJsonRouteWriter.cpp
+    Filter/JsonTrackReader.cpp
     Filter/GeoJsonTrackWriter.cpp
     Filter/GeoJsonMapWriter.cpp
     Filter/GeoJsonMapReader.cpp

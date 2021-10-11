@@ -11,7 +11,7 @@
 
 #include <amblog/global.h>
 
-namespace Applications::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 CsvSubRouteWriter::CsvSubRouteWriter(std::ostream & output) : Filter("CsvSubRouteWriter"), output_(output)
 {
@@ -62,4 +62,4 @@ bool CsvSubRouteWriter::operator()(
     return true;
 }
 
-}  // namespace Applications::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter

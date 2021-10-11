@@ -13,7 +13,7 @@
 
 #include <nlohmann/json.hpp>
 
-namespace Applications::ExampleMatcher::Filter {
+namespace AppComponents::Common::Filter {
 
 GeoJsonRouteWriter::GeoJsonRouteWriter(std::ostream & output) : Filter("GeoJsonRouteWriter"), output_(output)
 {
@@ -68,4 +68,4 @@ bool GeoJsonRouteWriter::operator()(
     return true;
 }
 
-}  // namespace Applications::ExampleMatcher::Filter
+}  // namespace AppComponents::Common::Filter
