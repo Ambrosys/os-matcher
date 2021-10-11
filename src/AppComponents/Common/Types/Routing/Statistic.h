@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <AppComponents/Common/Filter/Routing/Types.h>
+#include <AppComponents/Common/Matcher/Routing/Types.h>
 
 #include <unordered_map>
 #include <unordered_set>
@@ -27,8 +27,8 @@ struct CalculatedRouteStatistic
  */
 struct RoutingStatistic
 {
-    std::unordered_map<Filter::Routing::SamplingPointsSelection, CalculatedRouteStatistic> calculated;
-    std::vector<std::pair<Filter::Routing::SamplingPointsSelection, bool>> visited;
+    std::unordered_map<Matcher::Routing::SamplingPointsSelection, CalculatedRouteStatistic> calculated;
+    std::vector<std::pair<Matcher::Routing::SamplingPointsSelection, bool>> visited;
 };
 
 }  // namespace AppComponents::Common::Types::Routing
