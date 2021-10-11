@@ -12,6 +12,8 @@ To run the example application of the |os-matcher|, you need some data.
 Database
 --------
 
+.. TODO: #53 new explanation for an example
+
 You need a running OpenStreetMap database. We reference the server and the port as ``$DB_SERVER`` and ``$DB_PORT`` in the following.
 
 Track

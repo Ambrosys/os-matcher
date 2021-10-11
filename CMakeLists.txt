@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.7 )
 
 option ( CMAKE_DEBUG_OUTPUT "Enable if you want additional output for cmake's configure stage" OFF )
 option ( BUILD_LIBRARY "Enable if you want to build the library (and applications)" ON )
-option ( BUILD_APPLICATIONS "Enable if you want to build applications" ON )
+option ( BUILD_EXAMPLES "Enable if you want to build example applications" ON )
 option ( BUILD_DOCS "Enable if you want to build docs" OFF )
 
 if ( ${CMAKE_DEBUG_OUTPUT} )
@@ -78,8 +78,8 @@ if ( ${BUILD_LIBRARY} )
 
     add_subdirectory( src )
 
-    if ( ${BUILD_APPLICATIONS} )
-        add_subdirectory( apps )
+    if ( ${BUILD_EXAMPLES} )
+        add_subdirectory( examples )
     endif ()
 endif ()
 

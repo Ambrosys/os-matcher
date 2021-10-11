@@ -1,12 +1,7 @@
-/*
- * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
- *
- * SPDX-License-Identifier: Apache-2.0
- */
-
 #pragma once
 
 #include <AppComponents/Common/Types/Graph/EdgeMap.h>
+#include <AppComponents/Common/Types/Graph/Graph.h>
 #include <AppComponents/Common/Types/Graph/LemonDigraph.h>
 #include <AppComponents/Common/Types/Routing/Edge.h>
 #include <AppComponents/Common/Types/Routing/SamplingPoint.h>
@@ -15,7 +10,6 @@
 #include <AppComponents/Common/Types/Street/NodePair.h>
 #include <AppComponents/Common/Types/Street/Segment.h>
 #include <AppComponents/Common/Types/Street/TravelDirection.h>
-#include <AppComponents/Common/Types/Track/Altitude.h>
 #include <AppComponents/Common/Types/Track/Heading.h>
 #include <AppComponents/Common/Types/Track/Point.h>
 #include <AppComponents/Common/Types/Track/Time.h>
@@ -27,7 +21,6 @@ struct Context
     {
         AppComponents::Common::Types::Track::TimeList timeList;
         AppComponents::Common::Types::Track::PointList pointList;
-        AppComponents::Common::Types::Track::AltitudeList altitudeList;
         AppComponents::Common::Types::Track::HeadingList headingList;
         AppComponents::Common::Types::Track::VelocityList velocityList;
     } track;

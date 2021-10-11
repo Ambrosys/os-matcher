@@ -1,7 +1,7 @@
 ---
 Checks:          '-*,boost-*,bugprone-*,clang-analyzer-core*,clang-analyzer-cplusplus*,modernize-*,performance-*,readability-*,google-*,-google-runtime-references,-readability-else-after-return,-readability-braces-around-statements,-google-readability-braces-around-statements,-google-readability-namespace-comments'
 WarningsAsErrors: ''
-HeaderFilterRegex: 'src\/.* | apps\/.*'
+HeaderFilterRegex: 'src\/.* | examples\/.*'
 AnalyzeTemporaryDtors: false
 FormatStyle:     none
 ...

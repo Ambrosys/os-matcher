@@ -37,7 +37,7 @@ os-matcher-app-build:
         - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
         - ninja -C build test-if-git-HEAD-has-changed
         - ninja -C build install
-        - build/install/bin/ExampleMatcher -h
+        - build/install/bin/AmbRouter -h
     cache:
         paths:
             - ~/.conan/

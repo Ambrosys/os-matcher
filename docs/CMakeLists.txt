@@ -11,7 +11,7 @@ set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
 set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 set(DOXYGEN_STRIP_FROM_PATH ${PROJECT_SOURCE_DIR})
 set(APPLICATIONS_SOURCE ${CMAKE_CURRENT_BINARY_DIR}/../src)
-if ( ${BUILD_LIBRARY} AND ${BUILD_APPLICATIONS} )
+if ( ${BUILD_LIBRARY} AND ${BUILD_EXAMPLES} )
     set(APPLICATIONS_SYMLINK ${CMAKE_CURRENT_SOURCE_DIR}/_binaries)
 endif ()
 set(DOXYGEN_XML_PATCH_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/patch-doxygen-xml-output.sh)
@@ -26,17 +26,17 @@ set(DOC_OTHER_DEPENDENCIES
     ${APPLICATIONS_SYMLINK}
     )
 set(NEEDED_APPLICATIONS
-    ExampleMatcher
-    )
+        AmbRouter
+        )
 
 find_package(Doxygen REQUIRED)
 find_package(Sphinx REQUIRED)
 
-if ( ${BUILD_LIBRARY} AND ${BUILD_APPLICATIONS} )
+if ( ${BUILD_LIBRARY} AND ${BUILD_EXAMPLES}  )
     # Find all the public headers
     # TODO: Seems not to work (when changing f.ex. AppComponents/Common/Filter/OsmMapReader.h,
     #       Doxygen does not rerun).
-    get_target_property(PUBLIC_HEADER_DIR_1 ExampleMatcher INTERFACE_INCLUDE_DIRECTORIES)
+    get_target_property(PUBLIC_HEADER_DIR_1 AmbRouter INTERFACE_INCLUDE_DIRECTORIES)
     file(GLOB_RECURSE OS_MATCHER_PUBLIC_HEADERS CONFIGURE_DEPENDS
         ${PUBLIC_HEADER_DIR_1}/*.h
         )
@@ -62,7 +62,7 @@ add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
 # Nice named target so we can run the job easily
 add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
 
-if ( ${BUILD_LIBRARY} AND ${BUILD_APPLICATIONS} )
+if ( ${BUILD_LIBRARY} AND ${BUILD_EXAMPLES} )
     add_custom_command(OUTPUT ${APPLICATIONS_SYMLINK}
         DEPENDS ${NEEDED_APPLICATIONS}
         COMMAND ${CMAKE_COMMAND} -E create_symlink ${APPLICATIONS_SOURCE} ${APPLICATIONS_SYMLINK}
