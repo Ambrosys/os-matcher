@@ -88,7 +88,9 @@ pages:
         GITHUB_REPO: git@github.com:Ambrosys/os-matcher.git
     before_script:
         - apt-get update
-        - apt-get install -y git-all
+        # workaround until https://bugs.launchpad.net/ubuntu/+source/magit/+bug/1906365 is solved
+        - apt-get install -y git-all || true
+        - dpkg --configure -a
         - git --version
         - mkdir /root/.ssh
         - cp $GITHUB_DEPLOY_KEY /root/.ssh/id_github
