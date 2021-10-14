@@ -1,0 +1,23 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration:
+
+Struct SamplingPointRouter::Configuration
+=========================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Matcher::Routing::SamplingPointRouter::Configuration
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

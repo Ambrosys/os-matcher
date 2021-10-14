@@ -1,0 +1,106 @@
+
+.. _program_listing_file_src_Core_Common_Geometry_Helper.h:
+
+Program Listing for File Helper.h
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_Core_Common_Geometry_Helper.h>` (``src/Core/Common/Geometry/Helper.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include <Core/Common/Geometry/NumericConstants.h>
+   #include <Core/Common/Geometry/Types.h>
+   
+   #include <boost/geometry/algorithms/distance.hpp>
+   #include <boost/geometry/algorithms/length.hpp>
+   #include <boost/geometry/algorithms/within.hpp>
+   
+   #include <cmath>
+   #include <utility>
+   
+   namespace Core::Common::Geometry {
+   
+   struct LineStringProjectionResult
+   {
+       Point projectionPoint;
+       double distanceToSegment;        
+       double distanceAlongLineString;  
+       double segmentHeading;           
+       bool offLineString;              
+   };
+   
+   std::pair<Point, double> project(Point const & p, Segment const & segment);
+   
+   std::pair<Point, double> snap(Point const & p, Segment segment);
+   
+   Point reverseHaversine(Point const & p, double bearing, double distanceMeter);
+   
+   Box buffer(Box const & box, double distanceMeter);
+   
+   template <typename G1>
+   auto geoLength(G1 const & g1)
+   {
+       return boost::geometry::length(g1) * equatorRadiusMeter;
+   }
+   
+   template <typename G1, typename G2>
+   ValueType geoDistance(G1 const & g1, G2 const & g2)
+   {
+       return boost::geometry::distance(g1, g2) * equatorRadiusMeter;
+   }
+   
+   ValueType geoDistance(Point const & g1, Point const & g2);
+   
+   std::tuple<ValueType, Point, double> geoDistance(Point const & g1, Segment const & g2);
+   
+   double heading(Point const & p1, Point const & p2);
+   
+   double heading(Segment const & segment);
+   
+   double normalizeAngle(double angle);
+   
+   double headingDiff(double a, double b);
+   
+   double absHeadingDiff(double a, double b);
+   
+   double reversedHeading(double heading);
+   
+   template <typename T>
+   constexpr auto rad(T degree)
+   {
+       return degree * piover180;
+   }
+   
+   template <typename T>
+   constexpr auto degree(T rad)
+   {
+       return rad / piover180;
+   }
+   
+   LineStringProjectionResult projectOntoLineString(Point const & point, LineString const & lineString);
+   
+   double relativeDistanceAlongLineString(LineString const & lineString, Point const & point);
+   
+   double angleBetweenSegments(Segment const & segment1, Segment const & segment2);
+   
+   template <typename Geometry1, typename Geometry2>
+   bool within(Geometry1 const & geometry1, Geometry2 const & geometry2)
+   {
+       return boost::geometry::within(geometry1, geometry2);
+   }
+   
+   std::vector<Core::Common::Geometry::Point> trimmed(std::vector<Core::Common::Geometry::Point> const & points, double trimLeft, double trimRight);
+   
+   std::vector<Core::Common::Geometry::Point> flattened_simple(std::vector<Core::Common::Geometry::Point> const & points, size_t keepEachNthPoint);
+   
+   }  // namespace Core::Common::Geometry

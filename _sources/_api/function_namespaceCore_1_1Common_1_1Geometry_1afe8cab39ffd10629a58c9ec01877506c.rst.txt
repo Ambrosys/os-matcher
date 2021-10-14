@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c:
+
+Function Core::Common::Geometry::flattened_simple
+=================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::flattened_simple(std::vector<Core::Common::Geometry::Point> const&, size_t const)

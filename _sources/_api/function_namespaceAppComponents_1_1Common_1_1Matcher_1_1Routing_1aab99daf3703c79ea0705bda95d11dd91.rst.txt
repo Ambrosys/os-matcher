@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aab99daf3703c79ea0705bda95d11dd91:
+
+Function AppComponents::Common::Matcher::Routing::geoDistance
+=============================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::geoDistance(Core::Common::Geometry::LineString)

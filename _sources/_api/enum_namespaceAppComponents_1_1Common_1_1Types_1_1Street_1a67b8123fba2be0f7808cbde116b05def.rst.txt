@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a67b8123fba2be0f7808cbde116b05def:
+
+Enum HighwayType
+================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Street_Highway.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: AppComponents::Common::Types::Street::HighwayType

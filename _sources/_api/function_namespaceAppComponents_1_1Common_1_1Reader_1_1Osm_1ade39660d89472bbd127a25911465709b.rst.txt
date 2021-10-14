@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1ade39660d89472bbd127a25911465709b:
+
+Function AppComponents::Common::Reader::Osm::toHighway
+======================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::Osm::toHighway(std::string const&)

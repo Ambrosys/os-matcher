@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aaee6ab7819778719f42729a1a9cabf49:
+
+Typedef AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::ClusteredRouteMatrix
+==================================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::ClusteredRouteMatrix

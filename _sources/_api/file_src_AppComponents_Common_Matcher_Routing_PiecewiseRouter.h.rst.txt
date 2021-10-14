@@ -1,0 +1,65 @@
+
+.. _file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h:
+
+File PiecewiseRouter.h
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing>` (``src/AppComponents/Common/Matcher/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Routing/PiecewiseRouter.h``)
+---------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Routing/Edge.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Edge.h`)
+
+- ``AppComponents/Common/Types/Routing/SamplingPoint.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_SamplingPoint.h`)
+
+- ``AppComponents/Common/Types/Routing/Statistic.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Statistic.h`)
+
+- ``AppComponents/Common/Types/Track/Time.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Time.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter`
+

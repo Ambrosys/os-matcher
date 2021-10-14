@@ -1,0 +1,77 @@
+
+.. _file_src_AppComponents_Common_Matcher_Router.h:
+
+File Router.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher>` (``src/AppComponents/Common/Matcher``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Router.h``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Router.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Matcher/Routing/Types.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_Types.h`)
+
+- ``AppComponents/Common/Types/Graph/EdgeMap.h`` (:ref:`file_src_AppComponents_Common_Types_Graph_EdgeMap.h`)
+
+- ``AppComponents/Common/Types/Graph/Graph.h`` (:ref:`file_src_AppComponents_Common_Types_Graph_Graph.h`)
+
+- ``AppComponents/Common/Types/Routing/Edge.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Edge.h`)
+
+- ``AppComponents/Common/Types/Routing/SamplingPoint.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_SamplingPoint.h`)
+
+- ``AppComponents/Common/Types/Routing/Statistic.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Statistic.h`)
+
+- ``AppComponents/Common/Types/Street/Segment.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Segment.h`)
+
+- ``AppComponents/Common/Types/Track/Time.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Time.h`)
+
+- ``AppComponents/Common/Types/Track/Velocity.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Velocity.h`)
+
+- ``Core/Graph/Routing/Algorithm.h`` (:ref:`file_src_Core_Graph_Routing_Algorithm.h`)
+
+- ``ambpipeline/Filter.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Router`
+

@@ -1,0 +1,13 @@
+.. _exhale_enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f:
+
+Enum RouteClusterPreference
+===========================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Types.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: AppComponents::Common::Matcher::Routing::RouteClusterPreference

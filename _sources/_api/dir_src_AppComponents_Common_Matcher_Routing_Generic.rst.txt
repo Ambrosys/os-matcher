@@ -1,0 +1,23 @@
+.. _dir_src_AppComponents_Common_Matcher_Routing_Generic:
+
+
+Directory Generic
+=================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing>` (``src/AppComponents/Common/Matcher/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``src/AppComponents/Common/Matcher/Routing/Generic``
+
+
+Files
+-----
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.cpp`
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.h`
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.cpp`
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h`
+
+

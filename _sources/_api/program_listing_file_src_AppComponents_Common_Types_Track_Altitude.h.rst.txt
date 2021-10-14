@@ -1,0 +1,32 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Track_Altitude.h:
+
+Program Listing for File Altitude.h
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Track_Altitude.h>` (``src/AppComponents/Common/Types/Track/Altitude.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include <vector>
+   
+   namespace AppComponents::Common::Types::Track {
+   
+   using Altitude = double;
+   
+   struct AltitudeList : public std::vector<Altitude>
+   {
+   };
+   
+   }  // namespace AppComponents::Common::Types::Track

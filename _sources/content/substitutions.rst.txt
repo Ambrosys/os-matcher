@@ -1,0 +1,1 @@
+.. |os-matcher| replace:: *OS-Matcher*

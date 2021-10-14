@@ -1,0 +1,112 @@
+
+.. _file_src_AppComponents_Common_Types_Routing_Edge.h:
+
+File Edge.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Routing>` (``src/AppComponents/Common/Types/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Routing/Edge.h``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Routing_Edge.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Common/Geometry/Types.h`` (:ref:`file_src_Core_Common_Geometry_Types.h`)
+
+- ``Core/Graph/Graph.h`` (:ref:`file_src_Core_Graph_Graph.h`)
+
+- ``cstddef``
+
+- ``memory``
+
+- ``numeric``
+
+- ``optional``
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Comparators.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Types.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1Route`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RouteNode`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidateSelection`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointSelection`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SubRoute`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ac9fa4e768c35390a54580ce8f9fd4219`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a0f1b2cb11433ef4e9326ad7728664c09`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79`
+

@@ -1,0 +1,67 @@
+
+.. _file_src_Core_Graph_Routing_PathView.h:
+
+File PathView.h
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Graph_Routing>` (``src/Core/Graph/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Graph/Routing/PathView.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Graph_Routing_PathView.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Graph/Graph.h`` (:ref:`file_src_Core_Graph_Graph.h`)
+
+- ``boost/iterator/iterator_facade.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_Core_Graph_Routing_Algorithm.h`
+
+- :ref:`file_src_Core_Graph_Routing_Dijkstra.h`
+
+- :ref:`file_src_Core_Graph_Routing_PathView.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Graph__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1PathView`
+
+- :ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1PathViewImpl`
+
+- :ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1PathViewIterator`
+

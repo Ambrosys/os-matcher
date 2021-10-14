@@ -1,0 +1,58 @@
+
+.. _file_src_AppComponents_Common_Reader_Osm_Conversion.h:
+
+File Conversion.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Reader_Osm>` (``src/AppComponents/Common/Reader/Osm``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Reader/Osm/Conversion.h``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Reader_Osm_Conversion.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Street/Highway.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Highway.h`)
+
+- ``AppComponents/Common/Types/Street/TravelDirection.h`` (:ref:`file_src_AppComponents_Common_Types_Street_TravelDirection.h`)
+
+- ``string``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.cpp`
+
+- :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Reader__Osm`
+

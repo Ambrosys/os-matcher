@@ -1,0 +1,583 @@
+:orphan:
+
+
+Full API
+========
+
+Directories
+***********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Matcher.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Matcher_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Matcher_Routing_Generic.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Reader.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Reader_Osm.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Graph.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Street.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Types_Track.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Writer.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Geometry.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Postgres.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Common_Time.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Graph.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Core_Graph_Routing.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Hash.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Map.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_Progress.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_Generic_String.rst
+
+Files
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Algorithm.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Altitude.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Comparators.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Comparators.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Postgres_Connection.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_Osm_Conversion.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Conversion.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_Osm_Conversion.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Conversion.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Csv.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvRouteWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvSubRouteWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_CsvTrackReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_CsvTrackReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Dijkstra.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_Dijkstra.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_Edge.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_EdgeMap.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Map_FlipMap.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_GeoJsonMapReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonMapWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_Graph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Graph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_GraphBuilder.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_GraphBuilder.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Heading.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Time_Helper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Postgres_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Time_Helper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_Highway.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_JsonTrackReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_JsonTrackReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_LemonDigraph.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Graph_LemonDigraph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_LemonDigraph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Hash_MakeHashable.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_NodePair.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_NumericConstants.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_OsmMapReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_OsmMapReader.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_PathView.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Graph_Routing_PathView.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Point.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Progress_Progress.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_Progress_Progress.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Router.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Router.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_SamplingPoint.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_SamplingPointFinder.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_Segment.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Split.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Routing_Statistic.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Time.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Street_TravelDirection.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Generic_String_Trim.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Types.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Matcher_Routing_Types.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_Core_Common_Geometry_Types.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Types_Track_Velocity.h.rst

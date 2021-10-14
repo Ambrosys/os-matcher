@@ -1,0 +1,26 @@
+.. _exhale_class_classCore_1_1Graph_1_1LemonDigraph:
+
+Class LemonDigraph
+==================
+
+- Defined in :ref:`file_src_Core_Graph_LemonDigraph.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public Core::Graph::Graph`` (:ref:`exhale_class_classCore_1_1Graph_1_1Graph`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Core::Graph::LemonDigraph
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

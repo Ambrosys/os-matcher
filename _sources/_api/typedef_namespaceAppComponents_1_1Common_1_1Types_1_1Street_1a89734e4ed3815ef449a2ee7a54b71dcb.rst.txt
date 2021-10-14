@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a89734e4ed3815ef449a2ee7a54b71dcb:
+
+Typedef AppComponents::Common::Types::Street::TravelDirectionList
+=================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Street_TravelDirection.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Types::Street::TravelDirectionList

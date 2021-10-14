@@ -1,0 +1,82 @@
+
+.. _file_src_AppComponents_Common_Types_Street_Segment.h:
+
+File Segment.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Street>` (``src/AppComponents/Common/Types/Street``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Street/Segment.h``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Street_Segment.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Common/Geometry/Types.h`` (:ref:`file_src_Core_Common_Geometry_Types.h`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_SamplingPointFinder.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_GeoJsonMapReader.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Street`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Street_1_1Segment`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e`
+

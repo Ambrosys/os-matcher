@@ -1,0 +1,71 @@
+
+.. _file_src_Generic_String_Trim.h:
+
+File Trim.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Generic_String>` (``src/Generic/String``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Generic/String/Trim.h``)
+------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Generic_String_Trim.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``algorithm``
+
+- ``cctype``
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_Generic_String_Csv.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Generic__String`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1a2c0b64cb865c0c34cd1b739636f7c2d8`
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1a97d168fa959072bc21e37191616ac707`
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1aec057e190a4f54e9310cf401631faa9b`
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1af9d07af744b9c81a905c2044442545e7`
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1a3b48c5295cf52a14f590bb44ab169d93`
+
+- :ref:`exhale_function_namespaceGeneric_1_1String_1ab3dcb33deeccc5fdeed185170bcc9769`
+

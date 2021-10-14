@@ -1,0 +1,85 @@
+
+.. _file_src_Core_Common_Geometry_Helper.cpp:
+
+File Helper.cpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common_Geometry>` (``src/Core/Common/Geometry``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Common/Geometry/Helper.cpp``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Common_Geometry_Helper.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+- ``boost/geometry/strategies/spherical/distance_haversine.hpp``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common__Geometry`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1423bb7e832faf33084101b5c4e38e09`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1df610600fe9764d367a2e621f30002c`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1e296bf16ebcfcf6504de30d6f4684e1`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afc42fb42e0c128af4bbd9a6ff0a2f1fb`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1b68d0ba5810a3f793e41ce6c5b6f3df`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ad24d6a3cc02870a752a3fc443efbc6e2`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1acff476e8d69f05e2f4f2613f7f5a3e54`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a4a8b73b0e0053d462c5d37b34c058792`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a2fe8eabf7fc79f09e7501a677055f270`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1aec1ee754e14b29e04ff94a63785fe85f`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a6084027d4f1e974ed84b3a121831255a`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1adafe5e2bdab8f602851dc937ed16ea8e`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a2151fbc364765276e10915d74d986d7a`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a34536817e710658ad9d4fc569cab424c`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1aed424eb5a026244ab4716de67aa30367`
+

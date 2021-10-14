@@ -1,0 +1,33 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Track_Time.h:
+
+Program Listing for File Time.h
+===============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Track_Time.h>` (``src/AppComponents/Common/Types/Track/Time.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include <chrono>
+   #include <vector>
+   
+   namespace AppComponents::Common::Types::Track {
+   
+   using Time = std::chrono::system_clock::time_point;
+   
+   struct TimeList : public std::vector<Time>
+   {
+   };
+   
+   }  // namespace AppComponents::Common::Types::Track

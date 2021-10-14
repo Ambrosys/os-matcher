@@ -1,0 +1,63 @@
+
+.. _file_src_AppComponents_Common_Matcher_Routing_Helper.cpp:
+
+File Helper.cpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing>` (``src/AppComponents/Common/Matcher/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Routing/Helper.cpp``)
+--------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Routing_Helper.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Matcher/Routing/Helper.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.h`)
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher__Routing`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a6074bc8ad6068bc26f7b036e0f32c590`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aceca6959ea78e00f5eb22c9ee63f96c8`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a7d3a2e3af7041a822ef6c8952848016a`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a582725e2f4b2baf8944ccefaa0ac282c`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aab99daf3703c79ea0705bda95d11dd91`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1abf3a9ffe70aa83f4112735ddc3a47deb`
+

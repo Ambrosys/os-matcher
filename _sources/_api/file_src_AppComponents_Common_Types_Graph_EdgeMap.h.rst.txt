@@ -1,0 +1,90 @@
+
+.. _file_src_AppComponents_Common_Types_Graph_EdgeMap.h:
+
+File EdgeMap.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Graph>` (``src/AppComponents/Common/Types/Graph``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Graph/EdgeMap.h``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Graph_EdgeMap.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Graph/Graph.h`` (:ref:`file_src_Core_Graph_Graph.h`)
+
+- ``cstddef``
+
+- ``optional``
+
+- ``unordered_map``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_GraphBuilder.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Comparators.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Graph`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Graph_1_1GraphTriplePair`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Graph_1_1StreetEdge`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1affd879ea56a962cc9a45000b7953b519`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1aa31fd81e46787200e98ae39a0af7ffd8`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a0962f43a803190e87b543edbf6ae0da8`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a11299f69d926724f04d6da9b392bd0d5`
+

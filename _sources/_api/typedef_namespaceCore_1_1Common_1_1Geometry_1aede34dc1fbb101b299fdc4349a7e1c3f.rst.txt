@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceCore_1_1Common_1_1Geometry_1aede34dc1fbb101b299fdc4349a7e1c3f:
+
+Typedef Core::Common::Geometry::Segment
+=======================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: Core::Common::Geometry::Segment

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a20705e2542cf5f6c7b87ea54a68aedcc:
+
+Function AppComponents::Common::Matcher::Routing::routeResultToString
+=====================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::routeResultToString(RouteResult const)

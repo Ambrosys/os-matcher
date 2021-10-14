@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>Input data &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../../../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../../../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../../../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/>
+        <link rel="up" title="Data selection" href="Index.html"/>
+        <link rel="next" title="Overview" href="../../TrackPointProjection/Overview.html"/>
+        <link rel="prev" title="Data structures" href="DataStructures.html"/> 
+  <script src="../../../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../../../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../../../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Usage/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Installation.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Installation.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Installation.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Usage/Execution.html#track">Track</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Usage/Execution.html#execution">Execution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Index.html">Data selection</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">DETAILS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Details/Filters/Index.html">Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/CsvTrackReader.html">CsvTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/JsonTrackReader.html">JsonTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/GeoJsonMapReader.html">GeoJsonMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/OsmMapReader.html">OsmMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/OsmMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/OsmMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/OsmMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/CsvRouteWriter.html">CsvRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/CsvSubRouteWriter.html">CsvSubRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvSubRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvSubRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvSubRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/GeoJsonRouteWriter.html">GeoJsonRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/CsvTrackWriter.html">CsvTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/CsvTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/GeoJsonTrackWriter.html">GeoJsonTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/GeoJsonMapWriter.html">GeoJsonMapWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/GeoJsonMapWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html">JsonRouteStatisticWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html#output">Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html#def-samplingpoint-json">Def: SamplingPoint-JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html#def-samplingpointcandidate-json">Def: SamplingPointCandidate-JSON</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Details/Filters/JsonRouteStatisticWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_api/library_root.html">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_api/library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_api/library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_api/library_root.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_api/library_root.html#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+          <li><a href="Index.html">Data selection</a> &raquo;</li>
+    <li>Input data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/content/OperationalData/DataSelection/InputData.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+    <hr class="before-stealth-btn clear-both"/>
+    
+      <a href="../../TrackPointProjection/Overview.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
+          <span class="stealth-btn-text">Next</span>
+          <span class="fa fa-arrow-circle-right"/>
+      </a>
+    
+    
+      <a href="DataStructures.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
+          <span class="fa fa-arrow-circle-left"/>
+          <span class="stealth-btn-text">Previous</span>
+      </a>
+    
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="input-data">
+<h1>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h1>
+<p>To be able to perform the routing, we need a minimum set of data. When the input filters are not able to provide all needed data intermediate filters could be used to reconstruct the missing entries if possible. Additional data can be provided to increase the accuracy.</p>
+<div class="section" id="data-overview">
+<h2>Data overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="track">
+<h3>Track<a class="headerlink" href="#track" title="Permalink to this headline">¶</a></h3>
+<p>To perform the routing or matching, the filters have to provide at least two coordinate pairs (latitude and longitude; <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#_CPPv4N13AppComponents6Common5Types5Track9PointListE" title="AppComponents::Common::Types::Track::PointList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">PointList</span></code></a>).</p>
+<p>If possible, the following data should be provided for each point, too:</p>
+<ul class="simple">
+<li><p>heading (does not have to be complete, points without a heading are allowed) (<a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#_CPPv4N13AppComponents6Common5Types5Track11HeadingListE" title="AppComponents::Common::Types::Track::HeadingList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">HeadingList</span></code></a>)</p></li>
+<li><p>timestamp (<a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#_CPPv4N13AppComponents6Common5Types5Track8TimeListE" title="AppComponents::Common::Types::Track::TimeList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TimeList</span></code></a>)</p></li>
+<li><p>velocity (<a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#_CPPv4N13AppComponents6Common5Types5Track12VelocityListE" title="AppComponents::Common::Types::Track::VelocityList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">VelocityList</span></code></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="street-map">
+<h3>Street Map<a class="headerlink" href="#street-map" title="Permalink to this headline">¶</a></h3>
+<p>To built the routable street graph, the filters have to provide the following data <strong>*for each street item*</strong>:</p>
+<ul class="simple">
+<li><p>coordinates (at least two coordinate pairs) (<a class="reference internal" href="../../../_api/typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e.html#_CPPv4N13AppComponents6Common5Types6Street11SegmentListE" title="AppComponents::Common::Types::Street::SegmentList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">SegmentList</span></code></a>)</p></li>
+<li><p>identifiers for the two endpoints (junctions) (<a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#_CPPv4N13AppComponents6Common5Types6Street12NodePairListE" title="AppComponents::Common::Types::Street::NodePairList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">NodePairList</span></code></a>)</p></li>
+<li><p>allowed travel direction (forwards, backwards, both) (<a class="reference internal" href="../../../_api/typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a89734e4ed3815ef449a2ee7a54b71dcb.html#_CPPv4N13AppComponents6Common5Types6Street19TravelDirectionListE" title="AppComponents::Common::Types::Street::TravelDirectionList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TravelDirectionList</span></code></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="input-filter">
+<h2>Input filter<a class="headerlink" href="#input-filter" title="Permalink to this headline">¶</a></h2>
+<p>The data must be provided by one or more filters.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <span class="xref std std-ref">filter</span> to learn how to implement and plug in a filter.</p>
+</div>
+<div class="section" id="id1">
+<h3>Track<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="trackfig">
+<a class="with-shadow reference internal image-reference" href="../../../_images/Track.drawio.png"><img alt="Track data" class="with-shadow" src="../../../_images/Track.drawio.png" style="width: 817.0px; height: 247.5px;"/></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Track data</span><a class="headerlink" href="#trackfig" title="Permalink to this image">¶</a></p>
+</div>
+<p>In <a class="reference internal" href="#trackfig"><span class="std std-numref">Fig. 2 Track data</span></a> you see an example track and the representing data lists which have to be filled by the filters.</p>
+<p>For a track to be complete, the following requirements have to be fulfilled by one or more filters:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">PointList</span></code></dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#_CPPv4N13AppComponents6Common5Types5Track9PointListE" title="AppComponents::Common::Types::Track::PointList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">PointList</span></code></a></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">HeadingList</span></code> or <code class="docutils literal notranslate"><span class="pre">PartialHeadingList</span></code> (both optional)</dt><dd><ul class="simple">
+<li><p>Use the latter if the listing may contain <em>NaN</em> items.
+Using <code class="docutils literal notranslate"><span class="pre">PartialHeadingList</span></code>, a filter that can reconstruct the missing heading data (fulfilling <code class="docutils literal notranslate"><span class="pre">HeadingList</span></code>) could easily be plugged in.</p></li>
+<li><p>Data type: <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#_CPPv4N13AppComponents6Common5Types5Track11HeadingListE" title="AppComponents::Common::Types::Track::HeadingList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">HeadingList</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <em>NaN</em> items, use:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span/><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">Heading</span><span class="o">&gt;::</span><span class="n">quiet_NaN</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TimeList</span></code> (optional)</dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#_CPPv4N13AppComponents6Common5Types5Track8TimeListE" title="AppComponents::Common::Types::Track::TimeList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TimeList</span></code></a></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">VelocityList</span></code> (optional)</dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#_CPPv4N13AppComponents6Common5Types5Track12VelocityListE" title="AppComponents::Common::Types::Track::VelocityList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">VelocityList</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<p>Example skeleton:</p>
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span/><span class="k">class</span> <span class="nc">MyTrackReader</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Filter</span><span class="o">::</span><span class="n">Filter</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">MyTrackReader</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input</span> <span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">operator</span><span class="p">()(</span>
+        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">TimeList</span> <span class="o">&amp;</span><span class="p">,</span>
+        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="o">&amp;</span><span class="p">,</span>
+        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">HeadingList</span> <span class="o">&amp;</span><span class="p">,</span>
+        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">VelocityList</span> <span class="o">&amp;</span> <span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input_</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="n">MyTrackReader</span><span class="o">::</span><span class="n">MyTrackReader</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input</span> <span class="p">)</span>
+<span class="o">:</span> <span class="n">Filter</span><span class="p">(</span> <span class="s">&quot;MyTrackReader&quot;</span> <span class="p">),</span> <span class="n">input_</span><span class="p">(</span> <span class="n">input</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">setRequirements</span><span class="p">(</span> <span class="p">{}</span> <span class="p">);</span>
+    <span class="n">setOptionals</span><span class="p">(</span> <span class="p">{}</span> <span class="p">);</span>
+    <span class="n">setFulfillments</span><span class="p">(</span> <span class="p">{</span> <span class="s">&quot;TimeList&quot;</span><span class="p">,</span> <span class="s">&quot;PointList&quot;</span><span class="p">,</span> <span class="s">&quot;HeadingList&quot;</span><span class="p">,</span> <span class="s">&quot;VelocityList&quot;</span> <span class="p">}</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">MyTrackReader</span><span class="o">::</span><span class="k">operator</span><span class="p">()(</span>
+    <span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">TimeList</span> <span class="o">&amp;</span> <span class="n">timeList</span><span class="p">,</span>
+    <span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="o">&amp;</span> <span class="n">pointList</span><span class="p">,</span>
+    <span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">HeadingList</span> <span class="o">&amp;</span> <span class="n">headingList</span><span class="p">,</span>
+    <span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">VelocityList</span> <span class="o">&amp;</span> <span class="n">velocityList</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">APP_LOG_TAG</span><span class="p">(</span> <span class="n">noise</span><span class="p">,</span> <span class="s">&quot;I/O&quot;</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Reading track&quot;</span><span class="p">;</span>
+
+    <span class="c1">// read `input_` filling `timeList`, `pointList`, `headingList` and `velocityList`</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id2">
+<h3>Street Map<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="streetmapfig">
+<a class="with-shadow reference internal image-reference" href="../../../_images/StreetMap.drawio.png"><img alt="Street map data" class="with-shadow" src="../../../_images/StreetMap.drawio.png" style="width: 754.5px; height: 228.0px;"/></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Street map data</span><a class="headerlink" href="#streetmapfig" title="Permalink to this image">¶</a></p>
+</div>
+<p>In <a class="reference internal" href="#streetmapfig"><span class="std std-numref">Fig. 3 Street map data</span></a> you see an example street map and the representing data lists which have to be filled by the filters.</p>
+<p>For a street map to be complete, the following requirements have to be fulfilled by one or more filters:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">SegmentList</span></code></dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e.html#_CPPv4N13AppComponents6Common5Types6Street11SegmentListE" title="AppComponents::Common::Types::Street::SegmentList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">SegmentList</span></code></a></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">NodePairList</span></code></dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#_CPPv4N13AppComponents6Common5Types6Street12NodePairListE" title="AppComponents::Common::Types::Street::NodePairList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">NodePairList</span></code></a></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TravelDirectionList</span></code></dt><dd><ul class="simple">
+<li><p>Data type: <a class="reference internal" href="../../../_api/typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a89734e4ed3815ef449a2ee7a54b71dcb.html#_CPPv4N13AppComponents6Common5Types6Street19TravelDirectionListE" title="AppComponents::Common::Types::Street::TravelDirectionList"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TravelDirectionList</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<p>Example skeleton:</p>
+<div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span/><span class="k">class</span> <span class="nc">MyStreetMapReader</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Filter</span><span class="o">::</span><span class="n">Filter</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">MyStreetMapReader</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input</span> <span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">operator</span><span class="p">()(</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">SegmentList</span> <span class="o">&amp;</span><span class="p">,</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">NodePairList</span> <span class="o">&amp;</span><span class="p">,</span>
+        <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirectionList</span> <span class="o">&amp;</span> <span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input_</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="n">MyStreetMapReader</span><span class="o">::</span><span class="n">MyStreetMapReader</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">input</span> <span class="p">)</span>
+<span class="o">:</span> <span class="n">Filter</span><span class="p">(</span> <span class="s">&quot;MyStreetMapReader&quot;</span> <span class="p">),</span> <span class="n">input_</span><span class="p">(</span> <span class="n">input</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">setRequirements</span><span class="p">(</span> <span class="p">{}</span> <span class="p">);</span>
+    <span class="n">setOptionals</span><span class="p">(</span> <span class="p">{}</span> <span class="p">);</span>
+    <span class="n">setFulfillments</span><span class="p">(</span> <span class="p">{</span> <span class="s">&quot;SegmentList&quot;</span><span class="p">,</span> <span class="s">&quot;NodePairList&quot;</span><span class="p">,</span> <span class="s">&quot;TravelDirectionList&quot;</span> <span class="p">}</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">MyStreetMapReader</span><span class="o">::</span><span class="k">operator</span><span class="p">()(</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">SegmentList</span> <span class="o">&amp;</span> <span class="n">segmentList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">NodePairList</span> <span class="o">&amp;</span> <span class="n">nodePairList</span><span class="p">,</span>
+    <span class="n">Types</span><span class="o">::</span><span class="n">Street</span><span class="o">::</span><span class="n">TravelDirectionList</span> <span class="o">&amp;</span> <span class="n">travelDirectionList</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">APP_LOG_TAG</span><span class="p">(</span> <span class="n">noise</span><span class="p">,</span> <span class="s">&quot;I/O&quot;</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Reading street map&quot;</span><span class="p">;</span>
+
+    <span class="c1">// read `input_` filling `segmentList`, `nodePairList` and `travelDirectionList`</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../TrackPointProjection/Overview.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
+      
+      
+        <a href="DataStructures.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../../../_sources/content/OperationalData/DataSelection/InputData.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2018, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../../../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../../../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

@@ -1,0 +1,26 @@
+.. _exhale_class_classCore_1_1Graph_1_1Routing_1_1PathViewIterator:
+
+Class PathViewIterator
+======================
+
+- Defined in :ref:`file_src_Core_Graph_Routing_PathView.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public boost::iterator_facade< PathViewIterator, PathView, boost::forward_traversal_tag, PathView >``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Core::Graph::Routing::PathViewIterator
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

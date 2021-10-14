@@ -1,0 +1,74 @@
+
+.. _file_src_AppComponents_Common_Types_Street_Highway.h:
+
+File Highway.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Street>` (``src/AppComponents/Common/Types/Street``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Street/Highway.h``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Street_Highway.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``optional``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Reader_GeoJsonMapReader.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Street`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a67b8123fba2be0f7808cbde116b05def`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1af8e55770f3a5ec102fa3a71591732388`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1aef155a1d8ca325c53242fe6a439c1b12`
+

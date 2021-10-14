@@ -1,0 +1,31 @@
+
+.. _namespace_AppComponents__Common__Matcher__Routing__Generic:
+
+Namespace AppComponents::Common::Matcher::Routing::Generic
+==========================================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ac47a707f57038fc2fc6c5f1dc190adfe`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ad1129ceb47599d5208f4d0452e748ccb`

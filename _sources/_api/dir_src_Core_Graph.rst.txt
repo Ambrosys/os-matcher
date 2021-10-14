@@ -1,0 +1,27 @@
+.. _dir_src_Core_Graph:
+
+
+Directory Graph
+===============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core>` (``src/Core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``src/Core/Graph``
+
+Subdirectories
+--------------
+
+- :ref:`dir_src_Core_Graph_Routing`
+
+
+Files
+-----
+
+- :ref:`file_src_Core_Graph_Graph.h`
+- :ref:`file_src_Core_Graph_LemonDigraph.cpp`
+- :ref:`file_src_Core_Graph_LemonDigraph.h`
+
+

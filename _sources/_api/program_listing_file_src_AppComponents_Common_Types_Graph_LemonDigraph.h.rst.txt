@@ -1,0 +1,28 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Graph_LemonDigraph.h:
+
+Program Listing for File LemonDigraph.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Graph_LemonDigraph.h>` (``src/AppComponents/Common/Types/Graph/LemonDigraph.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include <Core/Graph/LemonDigraph.h>
+   
+   namespace AppComponents::Common::Types::Graph {
+   
+   using LemonDigraph = Core::Graph::LemonDigraph;
+   
+   }

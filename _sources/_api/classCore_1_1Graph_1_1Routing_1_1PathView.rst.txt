@@ -1,0 +1,17 @@
+.. _exhale_class_classCore_1_1Graph_1_1Routing_1_1PathView:
+
+Class PathView
+==============
+
+- Defined in :ref:`file_src_Core_Graph_Routing_PathView.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Core::Graph::Routing::PathView
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,82 @@
+
+.. _file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp:
+
+File SamplingPointFinder.cpp
+============================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher>` (``src/AppComponents/Common/Matcher``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/SamplingPointFinder.cpp``)
+-------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Matcher/SamplingPointFinder.h`` (:ref:`file_src_AppComponents_Common_Matcher_SamplingPointFinder.h`)
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+- ``amblog/global.h``
+
+- ``boost/geometry/index/rtree.hpp``
+
+- ``boost/iterator/function_output_iterator.hpp``
+
+- ``cassert``
+
+- ``unordered_map``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_anonymous_namespace_SamplingPointFinder.cpp`
+
+- :ref:`namespace_AppComponents__Common__Matcher`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a42c1701b2d0295a3b1d2ad259599f2a7`
+
+- :ref:`exhale_function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1aba18ee25c17adb7cd68ea50bc15f34e0`
+
+- :ref:`exhale_function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a9ff79156b2ad6ebe7482f955cf970952`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1af51a1ab323659cca811c66e44a759873`
+
+- :ref:`exhale_typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a43e7d1ab7184b076b5d0eaf44f7ca918`
+
+- :ref:`exhale_typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a4ff99423d9382594339fa80a4616eb6a`
+
+- :ref:`exhale_typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1ad111e0485b1bbc39ca6d3e11429f1826`
+

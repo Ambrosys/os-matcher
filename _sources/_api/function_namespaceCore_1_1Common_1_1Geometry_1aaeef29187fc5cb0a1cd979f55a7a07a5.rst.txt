@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1aaeef29187fc5cb0a1cd979f55a7a07a5:
+
+Function Core::Common::Geometry::operator"" _lon
+================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::operator"" _lon(long double)

@@ -1,0 +1,26 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList:
+
+Struct NodePairList
+===================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Street_NodePair.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public std::vector< NodePair >``
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Types::Street::NodePairList
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

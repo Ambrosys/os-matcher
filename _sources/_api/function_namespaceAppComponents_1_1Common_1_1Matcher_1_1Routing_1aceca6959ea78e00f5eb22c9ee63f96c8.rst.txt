@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aceca6959ea78e00f5eb22c9ee63f96c8:
+
+Function AppComponents::Common::Matcher::Routing::calcApproximateDistanceBetweenSamplingPoints
+==============================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::calcApproximateDistanceBetweenSamplingPoints(size_t const, size_t const, Types::Routing::SamplingPointList const&)

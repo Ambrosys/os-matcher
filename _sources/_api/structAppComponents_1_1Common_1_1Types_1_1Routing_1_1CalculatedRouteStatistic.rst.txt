@@ -1,0 +1,17 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1CalculatedRouteStatistic:
+
+Struct CalculatedRouteStatistic
+===============================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Routing_Statistic.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Types::Routing::CalculatedRouteStatistic
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

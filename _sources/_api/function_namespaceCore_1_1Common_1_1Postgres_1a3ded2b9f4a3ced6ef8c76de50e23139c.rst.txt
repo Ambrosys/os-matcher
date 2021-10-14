@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c:
+
+Template Function Core::Common::Postgres::getOptional(C const&)
+===============================================================
+
+- Defined in :ref:`file_src_Core_Common_Postgres_Helper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Postgres::getOptional(C const&)
