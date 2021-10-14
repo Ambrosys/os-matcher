@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IReader.h"
+
 #include <AppComponents/Common/Types/Track/Heading.h>
 #include <AppComponents/Common/Types/Track/Point.h>
 #include <AppComponents/Common/Types/Track/Time.h>
@@ -17,7 +19,7 @@
 
 namespace AppComponents::Common::Reader {
 
-class CsvTrackReader : public ambpipeline::Filter
+class CsvTrackReader : public ambpipeline::Filter, public ITrackReader
 {
 public:
     CsvTrackReader(std::istream & input);

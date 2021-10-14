@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "IReader.h"
+
 #include <AppComponents/Common/Types/Street/Highway.h>
 #include <AppComponents/Common/Types/Street/NodePair.h>
 #include <AppComponents/Common/Types/Street/Segment.h>
@@ -25,19 +27,43 @@ namespace AppComponents::Common::Reader {
 /**
  * Reads OpenStreetMap data from a PostGIS database.
  */
-class OsmMapReader : public ambpipeline::Filter
+class OsmMapReader : public ambpipeline::Filter//, public IMapReader
 {
 public:
     OsmMapReader(
         Core::Common::Postgres::Connection & connection, std::unordered_set<Types::Street::HighwayType> const & highwaySelection, double fetchCorridor, bool useSingleSearchCircle);
-    bool
-    operator()(Types::Track::PointList const &, Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+
+    bool operator()(
+        Types::Street::SegmentList &,
+        Types::Street::NodePairList &,
+        Types::Street::TravelDirectionList &,
+        Types::Street::HighwayList &
+    );
+
+    bool operator()(
+        Types::Track::PointList const &,
+        Types::Street::SegmentList &,
+        Types::Street::NodePairList &,
+        Types::Street::TravelDirectionList &,
+        Types::Street::HighwayList &
+        );
+
+    bool init(
+        Types::Track::PointList const &,
+        double fetchCorridor,
+        bool useSingleSearchCircle,
+        std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection
+        );
 
 private:
     Core::Common::Postgres::Connection & connection_;
-    std::unordered_set<Types::Street::HighwayType> const highwaySelection_;
+    std::unordered_set<Types::Street::HighwayType> highwaySelection_;
     double const fetchCorridor_;
+    double searchRadius_;
+    std::string pointsString_;
     bool const useSingleSearchCircle_;
+
+
 };
 
 }  // namespace AppComponents::Common::Reader

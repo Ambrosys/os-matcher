@@ -235,38 +235,36 @@ OsmMapReader::OsmMapReader(
     setFulfillments({"SegmentList", "NodePairList", "TravelDirectionList", "HighwayList"});
 }
 
-bool OsmMapReader::operator()(
+bool OsmMapReader::init(
     Types::Track::PointList const & pointList,
-    Types::Street::SegmentList & segmentList,
-    Types::Street::NodePairList & nodePairList,
-    Types::Street::TravelDirectionList & travelDirectionList,
-    Types::Street::HighwayList & highwayList)
+    double const fetchCorridor,
+    bool const useSingleSearchCircle,
+    std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection
+    )
 {
     using namespace Core::Common;
-    using namespace AppComponents::Common::Reader::Osm;
 
+    // Note: For further development in @ambrosys:os-matcher-amb#38
     size_t const eachNth = 1;
-
-    APP_LOG_TAG_MS(noise, "DB") << "Sending each " << eachNth << "th of " << pointList.size() << " points to database...";
 
     double searchRadius;
     std::string pointsString;
     if (!useSingleSearchCircle_)
     {
-        searchRadius = fetchCorridor_;
-        pointsString = Geometry::toWkt(Geometry::flattened_simple(pointList, eachNth));
+        searchRadius_ = fetchCorridor_;
+        pointsString_ = Geometry::toWkt(Geometry::flattened_simple(pointList, eachNth));
     }
     else
     {
         if (pointList.empty())
         {
-            searchRadius = 0;
-            pointsString = Geometry::toWkt(std::vector<Geometry::Point>{});
+            searchRadius_ = 0;
+            pointsString_ = Geometry::toWkt(std::vector<Geometry::Point>{});
         }
         else if (pointList.size() == 1)
         {
-            searchRadius = fetchCorridor_;
-            pointsString = toWkt(pointList[0]);
+            searchRadius_ = fetchCorridor_;
+            pointsString_ = toWkt(pointList[0]);
         }
         else
         {
@@ -274,10 +272,26 @@ bool OsmMapReader::operator()(
             double heading = Geometry::heading(pointList[0], pointList[pointList.size() - 1]);
             auto center = Geometry::reverseHaversine(pointList[0], heading, distance / 2.0);
 
-            searchRadius = distance / 2.0 + fetchCorridor_;
-            pointsString = toWkt(center);
+            searchRadius_ = distance / 2.0 + fetchCorridor_;
+            pointsString_ = toWkt(center);
         }
     }
+
+    if (highwaySelection){
+        highwaySelection_ = highwaySelection.value();
+    }
+
+    return false;
+}
+
+bool OsmMapReader::operator()(
+    Types::Street::SegmentList & segmentList,
+    Types::Street::NodePairList & nodePairList,
+    Types::Street::TravelDirectionList & travelDirectionList,
+    Types::Street::HighwayList & highwayList)
+{
+    using namespace Core::Common;
+    using namespace AppComponents::Common::Reader::Osm;
 
     auto dbConnection = connection_.getConnection();
     auto dbTransaction = pqxx::work{*dbConnection};
@@ -365,7 +379,7 @@ bool OsmMapReader::operator()(
         )sql"};
     boost::replace_all(query, "$HIGHWAY_CONDITION", toHighwaySelectionSql(highwaySelection_, "line"));
     dbConnection->prepare("", query);
-    pqxx::result records = dbTransaction.exec_prepared("", pointsString, searchRadius);
+    pqxx::result records = dbTransaction.exec_prepared("", pointsString_, searchRadius_);
 
     APP_LOG_TAG_MS(noise, "DB") << records.size() << " records were read";
 
@@ -378,6 +392,28 @@ bool OsmMapReader::operator()(
     APP_LOG_MS(noise) << segmentList.size() << " street segments created";
 
     return true;
+}
+
+bool OsmMapReader::operator()(
+    Types::Track::PointList const & pointList,
+    Types::Street::SegmentList & segmentList,
+    Types::Street::NodePairList & nodePairList,
+    Types::Street::TravelDirectionList & travelDirectionList,
+    Types::Street::HighwayList & highwayList)
+{
+    init(
+        pointList,
+        searchRadius_,
+        useSingleSearchCircle_,
+        highwaySelection_
+        );
+
+    return this->operator()(
+        segmentList,
+        nodePairList,
+        travelDirectionList,
+        highwayList
+        );
 }
 
 }  // namespace AppComponents::Common::Reader

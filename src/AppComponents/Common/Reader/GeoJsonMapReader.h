@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IReader.h"
+
 #include <AppComponents/Common/Types/Street/Highway.h>
 #include <AppComponents/Common/Types/Street/NodePair.h>
 #include <AppComponents/Common/Types/Street/Segment.h>
@@ -18,11 +20,16 @@
 
 namespace AppComponents::Common::Reader {
 
-class GeoJsonMapReader : public ambpipeline::Filter
+class GeoJsonMapReader : public ambpipeline::Filter, public IMapReader
 {
 public:
     GeoJsonMapReader(std::istream & input);
-    bool operator()(Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+    bool operator()(
+        Types::Street::SegmentList &,
+        Types::Street::NodePairList &,
+        Types::Street::TravelDirectionList &,
+        Types::Street::HighwayList &
+        );
 
 private:
     std::istream & input_;
