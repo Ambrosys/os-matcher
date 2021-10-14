@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>Class Router &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/>
+        <link rel="up" title="API documentation" href="library_root.html"/>
+        <link rel="next" title="Class BacktrackRouter" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html"/>
+        <link rel="prev" title="Class GraphBuilder" href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html"/> 
+  <script src="../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Installation.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#track">Track</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#execution">Execution</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/OperationalData/DataSelection/Index.html">Data selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">DETAILS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../content/Details/Filters/Index.html">Filters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html">CsvTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html">JsonTrackReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonTrackReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html">GeoJsonMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html">OsmMapReader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/OsmMapReader.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html">CsvRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html">CsvSubRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvSubRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html">GeoJsonRouteWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonRouteWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html">CsvTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/CsvTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html">GeoJsonTrackWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonTrackWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html">GeoJsonMapWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/GeoJsonMapWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html">JsonRouteStatisticWriter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#output">Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#def-samplingpoint-json">Def: SamplingPoint-JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#def-samplingpointcandidate-json">Def: SamplingPointCandidate-JSON</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Filters/JsonRouteStatisticWriter.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+          <li><a href="library_root.html">API documentation</a> &raquo;</li>
+    <li>Class Router</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Router.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+    <hr class="before-stealth-btn clear-both"/>
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
+          <span class="stealth-btn-text">Next</span>
+          <span class="fa fa-arrow-circle-right"/>
+      </a>
+    
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
+          <span class="fa fa-arrow-circle-left"/>
+          <span class="stealth-btn-text">Previous</span>
+      </a>
+    
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="class-router">
+<span id="exhale-class-classappcomponents-1-1common-1-1matcher-1-1router"/><h1>Class Router<a class="headerlink" href="#class-router" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_src_AppComponents_Common_Matcher_Router.h.html#file-src-appcomponents-common-matcher-router-h"><span class="std std-ref">File Router.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">Filter</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6RouterE">
+<span id="_CPPv3N13AppComponents6Common7Matcher6RouterE"/><span id="_CPPv2N13AppComponents6Common7Matcher6RouterE"/><span id="AppComponents::Common::Matcher::Router"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router"/><em class="property">class </em><code class="sig-name descname">Router</code> : <em class="property">public</em> Filter<a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6RouterE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router6RouterEdbdddN7Routing25SamplingPointSkipStrategyEddN7Routing22RouteClusterPreferenceE">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router6RouterEdbdddN7Routing25SamplingPointSkipStrategyEddN7Routing22RouteClusterPreferenceE"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router6RouterEdbdddN7Routing25SamplingPointSkipStrategyEddN7Routing22RouteClusterPreferenceE"/><span id="AppComponents::Common::Matcher::Router::Router__double.b.double.double.double.Routing::SamplingPointSkipStrategy.double.double.Routing::RouteClusterPreference"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a7dea558b30142ed8ed9bd7b5b3e3d0be"/><code class="sig-name descname">Router</code><span class="sig-paren">(</span>double <em>maxVelocityDifference</em>, bool <em>allowSelfIntersection</em>, double <em>maxAngularDeviation</em>, double <em>accountTurningCircleLength</em>, double <em>maxSamplingPointSkippingDistance</em>, Routing::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1ae4deeb6124725af2a8464206e2d14188.html#_CPPv4N13AppComponents6Common7Matcher7Routing25SamplingPointSkipStrategyE" title="AppComponents::Common::Matcher::Routing::SamplingPointSkipStrategy">SamplingPointSkipStrategy</a> <em>samplingPointSkipStrategy</em>, double <em>maxCandidateBacktrackingDistance</em>, double <em>maxClusteredRoutesLengthDifference</em>, Routing::<a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.html#_CPPv4N13AppComponents6Common7Matcher7Routing22RouteClusterPreferenceE" title="AppComponents::Common::Matcher::Routing::RouteClusterPreference">RouteClusterPreference</a> <em>routeClusterPreference</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router6RouterEdbdddN7Routing25SamplingPointSkipStrategyEddN7Routing22RouteClusterPreferenceE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6RouterclERKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListERKN5Types5Track12VelocityListERKN5Types6Street11SegmentListERKN5Types5Graph5GraphERKN5Types5Graph12GraphEdgeMapERKN5Types5Graph14StreetIndexMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE">
+<span id="_CPPv3N13AppComponents6Common7Matcher6RouterclERKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListERKN5Types5Track12VelocityListERKN5Types6Street11SegmentListERKN5Types5Graph5GraphERKN5Types5Graph12GraphEdgeMapERKN5Types5Graph14StreetIndexMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE"/><span id="_CPPv2N13AppComponents6Common7Matcher6RouterclERKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListERKN5Types5Track12VelocityListERKN5Types6Street11SegmentListERKN5Types5Graph5GraphERKN5Types5Graph12GraphEdgeMapERKN5Types5Graph14StreetIndexMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE"/><span id="AppComponents::Common::Matcher::Router::call-operator__Types::Routing::SamplingPointListCR.Types::Track::TimeListCR.Types::Track::VelocityListCR.Types::Street::SegmentListCR.Types::Graph::GraphCR.Types::Graph::GraphEdgeMapCR.Types::Graph::StreetIndexMapCR.Types::Routing::RouteListR.Types::Routing::RoutingStatisticR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1af479f7530075eb22652be16830b816b5"/>bool <code class="sig-name descname">operator()</code><span class="sig-paren">(</span>Types::Routing::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a635288c9182853b5994a908b48b99109.html#_CPPv4N13AppComponents6Common5Types7Routing17SamplingPointListE" title="AppComponents::Common::Types::Routing::SamplingPointList">SamplingPointList</a> <em class="property">const</em> &amp;<em>samplingPointList</em>, Types::Track::<a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#_CPPv4N13AppComponents6Common5Types5Track8TimeListE" title="AppComponents::Common::Types::Track::TimeList">TimeList</a> <em class="property">const</em> &amp;<em>timeList</em>, Types::Track::<a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#_CPPv4N13AppComponents6Common5Types5Track12VelocityListE" title="AppComponents::Common::Types::Track::VelocityList">VelocityList</a> <em class="property">const</em> &amp;<em>velocityList</em>, Types::Street::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e.html#_CPPv4N13AppComponents6Common5Types6Street11SegmentListE" title="AppComponents::Common::Types::Street::SegmentList">SegmentList</a> <em class="property">const</em> &amp;<em>segmentList</em>, Types::Graph::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a249855dd90c8417233fd150eb7385f7b.html#_CPPv4N13AppComponents6Common5Types5Graph5GraphE" title="AppComponents::Common::Types::Graph::Graph">Graph</a> <em class="property">const</em> &amp;<em>graph</em>, Types::Graph::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1affd879ea56a962cc9a45000b7953b519.html#_CPPv4N13AppComponents6Common5Types5Graph12GraphEdgeMapE" title="AppComponents::Common::Types::Graph::GraphEdgeMap">GraphEdgeMap</a> <em class="property">const</em> &amp;<em>graphEdgeMap</em>, Types::Graph::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a11299f69d926724f04d6da9b392bd0d5.html#_CPPv4N13AppComponents6Common5Types5Graph14StreetIndexMapE" title="AppComponents::Common::Types::Graph::StreetIndexMap">StreetIndexMap</a> <em class="property">const</em> &amp;<em>streetIndexMap</em>, Types::Routing::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html#_CPPv4N13AppComponents6Common5Types7Routing9RouteListE" title="AppComponents::Common::Types::Routing::RouteList">RouteList</a> &amp;<em>routeList</em>, Types::Routing::<a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#_CPPv4N13AppComponents6Common5Types7Routing16RoutingStatisticE" title="AppComponents::Common::Types::Routing::RoutingStatistic">RoutingStatistic</a> &amp;<em>routingStatistic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6RouterclERKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListERKN5Types5Track12VelocityListERKN5Types6Street11SegmentListERKN5Types5Graph5GraphERKN5Types5Graph12GraphEdgeMapERKN5Types5Graph14StreetIndexMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router22maxVelocityDifference_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router22maxVelocityDifference_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router22maxVelocityDifference_E"/><span id="AppComponents::Common::Matcher::Router::maxVelocityDifference___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a0afb0e650bf20440433012ad4a614747"/>double <em class="property">const</em> <code class="sig-name descname">maxVelocityDifference_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router22maxVelocityDifference_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router22allowSelfIntersection_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router22allowSelfIntersection_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router22allowSelfIntersection_E"/><span id="AppComponents::Common::Matcher::Router::allowSelfIntersection___bC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a88cdac0b239066abac33809ff6129d58"/>bool <em class="property">const</em> <code class="sig-name descname">allowSelfIntersection_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router22allowSelfIntersection_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router20maxAngularDeviation_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router20maxAngularDeviation_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router20maxAngularDeviation_E"/><span id="AppComponents::Common::Matcher::Router::maxAngularDeviation___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a374a623798c9a60925cfec70c8f64456"/>double <em class="property">const</em> <code class="sig-name descname">maxAngularDeviation_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router20maxAngularDeviation_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router27accountTurningCircleLength_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router27accountTurningCircleLength_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router27accountTurningCircleLength_E"/><span id="AppComponents::Common::Matcher::Router::accountTurningCircleLength___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1ab5c673ab923ad5f60794b6e9964a70e2"/>double <em class="property">const</em> <code class="sig-name descname">accountTurningCircleLength_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router27accountTurningCircleLength_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router33maxSamplingPointSkippingDistance_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router33maxSamplingPointSkippingDistance_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router33maxSamplingPointSkippingDistance_E"/><span id="AppComponents::Common::Matcher::Router::maxSamplingPointSkippingDistance___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1af8c5cfe997a389f1b375b307377b7a45"/>double <em class="property">const</em> <code class="sig-name descname">maxSamplingPointSkippingDistance_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router33maxSamplingPointSkippingDistance_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router26samplingPointSkipStrategy_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router26samplingPointSkipStrategy_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router26samplingPointSkipStrategy_E"/><span id="AppComponents::Common::Matcher::Router::samplingPointSkipStrategy___Routing::SamplingPointSkipStrategyC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1ac0b6aaf61a7d8abfa916d4c17c5fb62a"/>Routing::<a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1ae4deeb6124725af2a8464206e2d14188.html#_CPPv4N13AppComponents6Common7Matcher7Routing25SamplingPointSkipStrategyE" title="AppComponents::Common::Matcher::Routing::SamplingPointSkipStrategy">SamplingPointSkipStrategy</a> <em class="property">const</em> <code class="sig-name descname">samplingPointSkipStrategy_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router26samplingPointSkipStrategy_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router33maxCandidateBacktrackingDistance_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router33maxCandidateBacktrackingDistance_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router33maxCandidateBacktrackingDistance_E"/><span id="AppComponents::Common::Matcher::Router::maxCandidateBacktrackingDistance___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1aae2b33fe853c6e2d0ab73703f77c8377"/>double <em class="property">const</em> <code class="sig-name descname">maxCandidateBacktrackingDistance_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router33maxCandidateBacktrackingDistance_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router35maxClusteredRoutesLengthDifference_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router35maxClusteredRoutesLengthDifference_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router35maxClusteredRoutesLengthDifference_E"/><span id="AppComponents::Common::Matcher::Router::maxClusteredRoutesLengthDifference___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a2daa80b570d4f86e1126d9045aa8391c"/>double <em class="property">const</em> <code class="sig-name descname">maxClusteredRoutesLengthDifference_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router35maxClusteredRoutesLengthDifference_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13AppComponents6Common7Matcher6Router23routeClusterPreference_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher6Router23routeClusterPreference_E"/><span id="_CPPv2N13AppComponents6Common7Matcher6Router23routeClusterPreference_E"/><span id="AppComponents::Common::Matcher::Router::routeClusterPreference___Routing::RouteClusterPreferenceC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Router_1a01d8140e654dbccf424f537a02553f22"/>Routing::<a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.html#_CPPv4N13AppComponents6Common7Matcher7Routing22RouteClusterPreferenceE" title="AppComponents::Common::Matcher::Routing::RouteClusterPreference">RouteClusterPreference</a> <em class="property">const</em> <code class="sig-name descname">routeClusterPreference_</code><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher6Router23routeClusterPreference_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
+      
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Router.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2018, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

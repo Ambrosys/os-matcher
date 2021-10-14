@@ -26,22 +26,27 @@ Directories
 .. toctree::
    :maxdepth: 5
 
-   dir_src_AppComponents_Common_Filter.rst
+   dir_src_AppComponents_Common_Matcher.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir_src_AppComponents_Common_Filter_Osm.rst
+   dir_src_AppComponents_Common_Matcher_Routing.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir_src_AppComponents_Common_Filter_Routing.rst
+   dir_src_AppComponents_Common_Matcher_Routing_Generic.rst
 
 .. toctree::
    :maxdepth: 5
 
-   dir_src_AppComponents_Common_Filter_Routing_Generic.rst
+   dir_src_AppComponents_Common_Reader.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_src_AppComponents_Common_Reader_Osm.rst
 
 .. toctree::
    :maxdepth: 5
@@ -71,12 +76,7 @@ Directories
 .. toctree::
    :maxdepth: 5
 
-   dir_src_AppComponents_ExampleMatcher.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir_src_AppComponents_ExampleMatcher_Filter.rst
+   dir_src_AppComponents_Common_Writer.rst
 
 .. toctree::
    :maxdepth: 5
@@ -155,22 +155,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_BacktrackRouter.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Comparators.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_Comparators.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Comparators.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_Comparators.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -180,7 +180,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Osm_Conversion.cpp.rst
+   file_src_AppComponents_Common_Reader_Osm_Conversion.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -190,7 +190,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Osm_Conversion.h.rst
+   file_src_AppComponents_Common_Reader_Osm_Conversion.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -205,12 +205,32 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_ExampleMatcher_Filter_CsvTrackReader.cpp.rst
+   file_src_AppComponents_Common_Writer_CsvRouteWriter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_ExampleMatcher_Filter_CsvTrackReader.h.rst
+   file_src_AppComponents_Common_Writer_CsvRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvSubRouteWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_CsvTrackReader.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Reader_CsvTrackReader.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -225,12 +245,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_DirectedCandidateRouter.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -250,32 +270,42 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonMapReader.cpp.rst
+   file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonMapReader.h.rst
+   file_src_AppComponents_Common_Reader_GeoJsonMapReader.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonMapWriter.cpp.rst
+   file_src_AppComponents_Common_Writer_GeoJsonMapWriter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonMapWriter.h.rst
+   file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.cpp.rst
+   file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GeoJsonTrackWriter.h.rst
+   file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -290,12 +320,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GraphBuilder.cpp.rst
+   file_src_AppComponents_Common_Matcher_GraphBuilder.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_GraphBuilder.h.rst
+   file_src_AppComponents_Common_Matcher_GraphBuilder.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -305,12 +335,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Generic_Helper.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Helper.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_Helper.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -325,12 +355,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Generic_Helper.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Helper.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_Helper.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -355,22 +385,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_JsonRouteStatisticWriter.cpp.rst
+   file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_JsonRouteStatisticWriter.h.rst
+   file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.cpp.rst
+   file_src_AppComponents_Common_Reader_JsonTrackReader.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_ExampleMatcher_Filter_JsonTrackReader.h.rst
+   file_src_AppComponents_Common_Reader_JsonTrackReader.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -405,12 +435,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_OsmMapReader.cpp.rst
+   file_src_AppComponents_Common_Reader_OsmMapReader.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_OsmMapReader.h.rst
+   file_src_AppComponents_Common_Reader_OsmMapReader.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -425,12 +455,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_PiecewiseRouter.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -450,12 +480,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Router.cpp.rst
+   file_src_AppComponents_Common_Matcher_Router.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Router.h.rst
+   file_src_AppComponents_Common_Matcher_Router.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -465,22 +495,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp.rst
+   file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_SamplingPointFinder.h.rst
+   file_src_AppComponents_Common_Matcher_SamplingPointFinder.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_SamplingPointRouter.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -490,22 +520,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Generic_Skipper.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Generic_Skipper.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_SkipRouter.cpp.rst
+   file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_SkipRouter.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -540,7 +570,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_src_AppComponents_Common_Filter_Routing_Types.h.rst
+   file_src_AppComponents_Common_Matcher_Routing_Types.h.rst
 
 .. toctree::
    :maxdepth: 5

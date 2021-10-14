@@ -1,0 +1,67 @@
+
+.. _file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp:
+
+File SkipRouter.cpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing>` (``src/AppComponents/Common/Matcher/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Routing/SkipRouter.cpp``)
+------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Matcher/Routing/Generic/Helper.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.h`)
+
+- ``AppComponents/Common/Matcher/Routing/Helper.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.h`)
+
+- ``AppComponents/Common/Matcher/Routing/SkipRouter.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h`)
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+- ``Core/Common/Time/Helper.h`` (:ref:`file_src_Core_Common_Time_Helper.h`)
+
+- ``amblog/global.h``
+
+- ``mutex``
+
+- ``thread``
+
+- ``unordered_set``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session`
+

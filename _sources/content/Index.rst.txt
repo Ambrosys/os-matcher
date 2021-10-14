@@ -9,9 +9,9 @@
       :start-line: 1
       :end-line: 4
 
-.. ``$ ExampleMatcher --help``
+.. ``$ AmbRouter --help``
 ..
-.. .. program-output:: _binaries/ExampleMatcher --help
+.. .. program-output:: _binaries/AmbRouter --help
 
 .. include:: content/Usage/Index.rst
 .. include:: content/OperationalData/Index.rst

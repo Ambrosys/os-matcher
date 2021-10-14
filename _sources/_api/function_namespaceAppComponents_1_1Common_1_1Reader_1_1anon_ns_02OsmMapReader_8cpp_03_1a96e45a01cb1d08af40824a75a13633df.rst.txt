@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df:
+
+Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getCandidates
+===========================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getCandidates(pqxx::result&)

@@ -34,52 +34,47 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter.rst
+   namespace_AppComponents__Common__Matcher.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__anonymous_namespace_GeoJsonMapReader.cpp.rst
+   namespace_AppComponents__Common__Matcher__Routing.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__anonymous_namespace_GeoJsonMapWriter.cpp.rst
+   namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_Comparators.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__anonymous_namespace_JsonRouteStatisticWriter.cpp.rst
+   namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_SamplingPointRouter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__anonymous_namespace_OsmMapReader.cpp.rst
+   namespace_AppComponents__Common__Matcher__Routing__Generic.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__Osm.rst
+   namespace_AppComponents__Common__Reader.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__Routing.rst
+   namespace_AppComponents__Common__Reader__anonymous_namespace_GeoJsonMapReader.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__Routing__anonymous_namespace_Comparators.cpp.rst
+   namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__Common__Filter__Routing__anonymous_namespace_SamplingPointRouter.cpp.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   namespace_AppComponents__Common__Filter__Routing__Generic.rst
+   namespace_AppComponents__Common__Reader__Osm.rst
 
 .. toctree::
    :maxdepth: 5
@@ -109,12 +104,17 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__ExampleMatcher.rst
+   namespace_AppComponents__Common__Writer.rst
 
 .. toctree::
    :maxdepth: 5
 
-   namespace_AppComponents__ExampleMatcher__Filter.rst
+   namespace_AppComponents__Common__Writer__anonymous_namespace_GeoJsonMapWriter.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_AppComponents__Common__Writer__anonymous_namespace_JsonRouteStatisticWriter.cpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -173,72 +173,72 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestRouteComparator.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestSimilarRouteComparator.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter_1_1Configuration.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter_1_1Session.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointsSelection.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BestRouteComparator.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Configuration.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BestSimilarRouteComparator.rst
+   structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.rst
+   structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointRouter_1_1Configuration.rst
+   structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointsSelection.rst
+   structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter_1_1Configuration.rst
+   structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation.rst
 
 .. toctree::
    :maxdepth: 5
 
-   structAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter_1_1Session.rst
+   structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint.rst
 
 .. toctree::
    :maxdepth: 5
@@ -373,87 +373,102 @@ Classes and Structs
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1GeoJsonMapReader.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1GeoJsonMapWriter.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Router.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1GeoJsonTrackWriter.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1GraphBuilder.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1JsonRouteStatisticWriter.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1OsmMapReader.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Router.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1BacktrackRouter.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1DirectedCandidateRouter.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1Generic_1_1SelectiveSkipper.rst
+   classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1Generic_1_1Skipper.rst
+   classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1PiecewiseRouter.rst
+   classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SamplingPointRouter.rst
+   classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1Routing_1_1SkipRouter.rst
+   classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1Common_1_1Filter_1_1SamplingPointFinder.rst
+   classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1ExampleMatcher_1_1Filter_1_1CsvTrackReader.rst
+   classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.rst
 
 .. toctree::
    :maxdepth: 5
 
-   classAppComponents_1_1ExampleMatcher_1_1Filter_1_1JsonTrackReader.rst
+   classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.rst
 
 .. toctree::
    :maxdepth: 5
@@ -512,12 +527,12 @@ Enums
 .. toctree::
    :maxdepth: 5
 
-   enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a918f66e5dfc2dad0437f12663044c993.rst
+   enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a7bef97a0a43af1463a5e60437b82aa9a.rst
+   enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.rst
 
 .. toctree::
    :maxdepth: 5
@@ -566,137 +581,137 @@ Functions
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1ad82161c58032ec37a8aa7955e79e39b4.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02Comparators_8cpp_03_1aa5cbd37e120a38f61946dbfc671253a1.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a50b169e8d136411c7bb28cf7882a0c65.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a9b0b0f867bf23c0e291e381e1a4c074f.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1aec77f87eb070bbb22f4bde2d02dfa23e.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ae5050aa8a310a1b18cdce8d04f837c7d.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1a8332ecef6302dc1d4283206c3d95ca93.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aff151e5c7b9e6ddac90b43c6f5811f61.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02JsonRouteStatisticWriter_8cpp_03_1a6bfea156fa34cf7ef4dd1e729686bb2e.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a7afdd409f278a02e952e1974b684a0ab.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1ac322f42ca8650baca976eea8061ddee1.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a6074bc8ad6068bc26f7b036e0f32c590.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1a27f0b24859e8646e6d6c249430289185.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aceca6959ea78e00f5eb22c9ee63f96c8.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1ae5102f61ae5f03933edf7adb28aaf585.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a7d3a2e3af7041a822ef6c8952848016a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Osm_1ae7bd199d3c473d894230591b5d05d5c2.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a582725e2f4b2baf8944ccefaa0ac282c.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Osm_1abdcc3c058eb9e82c546b0fba83adb43e.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ac47a707f57038fc2fc6c5f1dc190adfe.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Osm_1a24ad006a2c44838752307d935303adf1.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ad1129ceb47599d5208f4d0452e748ccb.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Osm_1adb67fc376377c04b3646dd9ec480c768.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aab99daf3703c79ea0705bda95d11dd91.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02Comparators_8cpp_03_1a5906167070ae7e3bc355d4f79c54287d.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1abf3a9ffe70aa83f4112735ddc3a47deb.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ad704ebdec0111f902adecf90010bb85c.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a4807fdf71808dbe8b3b4d03ea3212814.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1acf60351ccd14f177c00fc67a4ff53ede.rst
+   function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a20705e2542cf5f6c7b87ea54a68aedcc.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ad54a477417af45e26ba9b12040753b7f.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a824a2d2c8ebfb5e2abd621a9a56c3f6a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a145377c94af34d1f6b94af6d98c728f1.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a93422843a17fc248a09d32b7155647bc.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1acf340bc178601f17d06b1aab309ad4d0.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a2de4e81ab509bdcdc1d04876e4a303b8.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ab35d28963e7324b0416c1932ee77c131.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a6467402746e9c607de60fef4ebe32ec1.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a448615760e276bc263d0202cc6eb9860.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1ade39660d89472bbd127a25911465709b.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1Generic_1a3d9f0dd0d7d8de4c2054714df73eda66.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a7e9ea189c6596b94f37ddc7e324b317b.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1Generic_1afe15194f9d7c838d5667ff490450e706.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1aabcd0fcf5ac380b80921d4a78dff1fcd.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a3dcaff1e06371bde3201ed1076b6e40c.rst
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a84d89c5d17474b5118b6981f03b18194.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a50cc4678932aa5dd799509e6c3dcab4b.rst
+   function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ac6211c4b31819049e7e346f1ba6d7531.rst
+   function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1adf3c7e5acd76caee1a0af8c6cc9be11a.rst
 
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a629e147a952c5b3693abaaf6f8b0bd25.rst
+   function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02JsonRouteStatisticWriter_8cpp_03_1a34e06dd47835f1fcc3ad1f63f80d5204.rst
 
 .. toctree::
    :maxdepth: 5
@@ -1018,32 +1033,32 @@ Typedefs
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1a4e85ebd2ad1d56da1928e2ac8c60bb4e.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aaee6ab7819778719f42729a1a9cabf49.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1a9444d466cfdf3ea710fa837ad449491a.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a262b545aa5db32add2f9cd5c1786f3a3.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1anon_ns_02OsmMapReader_8cpp_03_1a7f5d163a6f0c7c0f31ca1602c40f389f.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1ae4deeb6124725af2a8464206e2d14188.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a58c0060cfd97722e789e825825c94d0a.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ac26f1c7b368af135b0360ad3a71f84c2.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a63b3747fe279b0ce23f192f3cb98aa81.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a7ad0e5dbf94fc918df1dc7f201df5e32.rst
 
 .. toctree::
    :maxdepth: 5
 
-   typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ae366f6b6b7cb440b9213186e307cc7b1.rst
+   typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a.rst
 
 .. toctree::
    :maxdepth: 5

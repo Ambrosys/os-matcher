@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610:
+
+Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getUniquePoint
+============================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getUniquePoint(PointGeoindex&, Core::Common::Geometry::Point)

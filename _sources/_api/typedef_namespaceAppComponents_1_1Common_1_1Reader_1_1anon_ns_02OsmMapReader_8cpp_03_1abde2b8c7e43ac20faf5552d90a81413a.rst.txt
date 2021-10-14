@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a:
+
+Typedef AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::PointGeoindexValue
+===============================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::PointGeoindexValue

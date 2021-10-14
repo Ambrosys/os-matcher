@@ -418,7 +418,7 @@ conan user --remote ambrosys <span class="nv">$username</span> -p <span class="n
 </div>
 <p>Now we can download, build and publish packages into our local registry.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span/>mkdir conan/repositories
-<span class="k">for</span> package in amb-graph amb-log amb-thread amb-pipeline cli-app<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> package in amb-graph amb-log amb-thread amb-pipeline cli-app lemon<span class="p">;</span> <span class="k">do</span>
     git clone https://github.com/Ambrosys/<span class="nv">$package</span>.git conan/repositories/<span class="nv">$package</span>
     conan remove --force <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --src --builds --packages
     conan remove --force <span class="s2">&quot;</span><span class="nv">$package</span><span class="s2">/*&quot;</span> --system-reqs
@@ -428,6 +428,7 @@ conan user --remote ambrosys <span class="nv">$username</span> -p <span class="n
 <span class="k">done</span>
 </pre></div>
 </div>
+<p>In case that does not work, use  <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:Ambrosys/$package.git instead of <a class="reference external" href="https://github.com/Ambrosys/$package.git">https://github.com/Ambrosys/$package.git</a></p>
 </div>
 <div class="section" id="building-os-matcher">
 <h2>Building <em>OS-Matcher</em><a class="headerlink" href="#building-os-matcher" title="Permalink to this headline">¶</a></h2>
@@ -440,7 +441,8 @@ ninja -C build test-if-git-HEAD-has-changed
 ninja -C build install
 </pre></div>
 </div>
-<p>You will find the binaries now in <code class="docutils literal notranslate"><span class="pre">build/install</span></code>.</p>
+<p>You will find the binaries now in <code class="docutils literal notranslate"><span class="pre">build/install</span></code>.
+<a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:Ambrosys/$package.git</p>
 </div>
 </div>
 

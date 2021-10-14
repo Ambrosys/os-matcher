@@ -39,7 +39,7 @@ Included By
 -----------
 
 
-- :ref:`file_src_AppComponents_Common_Filter_OsmMapReader.cpp`
+- :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
 
 - :ref:`file_src_Core_Common_Geometry_Conversion.cpp`
 

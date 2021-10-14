@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a824a2d2c8ebfb5e2abd621a9a56c3f6a:
+
+Function AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toHighway
+===========================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toHighway(std::string const&)

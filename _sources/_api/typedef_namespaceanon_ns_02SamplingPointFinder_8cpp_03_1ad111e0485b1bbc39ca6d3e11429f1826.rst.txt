@@ -3,7 +3,7 @@
 Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexValue
 =============================================================================
 
-- Defined in :ref:`file_src_AppComponents_Common_Filter_SamplingPointFinder.cpp`
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp`
 
 
 Typedef Documentation

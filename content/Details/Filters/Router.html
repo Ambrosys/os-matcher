@@ -424,7 +424,7 @@ If the difference is greater than the one given, the route gets discarded.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">360</span></code>: Deactivates this restriction.</p></li>
 <li><p>Other values: Discards routes which have a greater <a class="reference internal" href="../../Specifications.html#term-heading"><span class="xref std std-term">heading</span></a> difference between a used candidate and its corresponding sampling point.
 The algorithm to determine this is rather complex, see
-<a class="reference internal" href="../../../_api/function_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ab35d28963e7324b0416c1932ee77c131.html#_CPPv4N13AppComponents6Common6Filter7Routing24checkMaxAngularDeviationERKN5Types7Routing5RouteEKd" title="AppComponents::Common::Filter::Routing::checkMaxAngularDeviation"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">function</span> <span class="pre">checkMaxAngularDeviation</span></code></a>
+<code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">function</span> <span class="pre">checkMaxAngularDeviation</span></code>
 for the implementation.</p></li>
 </ul>
 </dd>
@@ -445,7 +445,7 @@ for the implementation.</p></li>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>samplingPointSkipStrategy: <a class="reference internal" href="../../../_api/typedef_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1ae366f6b6b7cb440b9213186e307cc7b1.html#_CPPv4N13AppComponents6Common6Filter7Routing25SamplingPointSkipStrategyE" title="AppComponents::Common::Filter::Routing::SamplingPointSkipStrategy"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">enum</span> <span class="pre">SamplingPointSkipStrategy</span></code></a> (see <a class="reference internal" href="../../Matching/Algorithms/2-SkipRouter.html#skipping-router"><span class="std std-ref">Skip router</span></a>)</dt><dd><ul>
+<dt>samplingPointSkipStrategy: <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">enum</span> <span class="pre">SamplingPointSkipStrategy</span></code> (see <a class="reference internal" href="../../Matching/Algorithms/2-SkipRouter.html#skipping-router"><span class="std std-ref">Skip router</span></a>)</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">includeEdgeCosts</span></code>: The distances are measured from the sampling points before/after the to-be-skipped sampling points.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">excludeEdgeCosts</span></code>: The distances are measured from the outermost sampling points that are to be skipped.</p></li>
 </ul>
@@ -468,7 +468,7 @@ for the implementation.</p></li>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>routeClusterPreference: <a class="reference internal" href="../../../_api/enum_namespaceAppComponents_1_1Common_1_1Filter_1_1Routing_1a918f66e5dfc2dad0437f12663044c993.html#_CPPv4N13AppComponents6Common6Filter7Routing22RouteClusterPreferenceE" title="AppComponents::Common::Filter::Routing::RouteClusterPreference"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">enum</span> <span class="pre">RouteClusterPreference</span></code></a> (see <a class="reference internal" href="../../Matching/Overview/Routing.html#routing-clustering"><span class="std std-ref">Clustering</span></a>)</dt><dd><ul>
+<dt>routeClusterPreference: <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">enum</span> <span class="pre">RouteClusterPreference</span></code> (see <a class="reference internal" href="../../Matching/Overview/Routing.html#routing-clustering"><span class="std std-ref">Clustering</span></a>)</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">cheapest</span></code>: Chooses from all best routes of the clusters the route with the lowest routing costs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">shortest</span></code>: Chooses from all best routes of the clusters the shortest route.</p></li>
 </ul>

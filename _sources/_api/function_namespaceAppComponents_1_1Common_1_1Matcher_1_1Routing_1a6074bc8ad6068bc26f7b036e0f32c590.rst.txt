@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a6074bc8ad6068bc26f7b036e0f32c590:
+
+Function AppComponents::Common::Matcher::Routing::attachToPreviousRoute
+=======================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::attachToPreviousRoute(Types::Routing::RouteList&, size_t)

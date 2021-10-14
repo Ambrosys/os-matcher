@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a7e9ea189c6596b94f37ddc7e324b317b:
+
+Function AppComponents::Common::Reader::Osm::toHighwaySelectionSql
+==================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::Osm::toHighwaySelectionSql(std::unordered_set<Types::Street::HighwayType> const&, std::string const&)

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1abf3a9ffe70aa83f4112735ddc3a47deb:
+
+Function AppComponents::Common::Matcher::Routing::isSelfIntersectingRoute
+=========================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::isSelfIntersectingRoute(Types::Routing::Route const&)

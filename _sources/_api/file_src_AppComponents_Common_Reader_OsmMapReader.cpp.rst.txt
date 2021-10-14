@@ -1,0 +1,111 @@
+
+.. _file_src_AppComponents_Common_Reader_OsmMapReader.cpp:
+
+File OsmMapReader.cpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Reader>` (``src/AppComponents/Common/Reader``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Reader/OsmMapReader.cpp``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Reader_OsmMapReader.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Reader/Osm/Conversion.h`` (:ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.h`)
+
+- ``AppComponents/Common/Reader/OsmMapReader.h`` (:ref:`file_src_AppComponents_Common_Reader_OsmMapReader.h`)
+
+- ``Core/Common/Geometry/Conversion.h`` (:ref:`file_src_Core_Common_Geometry_Conversion.h`)
+
+- ``Core/Common/Geometry/Helper.h`` (:ref:`file_src_Core_Common_Geometry_Helper.h`)
+
+- ``Core/Common/Postgres/Helper.h`` (:ref:`file_src_Core_Common_Postgres_Helper.h`)
+
+- ``Generic/String/Split.h`` (:ref:`file_src_Generic_String_Split.h`)
+
+- ``amblog/global.h``
+
+- ``boost/algorithm/string/replace.hpp``
+
+- ``boost/geometry/index/rtree.hpp``
+
+- ``boost/iterator/function_output_iterator.hpp``
+
+- ``iomanip``
+
+- ``iterator``
+
+- ``pqxx/pqxx``
+
+- ``unordered_map``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Reader`
+
+- :ref:`namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a6467402746e9c607de60fef4ebe32ec1`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ac26f1c7b368af135b0360ad3a71f84c2`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a7ad0e5dbf94fc918df1dc7f201df5e32`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a`
+

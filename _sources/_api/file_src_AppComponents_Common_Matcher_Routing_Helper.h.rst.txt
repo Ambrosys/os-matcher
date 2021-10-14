@@ -1,0 +1,92 @@
+
+.. _file_src_AppComponents_Common_Matcher_Routing_Helper.h:
+
+File Helper.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing>` (``src/AppComponents/Common/Matcher/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Routing/Helper.h``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Routing_Helper.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Routing/Edge.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Edge.h`)
+
+- ``AppComponents/Common/Types/Routing/SamplingPoint.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_SamplingPoint.h`)
+
+- ``Core/Common/Geometry/Types.h`` (:ref:`file_src_Core_Common_Geometry_Types.h`)
+
+- ``functional``
+
+- ``optional``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Comparators.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Helper.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher__Routing`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a20705e2542cf5f6c7b87ea54a68aedcc`
+

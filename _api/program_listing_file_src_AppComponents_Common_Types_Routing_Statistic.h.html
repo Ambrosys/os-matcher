@@ -359,7 +359,7 @@
 
 <span class="cp">#pragma once</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;AppComponents/Common/Filter/Routing/Types.h&gt;</span><span class="cp"/>
+<span class="cp">#include</span> <span class="cpf">&lt;AppComponents/Common/Matcher/Routing/Types.h&gt;</span><span class="cp"/>
 
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"/>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_set&gt;</span><span class="cp"/>
@@ -376,8 +376,8 @@
 
 <span class="k">struct</span> <span class="n">RoutingStatistic</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">::</span><span class="n">Routing</span><span class="o">::</span><span class="n">SamplingPointsSelection</span><span class="p">,</span> <span class="n">CalculatedRouteStatistic</span><span class="o">&gt;</span> <span class="n">calculated</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">::</span><span class="n">Routing</span><span class="o">::</span><span class="n">SamplingPointsSelection</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;&gt;</span> <span class="n">visited</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">Matcher</span><span class="o">::</span><span class="n">Routing</span><span class="o">::</span><span class="n">SamplingPointsSelection</span><span class="p">,</span> <span class="n">CalculatedRouteStatistic</span><span class="o">&gt;</span> <span class="n">calculated</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Matcher</span><span class="o">::</span><span class="n">Routing</span><span class="o">::</span><span class="n">SamplingPointsSelection</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;&gt;</span> <span class="n">visited</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span>  <span class="c1">// namespace AppComponents::Common::Types::Routing</span>

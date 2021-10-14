@@ -15,7 +15,6 @@ Subdirectories
 --------------
 
 - :ref:`dir_src_AppComponents_Common`
-- :ref:`dir_src_AppComponents_ExampleMatcher`
 
 
 
