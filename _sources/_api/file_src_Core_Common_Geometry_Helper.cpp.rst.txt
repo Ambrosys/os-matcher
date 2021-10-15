@@ -61,9 +61,9 @@ Functions
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1b68d0ba5810a3f793e41ce6c5b6f3df`
-
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ad24d6a3cc02870a752a3fc443efbc6e2`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a1b68d0ba5810a3f793e41ce6c5b6f3df`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1acff476e8d69f05e2f4f2613f7f5a3e54`
 
