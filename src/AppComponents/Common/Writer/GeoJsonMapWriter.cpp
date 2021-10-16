@@ -62,6 +62,7 @@ GeoJsonMapWriter::GeoJsonMapWriter(std::ostream & output) : Filter("GeoJsonMapWr
 }
 
 bool GeoJsonMapWriter::operator()(
+    std::ostream & output,
     Types::Street::SegmentList const & segmentList,
     Types::Street::NodePairList const & nodePairList,
     Types::Street::TravelDirectionList const & travelDirectionList,
@@ -72,7 +73,7 @@ bool GeoJsonMapWriter::operator()(
     assert(segmentList.size() == nodePairList.size());
     assert(segmentList.size() == travelDirectionList.size());
 
-    output_ << R"RAW({ "type": "FeatureCollection", "features": [)RAW" << '\n';
+    output << R"RAW({ "type": "FeatureCollection", "features": [)RAW" << '\n';
 
     //auto features = nlohmann::json::array();
     for (size_t i = 0; i < segmentList.size(); ++i)
@@ -83,7 +84,7 @@ bool GeoJsonMapWriter::operator()(
         auto const & highway = highwayList[i];
 
         //features.push_back( nlohmann::json{
-        output_ << nlohmann::json{
+        output << nlohmann::json{
             {"type", "Feature"},
             {"geometry", Core::Common::Geometry::toGeoJson(segment.geometry)},
             {"properties",
@@ -95,8 +96,8 @@ bool GeoJsonMapWriter::operator()(
                  {"TravelDirection", toString(travelDirection)},
                  {"Highway", toString(highway)}}}};
         if (i + 1 < segmentList.size())
-            output_ << ',';
-        output_ << '\n';
+            output << ',';
+        output << '\n';
     }
 
     //nlohmann::json json{
@@ -104,11 +105,26 @@ bool GeoJsonMapWriter::operator()(
     //    { "features", features }
     //};
 
-    //output_ << json.dump( 2 );
+    //output << json.dump( 2 );
 
-    output_ << "] }";
+    output << "] }";
 
     return true;
+}
+
+bool GeoJsonMapWriter::operator()(
+    Types::Street::SegmentList const & segmentList,
+    Types::Street::NodePairList const & nodePairList,
+    Types::Street::TravelDirectionList const & travelDirectionList,
+    Types::Street::HighwayList const & highwayList)
+{
+    return this->operator()(
+        output_,
+        segmentList,
+        nodePairList,
+        travelDirectionList,
+        highwayList
+        );
 }
 
 }  // namespace AppComponents::Common::Writer

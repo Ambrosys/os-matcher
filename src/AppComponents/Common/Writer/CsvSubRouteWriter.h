@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IWriter.h"
+
 #include <AppComponents/Common/Types/Graph/EdgeMap.h>
 #include <AppComponents/Common/Types/Routing/Edge.h>
 #include <AppComponents/Common/Types/Routing/SamplingPoint.h>
@@ -18,17 +20,27 @@
 
 namespace AppComponents::Common::Writer {
 
-class CsvSubRouteWriter : public ambpipeline::Filter
+class CsvSubRouteWriter : public ambpipeline::Filter, public IRouteWriter
 {
 public:
     CsvSubRouteWriter(std::ostream & output);
+
     bool operator()(
-        AppComponents::Common::Types::Routing::RouteList const &,
-        AppComponents::Common::Types::Graph::GraphEdgeMap const &,
-        AppComponents::Common::Types::Graph::NodeMap const &,
-        AppComponents::Common::Types::Track::TimeList const &,
-        AppComponents::Common::Types::Street::SegmentList const &,
-        AppComponents::Common::Types::Routing::SamplingPointList const &);
+        std::ostream &,
+        Types::Routing::RouteList const &,
+        Types::Graph::GraphEdgeMap const &,
+        Types::Street::SegmentList const &,
+        Types::Graph::NodeMap const &,
+        Types::Track::TimeList const &,
+        Types::Routing::SamplingPointList const &);
+
+    bool operator()(
+        Types::Routing::RouteList const &,
+        Types::Graph::GraphEdgeMap const &,
+        Types::Graph::NodeMap const &,
+        Types::Track::TimeList const &,
+        Types::Street::SegmentList const &,
+        Types::Routing::SamplingPointList const &);
 
 private:
     std::ostream & output_;

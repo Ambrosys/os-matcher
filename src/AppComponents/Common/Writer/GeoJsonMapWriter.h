@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IWriter.h"
+
 #include <AppComponents/Common/Types/Street/Highway.h>
 #include <AppComponents/Common/Types/Street/NodePair.h>
 #include <AppComponents/Common/Types/Street/Segment.h>
@@ -17,11 +19,25 @@
 
 namespace AppComponents::Common::Writer {
 
-class GeoJsonMapWriter : public ambpipeline::Filter
+class GeoJsonMapWriter : public ambpipeline::Filter, public IMapWriter
 {
 public:
     GeoJsonMapWriter(std::ostream & output);
-    bool operator()(Types::Street::SegmentList const &, Types::Street::NodePairList const &, Types::Street::TravelDirectionList const &, Types::Street::HighwayList const &);
+
+    bool operator()(
+        std::ostream &,
+        Types::Street::SegmentList const &,
+        Types::Street::NodePairList const &,
+        Types::Street::TravelDirectionList const &,
+        Types::Street::HighwayList const &
+        );
+
+    bool operator()(
+        Types::Street::SegmentList const &,
+        Types::Street::NodePairList const &,
+        Types::Street::TravelDirectionList const &,
+        Types::Street::HighwayList const &
+    );
 
 private:
     std::ostream & output_;

@@ -50,7 +50,11 @@ JsonRouteStatisticWriter::JsonRouteStatisticWriter(std::ostream & output) : Filt
 }
 
 bool JsonRouteStatisticWriter::operator()(
-    Types::Routing::RoutingStatistic const & routingStatistic, Types::Routing::SamplingPointList const & samplingPointList, Types::Track::TimeList const & timeList)
+    std::ostream & output,
+    Types::Routing::RoutingStatistic const & routingStatistic,
+    Types::Routing::SamplingPointList const & samplingPointList,
+    Types::Track::TimeList const & timeList
+    )
 {
     APP_LOG_TAG(noise, "I/O") << "Writing routing statistic";
 
@@ -76,9 +80,19 @@ bool JsonRouteStatisticWriter::operator()(
 
     nlohmann::json json{{"calculated", calculated}, {"visited", visited}};
 
-    output_ << json.dump(2);
+    output << json.dump(2);
 
     return true;
+}
+bool JsonRouteStatisticWriter::operator()(
+    Types::Routing::RoutingStatistic const & routingStatistic, Types::Routing::SamplingPointList const & samplingPointList, Types::Track::TimeList const & timeList)
+{
+    return this->operator()(
+        output_,
+        routingStatistic,
+        samplingPointList,
+        timeList
+        );
 }
 
 }  // namespace AppComponents::Common::Writer
