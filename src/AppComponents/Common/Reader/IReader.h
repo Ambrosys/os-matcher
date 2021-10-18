@@ -21,7 +21,7 @@ struct ITrackReader
     virtual ~ITrackReader() {}
 
     /**
-     * Fills the provifed datastructures with the four-fold representation of Tracks:
+     * Fills the provided datastructures with the four-fold representation of Tracks:
      *  - TimeList: List of timestamps
      *  - PointList: List of GeoPositions per timestamp
      *  - HeadingList: List of directions per timestamp

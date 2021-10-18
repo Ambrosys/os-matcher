@@ -2,5 +2,7 @@
    :hidden:
    :caption: DETAILS
 
-   content/Details/Filters/Index
+   content/Details/Reader/Index
+   content/Details/Matcher/Index
+   content/Details/Writer/Index
    _api/library_root

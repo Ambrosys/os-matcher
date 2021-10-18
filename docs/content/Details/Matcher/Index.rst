@@ -1,20 +1,19 @@
 .. include:: ../../substitutions.rst
 
 =======
-Filters
+Matcher
 =======
 
-Each processing step of an application is implemented as a *filter*.
-
-Here you can find the basic data flow (simplified filter pipeline):
+Here you can find the basic data flow:
 
 .. figure:: ../../OperationalData/DataSelection/img/generated/DataFlow.drawio.png
    :class: with-shadow
    :scale: 50
-   :alt: Filter dataflow
+   :alt: application dataflow
 
-   Filter dataflow
+   Application dataflow
 
+Each processing step of the *Intermediate* and *Core* phase is implemented as a *filter*.
 A filter is a functor which can read, process and write specific data.
 
 .. _context_concept:
@@ -27,9 +26,9 @@ and/or optional preconditions (*optionals*). These can either be other filters o
 which must be satisfied before execution.
 After an execution of a filter, it satisfies specific features (*fulfillments*).
 
-The :class:`OsmMapReader class <AppComponents::Common::Filter::OsmMapReader>` for example
-has the obligatory precondition ``PointList`` and satisfies (after successful execution)
-the features ``SegmentList``, ``NodePairList``, ``TravelDirectionList`` and ``HighwayList``.
+The :class:`Router class <AppComponents::Common::Matcher::Router>` for example
+has the obligatory preconditions ``SamplingPointList``, ``Graph``, ``GraphEdgeMap``, ``StreetIndexMap`` and satisfies (after successful execution)
+the features ``RouteList`` and ``RoutingStatistic``.
 This is reflected by the parameters of its ``operator()``,
 where the preconditions are constant references
 and the satisfiable variables are writable references:
@@ -37,22 +36,23 @@ and the satisfiable variables are writable references:
 .. code-block::
    :linenos:
 
-   OsmMapReader::OsmMapReader( /* ... */ ) : Filter( "OsmMapReader" ), /* ... */
+   Router::Router( /* ... */ ) : Filter( "Router" ), /* ... */
    {
-       setRequirements( { "PointList" } );
-       setOptionals(    {} );
-       setFulfillments( { "SegmentList", "NodePairList", "TravelDirectionList", "HighwayList" } );
+      setRequirements({"SamplingPointList", "Graph", "GraphEdgeMap", "StreetIndexMap"});
+      setOptionals({});
+      setFulfillments({"RouteList", "RoutingStatistic"});
    }
 
-   bool OsmMapReader::operator()(
-       Types::Track::PointList const & pointList,
-       Types::Street::SegmentList & segmentList,
-       Types::Street::NodePairList & nodePairList,
-       Types::Street::TravelDirectionList & travelDirectionList,
-       Types::Street::HighwayList & highwayList )
-   {
+   bool Router::operator()(
+      Types::Routing::SamplingPointList const & samplingPointList,
+      Types::Graph::Graph const & graph,
+      Types::Graph::GraphEdgeMap const & graphEdgeMap,
+      Types::Graph::StreetIndexMap const & streetIndexMap,
+      Types::Routing::RouteList & routeList,
+      Types::Routing::RoutingStatistic & routingStatistic)
+  {
        /* ... */
-   }
+  }
 
 Based on these definitions (*requirements*, *optionals* and *fulfillments*)
 a multithreaded execution pipeline can be created automatically
