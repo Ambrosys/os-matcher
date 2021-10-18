@@ -27,22 +27,23 @@ Router::Router(
     Routing::SamplingPointSkipStrategy const samplingPointSkipStrategy,
     double const maxCandidateBacktrackingDistance,
     double const maxClusteredRoutesLengthDifference,
-    Routing::RouteClusterPreference const routeClusterPreference)
+    Routing::RouteClusterPreference const routeClusterPreference,
+    Types::Track::TimeList const & timeList,
+    Types::Track::VelocityList const & velocityList,
+    Types::Street::SegmentList const & segmentList)
   : Filter("Router"), maxVelocityDifference_(maxVelocityDifference), allowSelfIntersection_(allowSelfIntersection), maxAngularDeviation_(maxAngularDeviation),
     accountTurningCircleLength_(accountTurningCircleLength), maxSamplingPointSkippingDistance_(maxSamplingPointSkippingDistance),
     samplingPointSkipStrategy_(samplingPointSkipStrategy), maxCandidateBacktrackingDistance_(maxCandidateBacktrackingDistance),
-    maxClusteredRoutesLengthDifference_(maxClusteredRoutesLengthDifference), routeClusterPreference_(routeClusterPreference)
+    maxClusteredRoutesLengthDifference_(maxClusteredRoutesLengthDifference), routeClusterPreference_(routeClusterPreference),
+    timeList_(timeList), velocityList_(velocityList), segmentList_(segmentList)
 {
-    setRequirements({"SamplingPointList", "SegmentList", "Graph", "GraphEdgeMap", "StreetIndexMap"});
-    setOptionals({"TimeList", "VelocityList"});
+    setRequirements({"SamplingPointList", "Graph", "GraphEdgeMap", "StreetIndexMap"});
+    setOptionals({});
     setFulfillments({"RouteList", "RoutingStatistic"});
 }
 
 bool Router::operator()(
     Types::Routing::SamplingPointList const & samplingPointList,
-    Types::Track::TimeList const & timeList,
-    Types::Track::VelocityList const & velocityList,
-    Types::Street::SegmentList const & segmentList,
     Types::Graph::Graph const & graph,
     Types::Graph::GraphEdgeMap const & graphEdgeMap,
     Types::Graph::StreetIndexMap const & streetIndexMap,
@@ -50,7 +51,7 @@ bool Router::operator()(
     Types::Routing::RoutingStatistic & routingStatistic)
 {
     auto algorithm = Core::Graph::Routing::Dijkstra{graph};
-    auto costFunction = [&](Core::Graph::Edge edge) { return Routing::geoDistance(segmentList.at(graphEdgeMap.at(edge).streetIndex).geometry); };
+    auto costFunction = [&](Core::Graph::Edge edge) { return Routing::geoDistance(segmentList_.at(graphEdgeMap.at(edge).streetIndex).geometry); };
     algorithm.setCost(costFunction);
 
     auto directedCandidateRouter = Routing::DirectedCandidateRouter{
@@ -59,16 +60,16 @@ bool Router::operator()(
         samplingPointList,
         graphEdgeMap,
         streetIndexMap,
-        timeList,
-        velocityList,
-        segmentList};
+        timeList_,
+        velocityList_,
+        segmentList_};
 
     auto samplingPointRouter
         = Routing::SamplingPointRouter{directedCandidateRouter, {maxClusteredRoutesLengthDifference_, routeClusterPreference_}, samplingPointList, graphEdgeMap};
 
-    auto backtrackRouter = Routing::BacktrackRouter{samplingPointRouter, {maxCandidateBacktrackingDistance_}, samplingPointList, timeList};
-    auto skipRouter = Routing::SkipRouter{backtrackRouter, {maxSamplingPointSkippingDistance_, samplingPointSkipStrategy_}, samplingPointList, timeList};
-    auto piecewiseRouter = Routing::PiecewiseRouter{skipRouter, samplingPointList, timeList};
+    auto backtrackRouter = Routing::BacktrackRouter{samplingPointRouter, {maxCandidateBacktrackingDistance_}, samplingPointList, timeList_};
+    auto skipRouter = Routing::SkipRouter{backtrackRouter, {maxSamplingPointSkippingDistance_, samplingPointSkipStrategy_}, samplingPointList, timeList_};
+    auto piecewiseRouter = Routing::PiecewiseRouter{skipRouter, samplingPointList, timeList_};
 
     piecewiseRouter(routeList, routingStatistic);
 

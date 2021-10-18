@@ -36,12 +36,12 @@ public:
         Routing::SamplingPointSkipStrategy samplingPointSkipStrategy,
         double maxCandidateBacktrackingDistance,
         double maxClusteredRoutesLengthDifference,
-        Routing::RouteClusterPreference routeClusterPreference);
+        Routing::RouteClusterPreference routeClusterPreference,
+        Types::Track::TimeList const & timeList,
+        Types::Track::VelocityList const & velocityList,
+        Types::Street::SegmentList const & segmentList);
     bool operator()(
         Types::Routing::SamplingPointList const &,
-        Types::Track::TimeList const &,
-        Types::Track::VelocityList const &,
-        Types::Street::SegmentList const &,
         Types::Graph::Graph const &,
         Types::Graph::GraphEdgeMap const &,
         Types::Graph::StreetIndexMap const &,
@@ -58,6 +58,9 @@ private:
     double const maxCandidateBacktrackingDistance_;
     double const maxClusteredRoutesLengthDifference_;
     Routing::RouteClusterPreference const routeClusterPreference_;
+    Types::Track::TimeList const & timeList_;
+    Types::Track::VelocityList const & velocityList_;
+    Types::Street::SegmentList const & segmentList_;
 };
 
 }  // namespace AppComponents::Common::Matcher
