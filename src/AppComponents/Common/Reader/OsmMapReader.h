@@ -27,7 +27,7 @@ namespace AppComponents::Common::Reader {
 /**
  * Reads OpenStreetMap data from a PostGIS database.
  */
-class OsmMapReader : public ambpipeline::Filter//, public IMapReader
+class OsmMapReader : public IMapReader
 {
 public:
     OsmMapReader(

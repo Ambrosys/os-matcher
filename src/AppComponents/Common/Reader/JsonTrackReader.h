@@ -19,7 +19,7 @@
 
 namespace AppComponents::Common::Reader {
 
-class JsonTrackReader : public ambpipeline::Filter, public ITrackReader
+class JsonTrackReader : public ITrackReader
 {
 public:
     JsonTrackReader(std::istream & input);

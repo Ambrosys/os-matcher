@@ -19,7 +19,7 @@
 
 namespace AppComponents::Common::Writer {
 
-class GeoJsonTrackWriter : public ambpipeline::Filter, public ITrackWriter
+class GeoJsonTrackWriter : public ITrackWriter
 {
 public:
     GeoJsonTrackWriter(std::ostream & output);

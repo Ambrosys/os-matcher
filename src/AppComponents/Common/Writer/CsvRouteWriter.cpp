@@ -17,12 +17,8 @@
 
 namespace AppComponents::Common::Writer {
 
-CsvRouteWriter::CsvRouteWriter(std::ostream & output) : Filter("CsvRouteWriter"), output_(output)
-{
-    setRequirements({"RouteList", "GraphEdgeMap", "NodeMap", "TimeList", "SegmentList", "SamplingPointList"});
-    setOptionals({});
-    setFulfillments({"route written"});
-}
+CsvRouteWriter::CsvRouteWriter(std::ostream & output) : output_(output)
+{}
 
 bool CsvRouteWriter::operator()(
     std::ostream & output,

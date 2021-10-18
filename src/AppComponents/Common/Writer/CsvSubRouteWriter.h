@@ -20,7 +20,7 @@
 
 namespace AppComponents::Common::Writer {
 
-class CsvSubRouteWriter : public ambpipeline::Filter, public IRouteWriter
+class CsvSubRouteWriter : public IRouteWriter
 {
 public:
     CsvSubRouteWriter(std::ostream & output);

@@ -19,7 +19,7 @@
 
 namespace AppComponents::Common::Writer {
 
-class GeoJsonMapWriter : public ambpipeline::Filter, public IMapWriter
+class GeoJsonMapWriter : public IMapWriter
 {
 public:
     GeoJsonMapWriter(std::ostream & output);

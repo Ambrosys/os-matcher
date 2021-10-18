@@ -15,12 +15,8 @@
 
 namespace AppComponents::Common::Writer {
 
-GeoJsonRouteWriter::GeoJsonRouteWriter(std::ostream & output) : Filter("GeoJsonRouteWriter"), output_(output)
-{
-    setRequirements({"RouteList", "GraphEdgeMap", "NodeMap", "TimeList", "SegmentList", "SamplingPointList"});
-    setOptionals({});
-    setFulfillments({"route written"});
-}
+GeoJsonRouteWriter::GeoJsonRouteWriter(std::ostream & output) : output_(output)
+{}
 
 bool GeoJsonRouteWriter::operator()(
     std::ostream & output,

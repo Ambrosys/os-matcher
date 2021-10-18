@@ -42,12 +42,8 @@ namespace {
 
 }  // namespace
 
-JsonRouteStatisticWriter::JsonRouteStatisticWriter(std::ostream & output) : Filter("JsonRouteStatisticWriter"), output_(output)
-{
-    setRequirements({"RoutingStatistic", "SamplingPointList"});
-    setOptionals({"TimeList"});
-    setFulfillments({"routing statistic written"});
-}
+JsonRouteStatisticWriter::JsonRouteStatisticWriter(std::ostream & output) : output_(output)
+{}
 
 bool JsonRouteStatisticWriter::operator()(
     std::ostream & output,

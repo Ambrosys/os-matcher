@@ -54,11 +54,8 @@ namespace {
 
 }  // namespace
 
-GeoJsonMapWriter::GeoJsonMapWriter(std::ostream & output) : Filter("GeoJsonMapWriter"), output_(output)
+GeoJsonMapWriter::GeoJsonMapWriter(std::ostream & output) : output_(output)
 {
-    setRequirements({"SegmentList", "NodePairList", "TravelDirectionList", "HighwayList"});
-    setOptionals({});
-    setFulfillments({"map written"});
 }
 
 bool GeoJsonMapWriter::operator()(

@@ -20,7 +20,7 @@
 
 namespace AppComponents::Common::Reader {
 
-class GeoJsonMapReader : public ambpipeline::Filter, public IMapReader
+class GeoJsonMapReader : public IMapReader
 {
 public:
     GeoJsonMapReader(std::istream & input);

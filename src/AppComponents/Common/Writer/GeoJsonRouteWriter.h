@@ -20,7 +20,7 @@
 
 namespace AppComponents::Common::Writer {
 
-class GeoJsonRouteWriter : public ambpipeline::Filter, public IRouteWriter
+class GeoJsonRouteWriter : public IRouteWriter
 {
 public:
     GeoJsonRouteWriter(std::ostream & output);

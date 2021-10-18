@@ -14,12 +14,8 @@
 
 namespace AppComponents::Common::Writer {
 
-GeoJsonTrackWriter::GeoJsonTrackWriter(std::ostream & output) : Filter("GeoJsonTrackWriter"), output_(output)
-{
-    setRequirements({"TimeList", "PointList", "VelocityList"});
-    setOptionals({"HeadingList", "PartialHeadingList"});
-    setFulfillments({"track written"});
-}
+GeoJsonTrackWriter::GeoJsonTrackWriter(std::ostream & output) : output_(output)
+{}
 
 bool GeoJsonTrackWriter::operator()(
     std::ostream & output,

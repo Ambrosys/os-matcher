@@ -18,7 +18,7 @@
 
 namespace AppComponents::Common::Writer {
 
-class JsonRouteStatisticWriter : public ambpipeline::Filter, public IRouteStatisticWriter
+class JsonRouteStatisticWriter : public IRouteStatisticWriter
 {
 public:
     JsonRouteStatisticWriter(std::ostream & output);

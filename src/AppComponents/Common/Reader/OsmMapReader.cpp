@@ -228,11 +228,8 @@ OsmMapReader::OsmMapReader(
     std::unordered_set<Types::Street::HighwayType> const & highwaySelection,
     double const fetchCorridor,
     bool const useSingleSearchCircle)
-  : Filter("OsmMapReader"), connection_(connection), highwaySelection_(highwaySelection), fetchCorridor_(fetchCorridor), useSingleSearchCircle_(useSingleSearchCircle)
+  : connection_(connection), highwaySelection_(highwaySelection), fetchCorridor_(fetchCorridor), useSingleSearchCircle_(useSingleSearchCircle)
 {
-    setRequirements({"PointList"});
-    setOptionals({});
-    setFulfillments({"SegmentList", "NodePairList", "TravelDirectionList", "HighwayList"});
 }
 
 bool OsmMapReader::init(

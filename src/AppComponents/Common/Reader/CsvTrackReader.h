@@ -19,7 +19,7 @@
 
 namespace AppComponents::Common::Reader {
 
-class CsvTrackReader : public ambpipeline::Filter, public ITrackReader
+class CsvTrackReader : public ITrackReader
 {
 public:
     CsvTrackReader(std::istream & input);
