@@ -30,7 +30,7 @@ nlohmann::json toGeoJson(Point const & point)
 
 LineString toLineString(nlohmann::json const & geoJson)
 {
-    if (geoJson.at("type") != "LineString")
+    if (geoJson.at("type").get<std::string>() != "LineString")
         throw std::runtime_error("GeoJson type is not LineString");
     LineString lineString;
     for (auto const & coordinate : geoJson.at("coordinates"))
