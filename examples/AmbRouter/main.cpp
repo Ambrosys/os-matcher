@@ -39,39 +39,21 @@ namespace {
 
 //@{
 /// Filter signature definitions
-    using TrackIoFilter = std::function<bool(Types::Track::TimeList &, Types::Track::PointList &, Types::Track::HeadingList &, Types::Track::VelocityList &)>;
-    using MapReaderWriterFilter = std::function<bool(Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &)>;
-    using PartialMapReaderFilter = std::function<bool(
-            Types::Track::PointList &, Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &)>;
     using RouterFilter = std::function<bool(
             Types::Routing::SamplingPointList &,
-            Types::Track::TimeList &,
-            Types::Track::VelocityList &,
-            Types::Street::SegmentList &,
             Types::Graph::Graph &,
             Types::Graph::GraphEdgeMap &,
             Types::Graph::StreetIndexMap &,
             Types::Routing::RouteList &,
             Types::Routing::RoutingStatistic &)>;
     using GraphBuilderFilter = std::function<bool(
-            Types::Street::NodePairList &,
-            Types::Street::TravelDirectionList &,
             Types::Graph::Graph &,
             Types::Graph::GraphEdgeMap &,
             Types::Graph::StreetIndexMap &,
             Types::Graph::NodeMap &)>;
     using SamplingPointFinderFilter = std::function<bool(
-            Types::Track::PointList &, Types::Track::HeadingList &, Types::Street::SegmentList &, Types::Street::TravelDirectionList &, Types::Routing::SamplingPointList &)>;
-    using SamplingPointWriterFilter = std::function<bool(Types::Routing::SamplingPointList &, Types::Track::TimeList &, Types::Track::PointList &, Types::Street::SegmentList &)>;
-    using StreetRouteWriterFilter = std::function<bool(
-            Types::Routing::RouteList &,
-            Types::Graph::GraphEdgeMap &,
-            Types::Graph::NodeMap &,
-            Types::Track::TimeList &,
-            Types::Street::SegmentList &,
             Types::Routing::SamplingPointList &)>;
-    using RouteStatisticWriter = std::function<bool(Types::Routing::RoutingStatistic &, Types::Routing::SamplingPointList &, Types::Track::TimeList &)>;
-//@}
+    //@}
     using Feature = std::function<bool()>;
 
     struct FilterVisitor
@@ -80,19 +62,10 @@ namespace {
 
         //@{
         /// Filter calls
-        bool operator()(TrackIoFilter & filter) { return filter(c.track.timeList, c.track.pointList, c.track.headingList, c.track.velocityList); };
-        bool operator()(MapReaderWriterFilter & filter) { return filter(c.street.segmentList, c.street.nodePairList, c.street.travelDirectionList, c.street.highwayList); };
-        bool operator()(PartialMapReaderFilter & filter)
-        {
-            return filter(c.track.pointList, c.street.segmentList, c.street.nodePairList, c.street.travelDirectionList, c.street.highwayList);
-        };
         bool operator()(RouterFilter & filter)
         {
             return filter(
                     c.routing.samplingPointList,
-                    c.track.timeList,
-                    c.track.velocityList,
-                    c.street.segmentList,
                     c.graph.lemonDigraph,
                     c.graph.graphEdgeMap,
                     c.graph.streetIndexMap,
@@ -101,18 +74,12 @@ namespace {
         };
         bool operator()(GraphBuilderFilter & filter)
         {
-            return filter(c.street.nodePairList, c.street.travelDirectionList, c.graph.lemonDigraph, c.graph.graphEdgeMap, c.graph.streetIndexMap, c.graph.nodeMap);
+            return filter(c.graph.lemonDigraph, c.graph.graphEdgeMap, c.graph.streetIndexMap, c.graph.nodeMap);
         };
         bool operator()(SamplingPointFinderFilter & filter)
         {
-            return filter(c.track.pointList, c.track.headingList, c.street.segmentList, c.street.travelDirectionList, c.routing.samplingPointList);
+            return filter(c.routing.samplingPointList);
         };
-        bool operator()(SamplingPointWriterFilter & filter) { return filter(c.routing.samplingPointList, c.track.timeList, c.track.pointList, c.street.segmentList); };
-        bool operator()(StreetRouteWriterFilter & filter)
-        {
-            return filter(c.routing.routeList, c.graph.graphEdgeMap, c.graph.nodeMap, c.track.timeList, c.street.segmentList, c.routing.samplingPointList);
-        };
-        bool operator()(RouteStatisticWriter & filter) { return filter(c.routing.routingStatistic, c.routing.samplingPointList, c.track.timeList); };
         //@}
         bool operator()(ambpipeline::DummyFilterFunction & filter) { return filter({}); };
         bool operator()(Feature & filter) { return filter(); };
@@ -124,15 +91,9 @@ namespace {
     using Pipeline = ambpipeline::Pipeline<
             //@{
             /// Filter signature registrations
-            TrackIoFilter,
-            MapReaderWriterFilter,
-            PartialMapReaderFilter,
             RouterFilter,
             GraphBuilderFilter,
             SamplingPointFinderFilter,
-            SamplingPointWriterFilter,
-            StreetRouteWriterFilter,
-            RouteStatisticWriter,
             //@}
             ambpipeline::DummyFilterFunction,
             Feature>;
@@ -190,13 +151,28 @@ namespace {
         auto visitor = FilterVisitor{context};
         auto ensure = std::vector<std::string>{};
 
+        // Reader
+
         auto fspIn = std::ifstream{options.fspIn};
         {
             auto extension = std::filesystem::path(options.fspIn).extension();
             if (extension == ".csv" || extension == ".txt")
-                pipeline.add(AppComponents::Common::Reader::CsvTrackReader{fspIn});
+            {
+                AppComponents::Common::Reader::CsvTrackReader{fspIn}(
+                    context.track.timeList,
+                    context.track.pointList,
+                    context.track.headingList,
+                    context.track.velocityList
+                    );
+                APP_LOG(info) << "len(context.track.timeList) = " << context.track.timeList.size();
+            }
             else if (extension == ".json")
-                pipeline.add(AppComponents::Common::Reader::JsonTrackReader{fspIn});
+                AppComponents::Common::Reader::JsonTrackReader{fspIn}(
+                    context.track.timeList,
+                    context.track.pointList,
+                    context.track.headingList,
+                    context.track.velocityList
+                    );
             else
             {
                 APP_LOG(fatal) << "Fsp input file extension unknown: " << extension;
@@ -220,7 +196,13 @@ namespace {
                        HighwayType::secondary_link,
                        HighwayType::tertiary_link};
             if (options.mapSource == "auto")
-                pipeline.add(Reader::OsmMapReader{postgresConnection, highwaySelection, mapFetchCorridor, false});
+                Reader::OsmMapReader{postgresConnection, highwaySelection, mapFetchCorridor, false}(
+                    context.track.pointList,
+                    context.street.segmentList,
+                    context.street.nodePairList,
+                    context.street.travelDirectionList,
+                    context.street.highwayList
+                    );
             else
             {
                 APP_LOG(fatal) << "Map source unknown: " << options.mapSource << " (has to be "
@@ -233,7 +215,12 @@ namespace {
             mapIn = std::ifstream{options.mapIn};
             auto extension = std::filesystem::path(options.mapIn).extension();
             if (extension == ".geojson")
-                pipeline.add(AppComponents::Common::Reader::GeoJsonMapReader{mapIn});
+                AppComponents::Common::Reader::GeoJsonMapReader{mapIn}(
+                    context.street.segmentList,
+                    context.street.nodePairList,
+                    context.street.travelDirectionList,
+                    context.street.highwayList
+                );
             else
             {
                 APP_LOG(fatal) << "Map input file extension unknown: " << extension;
@@ -241,45 +228,9 @@ namespace {
             }
         }
 
-        auto mapOut = std::unique_ptr<std::ofstream>{};
-        if (!options.mapOut.empty())
-        {
-            mapOut = std::make_unique<std::ofstream>(options.mapOut);
-            pipeline.add(Writer::GeoJsonMapWriter{*mapOut});
-            ensure.emplace_back("map written");
-        }
+        // TODO: Extend Reader Interface with registrable thread pool functionality to maintain multithreading while reading
 
-        auto routeCsvOut = std::unique_ptr<std::ofstream>{};
-        if (!options.routeCsvOut.empty())
-        {
-            routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
-            pipeline.add(AppComponents::Common::Writer::CsvRouteWriter{*routeCsvOut});
-            ensure.emplace_back("CsvRouteWriter");
-        }
-
-        auto subRouteCsvOut = std::unique_ptr<std::ofstream>{};
-        if (!options.subRouteCsvOut.empty())
-        {
-            subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
-            pipeline.add(AppComponents::Common::Writer::CsvSubRouteWriter{*subRouteCsvOut});
-            ensure.emplace_back("CsvSubRouteWriter");
-        }
-
-        auto routeGeoJsonOut = std::unique_ptr<std::ofstream>{};
-        if (!options.routeGeoJsonOut.empty())
-        {
-            routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
-            pipeline.add(AppComponents::Common::Writer::GeoJsonRouteWriter{*routeGeoJsonOut});
-            ensure.emplace_back("GeoJsonRouteWriter");
-        }
-
-        auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
-        if (!options.routeStatisticJsonOut.empty())
-        {
-            routeStatisticJsonOut = std::make_unique<std::ofstream>(options.routeStatisticJsonOut);
-            pipeline.add(AppComponents::Common::Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut});
-            ensure.emplace_back("JsonRouteStatisticWriter");
-        }
+        // Matcher Pipeline
 
         pipeline.add(Matcher::Router{
                 maxVelocityDifference,
@@ -290,9 +241,22 @@ namespace {
                 Matcher::Routing::SamplingPointSkipStrategy::excludeEdgeCosts,
                 maxCandidateBacktrackingDistance,
                 4.0 * samplingPointSearchRadius,
-                Matcher::Routing::RouteClusterPreference::shortest});
-        pipeline.add(Matcher::GraphBuilder{});
-        pipeline.add(Matcher::SamplingPointFinder{Matcher::SamplingPointFinder::SelectionStrategy::all, samplingPointSearchRadius, maxSamplingPointHeadingDifference});
+                Matcher::Routing::RouteClusterPreference::shortest,
+                context.track.timeList,
+                context.track.velocityList,
+                context.street.segmentList});
+        pipeline.add(Matcher::GraphBuilder{context.street.nodePairList, context.street.travelDirectionList});
+        pipeline.add(Matcher::SamplingPointFinder{
+            Matcher::SamplingPointFinder::SelectionStrategy::all,
+            samplingPointSearchRadius,
+            maxSamplingPointHeadingDifference,
+            context.track.pointList,
+            context.track.headingList,
+            context.street.segmentList,
+            context.street.travelDirectionList
+        });
+        // Note: ensure shall not be empty so the Pipeline optimizer does not clear the whole piepline
+        ensure.emplace_back("Router");
 
         auto pipelineObject = pipeline.compile(ensure);
 
@@ -303,6 +267,81 @@ namespace {
         }
 
         pipelineObject.run(visitor, not options.noColor);
+
+        // Writer
+
+        // TODO: Extend Reader Interface with registrable thread pool functionality to maintain multithreading while reading
+        //       see ambthread and ambpipeline lib (ambpipeline::Pipeline.tpp:283ff)
+
+        auto mapOut = std::unique_ptr<std::ofstream>{};
+        if (!options.mapOut.empty())
+        {
+            mapOut = std::make_unique<std::ofstream>(options.mapOut);
+            Writer::GeoJsonMapWriter{*mapOut}(
+                context.street.segmentList,
+                context.street.nodePairList,
+                context.street.travelDirectionList,
+                context.street.highwayList
+                );
+            ensure.emplace_back("map written");
+        }
+
+        auto routeCsvOut = std::unique_ptr<std::ofstream>{};
+        if (!options.routeCsvOut.empty())
+        {
+            routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
+            AppComponents::Common::Writer::CsvRouteWriter{*routeCsvOut}(
+                context.routing.routeList,
+                context.graph.graphEdgeMap,
+                context.graph.nodeMap,
+                context.track.timeList,
+                context.street.segmentList,
+                context.routing.samplingPointList
+                );
+            ensure.emplace_back("CsvRouteWriter");
+        }
+
+        auto subRouteCsvOut = std::unique_ptr<std::ofstream>{};
+        if (!options.subRouteCsvOut.empty())
+        {
+            subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
+            AppComponents::Common::Writer::CsvSubRouteWriter{*subRouteCsvOut}(
+                context.routing.routeList,
+                context.graph.graphEdgeMap,
+                context.graph.nodeMap,
+                context.track.timeList,
+                context.street.segmentList,
+                context.routing.samplingPointList
+            );
+            ensure.emplace_back("CsvSubRouteWriter");
+        }
+
+        auto routeGeoJsonOut = std::unique_ptr<std::ofstream>{};
+        if (!options.routeGeoJsonOut.empty())
+        {
+            routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
+            AppComponents::Common::Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
+                context.routing.routeList,
+                context.graph.graphEdgeMap,
+                context.graph.nodeMap,
+                context.track.timeList,
+                context.street.segmentList,
+                context.routing.samplingPointList
+                );
+            ensure.emplace_back("GeoJsonRouteWriter");
+        }
+
+        auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
+        if (!options.routeStatisticJsonOut.empty())
+        {
+            routeStatisticJsonOut = std::make_unique<std::ofstream>(options.routeStatisticJsonOut);
+            AppComponents::Common::Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
+                context.routing.routingStatistic,
+                context.routing.samplingPointList,
+                context.track.timeList
+                );
+            ensure.emplace_back("JsonRouteStatisticWriter");
+        }
 
         return EXIT_SUCCESS;
     }
