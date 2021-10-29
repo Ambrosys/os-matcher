@@ -36,7 +36,7 @@ if ( ${BUILD_LIBRARY} AND ${BUILD_EXAMPLES}  )
     # Find all the public headers
     # TODO: Seems not to work (when changing f.ex. AppComponents/Common/Filter/OsmMapReader.h,
     #       Doxygen does not rerun).
-    get_target_property(PUBLIC_HEADER_DIR_1 AmbRouter INTERFACE_INCLUDE_DIRECTORIES)
+    #get_target_property(PUBLIC_HEADER_DIR_1 AmbRouter INTERFACE_INCLUDE_DIRECTORIES)
     file(GLOB_RECURSE OS_MATCHER_PUBLIC_HEADERS CONFIGURE_DEPENDS
         ${PUBLIC_HEADER_DIR_1}/*.h
         )

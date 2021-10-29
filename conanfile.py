@@ -35,6 +35,7 @@ class OsMatcherConan(ConanFile):
         cmake = CMake(self)
         cmake.configure()
         cmake.definitions["BUILD_UNITTESTS"] = self.options.testing
+        cmake.definitions["CONAN_DISABLE_CHECK_COMPILER"] = True
         return cmake
 
     def requirements(self):

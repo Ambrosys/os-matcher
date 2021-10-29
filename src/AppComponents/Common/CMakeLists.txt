@@ -43,7 +43,7 @@ target_link_libraries( AppComponents
     PUBLIC CONAN_PKG::amb-pipeline
     PUBLIC CONAN_PKG::libpqxx
     PUBLIC CONAN_PKG::nlohmann_json
-    PUBLIC pq
+    #PUBLIC pq
     )
 
 target_include_directories( AppComponents

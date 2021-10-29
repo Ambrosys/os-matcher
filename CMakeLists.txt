@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.13 )
+cmake_minimum_required( VERSION 3.7 )
 project( os-matcher LANGUAGES C CXX )
 
 option ( CMAKE_DEBUG_OUTPUT "Enable if you want additional output for cmake's configure stage" OFF )
@@ -27,6 +27,8 @@ if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" )
 endif()
 enable_cpp17()
 add_compile_options( -Wall -Wextra )
+
+set ( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
 
 if ( ${BUILD_LIBRARY} )
 
@@ -80,7 +82,7 @@ if ( ${BUILD_LIBRARY} )
             PUBLIC CONAN_PKG::amb-pipeline
             PUBLIC CONAN_PKG::libpqxx
             PUBLIC CONAN_PKG::nlohmann_json
-            PUBLIC pq
+            #PUBLIC pq
             )
 
     target_include_directories( os-matcher

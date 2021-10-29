@@ -8,11 +8,13 @@ add_dependencies( AmbRouter test-if-git-HEAD-has-changed )
 
 target_link_libraries( AmbRouter
         PUBLIC os-matcher
-        PUBLIC Core::AppComponents
+        #PUBLIC Core::AppComponents
         PUBLIC CONAN_PKG::amb-log
+        PUBLIC CONAN_PKG::libpqxx
         PUBLIC CONAN_PKG::amb-thread
         PUBLIC CONAN_PKG::cli-app
         PUBLIC Progress
+        #PUBLIC pq
         )
 
 if( CMAKE_CXX_COMPILER_ID STREQUAL "Clang" )
