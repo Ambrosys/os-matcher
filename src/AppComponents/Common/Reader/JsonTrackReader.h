@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IReader.h"
+
 #include <AppComponents/Common/Types/Track/Heading.h>
 #include <AppComponents/Common/Types/Track/Point.h>
 #include <AppComponents/Common/Types/Track/Time.h>
@@ -17,7 +19,7 @@
 
 namespace AppComponents::Common::Reader {
 
-class JsonTrackReader : public ambpipeline::Filter
+class JsonTrackReader : public ITrackReader
 {
 public:
     JsonTrackReader(std::istream & input);

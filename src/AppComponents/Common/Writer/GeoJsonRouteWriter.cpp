@@ -15,24 +15,21 @@
 
 namespace AppComponents::Common::Writer {
 
-GeoJsonRouteWriter::GeoJsonRouteWriter(std::ostream & output) : Filter("GeoJsonRouteWriter"), output_(output)
-{
-    setRequirements({"RouteList", "GraphEdgeMap", "NodeMap", "TimeList", "SegmentList", "SamplingPointList"});
-    setOptionals({});
-    setFulfillments({"route written"});
-}
+GeoJsonRouteWriter::GeoJsonRouteWriter(std::ostream & output) : output_(output)
+{}
 
 bool GeoJsonRouteWriter::operator()(
-    AppComponents::Common::Types::Routing::RouteList const & routeList,
-    AppComponents::Common::Types::Graph::GraphEdgeMap const & graphEdgeMap,
-    AppComponents::Common::Types::Graph::NodeMap const & nodeMap [[gnu::unused]],
-    AppComponents::Common::Types::Track::TimeList const & timeList,
-    AppComponents::Common::Types::Street::SegmentList const & segmentList,
-    AppComponents::Common::Types::Routing::SamplingPointList const & samplingPointList)
+    std::ostream & output,
+    Types::Routing::RouteList const & routeList,
+    Types::Graph::GraphEdgeMap const & graphEdgeMap,
+    Types::Street::SegmentList const & segmentList,
+    Types::Graph::NodeMap const & nodeMap [[gnu::unused]],
+    Types::Track::TimeList const & timeList,
+    Types::Routing::SamplingPointList const & samplingPointList)
 {
     APP_LOG_TAG(noise, "I/O") << "Writing route";
 
-    output_ << R"RAW({ "type": "FeatureCollection", "features": [)RAW" << '\n';
+    output << R"RAW({ "type": "FeatureCollection", "features": [)RAW" << '\n';
 
     bool someRoutePrinted = false;
     for (auto const & route : routeList)
@@ -46,9 +43,9 @@ bool GeoJsonRouteWriter::operator()(
                 continue;  // Skip routes with 1 entry.
 
             if (someRoutePrinted)
-                output_ << ",\n";
+                output << ",\n";
 
-            output_ << nlohmann::json{
+            output << nlohmann::json{
                 {"type", "Feature"},
                 {"geometry", Core::Common::Geometry::toGeoJson(subRoute.route)},
                 {"properties",
@@ -61,11 +58,30 @@ bool GeoJsonRouteWriter::operator()(
         }
 
     if (someRoutePrinted)
-        output_ << '\n';
+        output << '\n';
 
-    output_ << "] }";
+    output << "] }";
 
     return true;
+}
+
+bool GeoJsonRouteWriter::operator()(
+    Types::Routing::RouteList const & routeList,
+    Types::Graph::GraphEdgeMap const & graphEdgeMap,
+    Types::Graph::NodeMap const & nodeMap [[gnu::unused]],
+    Types::Track::TimeList const & timeList,
+    Types::Street::SegmentList const & segmentList,
+    Types::Routing::SamplingPointList const & samplingPointList)
+{
+    return this->operator()(
+        output_,
+        routeList,
+        graphEdgeMap,
+        segmentList,
+        nodeMap,
+        timeList,
+        samplingPointList
+    );
 }
 
 }  // namespace AppComponents::Common::Writer

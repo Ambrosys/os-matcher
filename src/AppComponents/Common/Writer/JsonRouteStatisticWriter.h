@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "IWriter.h"
+
 #include <AppComponents/Common/Types/Routing/SamplingPoint.h>
 #include <AppComponents/Common/Types/Routing/Statistic.h>
 #include <AppComponents/Common/Types/Track/Time.h>
@@ -16,11 +18,23 @@
 
 namespace AppComponents::Common::Writer {
 
-class JsonRouteStatisticWriter : public ambpipeline::Filter
+class JsonRouteStatisticWriter : public IRouteStatisticWriter
 {
 public:
     JsonRouteStatisticWriter(std::ostream & output);
-    bool operator()(Types::Routing::RoutingStatistic const &, Types::Routing::SamplingPointList const &, Types::Track::TimeList const &);
+
+    bool operator()(
+        std::ostream &,
+        Types::Routing::RoutingStatistic const &,
+        Types::Routing::SamplingPointList const &,
+        Types::Track::TimeList const &
+        );
+
+    bool operator()(
+        Types::Routing::RoutingStatistic const &,
+        Types::Routing::SamplingPointList const &,
+        Types::Track::TimeList const &
+    );
 
 private:
     std::ostream & output_;

@@ -86,31 +86,34 @@ headingDifference(double const trackHeading, double segmentHeading, AppComponent
 
 namespace AppComponents::Common::Matcher {
 
-SamplingPointFinder::SamplingPointFinder(SelectionStrategy selectionStrategy, double const searchRadius, double const maxHeadingDifference)
-  : Filter("SamplingPointFinder"), selectionStrategy_(selectionStrategy), searchRadius_(searchRadius), maxHeadingDifference_(maxHeadingDifference)
-{
-    setRequirements({"PointList", "SegmentList", "TravelDirectionList"});
-    setOptionals({"HeadingList", "PartialHeadingList"});
-    setFulfillments({"SamplingPointList"});
-}
-
-bool SamplingPointFinder::operator()(
+SamplingPointFinder::SamplingPointFinder(
+    SelectionStrategy selectionStrategy,
+    double const searchRadius,
+    double const maxHeadingDifference,
     Types::Track::PointList const & pointList,
     Types::Track::HeadingList const & headingList,
     Types::Street::SegmentList const & segmentList,
-    Types::Street::TravelDirectionList const & travelDirectionList,
-    Types::Routing::SamplingPointList & samplingPointList)
+    Types::Street::TravelDirectionList const & travelDirectionList)
+  : Filter("SamplingPointFinder"), selectionStrategy_(selectionStrategy), searchRadius_(searchRadius), maxHeadingDifference_(maxHeadingDifference),
+    pointList_(pointList), headingList_(headingList), segmentList_(segmentList), travelDirectionList_(travelDirectionList)
 {
-    assert(pointList.size() == headingList.size() || headingList.empty());
-    assert(segmentList.size() == travelDirectionList.size());
+    setRequirements({});
+    setOptionals({});
+    setFulfillments({"SamplingPointList"});
+}
+
+bool SamplingPointFinder::operator()( Types::Routing::SamplingPointList & samplingPointList )
+{
+    assert(pointList_.size() == headingList_.size() || headingList_.empty());
+    assert(segmentList_.size() == travelDirectionList_.size());
 
     StreetIndexGeoindex geoindex;
-    for (size_t i = 0; i < segmentList.size(); ++i)
-        addStreetIndex(geoindex, i, segmentList[i].geometry, searchRadius_);
+    for (size_t i = 0; i < segmentList_.size(); ++i)
+        addStreetIndex(geoindex, i, segmentList_[i].geometry, searchRadius_);
 
-    for (size_t trackIndex = 0; trackIndex < pointList.size(); ++trackIndex)
+    for (size_t trackIndex = 0; trackIndex < pointList_.size(); ++trackIndex)
     {
-        std::vector<std::pair<size_t, size_t>> streetIndices = getStreetIndices(geoindex, pointList[trackIndex]);
+        std::vector<std::pair<size_t, size_t>> streetIndices = getStreetIndices(geoindex, pointList_[trackIndex]);
         if (streetIndices.empty())
             continue;
 
@@ -125,13 +128,13 @@ bool SamplingPointFinder::operator()(
                     return true;
                 if (a.streetSegmentHeadingDifference == b.streetSegmentHeadingDifference)
                 {
-                    if (segmentList[a.streetIndex].originId < segmentList[b.streetIndex].originId)
+                    if (segmentList_[a.streetIndex].originId < segmentList_[b.streetIndex].originId)
                         return true;
-                    if (segmentList[a.streetIndex].originId == segmentList[b.streetIndex].originId)
+                    if (segmentList_[a.streetIndex].originId == segmentList_[b.streetIndex].originId)
                     {
-                        if (segmentList[a.streetIndex].originOffset + a.streetSegmentIndex < segmentList[b.streetIndex].originOffset + b.streetSegmentIndex)
+                        if (segmentList_[a.streetIndex].originOffset + a.streetSegmentIndex < segmentList_[b.streetIndex].originOffset + b.streetSegmentIndex)
                             return true;
-                        if (segmentList[a.streetIndex].originOffset + a.streetSegmentIndex == segmentList[b.streetIndex].originOffset + b.streetSegmentIndex)
+                        if (segmentList_[a.streetIndex].originOffset + a.streetSegmentIndex == segmentList_[b.streetIndex].originOffset + b.streetSegmentIndex)
                         {
                             // Note: originId may not be unique, so it is possible to get to this point.
                             return a.streetIndex < b.streetIndex;
@@ -145,9 +148,9 @@ bool SamplingPointFinder::operator()(
 
         for (auto [streetIndex, streetSegmentIndex] : streetIndices)
         {
-            auto const & segmentGeometry = segmentList[streetIndex].geometry;
+            auto const & segmentGeometry = segmentList_[streetIndex].geometry;
             auto segment = Core::Common::Geometry::Segment{segmentGeometry[streetSegmentIndex], segmentGeometry[streetSegmentIndex + 1]};
-            auto [streetSegmentDistance, streetSegmentProjectedPoint, streetSegmentProjectedPointNormLength] = Core::Common::Geometry::geoDistance(pointList[trackIndex], segment);
+            auto [streetSegmentDistance, streetSegmentProjectedPoint, streetSegmentProjectedPointNormLength] = Core::Common::Geometry::geoDistance(pointList_[trackIndex], segment);
 
             if (streetSegmentDistance > searchRadius_)
                 continue;
@@ -156,13 +159,13 @@ bool SamplingPointFinder::operator()(
 
             double streetSegmentHeadingDifference;
             Types::Street::TravelDirection streetSegmentTravelDirection;
-            if (!headingList.empty())
+            if (!headingList_.empty())
                 std::tie(streetSegmentHeadingDifference, streetSegmentTravelDirection)
-                    = headingDifference(headingList[trackIndex], streetSegmentHeading, travelDirectionList[streetIndex]);
+                    = headingDifference(headingList_[trackIndex], streetSegmentHeading, travelDirectionList_[streetIndex]);
             else
             {
                 streetSegmentHeadingDifference = 0.0;
-                streetSegmentTravelDirection = travelDirectionList[streetIndex];
+                streetSegmentTravelDirection = travelDirectionList_[streetIndex];
             }
 
             if (streetSegmentHeadingDifference > maxHeadingDifference_)

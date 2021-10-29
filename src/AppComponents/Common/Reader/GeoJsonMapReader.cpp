@@ -59,11 +59,8 @@ namespace {
 
 }  // namespace
 
-GeoJsonMapReader::GeoJsonMapReader(std::istream & input) : Filter("GeoJsonMapReader"), input_(input)
+GeoJsonMapReader::GeoJsonMapReader(std::istream & input) : input_(input)
 {
-    setRequirements({});
-    setOptionals({});
-    setFulfillments({"SegmentList", "NodePairList", "TravelDirectionList", "HighwayList"});
 }
 
 bool GeoJsonMapReader::operator()(

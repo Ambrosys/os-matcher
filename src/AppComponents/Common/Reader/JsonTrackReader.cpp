@@ -13,11 +13,8 @@
 
 namespace AppComponents::Common::Reader {
 
-JsonTrackReader::JsonTrackReader(std::istream & input) : Filter("JsonTrackReader"), input_(input)
+JsonTrackReader::JsonTrackReader(std::istream & input) : input_(input)
 {
-    setRequirements({});
-    setOptionals({});
-    setFulfillments({"TimeList", "PointList", "PartialHeadingList", "VelocityList"});
 }
 
 bool JsonTrackReader::operator()(

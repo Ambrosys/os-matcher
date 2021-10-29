@@ -22,18 +22,24 @@ class SamplingPointFinder : public ambpipeline::Filter
 {
 public:
     enum class SelectionStrategy { all, best, singles };
-    SamplingPointFinder(SelectionStrategy selectionStrategy, double searchRadius, double maxHeadingDifference);
-    bool operator()(
-        Types::Track::PointList const &,
-        Types::Track::HeadingList const &,
-        Types::Street::SegmentList const &,
-        Types::Street::TravelDirectionList const &,
-        Types::Routing::SamplingPointList &);
+    SamplingPointFinder(
+        SelectionStrategy selectionStrategy,
+        double searchRadius,
+        double maxHeadingDifference,
+        Types::Track::PointList const & pointList,
+        Types::Track::HeadingList const & headingList,
+        Types::Street::SegmentList const & segmentList,
+        Types::Street::TravelDirectionList const & travelDirectionList);
+    bool operator()( Types::Routing::SamplingPointList & );
 
 private:
     SelectionStrategy const selectionStrategy_;
     double const searchRadius_;
     double const maxHeadingDifference_;
+    Types::Track::PointList const & pointList_;
+    Types::Street::SegmentList const & segmentList_;
+    Types::Street::TravelDirectionList const & travelDirectionList_;
+    Types::Track::HeadingList const & headingList_;
 };
 
 }  // namespace AppComponents::Common::Matcher

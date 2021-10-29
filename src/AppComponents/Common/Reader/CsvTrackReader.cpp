@@ -19,11 +19,8 @@
 
 namespace AppComponents::Common::Reader {
 
-CsvTrackReader::CsvTrackReader(std::istream & input) : Filter("CsvTrackReader"), input_(input)
+CsvTrackReader::CsvTrackReader(std::istream & input) : input_(input)
 {
-    setRequirements({});
-    setOptionals({});
-    setFulfillments({"TimeList", "PointList", "HeadingList", "VelocityList"});
 }
 
 bool CsvTrackReader::operator()(

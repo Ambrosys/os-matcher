@@ -18,14 +18,19 @@ namespace AppComponents::Common::Matcher {
 class GraphBuilder : public ambpipeline::Filter
 {
 public:
-    GraphBuilder();
-    bool operator()(
+    GraphBuilder(
         Types::Street::NodePairList const &,
-        Types::Street::TravelDirectionList const &,
+        Types::Street::TravelDirectionList const &
+        );
+    bool operator()(
         Types::Graph::Graph &,
         Types::Graph::GraphEdgeMap &,
         Types::Graph::StreetIndexMap &,
         Types::Graph::NodeMap &);
+
+private:
+    Types::Street::NodePairList const & nodePairList_;
+    Types::Street::TravelDirectionList const & travelDirectionList_;
 };
 
 }  // namespace AppComponents::Common::Matcher
