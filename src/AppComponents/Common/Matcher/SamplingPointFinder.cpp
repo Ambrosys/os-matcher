@@ -12,8 +12,8 @@
 
 #include <amblog/global.h>
 
-#include <boost/iterator/function_output_iterator.hpp>
 #include <boost/geometry/index/rtree.hpp>
+#include <boost/iterator/function_output_iterator.hpp>
 
 #include <cassert>
 #include <unordered_map>
@@ -34,6 +34,23 @@ void addStreetIndex(StreetIndexGeoindex & geoindex, size_t const index, Core::Co
     {
         auto box = Core::Common::Geometry::buffer(
             boost::geometry::return_envelope<StreetIndexGeoindexGeometry>(Core::Common::Geometry::Segment{lineString[i], lineString[i + 1]}), searchRadius);
+
+        // TODO: Research why sometimes min/max are wrong, f.ex. line ((12.794089999999999, 52.816599999999994), (12.794090000000001, 52.813930000000006))
+        //       would not lead to the envelope ((12.794089999999999, 52.813930000000006), (12.794090000000001, 52.816599999999994)).
+        //       Instead it has the same coordinates as the line.
+        //       The following two if blocks work around this bug.
+        if (box.min_corner().lat() > box.max_corner().lat())
+        {
+            auto min = box.min_corner().lat();
+            box.min_corner().setLat(box.max_corner().lat());
+            box.max_corner().setLat(min);
+        }
+        if (box.min_corner().lon() > box.max_corner().lon())
+        {
+            auto min = box.min_corner().lon();
+            box.min_corner().setLon(box.max_corner().lon());
+            box.max_corner().setLon(min);
+        }
 
         geoindex.insert(StreetIndexGeoindexValue{box, {index, i}});
     }
@@ -94,15 +111,15 @@ SamplingPointFinder::SamplingPointFinder(
     Types::Track::HeadingList const & headingList,
     Types::Street::SegmentList const & segmentList,
     Types::Street::TravelDirectionList const & travelDirectionList)
-  : Filter("SamplingPointFinder"), selectionStrategy_(selectionStrategy), searchRadius_(searchRadius), maxHeadingDifference_(maxHeadingDifference),
-    pointList_(pointList), headingList_(headingList), segmentList_(segmentList), travelDirectionList_(travelDirectionList)
+  : Filter("SamplingPointFinder"), selectionStrategy_(selectionStrategy), searchRadius_(searchRadius), maxHeadingDifference_(maxHeadingDifference), pointList_(pointList),
+    headingList_(headingList), segmentList_(segmentList), travelDirectionList_(travelDirectionList)
 {
     setRequirements({});
     setOptionals({});
     setFulfillments({"SamplingPointList"});
 }
 
-bool SamplingPointFinder::operator()( Types::Routing::SamplingPointList & samplingPointList )
+bool SamplingPointFinder::operator()(Types::Routing::SamplingPointList & samplingPointList)
 {
     assert(pointList_.size() == headingList_.size() || headingList_.empty());
     assert(segmentList_.size() == travelDirectionList_.size());
