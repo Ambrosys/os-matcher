@@ -19,8 +19,8 @@
 #include <pqxx/pqxx>
 
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/iterator/function_output_iterator.hpp>
 #include <boost/geometry/index/rtree.hpp>
+#include <boost/iterator/function_output_iterator.hpp>
 
 #include <iomanip>
 #include <iterator>
@@ -236,8 +236,7 @@ bool OsmMapReader::init(
     Types::Track::PointList const & pointList,
     double const fetchCorridor,
     bool const useSingleSearchCircle,
-    std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection
-    )
+    std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection)
 {
     using namespace Core::Common;
 
@@ -274,9 +273,8 @@ bool OsmMapReader::init(
         }
     }
 
-    if (highwaySelection){
+    if (highwaySelection)
         highwaySelection_ = highwaySelection.value();
-    }
 
     return false;
 }
@@ -398,19 +396,9 @@ bool OsmMapReader::operator()(
     Types::Street::TravelDirectionList & travelDirectionList,
     Types::Street::HighwayList & highwayList)
 {
-    init(
-        pointList,
-        searchRadius_,
-        useSingleSearchCircle_,
-        highwaySelection_
-        );
+    init(pointList, searchRadius_, useSingleSearchCircle_, highwaySelection_);
 
-    return this->operator()(
-        segmentList,
-        nodePairList,
-        travelDirectionList,
-        highwayList
-        );
+    return this->operator()(segmentList, nodePairList, travelDirectionList, highwayList);
 }
 
 }  // namespace AppComponents::Common::Reader
