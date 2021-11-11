@@ -95,6 +95,7 @@ namespace {
         std::string routeCsvOut;
         std::string subRouteCsvOut;
         std::string routeGeoJsonOut;
+        std::string trackGeoJsonOut;
         std::string routeStatisticJsonOut;
         std::string pipelineOut;
         std::string dbHost{"localhost"};
@@ -271,7 +272,6 @@ namespace {
                 context.street.travelDirectionList,
                 context.street.highwayList
                 );
-            ensure.emplace_back("map written");
         }
 
         auto routeCsvOut = std::unique_ptr<std::ofstream>{};
@@ -286,7 +286,6 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
                 );
-            ensure.emplace_back("CsvRouteWriter");
         }
 
         auto subRouteCsvOut = std::unique_ptr<std::ofstream>{};
@@ -301,7 +300,6 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
             );
-            ensure.emplace_back("CsvSubRouteWriter");
         }
 
         auto routeGeoJsonOut = std::unique_ptr<std::ofstream>{};
@@ -316,7 +314,6 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
                 );
-            ensure.emplace_back("GeoJsonRouteWriter");
         }
 
         auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
@@ -328,7 +325,18 @@ namespace {
                 context.routing.samplingPointList,
                 context.track.timeList
                 );
-            ensure.emplace_back("JsonRouteStatisticWriter");
+        }
+
+        auto trackGeoJsonOut = std::unique_ptr<std::ofstream>{};
+        if (!options.trackGeoJsonOut.empty())
+        {
+            trackGeoJsonOut = std::make_unique<std::ofstream>(options.trackGeoJsonOut);
+            Writer::GeoJsonTrackWriter{*trackGeoJsonOut}(
+                context.track.timeList,
+                context.track.pointList,
+                context.track.headingList,
+                context.track.velocityList
+            );
         }
 
         return EXIT_SUCCESS;
@@ -344,6 +352,7 @@ int main(int argc, char * argv[])
                | lyra::opt(options.routeCsvOut, "file")["--route"]("route output").optional()
                | lyra::opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
                | lyra::opt(options.routeGeoJsonOut, "file")["--route-geojson"]("route output").optional()
+               | lyra::opt(options.trackGeoJsonOut, "file")["--track-geojson"]("track output").optional()
                | lyra::opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
                | lyra::opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional()
                | lyra::opt(options.dbHost, "db host")["--host"]("db host name").optional() | lyra::opt(options.dbPort, "db port")["--port"]("db host port").optional()
