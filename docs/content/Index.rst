@@ -9,10 +9,6 @@
       :start-line: 1
       :end-line: 4
 
-.. ``$ AmbRouter --help``
-..
-.. .. program-output:: _binaries/AmbRouter --help
-
 .. include:: content/Usage/Index.rst
 .. include:: content/OperationalData/Index.rst
 .. include:: content/TrackPointProjection/Index.rst
