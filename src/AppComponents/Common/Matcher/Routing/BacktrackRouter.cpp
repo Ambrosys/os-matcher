@@ -98,7 +98,7 @@ std::tuple<RouteResult, size_t> BacktrackRouter::backtrackProcess(size_t const s
         }
 
         auto const routeSource = attachToPreviousRoute(session.routeList, *reachedSamplingPoint);
-        assert(routeSource == reachedSamplingPoint);
+        assert(routeSource <= reachedSamplingPoint);  // May be "less than" if the previous route ended because of skipped points.
 
         auto const [result, reached] = routeProcess(*reachedSamplingPoint, session);
 

@@ -118,7 +118,10 @@ std::tuple<RouteResult, size_t> SkipRouter::skipProcess(size_t const sourceSampl
         }
     }
 
-    APP_LOG(debug) << "skipping not successful, farthest " << getTime(sourceSamplingPoint) << ", last skip " << getTime(skipper.source()) << ".." << getTime(skipper.target());
+    if (skipper.isValid())
+        APP_LOG(debug) << "skipping not successful, farthest " << getTime(sourceSamplingPoint) << ", last skip " << getTime(skipper.source()) << ".." << getTime(skipper.target());
+    else
+        APP_LOG(debug) << "skipping not successful, farthest " << getTime(sourceSamplingPoint) << ", last skip none";
     session.routeList = routeListSnapshot;
     session.skippedSamplingPoints = alreadySkippedSampingPoints;
     return {RouteResult::goalNotReachedButReachable, sourceSamplingPoint};
