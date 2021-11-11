@@ -1,8 +1,8 @@
-/build/
+build/
 
 # JetBrains
 /.idea/
-/cmake-build-*/
+cmake-build-*/
 
 # Visual Studio Code
 /.vscode/

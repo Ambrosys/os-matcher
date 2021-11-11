@@ -5,24 +5,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "AppComponents/Common/Writer/CsvRouteWriter.h"
-#include "AppComponents/Common/Writer/CsvSubRouteWriter.h"
-#include "AppComponents/Common/Writer/GeoJsonRouteWriter.h"
 #include "Context.h"
 
-#include <AppComponents/Common/Reader/CsvTrackReader.h>
-#include <AppComponents/Common/Reader/GeoJsonMapReader.h>
-#include <AppComponents/Common/Writer/GeoJsonMapWriter.h>
-#include <AppComponents/Common/Matcher/GraphBuilder.h>
-#include <AppComponents/Common/Writer/JsonRouteStatisticWriter.h>
-#include <AppComponents/Common/Reader/JsonTrackReader.h>
-#include <AppComponents/Common/Reader/OsmMapReader.h>
-#include <AppComponents/Common/Matcher/Router.h>
-#include <AppComponents/Common/Matcher/SamplingPointFinder.h>
 #include <OsMatcher/OsMatcherVersion.h>
 
-#include <Core/Common/Postgres/Connection.h>
-
+//#include <Core/Common/Postgres/Connection.h>
+#include <OsMatcher.h>
 #include <amblog/global.h>
 #include <ambpipeline/Filter.h>
 #include <ambpipeline/Pipeline.h>
@@ -35,7 +23,7 @@
 
 namespace {
 
-    using namespace AppComponents::Common;
+    using namespace osmatcher;
 
 //@{
 /// Filter signature definitions
@@ -107,6 +95,7 @@ namespace {
         std::string routeCsvOut;
         std::string subRouteCsvOut;
         std::string routeGeoJsonOut;
+        std::string trackGeoJsonOut;
         std::string routeStatisticJsonOut;
         std::string pipelineOut;
         std::string dbHost{"localhost"};
@@ -158,7 +147,7 @@ namespace {
             auto extension = std::filesystem::path(options.fspIn).extension();
             if (extension == ".csv" || extension == ".txt")
             {
-                AppComponents::Common::Reader::CsvTrackReader{fspIn}(
+                Reader::CsvTrackReader{fspIn}(
                     context.track.timeList,
                     context.track.pointList,
                     context.track.headingList,
@@ -167,7 +156,7 @@ namespace {
                 APP_LOG(info) << "len(context.track.timeList) = " << context.track.timeList.size();
             }
             else if (extension == ".json")
-                AppComponents::Common::Reader::JsonTrackReader{fspIn}(
+                Reader::JsonTrackReader{fspIn}(
                     context.track.timeList,
                     context.track.pointList,
                     context.track.headingList,
@@ -215,7 +204,7 @@ namespace {
             mapIn = std::ifstream{options.mapIn};
             auto extension = std::filesystem::path(options.mapIn).extension();
             if (extension == ".geojson")
-                AppComponents::Common::Reader::GeoJsonMapReader{mapIn}(
+                Reader::GeoJsonMapReader{mapIn}(
                     context.street.segmentList,
                     context.street.nodePairList,
                     context.street.travelDirectionList,
@@ -283,14 +272,13 @@ namespace {
                 context.street.travelDirectionList,
                 context.street.highwayList
                 );
-            ensure.emplace_back("map written");
         }
 
         auto routeCsvOut = std::unique_ptr<std::ofstream>{};
         if (!options.routeCsvOut.empty())
         {
             routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
-            AppComponents::Common::Writer::CsvRouteWriter{*routeCsvOut}(
+            Writer::CsvRouteWriter{*routeCsvOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -298,14 +286,13 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
                 );
-            ensure.emplace_back("CsvRouteWriter");
         }
 
         auto subRouteCsvOut = std::unique_ptr<std::ofstream>{};
         if (!options.subRouteCsvOut.empty())
         {
             subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
-            AppComponents::Common::Writer::CsvSubRouteWriter{*subRouteCsvOut}(
+            Writer::CsvSubRouteWriter{*subRouteCsvOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -313,14 +300,13 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
             );
-            ensure.emplace_back("CsvSubRouteWriter");
         }
 
         auto routeGeoJsonOut = std::unique_ptr<std::ofstream>{};
         if (!options.routeGeoJsonOut.empty())
         {
             routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
-            AppComponents::Common::Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
+            Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
                 context.routing.routeList,
                 context.graph.graphEdgeMap,
                 context.graph.nodeMap,
@@ -328,19 +314,29 @@ namespace {
                 context.street.segmentList,
                 context.routing.samplingPointList
                 );
-            ensure.emplace_back("GeoJsonRouteWriter");
         }
 
         auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
         if (!options.routeStatisticJsonOut.empty())
         {
             routeStatisticJsonOut = std::make_unique<std::ofstream>(options.routeStatisticJsonOut);
-            AppComponents::Common::Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
+            Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
                 context.routing.routingStatistic,
                 context.routing.samplingPointList,
                 context.track.timeList
                 );
-            ensure.emplace_back("JsonRouteStatisticWriter");
+        }
+
+        auto trackGeoJsonOut = std::unique_ptr<std::ofstream>{};
+        if (!options.trackGeoJsonOut.empty())
+        {
+            trackGeoJsonOut = std::make_unique<std::ofstream>(options.trackGeoJsonOut);
+            Writer::GeoJsonTrackWriter{*trackGeoJsonOut}(
+                context.track.timeList,
+                context.track.pointList,
+                context.track.headingList,
+                context.track.velocityList
+            );
         }
 
         return EXIT_SUCCESS;
@@ -356,6 +352,7 @@ int main(int argc, char * argv[])
                | lyra::opt(options.routeCsvOut, "file")["--route"]("route output").optional()
                | lyra::opt(options.subRouteCsvOut, "file")["--sub-route"]("sub route output").optional()
                | lyra::opt(options.routeGeoJsonOut, "file")["--route-geojson"]("route output").optional()
+               | lyra::opt(options.trackGeoJsonOut, "file")["--track-geojson"]("track output").optional()
                | lyra::opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
                | lyra::opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional()
                | lyra::opt(options.dbHost, "db host")["--host"]("db host name").optional() | lyra::opt(options.dbPort, "db port")["--port"]("db host port").optional()

@@ -33,8 +33,9 @@ os-matcher-app-build:
         - pip3 install conan
         - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
         - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
+        - conan install . -s build_type=Release --install-folder=build -s compiler.libcxx=libstdc++11 --build=missing > conan_build.log
     script:
-        - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
+        - cmake -Bbuild -H. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=ON -DBUILD_EXAMPLES=ON -DBUILD_DOCS=OFF
         - ninja -C build test-if-git-HEAD-has-changed
         - ninja -C build install
         - build/install/bin/AmbRouter -h
@@ -63,6 +64,59 @@ unit-test:
             - master
             - merge_requests
             - external_pull_requests
+
+.conan_deploy:
+    stage: deploy
+    needs: ["unit-test"]
+    before_script:
+        - |
+            sudo apt update \
+            && apt install -y cmake ninja-build python3-pip pv \
+            && rm -rf /var/lib/apt/lists/*
+        - pip3 install conan
+        - conan remote add -f ambrosys https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+        - conan user --remote ambrosys ci_user -p $CI_JOB_TOKEN
+    script:
+        - pkg_name=os-matcher
+        - conan remove --force "$pkg_name/*" --src --builds --packages
+        - conan remove --force "$pkg_name/*" --system-reqs
+        - conan install . -s build_type=Release --install-folder=build -s compiler.libcxx=libstdc++11 --build=missing > conan_build.log
+        - conan create . amb/stable --build $pkg_name --build outdated --test-folder .conan/test_package
+        - if [[ $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH ]]; then conan upload "$pkg_name/*" --confirm --all --remote ambrosys; fi
+    only:
+        refs:
+            - master
+            - merge_requests
+            - external_pull_requests
+    artifacts:
+        paths:
+            - conan_build.log
+        expire_in: 1 day
+
+conan deploy gcc8:
+    extends: .conan_deploy
+    image: conanio/gcc8
+
+conan deploy gcc9:
+    extends: .conan_deploy
+    image: conanio/gcc9
+
+conan deploy gcc10:
+    extends: .conan_deploy
+    image: conanio/gcc10
+
+conan deploy clang10:
+    extends: .conan_deploy
+    image: conanio/clang10
+
+conan deploy clang11:
+    extends: .conan_deploy
+    image: conanio/clang11
+
+conan deploy clang12:
+    extends: .conan_deploy
+    image: conanio/clang12
+
 
 build doc:
     image: bibermann/os-matcher:gcc-sphinx
@@ -133,6 +187,8 @@ pages:
     only:
         refs:
             - master
+
+
 
 
 

@@ -42,9 +42,19 @@ function( add_core_library TARGET )
     )
 endfunction()
 
+function( add_object_core_library TARGET )
+    add_library( ${TARGET} OBJECT ${ARGN} )
+    add_library( Core::${TARGET} ALIAS ${TARGET} )
+
+    set_target_properties(
+            ${TARGET} PROPERTIES
+            CXX_CLANG_TIDY "${CLANG_TIDY_EXE}"
+            #         CXX_INCLUDE_WHAT_YOU_USE "${IWYU_EXE}"
+    )
+endfunction()
 
 function( add_core_interface_library TARGET )
-    add_library( ${TARGET} INTERFACE ${ARGN} )
+    add_library( ${TARGET} INTERFACE )
     add_library( Core::${TARGET} ALIAS ${TARGET} )
 endfunction()
 

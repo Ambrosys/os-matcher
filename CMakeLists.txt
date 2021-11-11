@@ -1,82 +1,98 @@
 cmake_minimum_required( VERSION 3.7 )
+project( os-matcher LANGUAGES C CXX )
 
 option ( CMAKE_DEBUG_OUTPUT "Enable if you want additional output for cmake's configure stage" OFF )
 option ( BUILD_LIBRARY "Enable if you want to build the library (and applications)" ON )
-option ( BUILD_EXAMPLES "Enable if you want to build example applications" ON )
+option ( BUILD_EXAMPLES "Enable if you want to build example applications" OFF )
 option ( BUILD_DOCS "Enable if you want to build docs" OFF )
 
 if ( ${CMAKE_DEBUG_OUTPUT} )
     set(CMAKE_DEBUG_TARGET_PROPERTIES
-        INCLUDE_DIRECTORIES
-        COMPILE_DEFINITIONS
-        CONTAINER_SIZE_REQUIRED
-        LIB_VERSION
-    )
+            INCLUDE_DIRECTORIES
+            COMPILE_DEFINITIONS
+            CONTAINER_SIZE_REQUIRED
+            LIB_VERSION
+            )
 endif ()
 
 include( "CMakeModules/CustomTargets.cmake" )
 include( "CMakeModules/CustomBuildTypes.cmake" )
 include( "CMakeModules/enable_cpp17.cmake" )
 include( "CMakeModules/CreateVersionFile.cmake" )
+include( "CMakeModules/FindTool.cmake" )
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/Global" )
-
-project( OS-Matcher LANGUAGES C CXX ) # The version information is pulled from hte git tag.
 
 if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" )
     add_compile_options( -stdlib=libc++ )  # Due to https://bugs.llvm.org/show_bug.cgi?id=33222
 endif()
-
 enable_cpp17()
-add_compile_options( -Wall -Wextra  )
+add_compile_options( -Wall -Wextra )
 
 set ( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
 
 if ( ${BUILD_LIBRARY} )
-    if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
-        message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-        file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
-            "${CMAKE_BINARY_DIR}/conan.cmake")
-    endif()
 
-    include(${CMAKE_BINARY_DIR}/conan.cmake)
-
-    conan_cmake_run(
-        REQUIRES
-
-            # Ambrosys libraries
-            amb-log/0.5.0@amb/stable
-            amb-pipeline/0.4.0@amb/stable
-            cli-app/0.4.0@amb/stable
-
-            # A modern, C++-native, header-only, framework for unit-tests.
-            catch2/2.13.6
-
-            # JSON for Modern C++.
-            nlohmann_json/3.9.1
-
-            # Boost C++ libraries.
-            boost/1.76.0
-
-            libpqxx/7.5.0
-            lemon/1.3.2@amb/stable
+    list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+    list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
 
 
-        BASIC_SETUP
-        NO_OUTPUT_DIRS
-        PROFILE_AUTO
-        CMAKE_TARGETS
-        BUILD missing
-    )
+    include( ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake )
+    conan_basic_setup( TARGETS )
 
-    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    conan_basic_setup()
+
+    find_package( Boost 1.76.0 REQUIRED )
+    # To find lemon is a science in itself
+    find_package( lemon 1.3.2 REQUIRED )
 
     include_directories( ${CMAKE_BINARY_DIR}/GeneratedIncludes )
+    include_directories( ${CONAN_INCLUDE_DIRS} )
 
+    enable_cpp17()
     add_compile_options( -D__CMAKE_BINARY_DIR__=\"${CMAKE_BINARY_DIR}\" )
     add_compile_options( -D__CMAKE_SOURCE_DIR__=\"${CMAKE_SOURCE_DIR}\" )
 
     add_subdirectory( src )
+
+    set( SOURCE
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/OsMatcher.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Reader/CsvTrackReader.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Reader/GeoJsonMapReader.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Reader/JsonTrackReader.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Reader/Osm/Conversion.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Reader/OsmMapReader.cpp
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Matcher/Router.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Matcher/GraphBuilder.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Matcher/SamplingPointFinder.cpp
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/CsvRouteWriter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/CsvSubRouteWriter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/GeoJsonRouteWriter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/GeoJsonTrackWriter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/GeoJsonMapWriter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AppComponents/Common/Writer/JsonRouteStatisticWriter.cpp
+            )
+
+    add_library( os-matcher STATIC $<TARGET_OBJECTS:Common> $<TARGET_OBJECTS:Graph> ${SOURCE} )
+
+    target_link_libraries( os-matcher
+            PUBLIC Core::Common
+            PUBLIC Core::Graph
+            PUBLIC Boost::boost
+            PUBLIC CONAN_PKG::amb-pipeline
+            PUBLIC CONAN_PKG::libpqxx
+            PUBLIC CONAN_PKG::nlohmann_json
+            #PUBLIC pq
+            )
+
+    target_include_directories( os-matcher
+            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+            )
+
+    install(
+            TARGETS os-matcher
+            ARCHIVE DESTINATION lib
+    )
 
     if ( ${BUILD_EXAMPLES} )
         add_subdirectory( examples )
