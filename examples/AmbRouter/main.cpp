@@ -97,6 +97,7 @@ struct UserOptions : public cliapp::UserOptionsBase
     std::string dbName{"gis"};
     std::string dbPass{"docker"};
     unsigned short dbPort{5432};
+    bool noSplitStreets{false};
 };
 
 int app(UserOptions options)
@@ -169,7 +170,7 @@ int app(UserOptions options)
                HighwayType::secondary_link,
                HighwayType::tertiary_link};
         if (options.mapSource == "auto")
-            Reader::OsmMapReader{postgresConnection, highwaySelection, mapFetchCorridor, false}(
+            Reader::OsmMapReader{postgresConnection, highwaySelection, mapFetchCorridor, false, !options.noSplitStreets}(
                 context.track.pointList, context.street.segmentList, context.street.nodePairList, context.street.travelDirectionList, context.street.highwayList);
         else
         {
@@ -296,7 +297,8 @@ int main(int argc, char * argv[])
         | lyra::opt(options.routeStatisticJsonOut, "file")["--route-statistic"]("route statistic output").optional()
         | lyra::opt(options.pipelineOut, "file")["--pipeline"]("pipeline graph output (dot)").optional() | lyra::opt(options.dbHost, "db host")["--host"]("db host name").optional()
         | lyra::opt(options.dbPort, "db port")["--port"]("db host port").optional() | lyra::opt(options.dbName, "db name")["--db"]("database").optional()
-        | lyra::opt(options.dbUser, "db user")["--dbuser"]("db user").optional() | lyra::opt(options.dbPass, "db password")["--dbpasswd"]("db password").optional();
+        | lyra::opt(options.dbUser, "db user")["--dbuser"]("db user").optional() | lyra::opt(options.dbPass, "db password")["--dbpasswd"]("db password").optional()
+        | lyra::opt(options.noSplitStreets)["--no-split-streets"]("do not split streets on overlapping points").optional();
 
     return cliapp::main(argc, argv, cli, options, "AmbRouter", "v" + std::string{OSMATCHER_VERSION_SHORT}, "Ambrosys Router application.", app);
 }
