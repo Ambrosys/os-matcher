@@ -19,8 +19,8 @@
 #include <pqxx/pqxx>
 
 #include <boost/algorithm/string/replace.hpp>
-#include <boost/iterator/function_output_iterator.hpp>
 #include <boost/geometry/index/rtree.hpp>
+#include <boost/iterator/function_output_iterator.hpp>
 
 #include <iomanip>
 #include <iterator>
@@ -176,10 +176,17 @@ namespace {
     }
 
     /**
-     * Note: Candidates are split on shared point intersections.
+     *
+     * @param candidates
+     * @param osmPointMap
+     * @param geoindex
+     * @param splitOnOverlappingPoints If true, candidates are split on shared point intersections.
      */
-    std::tuple<Types::Street::SegmentList, Types::Street::NodePairList, Types::Street::TravelDirectionList, Types::Street::HighwayList>
-    processCandidates(std::vector<Candidate> const & candidates, std::unordered_map<size_t, OsmPointCandidate> const & osmPointMap [[gnu::unused]], PointGeoindex & geoindex)
+    std::tuple<Types::Street::SegmentList, Types::Street::NodePairList, Types::Street::TravelDirectionList, Types::Street::HighwayList> processCandidates(
+        std::vector<Candidate> const & candidates,
+        std::unordered_map<size_t, OsmPointCandidate> const & osmPointMap [[gnu::unused]],
+        PointGeoindex & geoindex,
+        bool const splitOnOverlappingPoints)
     {
         Types::Street::SegmentList segmentList;
         Types::Street::NodePairList nodePairList;
@@ -203,16 +210,17 @@ namespace {
         {
             size_t firstPointIndex = 0;
             size_t firstPointId = getUniquePoint(geoindex, candidate.segment.segment.geometry[firstPointIndex])->id;
-            for (size_t i = 1; i < candidate.segment.segment.geometry.size() - 1; ++i)
-            {
-                auto & uniquePoint = *getUniquePoint(geoindex, candidate.segment.segment.geometry[i]);
-                if (uniquePoint.locations.size() > 1)  // split street on junction
+            if (splitOnOverlappingPoints)
+                for (size_t i = 1; i < candidate.segment.segment.geometry.size() - 1; ++i)
                 {
-                    addStreet(candidate.segment, firstPointIndex, i, firstPointId, uniquePoint.id);
-                    firstPointIndex = i;
-                    firstPointId = uniquePoint.id;
+                    auto & uniquePoint = *getUniquePoint(geoindex, candidate.segment.segment.geometry[i]);
+                    if (uniquePoint.locations.size() > 1)  // split street on junction
+                    {
+                        addStreet(candidate.segment, firstPointIndex, i, firstPointId, uniquePoint.id);
+                        firstPointIndex = i;
+                        firstPointId = uniquePoint.id;
+                    }
                 }
-            }
             size_t lastPointIndex = candidate.segment.segment.geometry.size() - 1;
             size_t lastPointId = getUniquePoint(geoindex, candidate.segment.segment.geometry[lastPointIndex])->id;
             addStreet(candidate.segment, firstPointIndex, lastPointIndex, firstPointId, lastPointId);
@@ -227,8 +235,10 @@ OsmMapReader::OsmMapReader(
     Core::Common::Postgres::Connection & connection,
     std::unordered_set<Types::Street::HighwayType> const & highwaySelection,
     double const fetchCorridor,
-    bool const useSingleSearchCircle)
-  : connection_(connection), highwaySelection_(highwaySelection), fetchCorridor_(fetchCorridor), useSingleSearchCircle_(useSingleSearchCircle)
+    bool const useSingleSearchCircle,
+    bool const splitOnOverlappingPoints)
+  : connection_(connection), highwaySelection_(highwaySelection), fetchCorridor_(fetchCorridor), useSingleSearchCircle_(useSingleSearchCircle),
+    splitOnOverlappingPoints_(splitOnOverlappingPoints)
 {
 }
 
@@ -236,8 +246,7 @@ bool OsmMapReader::init(
     Types::Track::PointList const & pointList,
     double const fetchCorridor,
     bool const useSingleSearchCircle,
-    std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection
-    )
+    std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection)
 {
     using namespace Core::Common;
 
@@ -274,9 +283,8 @@ bool OsmMapReader::init(
         }
     }
 
-    if (highwaySelection){
+    if (highwaySelection)
         highwaySelection_ = highwaySelection.value();
-    }
 
     return false;
 }
@@ -384,7 +392,7 @@ bool OsmMapReader::operator()(
 
     APP_LOG_TAG_MS(noise, "DB") << candidates.size() << " lines, " << osmPointMap.size() << " points and " << geoindex.size() << " coordinates fetched";
 
-    std::tie(segmentList, nodePairList, travelDirectionList, highwayList) = processCandidates(candidates, osmPointMap, geoindex);
+    std::tie(segmentList, nodePairList, travelDirectionList, highwayList) = processCandidates(candidates, osmPointMap, geoindex, splitOnOverlappingPoints_);
 
     APP_LOG_MS(noise) << segmentList.size() << " street segments created";
 
@@ -398,19 +406,9 @@ bool OsmMapReader::operator()(
     Types::Street::TravelDirectionList & travelDirectionList,
     Types::Street::HighwayList & highwayList)
 {
-    init(
-        pointList,
-        searchRadius_,
-        useSingleSearchCircle_,
-        highwaySelection_
-        );
+    init(pointList, searchRadius_, useSingleSearchCircle_, highwaySelection_);
 
-    return this->operator()(
-        segmentList,
-        nodePairList,
-        travelDirectionList,
-        highwayList
-        );
+    return this->operator()(segmentList, nodePairList, travelDirectionList, highwayList);
 }
 
 }  // namespace AppComponents::Common::Reader

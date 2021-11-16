@@ -31,29 +31,19 @@ class OsmMapReader : public IMapReader
 {
 public:
     OsmMapReader(
-        Core::Common::Postgres::Connection & connection, std::unordered_set<Types::Street::HighwayType> const & highwaySelection, double fetchCorridor, bool useSingleSearchCircle);
-
-    bool operator()(
-        Types::Street::SegmentList &,
-        Types::Street::NodePairList &,
-        Types::Street::TravelDirectionList &,
-        Types::Street::HighwayList &
-    );
-
-    bool operator()(
-        Types::Track::PointList const &,
-        Types::Street::SegmentList &,
-        Types::Street::NodePairList &,
-        Types::Street::TravelDirectionList &,
-        Types::Street::HighwayList &
-        );
-
-    bool init(
-        Types::Track::PointList const &,
+        Core::Common::Postgres::Connection & connection,
+        std::unordered_set<Types::Street::HighwayType> const & highwaySelection,
         double fetchCorridor,
         bool useSingleSearchCircle,
-        std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection
-        );
+        bool splitOnOverlappingPoints);
+
+    bool operator()(Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+
+    bool
+    operator()(Types::Track::PointList const &, Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+
+    bool
+    init(Types::Track::PointList const &, double fetchCorridor, bool useSingleSearchCircle, std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection);
 
 private:
     Core::Common::Postgres::Connection & connection_;
@@ -62,8 +52,7 @@ private:
     double searchRadius_;
     std::string pointsString_;
     bool const useSingleSearchCircle_;
-
-
+    bool const splitOnOverlappingPoints_;
 };
 
 }  // namespace AppComponents::Common::Reader
