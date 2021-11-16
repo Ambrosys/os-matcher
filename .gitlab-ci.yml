@@ -18,7 +18,7 @@ clang-format: # TODO: Use clang format 11, currently the image install clang-for
     allow_failure: true
     only:
         refs:
-            - master
+            - $CI_DEFAULT_BRANCH
             - merge_requests
             - external_pull_requests
 
@@ -57,7 +57,7 @@ build apps:
         expire_in: 1 day
     only:
         refs:
-            - master
+            - $CI_DEFAULT_BRANCH
             - merge_requests
             - external_pull_requests
 
@@ -70,7 +70,7 @@ unit-test:
         - build apps
     only:
         refs:
-            - master
+            - $CI_DEFAULT_BRANCH
             - merge_requests
             - external_pull_requests
 
@@ -93,13 +93,20 @@ build apps image:
               --build-arg CONAN_REMOTE_URL \
               --build-arg CONAN_USERNAME \
               --build-arg CONAN_PASSWORD \
-              -f Dockerfile.apps
+              -f Dockerfile.apps \
               -t $REPOSITORY_URL:$TAG .
-        - docker run --rm -it $REPOSITORY_URL:$TAG
-        - docker push $REPOSITORY_URL:$TAG
+        - docker run --rm $REPOSITORY_URL:$TAG
+        - |
+            if [ "$CI_COMMIT_REF_NAME" == "$CI_DEFAULT_BRANCH" ]; then
+              docker push $REPOSITORY_URL:$TAG
+            else
+              docker rmi $REPOSITORY_URL:$TAG
+            fi
     only:
         refs:
-            - master
+            - $CI_DEFAULT_BRANCH
+            - merge_requests
+            - external_pull_requests
 
 build docs:
     image: sphinxdoc/sphinx-latexpdf:4.1.2
@@ -120,7 +127,7 @@ build docs:
         expire_in: 1 day
     only:
         refs:
-            - master
+            - $CI_DEFAULT_BRANCH
             - merge_requests
             - external_pull_requests
 
