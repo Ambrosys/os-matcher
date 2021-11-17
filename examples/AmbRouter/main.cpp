@@ -104,6 +104,8 @@ struct UserOptions : public cliapp::UserOptionsBase
 
 int app(UserOptions options)
 {
+    APP_LOG_MS(info) << "AmbRouter running";
+
     if (not options.mapIn.empty() and options.mapSource != "auto")
     {
         APP_LOG(fatal) << "Error in command line:\n--map-source has to be \"auto\" when specifying --map-in";
@@ -139,6 +141,8 @@ int app(UserOptions options)
 
     // Reader
 
+    APP_LOG_MS(info) << "Reader start.";
+
     auto trackIn = std::ifstream{options.trackIn};
     {
         auto extension = std::filesystem::path(options.trackIn).extension();
@@ -156,6 +160,7 @@ int app(UserOptions options)
         }
     }
 
+    APP_LOG_MS(info) << "MapReader start.";
     auto mapIn = std::ifstream{};
     if (options.mapIn.empty())
     {
@@ -194,8 +199,13 @@ int app(UserOptions options)
             return EXIT_FAILURE;
         }
     }
+    APP_LOG_MS(info) << "MapReader finished.";
+
+    APP_LOG_MS(info) << "Reader finished.";
 
     // TODO: Extend Reader Interface with registrable thread pool functionality to maintain multithreading while reading
+
+    APP_LOG_MS(info) << "Matcher start.";
 
     // Matcher Pipeline
 
@@ -234,7 +244,11 @@ int app(UserOptions options)
 
     pipelineObject.run(visitor, not options.noColor);
 
+    APP_LOG_MS(info) << "Matcher finished.";
+
     // Writer
+
+    APP_LOG_MS(info) << "Writer start.";
 
     // TODO: Extend Reader Interface with registrable thread pool functionality to maintain multithreading while reading
     //       see ambthread and ambpipeline lib (ambpipeline::Pipeline.tpp:283ff)
@@ -244,7 +258,6 @@ int app(UserOptions options)
     {
         mapOut = std::make_unique<std::ofstream>(options.mapOut);
         Writer::GeoJsonMapWriter{*mapOut}(context.street.segmentList, context.street.nodePairList, context.street.travelDirectionList, context.street.highwayList);
-        ensure.emplace_back("map written");
     }
 
     auto routeCsvOut = std::unique_ptr<std::ofstream>{};
@@ -253,7 +266,6 @@ int app(UserOptions options)
         routeCsvOut = std::make_unique<std::ofstream>(options.routeCsvOut);
         AppComponents::Common::Writer::CsvRouteWriter{*routeCsvOut}(
             context.routing.routeList, context.graph.graphEdgeMap, context.graph.nodeMap, context.track.timeList, context.street.segmentList, context.routing.samplingPointList);
-        ensure.emplace_back("CsvRouteWriter");
     }
 
     auto subRouteCsvOut = std::unique_ptr<std::ofstream>{};
@@ -262,7 +274,6 @@ int app(UserOptions options)
         subRouteCsvOut = std::make_unique<std::ofstream>(options.subRouteCsvOut);
         AppComponents::Common::Writer::CsvSubRouteWriter{*subRouteCsvOut}(
             context.routing.routeList, context.graph.graphEdgeMap, context.graph.nodeMap, context.track.timeList, context.street.segmentList, context.routing.samplingPointList);
-        ensure.emplace_back("CsvSubRouteWriter");
     }
 
     auto routeGeoJsonOut = std::unique_ptr<std::ofstream>{};
@@ -271,7 +282,6 @@ int app(UserOptions options)
         routeGeoJsonOut = std::make_unique<std::ofstream>(options.routeGeoJsonOut);
         AppComponents::Common::Writer::GeoJsonRouteWriter{*routeGeoJsonOut}(
             context.routing.routeList, context.graph.graphEdgeMap, context.graph.nodeMap, context.track.timeList, context.street.segmentList, context.routing.samplingPointList);
-        ensure.emplace_back("GeoJsonRouteWriter");
     }
 
     auto trackGeoJsonOut = std::unique_ptr<std::ofstream>{};
@@ -279,7 +289,6 @@ int app(UserOptions options)
     {
         trackGeoJsonOut = std::make_unique<std::ofstream>(options.trackGeoJsonOut);
         AppComponents::Common::Writer::GeoJsonTrackWriter{*trackGeoJsonOut}(context.track.timeList, context.track.pointList, context.track.headingList, context.track.velocityList);
-        ensure.emplace_back("GeoJsonTrackWriter");
     }
 
     auto routeStatisticJsonOut = std::unique_ptr<std::ofstream>{};
@@ -288,8 +297,10 @@ int app(UserOptions options)
         routeStatisticJsonOut = std::make_unique<std::ofstream>(options.routeStatisticJsonOut);
         AppComponents::Common::Writer::JsonRouteStatisticWriter{*routeStatisticJsonOut}(
             context.routing.routingStatistic, context.routing.samplingPointList, context.track.timeList);
-        ensure.emplace_back("JsonRouteStatisticWriter");
     }
+
+    APP_LOG_MS(info) << "Writer finished.";
+    APP_LOG_MS(info) << "AmbRouter finished.";
 
     return EXIT_SUCCESS;
 }
