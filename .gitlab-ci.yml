@@ -1,189 +1,177 @@
+.default_rules:
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  - if: $CI_PIPELINE_SOURCE == "external_pull_request_event"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
 stages:
-    - lint
-    - test-build
-    - test
-    - build
-    - deploy
+  - lint
+  - test-build
+  - test
+  - build
+  - deploy
 
 clang-format: # TODO: Use clang format 11, currently the image install clang-format 7.0
-    image: gcc:10.2.0
-    stage: lint
-    before_script: 
-        - apt update && apt install -y clang-format
-    script:
-        - |
-            for f in $(find . -regex '.*\.\(h\|hpp\|tpp\|c\|cpp\)'); 
-                do clang-format -style=file $f; 
-            done
-    allow_failure: true
-    only:
-        refs:
-            - $CI_DEFAULT_BRANCH
-            - merge_requests
-            - external_pull_requests
+  image: gcc:10.2.0
+  stage: lint
+  before_script:
+    - apt update && apt install -y clang-format
+  script:
+    - |
+      for f in $(find . -regex '.*\.\(h\|hpp\|tpp\|c\|cpp\)');
+          do clang-format -style=file $f;
+      done
+  allow_failure: true
+  rules:
+    - !reference [ .default_rules ]
 
 build apps:
-    image: gcc:10.2.0
-    stage: test-build
-    variables:
-        CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
-        CONAN_USERNAME: ci_user
-        CONAN_PASSWORD: $CI_JOB_TOKEN
-    before_script:
-        - |
-            apt update \
-              && apt install --no-install-recommends -y cmake ninja-build iwyu python3-pip python3-setuptools \
-              && rm -rf /var/lib/apt/lists/*
-        - pip3 install conan
-        - rm -f ~/.conan/profiles/default
-        - conan profile new default --detect
-        - conan profile update settings.compiler.libcxx=libstdc++11 default
-        - conan remote add --force ambrosys $CONAN_REMOTE_URL
-        - conan user --remote ambrosys $CONAN_USERNAME --password $CONAN_PASSWORD
-    script:
-        - |
-            cmake -Bbuild -H. -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ \
-              -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install \
-              -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
-        - ninja -C build test-if-git-HEAD-has-changed
-        - ninja -C build install
-        - install/bin/AmbRouter -h
-    cache:
-        paths:
-            - ~/.conan/
-    artifacts:
-        paths:
-            - install
-        expire_in: 1 day
-    only:
-        refs:
-            - $CI_DEFAULT_BRANCH
-            - merge_requests
-            - external_pull_requests
+  image: gcc:10.2.0
+  stage: test-build
+  variables:
+    CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+    CONAN_USERNAME: ci_user
+    CONAN_PASSWORD: $CI_JOB_TOKEN
+  before_script:
+    - |
+      apt update \
+        && apt install --no-install-recommends -y cmake ninja-build iwyu python3-pip python3-setuptools \
+        && rm -rf /var/lib/apt/lists/*
+    - pip3 install conan
+    - rm -f ~/.conan/profiles/default
+    - conan profile new default --detect
+    - conan profile update settings.compiler.libcxx=libstdc++11 default
+    - conan remote add --force ambrosys $CONAN_REMOTE_URL
+    - conan user --remote ambrosys $CONAN_USERNAME --password $CONAN_PASSWORD
+  script:
+    - |
+      cmake -Bbuild -H. -GNinja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ \
+        -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install \
+        -DBUILD_LIBRARY=ON -DBUILD_DOCS=OFF
+    - ninja -C build test-if-git-HEAD-has-changed
+    - ninja -C build install
+    - install/bin/AmbRouter -h
+  cache:
+    paths:
+      - ~/.conan/
+  artifacts:
+    paths:
+      - install
+    expire_in: 1 day
+  rules:
+    - !reference [ .default_rules ]
 
 unit-test:
-    image: gcc:10.2.0
-    stage: test
-    script:
-        - install/bin/UnitTestsGraph
-    dependencies: 
-        - build apps
-    only:
-        refs:
-            - $CI_DEFAULT_BRANCH
-            - merge_requests
-            - external_pull_requests
+  image: gcc:10.2.0
+  stage: test
+  script:
+    - install/bin/UnitTestsGraph
+  dependencies:
+    - build apps
+  rules:
+    - !reference [ .default_rules ]
 
 build apps image:
-    image: docker:latest
-    stage: build
-    services:
-        - docker:dind
-    variables:
-        REPOSITORY_URL: ambrosys/os-matcher
-        TAG: latest
-        CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
-        CONAN_USERNAME: ci_user
-        CONAN_PASSWORD: $CI_JOB_TOKEN
-    before_script:
-        - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-    script:
-        - |
-            docker build \
-              --build-arg CONAN_REMOTE_URL \
-              --build-arg CONAN_USERNAME \
-              --build-arg CONAN_PASSWORD \
-              -f Dockerfile.apps \
-              -t $REPOSITORY_URL:$TAG .
-        - docker run --rm $REPOSITORY_URL:$TAG
-        - |
-            if [ "$CI_COMMIT_REF_NAME" == "$CI_DEFAULT_BRANCH" ]; then
-              docker push $REPOSITORY_URL:$TAG
-            else
-              docker rmi $REPOSITORY_URL:$TAG
-            fi
-    only:
-        refs:
-            - $CI_DEFAULT_BRANCH
-            - merge_requests
-            - external_pull_requests
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  variables:
+    REPOSITORY_URL: ambrosys/os-matcher
+    TAG: latest
+    CONAN_REMOTE_URL: https://gl.ambrosys.de/api/v4/projects/356/packages/conan
+    CONAN_USERNAME: ci_user
+    CONAN_PASSWORD: $CI_JOB_TOKEN
+  before_script:
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+  script:
+    - |
+      docker build \
+        --build-arg CONAN_REMOTE_URL \
+        --build-arg CONAN_USERNAME \
+        --build-arg CONAN_PASSWORD \
+        -f Dockerfile.apps \
+        -t $REPOSITORY_URL:$TAG .
+    - docker run --rm $REPOSITORY_URL:$TAG
+    - |
+      if [ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]; then
+        docker push $REPOSITORY_URL:$TAG
+      else
+        docker rmi $REPOSITORY_URL:$TAG
+      fi
+  rules:
+    - !reference [ .default_rules ]
 
 build docs:
-    image: sphinxdoc/sphinx-latexpdf:4.1.2
-    stage: build
-    before_script:
-        - |
-            python3 -m pip install --no-cache-dir \
-              docutils==0.16 breathe exhale t3SphinxThemeRtd m2r2 sphinxcontrib-programoutput cloud_sptheme
-        - |
-            apt-get update && apt-get install --no-install-recommends -y \
-              g++ cmake ninja-build doxygen moreutils html-xml-utils
-    script:
-        - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
-        - ninja -C build install
-    artifacts:
-        paths:
-            - install
-        expire_in: 1 day
-    only:
-        refs:
-            - $CI_DEFAULT_BRANCH
-            - merge_requests
-            - external_pull_requests
+  image: sphinxdoc/sphinx-latexpdf:4.1.2
+  stage: build
+  before_script:
+    - |
+      python3 -m pip install --no-cache-dir \
+        docutils==0.16 breathe exhale t3SphinxThemeRtd m2r2 sphinxcontrib-programoutput cloud_sptheme
+    - |
+      apt-get update && apt-get install --no-install-recommends -y \
+        g++ cmake ninja-build doxygen moreutils html-xml-utils
+  script:
+    - cmake -H. -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_LIBRARY=OFF -DBUILD_DOCS=ON
+    - ninja -C build install
+  artifacts:
+    paths:
+      - install
+    expire_in: 1 day
+  rules:
+    - !reference [ .default_rules ]
 
 pages:
-    image: python:3-slim
-    stage: deploy
-    variables:
-        GIT_STRATEGY: none
-        GITHUB_REPO: git@github.com:Ambrosys/os-matcher.git
-    before_script:
-        - apt-get update
-        # workaround until https://bugs.launchpad.net/ubuntu/+source/magit/+bug/1906365 is solved
-        - apt-get install -y git-all || true
-        - dpkg --configure -a
-        - git --version
-        - mkdir /root/.ssh
-        - cp $GITHUB_DEPLOY_KEY /root/.ssh/id_github
-        - cp $GITHUB_DEPLOY_KEY_PUB ~/.ssh/id_github.pub
-        - chmod 600 /root/.ssh/id_github
-        - |
-            cat >>/etc/ssh/ssh_config <<EOL
-            Host github.com
-                Hostname github.com
-                User git
-                Port 22
-                IdentityFile /root/.ssh/id_github
-                IdentitiesOnly yes
-                StrictHostKeyChecking no
-            EOL
-        - cat /etc/ssh/ssh_config
-    script:
-        - |
-            if [ ! -f install/doc/html/index.html ]; then
-                mkdir -p public
-                echo "Build-error." > public/index.html
-            else
-                rm -rf public
-                cp -r install/doc/html public
-                cp install/doc/os-matcher.pdf public/
-                rm -rf public/.doctrees
-            fi
-        - git clone -b gh-pages $GITHUB_REPO github_repo
-        - cd github_repo
-        - git rm -r .
-        - cp -r --no-target-directory ../public .
-        - git add .
-        - git commit -m "Deploying to gh-pages testing" || true
-        - git push $GITHUB_REPO
-    dependencies:
-        - build docs
-    artifacts:
-        paths:
-            - public
-    only:
-        refs:
-            - master
-
+  image: python:3-slim
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+    GITHUB_REPO: git@github.com:Ambrosys/os-matcher.git
+  before_script:
+    - apt-get update
+    # workaround until https://bugs.launchpad.net/ubuntu/+source/magit/+bug/1906365 is solved
+    - apt-get install -y git-all || true
+    - dpkg --configure -a
+    - git --version
+    - mkdir /root/.ssh
+    - cp $GITHUB_DEPLOY_KEY /root/.ssh/id_github
+    - cp $GITHUB_DEPLOY_KEY_PUB ~/.ssh/id_github.pub
+    - chmod 600 /root/.ssh/id_github
+    - |
+      cat >>/etc/ssh/ssh_config <<EOL
+      Host github.com
+          Hostname github.com
+          User git
+          Port 22
+          IdentityFile /root/.ssh/id_github
+          IdentitiesOnly yes
+          StrictHostKeyChecking no
+      EOL
+    - cat /etc/ssh/ssh_config
+  script:
+    - |
+      if [ ! -f install/doc/html/index.html ]; then
+          mkdir -p public
+          echo "Build-error." > public/index.html
+      else
+          rm -rf public
+          cp -r install/doc/html public
+          cp install/doc/os-matcher.pdf public/
+          rm -rf public/.doctrees
+      fi
+    - git clone -b gh-pages $GITHUB_REPO github_repo
+    - cd github_repo
+    - git rm -r .
+    - cp -r --no-target-directory ../public .
+    - git add .
+    - git commit -m "Deploying to gh-pages testing" || true
+    - git push $GITHUB_REPO
+  dependencies:
+    - build docs
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
