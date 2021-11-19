@@ -1,0 +1,27 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1ITrackReader:
+
+Struct ITrackReader
+===================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_IReader.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public AppComponents::Common::Reader::CsvTrackReader`` (:ref:`exhale_class_classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader`)
+- ``public AppComponents::Common::Reader::JsonTrackReader`` (:ref:`exhale_class_classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Reader::ITrackReader
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

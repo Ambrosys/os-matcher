@@ -1,0 +1,50 @@
+
+.. _namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp:
+
+Namespace AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp
+=============================================================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a2b68dcb242b90c15680f9d74558c1b7e`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ac26f1c7b368af135b0360ad3a71f84c2`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a7ad0e5dbf94fc918df1dc7f201df5e32`
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a`

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceGeneric_1_1String_1aec057e190a4f54e9310cf401631faa9b:
+
+Function Generic::String::rtrim
+===============================
+
+- Defined in :ref:`file_src_Generic_String_Trim.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Generic::String::rtrim(std::string&)

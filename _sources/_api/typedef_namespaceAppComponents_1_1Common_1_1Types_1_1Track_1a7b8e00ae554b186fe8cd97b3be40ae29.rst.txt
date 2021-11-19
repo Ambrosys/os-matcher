@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a7b8e00ae554b186fe8cd97b3be40ae29:
+
+Typedef AppComponents::Common::Types::Track::Heading
+====================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Track_Heading.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: AppComponents::Common::Types::Track::Heading

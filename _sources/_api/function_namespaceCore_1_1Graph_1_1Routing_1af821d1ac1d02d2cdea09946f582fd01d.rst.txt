@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Graph_1_1Routing_1af821d1ac1d02d2cdea09946f582fd01d:
+
+Function Core::Graph::Routing::operator>
+========================================
+
+- Defined in :ref:`file_src_Core_Graph_Routing_Dijkstra.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Graph::Routing::operator>(std::shared_ptr<Dijkstra::PathNode> const&, std::shared_ptr<Dijkstra::PathNode> const&)

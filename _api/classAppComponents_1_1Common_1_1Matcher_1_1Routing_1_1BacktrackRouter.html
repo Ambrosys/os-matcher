@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>Class BacktrackRouter &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/>
+        <link rel="up" title="API documentation" href="library_root.html"/>
+        <link rel="next" title="Class DirectedCandidateRouter" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html"/>
+        <link rel="prev" title="Class Router" href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html"/> 
+  <script src="../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#track">Track</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#execution">Execution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-docker">Execution with Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-built-binary">Execution with built binary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Build.html">Build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-for-docker">Building for Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/OperationalData/DataSelection/Index.html">Data selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DETAILS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../content/Details/Matcher/Index.html">Matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+          <li><a href="library_root.html">API documentation</a> &raquo;</li>
+    <li>Class BacktrackRouter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+    <hr class="before-stealth-btn clear-both"/>
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
+          <span class="stealth-btn-text">Next</span>
+          <span class="fa fa-arrow-circle-right"/>
+      </a>
+    
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
+          <span class="fa fa-arrow-circle-left"/>
+          <span class="stealth-btn-text">Previous</span>
+      </a>
+    
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="class-backtrackrouter">
+<span id="exhale-class-classappcomponents-1-1common-1-1matcher-1-1routing-1-1backtrackrouter"/><h1>Class BacktrackRouter<a class="headerlink" href="#class-backtrackrouter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h.html#file-src-appcomponents-common-matcher-routing-backtrackrouter-h"><span class="std std-ref">File BacktrackRouter.h</span></a></p></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.html#exhale-struct-structappcomponents-1-1common-1-1matcher-1-1routing-1-1backtrackrouter-1-1configuration"><span class="std std-ref">Struct BacktrackRouter::Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.html#exhale-struct-structappcomponents-1-1common-1-1matcher-1-1routing-1-1backtrackrouter-1-1session"><span class="std std-ref">Struct BacktrackRouter::Session</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouterE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouterE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouterE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter"/><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">AppComponents</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Common</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matcher</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">BacktrackRouter</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouterE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter15BacktrackRouterERK19SamplingPointRouterK13ConfigurationRKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter15BacktrackRouterERK19SamplingPointRouterK13ConfigurationRKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter15BacktrackRouterERK19SamplingPointRouterK13ConfigurationRKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::BacktrackRouter__SamplingPointRouterCR.ConfigurationC.Types::Routing::SamplingPointListCR.Types::Track::TimeListCR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1af2ea0c492018bcd81abfd2432099f5c6"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BacktrackRouter</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">router</span></span>, <a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE" title="AppComponents::Common::Matcher::Routing::BacktrackRouter::Configuration"><span class="n"><span class="pre">Configuration</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">configuration</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a635288c9182853b5994a908b48b99109.html#_CPPv4N13AppComponents6Common5Types7Routing17SamplingPointListE" title="AppComponents::Common::Types::Routing::SamplingPointList"><span class="n"><span class="pre">SamplingPointList</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">samplingPointList</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Track</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#_CPPv4N13AppComponents6Common5Types5Track8TimeListE" title="AppComponents::Common::Types::Track::TimeList"><span class="n"><span class="pre">TimeList</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">timeList</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter15BacktrackRouterERK19SamplingPointRouterK13ConfigurationRKN5Types7Routing17SamplingPointListERKN5Types5Track8TimeListE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouterclE6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERN19SamplingPointRouter8RouteMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing15BacktrackRouterclE6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERN19SamplingPointRouter8RouteMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing15BacktrackRouterclE6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERN19SamplingPointRouter8RouteMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::call-operator__s.s.s.std::unordered_set:s:CR.SamplingPointRouter::RouteMapR.Types::Routing::RouteListR.Types::Routing::RoutingStatisticRC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1a3e7e00baa1ec85249f3cefef7de7d0e3"/><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sourceSamplingPointIndexMinimum</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sourceSamplingPointIndexStart</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">targetSamplingPointIndexGoal</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">skippedSamplingPoints</span></span>, <a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouter8RouteMapE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter::RouteMap"><span class="n"><span class="pre">RouteMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routeMap</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html#_CPPv4N13AppComponents6Common5Types7Routing9RouteListE" title="AppComponents::Common::Types::Routing::RouteList"><span class="n"><span class="pre">RouteList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routeList</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#_CPPv4N13AppComponents6Common5Types7Routing16RoutingStatisticE" title="AppComponents::Common::Types::Routing::RoutingStatistic"><span class="n"><span class="pre">RoutingStatistic</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routingStatistic</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouterclE6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERN19SamplingPointRouter8RouteMapERN5Types7Routing9RouteListERN5Types7Routing16RoutingStatisticE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouter12routeProcessE6size_tR7Session">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing15BacktrackRouter12routeProcessE6size_tR7Session"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing15BacktrackRouter12routeProcessE6size_tR7Session"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::routeProcess__s.SessionRC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1a45c4154db8c357123d637804b2b1b36a"/><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.html#_CPPv4N13AppComponents6Common7Matcher7Routing11RouteResultE" title="AppComponents::Common::Matcher::Routing::RouteResult"><span class="n"><span class="pre">RouteResult</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">routeProcess</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sourceSamplingPoint</span></span>, <a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE" title="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session"><span class="n"><span class="pre">Session</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">session</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouter12routeProcessE6size_tR7Session" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p>Routes in normal mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The route if the goal is not yet reached and still reachable. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouter16backtrackProcessE6size_tR7Session">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing15BacktrackRouter16backtrackProcessE6size_tR7Session"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing15BacktrackRouter16backtrackProcessE6size_tR7Session"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::backtrackProcess__s.SessionRC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1a558aaf856640453137d0e9ef85ff12ff"/><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.html#_CPPv4N13AppComponents6Common7Matcher7Routing11RouteResultE" title="AppComponents::Common::Matcher::Routing::RouteResult"><span class="n"><span class="pre">RouteResult</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">backtrackProcess</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sourceSamplingPoint</span></span>, <a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE" title="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session"><span class="n"><span class="pre">Session</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">session</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing15BacktrackRouter16backtrackProcessE6size_tR7Session" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p>Routes in skip mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The route if the goal is not yet reached and still reachable. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7router_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7router_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7router_E"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::router___SamplingPointRouterCR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1aeaf8d35e8822f47e9b7aa6a6f951bde5"/><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">router_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7router_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter14configuration_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter14configuration_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter14configuration_E"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::configuration___ConfigurationC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1ae316b3326443f38cce3e81a7e942b69e"/><a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE" title="AppComponents::Common::Matcher::Routing::BacktrackRouter::Configuration"><span class="n"><span class="pre">Configuration</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configuration_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter14configuration_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter18samplingPointList_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter18samplingPointList_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter18samplingPointList_E"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::samplingPointList___Types::Routing::SamplingPointListCR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1ade53b85bae8ad5f5295f257c831d149d"/><span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a635288c9182853b5994a908b48b99109.html#_CPPv4N13AppComponents6Common5Types7Routing17SamplingPointListE" title="AppComponents::Common::Types::Routing::SamplingPointList"><span class="n"><span class="pre">SamplingPointList</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">samplingPointList_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter18samplingPointList_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter9timeList_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter9timeList_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter9timeList_E"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::timeList___Types::Track::TimeListCR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1a157396ea661f6a3b88163bce6c6b0d9b"/><span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Track</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#_CPPv4N13AppComponents6Common5Types5Track8TimeListE" title="AppComponents::Common::Types::Track::TimeList"><span class="n"><span class="pre">TimeList</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">timeList_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter9timeList_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Configuration"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration"/><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Configuration</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13ConfigurationE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13Configuration23maxBacktrackingDistanceE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter13Configuration23maxBacktrackingDistanceE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter13Configuration23maxBacktrackingDistanceE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Configuration::maxBacktrackingDistance__double"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration_1a6eac885158f6f92a934c077843a3cf80"/><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxBacktrackingDistance</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter13Configuration23maxBacktrackingDistanceE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session"/><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Session</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7SessionE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session7SessionEK6size_tK6size_tRKNSt13unordered_setI6size_tEERN5Types7Routing9RouteListERN19SamplingPointRouter8RouteMapERN5Types7Routing16RoutingStatisticE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session7SessionEK6size_tK6size_tRKNSt13unordered_setI6size_tEERN5Types7Routing9RouteListERN19SamplingPointRouter8RouteMapERN5Types7Routing16RoutingStatisticE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session7SessionEK6size_tK6size_tRKNSt13unordered_setI6size_tEERN5Types7Routing9RouteListERN19SamplingPointRouter8RouteMapERN5Types7Routing16RoutingStatisticE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::Session__sC.sC.std::unordered_set:s:CR.Types::Routing::RouteListR.SamplingPointRouter::RouteMapR.Types::Routing::RoutingStatisticR"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1aca42292bf485fb565779627b43146c68"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Session</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sourceSamplingPointIndexMinimum_</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">targetSamplingPointIndexGoal_</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">skippedSamplingPoints_</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html#_CPPv4N13AppComponents6Common5Types7Routing9RouteListE" title="AppComponents::Common::Types::Routing::RouteList"><span class="n"><span class="pre">RouteList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routeList_</span></span>, <a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouter8RouteMapE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter::RouteMap"><span class="n"><span class="pre">RouteMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routeMap_</span></span>, <span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#_CPPv4N13AppComponents6Common5Types7Routing16RoutingStatisticE" title="AppComponents::Common::Types::Routing::RoutingStatistic"><span class="n"><span class="pre">RoutingStatistic</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">routingStatistic_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session7SessionEK6size_tK6size_tRKNSt13unordered_setI6size_tEERN5Types7Routing9RouteListERN19SamplingPointRouter8RouteMapERN5Types7Routing16RoutingStatisticE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session31sourceSamplingPointIndexMinimumE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session31sourceSamplingPointIndexMinimumE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session31sourceSamplingPointIndexMinimumE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::sourceSamplingPointIndexMinimum__sC"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1a922751a22bf366e209ebdca0b2c6774c"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sourceSamplingPointIndexMinimum</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session31sourceSamplingPointIndexMinimumE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session28targetSamplingPointIndexGoalE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session28targetSamplingPointIndexGoalE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session28targetSamplingPointIndexGoalE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::targetSamplingPointIndexGoal__sC"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1ae2da58daebcc354d82117f18e8e1abc7"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">targetSamplingPointIndexGoal</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session28targetSamplingPointIndexGoalE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session21skippedSamplingPointsE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session21skippedSamplingPointsE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session21skippedSamplingPointsE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::skippedSamplingPoints__std::unordered_set:s:CR"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1aa4c00df8ed3a7a10a0ed1187da66da2f"/><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">skippedSamplingPoints</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session21skippedSamplingPointsE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session9routeListE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session9routeListE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session9routeListE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::routeList__Types::Routing::RouteListR"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1a2bf2ce43d082f686272c8b551bf58228"/><span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html#_CPPv4N13AppComponents6Common5Types7Routing9RouteListE" title="AppComponents::Common::Types::Routing::RouteList"><span class="n"><span class="pre">RouteList</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">routeList</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session9routeListE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session16routingStatisticE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session16routingStatisticE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session16routingStatisticE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::routingStatistic__Types::Routing::RoutingStatisticR"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1aa970550949b5437e1ce3dc23d0c69f8a"/><span class="n"><span class="pre">Types</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#_CPPv4N13AppComponents6Common5Types7Routing16RoutingStatisticE" title="AppComponents::Common::Types::Routing::RoutingStatistic"><span class="n"><span class="pre">RoutingStatistic</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">routingStatistic</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session16routingStatisticE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session8routeMapE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session8routeMapE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session8routeMapE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::routeMap__SamplingPointRouter::RouteMapR"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1ac52d1e7f5a8d28630b709224a7fff197"/><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouter8RouteMapE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter::RouteMap"><span class="n"><span class="pre">RouteMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">routeMap</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session8routeMapE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session15visitedRouteSetE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session15visitedRouteSetE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session15visitedRouteSetE"/><span id="AppComponents::Common::Matcher::Routing::BacktrackRouter::Session::visitedRouteSet__SamplingPointRouter::VisitedRouteSet"/><span class="target" id="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session_1a5fbdab1e291e5e09f86ea10c33b00442"/><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouterE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter"><span class="n"><span class="pre">SamplingPointRouter</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#_CPPv4N13AppComponents6Common7Matcher7Routing19SamplingPointRouter15VisitedRouteSetE" title="AppComponents::Common::Matcher::Routing::SamplingPointRouter::VisitedRouteSet"><span class="n"><span class="pre">VisitedRouteSet</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visitedRouteSet</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing15BacktrackRouter7Session15visitedRouteSetE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
+      
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2018, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

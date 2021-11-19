@@ -1,0 +1,26 @@
+.. _exhale_class_classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter:
+
+Class JsonRouteStatisticWriter
+==============================
+
+- Defined in :ref:`file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public AppComponents::Common::Writer::IRouteStatisticWriter`` (:ref:`exhale_struct_structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: AppComponents::Common::Writer::JsonRouteStatisticWriter
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

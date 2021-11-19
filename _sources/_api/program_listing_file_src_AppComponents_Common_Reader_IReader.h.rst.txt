@@ -1,0 +1,63 @@
+
+.. _program_listing_file_src_AppComponents_Common_Reader_IReader.h:
+
+Program Listing for File IReader.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Reader_IReader.h>` (``src/AppComponents/Common/Reader/IReader.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #ifndef OS_MATCHER_IREADER_H
+   #define OS_MATCHER_IREADER_H
+   
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   #include <AppComponents/Common/Types/Track/Heading.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   #include <AppComponents/Common/Types/Track/Time.h>
+   #include <AppComponents/Common/Types/Track/Velocity.h>
+   
+   #include <unordered_set>
+   
+   
+   namespace AppComponents::Common::Reader{
+   
+   struct ITrackReader
+   {
+       virtual ~ITrackReader() {}
+   
+       virtual bool operator()(
+           Types::Track::TimeList &,
+           Types::Track::PointList &,
+           Types::Track::HeadingList &,
+           Types::Track::VelocityList &
+           ) = 0;
+   };
+   
+   struct IMapReader
+   {
+       virtual ~IMapReader() {}
+       virtual bool operator()(
+           Types::Street::SegmentList &,
+           Types::Street::NodePairList &,
+           Types::Street::TravelDirectionList &,
+           Types::Street::HighwayList &) = 0;
+   
+       virtual bool init(
+           Types::Track::PointList const &,
+           double fetchCorridor,
+           bool useSingleSearchCircle,
+           std::optional<std::unordered_set<Types::Street::HighwayType>> const &
+           ){ return false; };
+   
+   };
+   
+   }
+   
+   #endif  //OS_MATCHER_IREADER_H

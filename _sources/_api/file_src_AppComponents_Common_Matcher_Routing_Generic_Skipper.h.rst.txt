@@ -1,0 +1,65 @@
+
+.. _file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h:
+
+File Skipper.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Matcher_Routing_Generic>` (``src/AppComponents/Common/Matcher/Routing/Generic``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Matcher/Routing/Generic/Skipper.h``)
+---------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``functional``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.cpp`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_Types.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Matcher__Routing__Generic`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper`
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper`
+

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a84d89c5d17474b5118b6981f03b18194:
+
+Function AppComponents::Common::Reader::Osm::toTravelDirection
+==============================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_Osm_Conversion.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::Osm::toTravelDirection(std::string const&)

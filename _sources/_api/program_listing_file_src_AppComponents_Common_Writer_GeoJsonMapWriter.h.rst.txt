@@ -1,0 +1,58 @@
+
+.. _program_listing_file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h:
+
+Program Listing for File GeoJsonMapWriter.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h>` (``src/AppComponents/Common/Writer/GeoJsonMapWriter.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include "IWriter.h"
+   
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <ostream>
+   
+   namespace AppComponents::Common::Writer {
+   
+   class GeoJsonMapWriter : public IMapWriter
+   {
+   public:
+       GeoJsonMapWriter(std::ostream & output);
+   
+       bool operator()(
+           std::ostream &,
+           Types::Street::SegmentList const &,
+           Types::Street::NodePairList const &,
+           Types::Street::TravelDirectionList const &,
+           Types::Street::HighwayList const &
+           );
+   
+       bool operator()(
+           Types::Street::SegmentList const &,
+           Types::Street::NodePairList const &,
+           Types::Street::TravelDirectionList const &,
+           Types::Street::HighwayList const &
+       );
+   
+   private:
+       std::ostream & output_;
+   };
+   
+   }  // namespace AppComponents::Common::Writer

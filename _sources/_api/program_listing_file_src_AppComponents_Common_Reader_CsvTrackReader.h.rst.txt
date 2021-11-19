@@ -1,0 +1,48 @@
+
+.. _program_listing_file_src_AppComponents_Common_Reader_CsvTrackReader.h:
+
+Program Listing for File CsvTrackReader.h
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Reader_CsvTrackReader.h>` (``src/AppComponents/Common/Reader/CsvTrackReader.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include "IReader.h"
+   
+   #include <AppComponents/Common/Types/Track/Heading.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   #include <AppComponents/Common/Types/Track/Time.h>
+   #include <AppComponents/Common/Types/Track/Velocity.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <istream>
+   
+   namespace AppComponents::Common::Reader {
+   
+   class CsvTrackReader : public ITrackReader
+   {
+   public:
+       CsvTrackReader(std::istream & input);
+       bool operator()(
+           AppComponents::Common::Types::Track::TimeList &,
+           AppComponents::Common::Types::Track::PointList &,
+           AppComponents::Common::Types::Track::HeadingList &,
+           AppComponents::Common::Types::Track::VelocityList &);
+   
+   private:
+       std::istream & input_;
+   };
+   
+   }  // namespace AppComponents::Common::Reader

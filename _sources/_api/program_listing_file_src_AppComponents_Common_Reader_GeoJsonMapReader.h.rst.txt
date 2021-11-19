@@ -1,0 +1,50 @@
+
+.. _program_listing_file_src_AppComponents_Common_Reader_GeoJsonMapReader.h:
+
+Program Listing for File GeoJsonMapReader.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Reader_GeoJsonMapReader.h>` (``src/AppComponents/Common/Reader/GeoJsonMapReader.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include "IReader.h"
+   
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <istream>
+   
+   namespace AppComponents::Common::Reader {
+   
+   class GeoJsonMapReader : public IMapReader
+   {
+   public:
+       GeoJsonMapReader(std::istream & input);
+       bool operator()(
+           Types::Street::SegmentList &,
+           Types::Street::NodePairList &,
+           Types::Street::TravelDirectionList &,
+           Types::Street::HighwayList &
+           );
+   
+   private:
+       std::istream & input_;
+   };
+   
+   }  // namespace AppComponents::Common::Reader

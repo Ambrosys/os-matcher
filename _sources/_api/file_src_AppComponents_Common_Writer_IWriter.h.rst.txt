@@ -1,0 +1,95 @@
+
+.. _file_src_AppComponents_Common_Writer_IWriter.h:
+
+File IWriter.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Writer>` (``src/AppComponents/Common/Writer``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Writer/IWriter.h``)
+----------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Writer_IWriter.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Graph/EdgeMap.h`` (:ref:`file_src_AppComponents_Common_Types_Graph_EdgeMap.h`)
+
+- ``AppComponents/Common/Types/Routing/Edge.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Edge.h`)
+
+- ``AppComponents/Common/Types/Routing/SamplingPoint.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_SamplingPoint.h`)
+
+- ``AppComponents/Common/Types/Routing/Statistic.h`` (:ref:`file_src_AppComponents_Common_Types_Routing_Statistic.h`)
+
+- ``AppComponents/Common/Types/Street/Highway.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Highway.h`)
+
+- ``AppComponents/Common/Types/Street/NodePair.h`` (:ref:`file_src_AppComponents_Common_Types_Street_NodePair.h`)
+
+- ``AppComponents/Common/Types/Street/Segment.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Segment.h`)
+
+- ``AppComponents/Common/Types/Track/Heading.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Heading.h`)
+
+- ``AppComponents/Common/Types/Track/Point.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Point.h`)
+
+- ``AppComponents/Common/Types/Track/Time.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Time.h`)
+
+- ``AppComponents/Common/Types/Track/Velocity.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Velocity.h`)
+
+- ``ostream``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Writer`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Writer_1_1IMapWriter`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter`
+

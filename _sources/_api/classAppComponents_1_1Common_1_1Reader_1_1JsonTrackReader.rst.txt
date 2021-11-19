@@ -1,0 +1,26 @@
+.. _exhale_class_classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader:
+
+Class JsonTrackReader
+=====================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_JsonTrackReader.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public AppComponents::Common::Reader::ITrackReader`` (:ref:`exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1ITrackReader`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: AppComponents::Common::Reader::JsonTrackReader
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

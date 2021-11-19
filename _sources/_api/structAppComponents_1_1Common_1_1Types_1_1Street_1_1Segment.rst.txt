@@ -1,0 +1,17 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Street_1_1Segment:
+
+Struct Segment
+==============
+
+- Defined in :ref:`file_src_AppComponents_Common_Types_Street_Segment.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Types::Street::Segment
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

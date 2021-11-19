@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceCore_1_1Common_1_1Geometry_1ac64dd42beca83600b9d31cae68abe734:
+
+Typedef Core::Common::Geometry::Box
+===================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: Core::Common::Geometry::Box

@@ -1,0 +1,65 @@
+
+.. _file_src_AppComponents_Common_Writer_GeoJsonMapWriter.cpp:
+
+File GeoJsonMapWriter.cpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Writer>` (``src/AppComponents/Common/Writer``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Writer/GeoJsonMapWriter.cpp``)
+---------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Writer_GeoJsonMapWriter.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Writer/GeoJsonMapWriter.h`` (:ref:`file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h`)
+
+- ``Core/Common/Geometry/Conversion.h`` (:ref:`file_src_Core_Common_Geometry_Conversion.h`)
+
+- ``amblog/global.h``
+
+- ``cassert``
+
+- ``nlohmann/json.hpp``
+
+- ``string``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Writer`
+
+- :ref:`namespace_AppComponents__Common__Writer__anonymous_namespace_GeoJsonMapWriter.cpp`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1adf3c7e5acd76caee1a0af8c6cc9be11a`
+

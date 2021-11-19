@@ -1,0 +1,27 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1IMapReader:
+
+Struct IMapReader
+=================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_IReader.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public AppComponents::Common::Reader::GeoJsonMapReader`` (:ref:`exhale_class_classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader`)
+- ``public AppComponents::Common::Reader::OsmMapReader`` (:ref:`exhale_class_classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Reader::IMapReader
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

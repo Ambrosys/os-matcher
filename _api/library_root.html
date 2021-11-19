@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>API documentation &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/>
+        <link rel="next" title="Namespace anonymous_namespace_FlipMap.h" href="namespace_anonymous_namespace_FlipMap.h.html"/>
+        <link rel="prev" title="Router" href="../content/Details/Matcher/Router.html"/> 
+  <script src="../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#track">Track</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#execution">Execution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-docker">Execution with Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-built-binary">Execution with built binary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Build.html">Build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-for-docker">Building for Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/OperationalData/DataSelection/Index.html">Data selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DETAILS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../content/Details/Matcher/Index.html">Matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    <li>API documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_api/library_root.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+    <hr class="before-stealth-btn clear-both"/>
+    
+      <a href="namespace_anonymous_namespace_FlipMap.h.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
+          <span class="stealth-btn-text">Next</span>
+          <span class="fa fa-arrow-circle-right"/>
+      </a>
+    
+    
+      <a href="../content/Details/Matcher/Router.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
+          <span class="fa fa-arrow-circle-left"/>
+          <span class="stealth-btn-text">Previous</span>
+      </a>
+    
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="api-documentation">
+<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_AppComponents.html#namespace-AppComponents">AppComponents</a><ul><li class="lastChild">Namespace <a href="namespace_AppComponents__Common.html#namespace-AppComponents-Common">AppComponents::Common</a><ul><li>Namespace <a href="namespace_AppComponents__Common__Matcher.html#namespace-AppComponents-Common-Matcher">AppComponents::Common::Matcher</a><ul><li>Namespace <a href="namespace_AppComponents__Common__Matcher__Routing.html#namespace-AppComponents-Common-Matcher-Routing">AppComponents::Common::Matcher::Routing</a><ul><li>Namespace <a href="namespace_AppComponents__Common__Matcher__Routing__Generic.html#namespace-AppComponents-Common-Matcher-Routing-Generic">AppComponents::Common::Matcher::Routing::Generic</a><ul><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1Generic-1-1SelectiveSkipper">SelectiveSkipper</a></li><li class="lastChild">Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1Generic-1-1Skipper">Skipper</a></li></ul></li><li>Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestRouteComparator.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1BestRouteComparator">BestRouteComparator</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestSimilarRouteComparator.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1BestSimilarRouteComparator">BestSimilarRouteComparator</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointsSelection.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SamplingPointsSelection">SamplingPointsSelection</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1BacktrackRouter">BacktrackRouter</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1BacktrackRouter-1-1Configuration">BacktrackRouter::Configuration</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1BacktrackRouter-1-1Session">BacktrackRouter::Session</a></li></ul></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1DirectedCandidateRouter">DirectedCandidateRouter</a><ul><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1DirectedCandidateRouter-1-1Configuration">DirectedCandidateRouter::Configuration</a></li></ul></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1PiecewiseRouter">PiecewiseRouter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SamplingPointRouter">SamplingPointRouter</a><ul><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SamplingPointRouter-1-1Configuration">SamplingPointRouter::Configuration</a></li></ul></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SkipRouter">SkipRouter</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Configuration.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SkipRouter-1-1Configuration">SkipRouter::Configuration</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session.html#exhale-struct-structAppComponents-1-1Common-1-1Matcher-1-1Routing-1-1SkipRouter-1-1Session">SkipRouter::Session</a></li></ul></li><li>Enum <a href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.html#exhale-enum-namespaceAppComponents-1-1Common-1-1Matcher-1-1Routing-1a240c0a17589f5ef5818c3ae51488ab8f">RouteClusterPreference</a></li><li class="lastChild">Enum <a href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.html#exhale-enum-namespaceAppComponents-1-1Common-1-1Matcher-1-1Routing-1aefc8b98660ae3b2944d6ac77b9c20721">RouteResult</a></li></ul></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1GraphBuilder">GraphBuilder</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1Router">Router</a></li><li class="lastChild">Class <a href="classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.html#exhale-class-classAppComponents-1-1Common-1-1Matcher-1-1SamplingPointFinder">SamplingPointFinder</a></li></ul></li><li>Namespace <a href="namespace_AppComponents__Common__Reader.html#namespace-AppComponents-Common-Reader">AppComponents::Common::Reader</a><ul><li>Namespace <a href="namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.html#namespace-AppComponents-Common-Reader-anonymous-namespace-OsmMapReader.cpp">AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1anon-ns-02OsmMapReader-8cpp-03-1-1Candidate">Candidate</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1anon-ns-02OsmMapReader-8cpp-03-1-1OsmLineCandidate">OsmLineCandidate</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1anon-ns-02OsmMapReader-8cpp-03-1-1OsmPointCandidate">OsmPointCandidate</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1anon-ns-02OsmMapReader-8cpp-03-1-1PointLocation">PointLocation</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1anon-ns-02OsmMapReader-8cpp-03-1-1UniquePoint">UniquePoint</a></li></ul></li><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1IMapReader.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1IMapReader">IMapReader</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Reader_1_1ITrackReader.html#exhale-struct-structAppComponents-1-1Common-1-1Reader-1-1ITrackReader">ITrackReader</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.html#exhale-class-classAppComponents-1-1Common-1-1Reader-1-1CsvTrackReader">CsvTrackReader</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.html#exhale-class-classAppComponents-1-1Common-1-1Reader-1-1GeoJsonMapReader">GeoJsonMapReader</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.html#exhale-class-classAppComponents-1-1Common-1-1Reader-1-1JsonTrackReader">JsonTrackReader</a></li><li class="lastChild">Class <a href="classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.html#exhale-class-classAppComponents-1-1Common-1-1Reader-1-1OsmMapReader">OsmMapReader</a></li></ul></li><li>Namespace <a href="namespace_AppComponents__Common__Types.html#namespace-AppComponents-Common-Types">AppComponents::Common::Types</a><ul><li>Namespace <a href="namespace_AppComponents__Common__Types__Graph.html#namespace-AppComponents-Common-Types-Graph">AppComponents::Common::Types::Graph</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1GraphTriplePair.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Graph-1-1GraphTriplePair">GraphTriplePair</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1StreetEdge.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Graph-1-1StreetEdge">StreetEdge</a></li></ul></li><li>Namespace <a href="namespace_AppComponents__Common__Types__Routing.html#namespace-AppComponents-Common-Types-Routing">AppComponents::Common::Types::Routing</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1CalculatedRouteStatistic.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1CalculatedRouteStatistic">CalculatedRouteStatistic</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1Route.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1Route">Route</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RouteNode.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1RouteNode">RouteNode</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1RoutingStatistic">RoutingStatistic</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPoint.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1SamplingPoint">SamplingPoint</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidate.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1SamplingPointCandidate">SamplingPointCandidate</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidateSelection.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1SamplingPointCandidateSelection">SamplingPointCandidateSelection</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointSelection.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1SamplingPointSelection">SamplingPointSelection</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SubRoute.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Routing-1-1SubRoute">SubRoute</a></li></ul></li><li>Namespace <a href="namespace_AppComponents__Common__Types__Street.html#namespace-AppComponents-Common-Types-Street">AppComponents::Common::Types::Street</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1Segment.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Street-1-1Segment">Segment</a></li><li>Enum <a href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a7a375e97caedc6f873ad02af0ed023ac.html#exhale-enum-namespaceAppComponents-1-1Common-1-1Types-1-1Street-1a7a375e97caedc6f873ad02af0ed023ac">TravelDirection</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Street-1-1NodePairList">NodePairList</a></li><li class="lastChild">Enum <a href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a67b8123fba2be0f7808cbde116b05def.html#exhale-enum-namespaceAppComponents-1-1Common-1-1Types-1-1Street-1a67b8123fba2be0f7808cbde116b05def">HighwayType</a></li></ul></li><li class="lastChild">Namespace <a href="namespace_AppComponents__Common__Types__Track.html#namespace-AppComponents-Common-Types-Track">AppComponents::Common::Types::Track</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1AltitudeList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Track-1-1AltitudeList">AltitudeList</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Track-1-1HeadingList">HeadingList</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Track-1-1PointList">PointList</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Track-1-1TimeList">TimeList</a></li><li class="lastChild">Struct <a href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#exhale-struct-structAppComponents-1-1Common-1-1Types-1-1Track-1-1VelocityList">VelocityList</a></li></ul></li></ul></li><li class="lastChild">Namespace <a href="namespace_AppComponents__Common__Writer.html#namespace-AppComponents-Common-Writer">AppComponents::Common::Writer</a><ul><li>Struct <a href="structAppComponents_1_1Common_1_1Writer_1_1IMapWriter.html#exhale-struct-structAppComponents-1-1Common-1-1Writer-1-1IMapWriter">IMapWriter</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter.html#exhale-struct-structAppComponents-1-1Common-1-1Writer-1-1IRouteStatisticWriter">IRouteStatisticWriter</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter.html#exhale-struct-structAppComponents-1-1Common-1-1Writer-1-1IRouteWriter">IRouteWriter</a></li><li>Struct <a href="structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter.html#exhale-struct-structAppComponents-1-1Common-1-1Writer-1-1ITrackWriter">ITrackWriter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1CsvRouteWriter">CsvRouteWriter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1CsvSubRouteWriter">CsvSubRouteWriter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1GeoJsonMapWriter">GeoJsonMapWriter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1GeoJsonRouteWriter">GeoJsonRouteWriter</a></li><li>Class <a href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1GeoJsonTrackWriter">GeoJsonTrackWriter</a></li><li class="lastChild">Class <a href="classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.html#exhale-class-classAppComponents-1-1Common-1-1Writer-1-1JsonRouteStatisticWriter">JsonRouteStatisticWriter</a></li></ul></li></ul></li></ul></li><li>Namespace <a href="namespace_Core.html#namespace-Core">Core</a><ul><li>Namespace <a href="namespace_Core__Common.html#namespace-Core-Common">Core::Common</a><ul><li>Namespace <a href="namespace_Core__Common__Geometry.html#namespace-Core-Common-Geometry">Core::Common::Geometry</a><ul><li>Struct <a href="structCore_1_1Common_1_1Geometry_1_1LineStringProjectionResult.html#exhale-struct-structCore-1-1Common-1-1Geometry-1-1LineStringProjectionResult">LineStringProjectionResult</a></li><li class="lastChild">Struct <a href="structCore_1_1Common_1_1Geometry_1_1Point.html#exhale-struct-structCore-1-1Common-1-1Geometry-1-1Point">Point</a><ul><li>Struct <a href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Latitude.html#exhale-struct-structCore-1-1Common-1-1Geometry-1-1Point-1-1Latitude">Point::Latitude</a></li><li class="lastChild">Struct <a href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Longitude.html#exhale-struct-structCore-1-1Common-1-1Geometry-1-1Point-1-1Longitude">Point::Longitude</a></li></ul></li></ul></li><li class="lastChild">Namespace <a href="namespace_Core__Common__Postgres.html#namespace-Core-Common-Postgres">Core::Common::Postgres</a><ul><li class="lastChild">Class <a href="classCore_1_1Common_1_1Postgres_1_1Connection.html#exhale-class-classCore-1-1Common-1-1Postgres-1-1Connection">Connection</a></li></ul></li></ul></li><li class="lastChild">Namespace <a href="namespace_Core__Graph.html#namespace-Core-Graph">Core::Graph</a><ul><li>Namespace <a href="namespace_Core__Graph__Routing.html#namespace-Core-Graph-Routing">Core::Graph::Routing</a><ul><li>Class <a href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1Dijkstra">Dijkstra</a><ul><li class="lastChild">Class <a href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1Dijkstra-1-1PathNode">Dijkstra::PathNode</a></li></ul></li><li>Class <a href="classCore_1_1Graph_1_1Routing_1_1PathView.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1PathView">PathView</a></li><li>Class <a href="classCore_1_1Graph_1_1Routing_1_1PathViewImpl.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1PathViewImpl">PathViewImpl</a></li><li>Class <a href="classCore_1_1Graph_1_1Routing_1_1PathViewIterator.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1PathViewIterator">PathViewIterator</a></li><li class="lastChild">Class <a href="classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm.html#exhale-class-classCore-1-1Graph-1-1Routing-1-1RoutingAlgorithm">RoutingAlgorithm</a></li></ul></li><li>Struct <a href="structCore_1_1Graph_1_1Edge.html#exhale-struct-structCore-1-1Graph-1-1Edge">Edge</a></li><li>Struct <a href="structCore_1_1Graph_1_1Node.html#exhale-struct-structCore-1-1Graph-1-1Node">Node</a></li><li>Class <a href="classCore_1_1Graph_1_1Graph.html#exhale-class-classCore-1-1Graph-1-1Graph">Graph</a></li><li class="lastChild">Class <a href="classCore_1_1Graph_1_1LemonDigraph.html#exhale-class-classCore-1-1Graph-1-1LemonDigraph">LemonDigraph</a></li></ul></li></ul></li><li>Namespace <a href="namespace_Generic.html#namespace-Generic">Generic</a><ul><li class="lastChild">Class <a href="classGeneric_1_1Progress.html#exhale-class-classGeneric-1-1Progress">Progress</a></li></ul></li><li class="lastChild">Namespace <a href="namespace_std.html#namespace-std">std</a><ul><li>Template <a href="structstd_1_1hash_3_01Core_1_1Graph_1_1Edge_01_4.html#exhale-struct-structstd-1-1hash-3-01Core-1-1Graph-1-1Edge-01-4">Struct hash&lt; Core::Graph::Edge &gt;</a></li><li class="lastChild">Template <a href="structstd_1_1hash_3_01Core_1_1Graph_1_1Node_01_4.html#exhale-struct-structstd-1-1hash-3-01Core-1-1Graph-1-1Node-01-4">Struct hash&lt; Core::Graph::Node &gt;</a></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></div>
+<div class="section" id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Directory <a href="dir_src.html#dir-src">src</a><ul><li>Directory <a href="dir_src_AppComponents.html#dir-src-AppComponents">AppComponents</a><ul><li class="lastChild">Directory <a href="dir_src_AppComponents_Common.html#dir-src-AppComponents-Common">Common</a><ul><li>Directory <a href="dir_src_AppComponents_Common_Matcher.html#dir-src-AppComponents-Common-Matcher">Matcher</a><ul><li>Directory <a href="dir_src_AppComponents_Common_Matcher_Routing.html#dir-src-AppComponents-Common-Matcher-Routing">Routing</a><ul><li>Directory <a href="dir_src_AppComponents_Common_Matcher_Routing_Generic.html#dir-src-AppComponents-Common-Matcher-Routing-Generic">Generic</a><ul><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.cpp.html#file-src-AppComponents-Common-Matcher-Routing-Generic-Helper.cpp">Helper.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Generic_Helper.h.html#file-src-AppComponents-Common-Matcher-Routing-Generic-Helper.h">Helper.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.cpp.html#file-src-AppComponents-Common-Matcher-Routing-Generic-Skipper.cpp">Skipper.cpp</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h.html#file-src-AppComponents-Common-Matcher-Routing-Generic-Skipper.h">Skipper.h</a></li></ul></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.cpp.html#file-src-AppComponents-Common-Matcher-Routing-BacktrackRouter.cpp">BacktrackRouter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h.html#file-src-AppComponents-Common-Matcher-Routing-BacktrackRouter.h">BacktrackRouter.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Comparators.cpp.html#file-src-AppComponents-Common-Matcher-Routing-Comparators.cpp">Comparators.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Comparators.h.html#file-src-AppComponents-Common-Matcher-Routing-Comparators.h">Comparators.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.cpp.html#file-src-AppComponents-Common-Matcher-Routing-DirectedCandidateRouter.cpp">DirectedCandidateRouter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h.html#file-src-AppComponents-Common-Matcher-Routing-DirectedCandidateRouter.h">DirectedCandidateRouter.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Helper.cpp.html#file-src-AppComponents-Common-Matcher-Routing-Helper.cpp">Helper.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_Helper.h.html#file-src-AppComponents-Common-Matcher-Routing-Helper.h">Helper.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.cpp.html#file-src-AppComponents-Common-Matcher-Routing-PiecewiseRouter.cpp">PiecewiseRouter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h.html#file-src-AppComponents-Common-Matcher-Routing-PiecewiseRouter.h">PiecewiseRouter.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp.html#file-src-AppComponents-Common-Matcher-Routing-SamplingPointRouter.cpp">SamplingPointRouter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h.html#file-src-AppComponents-Common-Matcher-Routing-SamplingPointRouter.h">SamplingPointRouter.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_SkipRouter.cpp.html#file-src-AppComponents-Common-Matcher-Routing-SkipRouter.cpp">SkipRouter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h.html#file-src-AppComponents-Common-Matcher-Routing-SkipRouter.h">SkipRouter.h</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Matcher_Routing_Types.h.html#file-src-AppComponents-Common-Matcher-Routing-Types.h">Types.h</a></li></ul></li><li>File <a href="file_src_AppComponents_Common_Matcher_GraphBuilder.cpp.html#file-src-AppComponents-Common-Matcher-GraphBuilder.cpp">GraphBuilder.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_GraphBuilder.h.html#file-src-AppComponents-Common-Matcher-GraphBuilder.h">GraphBuilder.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Router.cpp.html#file-src-AppComponents-Common-Matcher-Router.cpp">Router.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_Router.h.html#file-src-AppComponents-Common-Matcher-Router.h">Router.h</a></li><li>File <a href="file_src_AppComponents_Common_Matcher_SamplingPointFinder.cpp.html#file-src-AppComponents-Common-Matcher-SamplingPointFinder.cpp">SamplingPointFinder.cpp</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Matcher_SamplingPointFinder.h.html#file-src-AppComponents-Common-Matcher-SamplingPointFinder.h">SamplingPointFinder.h</a></li></ul></li><li>Directory <a href="dir_src_AppComponents_Common_Reader.html#dir-src-AppComponents-Common-Reader">Reader</a><ul><li>Directory <a href="dir_src_AppComponents_Common_Reader_Osm.html#dir-src-AppComponents-Common-Reader-Osm">Osm</a><ul><li>File <a href="file_src_AppComponents_Common_Reader_Osm_Conversion.cpp.html#file-src-AppComponents-Common-Reader-Osm-Conversion.cpp">Conversion.cpp</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Reader_Osm_Conversion.h.html#file-src-AppComponents-Common-Reader-Osm-Conversion.h">Conversion.h</a></li></ul></li><li>File <a href="file_src_AppComponents_Common_Reader_CsvTrackReader.cpp.html#file-src-AppComponents-Common-Reader-CsvTrackReader.cpp">CsvTrackReader.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Reader_CsvTrackReader.h.html#file-src-AppComponents-Common-Reader-CsvTrackReader.h">CsvTrackReader.h</a></li><li>File <a href="file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp.html#file-src-AppComponents-Common-Reader-GeoJsonMapReader.cpp">GeoJsonMapReader.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Reader_GeoJsonMapReader.h.html#file-src-AppComponents-Common-Reader-GeoJsonMapReader.h">GeoJsonMapReader.h</a></li><li>File <a href="file_src_AppComponents_Common_Reader_IReader.h.html#file-src-AppComponents-Common-Reader-IReader.h">IReader.h</a></li><li>File <a href="file_src_AppComponents_Common_Reader_JsonTrackReader.cpp.html#file-src-AppComponents-Common-Reader-JsonTrackReader.cpp">JsonTrackReader.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Reader_JsonTrackReader.h.html#file-src-AppComponents-Common-Reader-JsonTrackReader.h">JsonTrackReader.h</a></li><li>File <a href="file_src_AppComponents_Common_Reader_OsmMapReader.cpp.html#file-src-AppComponents-Common-Reader-OsmMapReader.cpp">OsmMapReader.cpp</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Reader_OsmMapReader.h.html#file-src-AppComponents-Common-Reader-OsmMapReader.h">OsmMapReader.h</a></li></ul></li><li>Directory <a href="dir_src_AppComponents_Common_Types.html#dir-src-AppComponents-Common-Types">Types</a><ul><li>Directory <a href="dir_src_AppComponents_Common_Types_Graph.html#dir-src-AppComponents-Common-Types-Graph">Graph</a><ul><li>File <a href="file_src_AppComponents_Common_Types_Graph_EdgeMap.h.html#file-src-AppComponents-Common-Types-Graph-EdgeMap.h">EdgeMap.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Graph_Graph.h.html#file-src-AppComponents-Common-Types-Graph-Graph.h">Graph.h</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Types_Graph_LemonDigraph.h.html#file-src-AppComponents-Common-Types-Graph-LemonDigraph.h">LemonDigraph.h</a></li></ul></li><li>Directory <a href="dir_src_AppComponents_Common_Types_Routing.html#dir-src-AppComponents-Common-Types-Routing">Routing</a><ul><li>File <a href="file_src_AppComponents_Common_Types_Routing_Edge.h.html#file-src-AppComponents-Common-Types-Routing-Edge.h">Edge.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Routing_SamplingPoint.h.html#file-src-AppComponents-Common-Types-Routing-SamplingPoint.h">SamplingPoint.h</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Types_Routing_Statistic.h.html#file-src-AppComponents-Common-Types-Routing-Statistic.h">Statistic.h</a></li></ul></li><li>Directory <a href="dir_src_AppComponents_Common_Types_Street.html#dir-src-AppComponents-Common-Types-Street">Street</a><ul><li>File <a href="file_src_AppComponents_Common_Types_Street_Highway.h.html#file-src-AppComponents-Common-Types-Street-Highway.h">Highway.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Street_NodePair.h.html#file-src-AppComponents-Common-Types-Street-NodePair.h">NodePair.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Street_Segment.h.html#file-src-AppComponents-Common-Types-Street-Segment.h">Segment.h</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Types_Street_TravelDirection.h.html#file-src-AppComponents-Common-Types-Street-TravelDirection.h">TravelDirection.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_src_AppComponents_Common_Types_Track.html#dir-src-AppComponents-Common-Types-Track">Track</a><ul><li>File <a href="file_src_AppComponents_Common_Types_Track_Altitude.h.html#file-src-AppComponents-Common-Types-Track-Altitude.h">Altitude.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Track_Heading.h.html#file-src-AppComponents-Common-Types-Track-Heading.h">Heading.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Track_Point.h.html#file-src-AppComponents-Common-Types-Track-Point.h">Point.h</a></li><li>File <a href="file_src_AppComponents_Common_Types_Track_Time.h.html#file-src-AppComponents-Common-Types-Track-Time.h">Time.h</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Types_Track_Velocity.h.html#file-src-AppComponents-Common-Types-Track-Velocity.h">Velocity.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_src_AppComponents_Common_Writer.html#dir-src-AppComponents-Common-Writer">Writer</a><ul><li>File <a href="file_src_AppComponents_Common_Writer_CsvRouteWriter.cpp.html#file-src-AppComponents-Common-Writer-CsvRouteWriter.cpp">CsvRouteWriter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Writer_CsvRouteWriter.h.html#file-src-AppComponents-Common-Writer-CsvRouteWriter.h">CsvRouteWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_CsvSubRouteWriter.cpp.html#file-src-AppComponents-Common-Writer-CsvSubRouteWriter.cpp">CsvSubRouteWriter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Writer_CsvSubRouteWriter.h.html#file-src-AppComponents-Common-Writer-CsvSubRouteWriter.h">CsvSubRouteWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonMapWriter.cpp.html#file-src-AppComponents-Common-Writer-GeoJsonMapWriter.cpp">GeoJsonMapWriter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonMapWriter.h.html#file-src-AppComponents-Common-Writer-GeoJsonMapWriter.h">GeoJsonMapWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.cpp.html#file-src-AppComponents-Common-Writer-GeoJsonRouteWriter.cpp">GeoJsonRouteWriter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonRouteWriter.h.html#file-src-AppComponents-Common-Writer-GeoJsonRouteWriter.h">GeoJsonRouteWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.cpp.html#file-src-AppComponents-Common-Writer-GeoJsonTrackWriter.cpp">GeoJsonTrackWriter.cpp</a></li><li>File <a href="file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.h.html#file-src-AppComponents-Common-Writer-GeoJsonTrackWriter.h">GeoJsonTrackWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_IWriter.h.html#file-src-AppComponents-Common-Writer-IWriter.h">IWriter.h</a></li><li>File <a href="file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.cpp.html#file-src-AppComponents-Common-Writer-JsonRouteStatisticWriter.cpp">JsonRouteStatisticWriter.cpp</a></li><li class="lastChild">File <a href="file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h.html#file-src-AppComponents-Common-Writer-JsonRouteStatisticWriter.h">JsonRouteStatisticWriter.h</a></li></ul></li></ul></li></ul></li><li>Directory <a href="dir_src_Core.html#dir-src-Core">Core</a><ul><li>Directory <a href="dir_src_Core_Common.html#dir-src-Core-Common">Common</a><ul><li>Directory <a href="dir_src_Core_Common_Geometry.html#dir-src-Core-Common-Geometry">Geometry</a><ul><li>File <a href="file_src_Core_Common_Geometry_Conversion.cpp.html#file-src-Core-Common-Geometry-Conversion.cpp">Conversion.cpp</a></li><li>File <a href="file_src_Core_Common_Geometry_Conversion.h.html#file-src-Core-Common-Geometry-Conversion.h">Conversion.h</a></li><li>File <a href="file_src_Core_Common_Geometry_Helper.cpp.html#file-src-Core-Common-Geometry-Helper.cpp">Helper.cpp</a></li><li>File <a href="file_src_Core_Common_Geometry_Helper.h.html#file-src-Core-Common-Geometry-Helper.h">Helper.h</a></li><li>File <a href="file_src_Core_Common_Geometry_NumericConstants.h.html#file-src-Core-Common-Geometry-NumericConstants.h">NumericConstants.h</a></li><li>File <a href="file_src_Core_Common_Geometry_Types.cpp.html#file-src-Core-Common-Geometry-Types.cpp">Types.cpp</a></li><li class="lastChild">File <a href="file_src_Core_Common_Geometry_Types.h.html#file-src-Core-Common-Geometry-Types.h">Types.h</a></li></ul></li><li>Directory <a href="dir_src_Core_Common_Postgres.html#dir-src-Core-Common-Postgres">Postgres</a><ul><li>File <a href="file_src_Core_Common_Postgres_Connection.h.html#file-src-Core-Common-Postgres-Connection.h">Connection.h</a></li><li class="lastChild">File <a href="file_src_Core_Common_Postgres_Helper.h.html#file-src-Core-Common-Postgres-Helper.h">Helper.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_src_Core_Common_Time.html#dir-src-Core-Common-Time">Time</a><ul><li>File <a href="file_src_Core_Common_Time_Helper.cpp.html#file-src-Core-Common-Time-Helper.cpp">Helper.cpp</a></li><li class="lastChild">File <a href="file_src_Core_Common_Time_Helper.h.html#file-src-Core-Common-Time-Helper.h">Helper.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_src_Core_Graph.html#dir-src-Core-Graph">Graph</a><ul><li>Directory <a href="dir_src_Core_Graph_Routing.html#dir-src-Core-Graph-Routing">Routing</a><ul><li>File <a href="file_src_Core_Graph_Routing_Algorithm.h.html#file-src-Core-Graph-Routing-Algorithm.h">Algorithm.h</a></li><li>File <a href="file_src_Core_Graph_Routing_Dijkstra.cpp.html#file-src-Core-Graph-Routing-Dijkstra.cpp">Dijkstra.cpp</a></li><li>File <a href="file_src_Core_Graph_Routing_Dijkstra.h.html#file-src-Core-Graph-Routing-Dijkstra.h">Dijkstra.h</a></li><li>File <a href="file_src_Core_Graph_Routing_PathView.cpp.html#file-src-Core-Graph-Routing-PathView.cpp">PathView.cpp</a></li><li class="lastChild">File <a href="file_src_Core_Graph_Routing_PathView.h.html#file-src-Core-Graph-Routing-PathView.h">PathView.h</a></li></ul></li><li>File <a href="file_src_Core_Graph_Graph.h.html#file-src-Core-Graph-Graph.h">Graph.h</a></li><li>File <a href="file_src_Core_Graph_LemonDigraph.cpp.html#file-src-Core-Graph-LemonDigraph.cpp">LemonDigraph.cpp</a></li><li class="lastChild">File <a href="file_src_Core_Graph_LemonDigraph.h.html#file-src-Core-Graph-LemonDigraph.h">LemonDigraph.h</a></li></ul></li></ul></li><li class="lastChild">Directory <a href="dir_src_Generic.html#dir-src-Generic">Generic</a><ul><li>Directory <a href="dir_src_Generic_Hash.html#dir-src-Generic-Hash">Hash</a><ul><li class="lastChild">File <a href="file_src_Generic_Hash_MakeHashable.h.html#file-src-Generic-Hash-MakeHashable.h">MakeHashable.h</a></li></ul></li><li>Directory <a href="dir_src_Generic_Map.html#dir-src-Generic-Map">Map</a><ul><li class="lastChild">File <a href="file_src_Generic_Map_FlipMap.h.html#file-src-Generic-Map-FlipMap.h">FlipMap.h</a></li></ul></li><li>Directory <a href="dir_src_Generic_Progress.html#dir-src-Generic-Progress">Progress</a><ul><li>File <a href="file_src_Generic_Progress_Progress.cpp.html#file-src-Generic-Progress-Progress.cpp">Progress.cpp</a></li><li class="lastChild">File <a href="file_src_Generic_Progress_Progress.h.html#file-src-Generic-Progress-Progress.h">Progress.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_src_Generic_String.html#dir-src-Generic-String">String</a><ul><li>File <a href="file_src_Generic_String_Csv.h.html#file-src-Generic-String-Csv.h">Csv.h</a></li><li>File <a href="file_src_Generic_String_Split.h.html#file-src-Generic-String-Split.h">Split.h</a></li><li class="lastChild">File <a href="file_src_Generic_String_Trim.h.html#file-src-Generic-String-Trim.h">Trim.h</a></li></ul></li></ul></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></div>
+<div class="section" id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_anonymous_namespace_FlipMap.h.html">Namespace anonymous_namespace_FlipMap.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace_FlipMap.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_anonymous_namespace_MakeHashable.h.html">Namespace anonymous_namespace_MakeHashable.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace_MakeHashable.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_anonymous_namespace_SamplingPointFinder.cpp.html">Namespace anonymous_namespace_SamplingPointFinder.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace_SamplingPointFinder.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_anonymous_namespace_SamplingPointFinder.cpp.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents.html">Namespace AppComponents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common.html">Namespace AppComponents::Common</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Matcher.html">Namespace AppComponents::Common::Matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html">Namespace AppComponents::Common::Matcher::Routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_Comparators.cpp.html">Namespace AppComponents::Common::Matcher::Routing::anonymous_namespace_Comparators.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_Comparators.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_SamplingPointRouter.cpp.html">Namespace AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_SamplingPointRouter.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__anonymous_namespace_SamplingPointRouter.cpp.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__Generic.html">Namespace AppComponents::Common::Matcher::Routing::Generic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__Generic.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Matcher__Routing__Generic.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Reader.html">Namespace AppComponents::Common::Reader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_GeoJsonMapReader.cpp.html">Namespace AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_GeoJsonMapReader.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.html">Namespace AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader__anonymous_namespace_OsmMapReader.cpp.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Reader__Osm.html">Namespace AppComponents::Common::Reader::Osm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Reader__Osm.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Types.html">Namespace AppComponents::Common::Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Types__Graph.html">Namespace AppComponents::Common::Types::Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Graph.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Graph.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Types__Routing.html">Namespace AppComponents::Common::Types::Routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Routing.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Routing.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Types__Street.html">Namespace AppComponents::Common::Types::Street</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Street.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Street.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Street.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Types__Track.html">Namespace AppComponents::Common::Types::Track</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Track.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Types__Track.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Writer.html">Namespace AppComponents::Common::Writer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Writer.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Writer.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Writer__anonymous_namespace_GeoJsonMapWriter.cpp.html">Namespace AppComponents::Common::Writer::anonymous_namespace_GeoJsonMapWriter.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Writer__anonymous_namespace_GeoJsonMapWriter.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_AppComponents__Common__Writer__anonymous_namespace_JsonRouteStatisticWriter.cpp.html">Namespace AppComponents::Common::Writer::anonymous_namespace_JsonRouteStatisticWriter.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_AppComponents__Common__Writer__anonymous_namespace_JsonRouteStatisticWriter.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core.html">Namespace Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Common.html">Namespace Core::Common</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Common__Geometry.html">Namespace Core::Common::Geometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Geometry.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Geometry.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Geometry.html#typedefs">Typedefs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Geometry.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Common__Postgres.html">Namespace Core::Common::Postgres</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Postgres.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Postgres.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Common__Time.html">Namespace Core::Common::Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Common__Time.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Graph.html">Namespace Core::Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Graph.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Graph.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Core__Graph__Routing.html">Namespace Core::Graph::Routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Graph__Routing.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Graph__Routing.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Core__Graph__Routing.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Generic.html">Namespace Generic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Generic.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Generic.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Generic.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_Generic__String.html">Namespace Generic::String</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_Generic__String.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_std.html">Namespace std</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_std.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.html">Struct BacktrackRouter::Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Configuration.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.html">Struct BacktrackRouter::Session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter_1_1Session.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestRouteComparator.html">Struct BestRouteComparator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestRouteComparator.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestSimilarRouteComparator.html">Struct BestSimilarRouteComparator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BestSimilarRouteComparator.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.html">Struct DirectedCandidateRouter::Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter_1_1Configuration.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration.html">Struct SamplingPointRouter::Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter_1_1Configuration.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointsSelection.html">Struct SamplingPointsSelection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointsSelection.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Configuration.html">Struct SkipRouter::Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Configuration.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Configuration.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session.html">Struct SkipRouter::Session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter_1_1Session.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate.html">Struct Candidate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1Candidate.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate.html">Struct OsmLineCandidate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmLineCandidate.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate.html">Struct OsmPointCandidate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation.html">Struct PointLocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1PointLocation.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint.html">Struct UniquePoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1UniquePoint.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1IMapReader.html">Struct IMapReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1IMapReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1IMapReader.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1IMapReader.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1ITrackReader.html">Struct ITrackReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1ITrackReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1ITrackReader.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Reader_1_1ITrackReader.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1GraphTriplePair.html">Struct GraphTriplePair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1GraphTriplePair.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1StreetEdge.html">Struct StreetEdge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Graph_1_1StreetEdge.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1CalculatedRouteStatistic.html">Struct CalculatedRouteStatistic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1CalculatedRouteStatistic.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1Route.html">Struct Route</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1Route.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RouteNode.html">Struct RouteNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RouteNode.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html">Struct RoutingStatistic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPoint.html">Struct SamplingPoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPoint.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidate.html">Struct SamplingPointCandidate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidate.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidateSelection.html">Struct SamplingPointCandidateSelection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointCandidateSelection.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointSelection.html">Struct SamplingPointSelection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SamplingPointSelection.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SubRoute.html">Struct SubRoute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Routing_1_1SubRoute.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html">Struct NodePairList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1NodePairList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1Segment.html">Struct Segment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Street_1_1Segment.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1AltitudeList.html">Struct AltitudeList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1AltitudeList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1AltitudeList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1AltitudeList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html">Struct HeadingList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html">Struct PointList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1PointList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html">Struct TimeList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1TimeList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html">Struct VelocityList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Types_1_1Track_1_1VelocityList.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IMapWriter.html">Struct IMapWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IMapWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IMapWriter.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IMapWriter.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter.html">Struct IRouteStatisticWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteStatisticWriter.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter.html">Struct IRouteWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1IRouteWriter.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter.html">Struct ITrackWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structAppComponents_1_1Common_1_1Writer_1_1ITrackWriter.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1LineStringProjectionResult.html">Struct LineStringProjectionResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1LineStringProjectionResult.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point.html">Struct Point</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Latitude.html">Struct Point::Latitude</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Latitude.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Latitude.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Longitude.html">Struct Point::Longitude</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Longitude.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Common_1_1Geometry_1_1Point_1_1Longitude.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Graph_1_1Edge.html">Struct Edge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Graph_1_1Edge.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCore_1_1Graph_1_1Node.html">Struct Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCore_1_1Graph_1_1Node.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structstd_1_1hash_3_01Core_1_1Graph_1_1Edge_01_4.html">Template Struct hash&lt; Core::Graph::Edge &gt;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structstd_1_1hash_3_01Core_1_1Graph_1_1Edge_01_4.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structstd_1_1hash_3_01Core_1_1Graph_1_1Node_01_4.html">Template Struct hash&lt; Core::Graph::Node &gt;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structstd_1_1hash_3_01Core_1_1Graph_1_1Node_01_4.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html">Class GraphBuilder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1GraphBuilder.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html">Class Router</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Router.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html">Class BacktrackRouter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1BacktrackRouter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html">Class DirectedCandidateRouter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1DirectedCandidateRouter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html">Class SelectiveSkipper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.html">Class Skipper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html">Class PiecewiseRouter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html">Class SamplingPointRouter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SamplingPointRouter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.html">Class SkipRouter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1SkipRouter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.html">Class SamplingPointFinder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Matcher_1_1SamplingPointFinder.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.html">Class CsvTrackReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1CsvTrackReader.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.html">Class GeoJsonMapReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.html">Class JsonTrackReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1JsonTrackReader.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.html">Class OsmMapReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Reader_1_1OsmMapReader.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.html">Class CsvRouteWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvRouteWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.html">Class CsvSubRouteWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1CsvSubRouteWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.html">Class GeoJsonMapWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonMapWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.html">Class GeoJsonRouteWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonRouteWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.html">Class GeoJsonTrackWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1GeoJsonTrackWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.html">Class JsonRouteStatisticWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classAppComponents_1_1Common_1_1Writer_1_1JsonRouteStatisticWriter.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Common_1_1Postgres_1_1Connection.html">Class Connection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Common_1_1Postgres_1_1Connection.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Graph.html">Class Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Graph.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Graph.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Graph.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1LemonDigraph.html">Class LemonDigraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1LemonDigraph.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1LemonDigraph.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1LemonDigraph.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html">Class Dijkstra</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html">Class Dijkstra::PathNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1Dijkstra_1_1PathNode.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathView.html">Class PathView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathView.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewImpl.html">Class PathViewImpl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewImpl.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewImpl.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewImpl.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewIterator.html">Class PathViewIterator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewIterator.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewIterator.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1PathViewIterator.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm.html">Class RoutingAlgorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classGeneric_1_1Progress.html">Class Progress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classGeneric_1_1Progress.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="enums">
+<h3>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.html">Enum RouteClusterPreference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a240c0a17589f5ef5818c3ae51488ab8f.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.html">Enum RouteResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aefc8b98660ae3b2944d6ac77b9c20721.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a67b8123fba2be0f7808cbde116b05def.html">Enum HighwayType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a67b8123fba2be0f7808cbde116b05def.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a7a375e97caedc6f873ad02af0ed023ac.html">Enum TravelDirection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a7a375e97caedc6f873ad02af0ed023ac.html#enum-documentation">Enum Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02FlipMap_8h_03_1aa14d3e997faf77f76f7c22bb34d33f42.html">Template Function anonymous_namespace_FlipMap.h::flipPair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02FlipMap_8h_03_1aa14d3e997faf77f76f7c22bb34d33f42.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02MakeHashable_8h_03_1af96987ed806b5c0246cfd0ba5260cd6c.html">Function anonymous_namespace_MakeHashable.h::hash_combine(std::size_t&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02MakeHashable_8h_03_1af96987ed806b5c0246cfd0ba5260cd6c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02MakeHashable_8h_03_1a41e403ee3a1a00e25d7d9d2e486deaa7.html">Template Function anonymous_namespace_MakeHashable.h::hash_combine(std::size_t&amp;, const T&amp;, Rest…)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02MakeHashable_8h_03_1a41e403ee3a1a00e25d7d9d2e486deaa7.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a42c1701b2d0295a3b1d2ad259599f2a7.html">Function anonymous_namespace_SamplingPointFinder.cpp::addStreetIndex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a42c1701b2d0295a3b1d2ad259599f2a7.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1aba18ee25c17adb7cd68ea50bc15f34e0.html">Function anonymous_namespace_SamplingPointFinder.cpp::getStreetIndices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1aba18ee25c17adb7cd68ea50bc15f34e0.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a9ff79156b2ad6ebe7482f955cf970952.html">Function anonymous_namespace_SamplingPointFinder.cpp::headingDifference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a9ff79156b2ad6ebe7482f955cf970952.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02Comparators_8cpp_03_1aa5cbd37e120a38f61946dbfc671253a1.html">Function AppComponents::Common::Matcher::Routing::anonymous_namespace_Comparators.cpp::isContained</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02Comparators_8cpp_03_1aa5cbd37e120a38f61946dbfc671253a1.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a9b0b0f867bf23c0e291e381e1a4c074f.html">Function AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a9b0b0f867bf23c0e291e381e1a4c074f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ae5050aa8a310a1b18cdce8d04f837c7d.html">Function AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::getBestRoute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1ae5050aa8a310a1b18cdce8d04f837c7d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aff151e5c7b9e6ddac90b43c6f5811f61.html">Function AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::routeCached</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aff151e5c7b9e6ddac90b43c6f5811f61.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a7afdd409f278a02e952e1974b684a0ab.html">Function AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::selectCandidates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a7afdd409f278a02e952e1974b684a0ab.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a6074bc8ad6068bc26f7b036e0f32c590.html">Function AppComponents::Common::Matcher::Routing::attachToPreviousRoute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a6074bc8ad6068bc26f7b036e0f32c590.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aceca6959ea78e00f5eb22c9ee63f96c8.html">Function AppComponents::Common::Matcher::Routing::calcApproximateDistanceBetweenSamplingPoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aceca6959ea78e00f5eb22c9ee63f96c8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a7d3a2e3af7041a822ef6c8952848016a.html">Function AppComponents::Common::Matcher::Routing::checkMaxAngularDeviation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a7d3a2e3af7041a822ef6c8952848016a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a582725e2f4b2baf8944ccefaa0ac282c.html">Function AppComponents::Common::Matcher::Routing::findPreviousConnectedRoute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a582725e2f4b2baf8944ccefaa0ac282c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ac47a707f57038fc2fc6c5f1dc190adfe.html">Function AppComponents::Common::Matcher::Routing::Generic::findNextAllowed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ac47a707f57038fc2fc6c5f1dc190adfe.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ad1129ceb47599d5208f4d0452e748ccb.html">Function AppComponents::Common::Matcher::Routing::Generic::findPreviousAllowed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1ad1129ceb47599d5208f4d0452e748ccb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aab99daf3703c79ea0705bda95d11dd91.html">Function AppComponents::Common::Matcher::Routing::geoDistance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1aab99daf3703c79ea0705bda95d11dd91.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1abf3a9ffe70aa83f4112735ddc3a47deb.html">Function AppComponents::Common::Matcher::Routing::isSelfIntersectingRoute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1abf3a9ffe70aa83f4112735ddc3a47deb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a4807fdf71808dbe8b3b4d03ea3212814.html">Function AppComponents::Common::Matcher::Routing::isSimilar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a4807fdf71808dbe8b3b4d03ea3212814.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a20705e2542cf5f6c7b87ea54a68aedcc.html">Function AppComponents::Common::Matcher::Routing::routeResultToString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1a20705e2542cf5f6c7b87ea54a68aedcc.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a824a2d2c8ebfb5e2abd621a9a56c3f6a.html">Function AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toHighway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a824a2d2c8ebfb5e2abd621a9a56c3f6a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a93422843a17fc248a09d32b7155647bc.html">Function AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toTravelDirection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a93422843a17fc248a09d32b7155647bc.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df.html">Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getCandidates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610.html">Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::getUniquePoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a2b68dcb242b90c15680f9d74558c1b7e.html">Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::processCandidates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a2b68dcb242b90c15680f9d74558c1b7e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1ade39660d89472bbd127a25911465709b.html">Function AppComponents::Common::Reader::Osm::toHighway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1ade39660d89472bbd127a25911465709b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a7e9ea189c6596b94f37ddc7e324b317b.html">Function AppComponents::Common::Reader::Osm::toHighwaySelectionSql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a7e9ea189c6596b94f37ddc7e324b317b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1aabcd0fcf5ac380b80921d4a78dff1fcd.html">Function AppComponents::Common::Reader::Osm::toOsmString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1aabcd0fcf5ac380b80921d4a78dff1fcd.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a84d89c5d17474b5118b6981f03b18194.html">Function AppComponents::Common::Reader::Osm::toTravelDirection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Reader_1_1Osm_1a84d89c5d17474b5118b6981f03b18194.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8.html">Function AppComponents::Common::Writer::anonymous_namespace_GeoJsonMapWriter.cpp::toString(Types::Street::TravelDirection const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1adf3c7e5acd76caee1a0af8c6cc9be11a.html">Function AppComponents::Common::Writer::anonymous_namespace_GeoJsonMapWriter.cpp::toString(Types::Street::Highway const)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1adf3c7e5acd76caee1a0af8c6cc9be11a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02JsonRouteStatisticWriter_8cpp_03_1a34e06dd47835f1fcc3ad1f63f80d5204.html">Function AppComponents::Common::Writer::anonymous_namespace_JsonRouteStatisticWriter.cpp::toJson</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02JsonRouteStatisticWriter_8cpp_03_1a34e06dd47835f1fcc3ad1f63f80d5204.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1423bb7e832faf33084101b5c4e38e09.html">Function Core::Common::Geometry::absHeadingDiff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1423bb7e832faf33084101b5c4e38e09.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1df610600fe9764d367a2e621f30002c.html">Function Core::Common::Geometry::angleBetweenSegments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1df610600fe9764d367a2e621f30002c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1e296bf16ebcfcf6504de30d6f4684e1.html">Function Core::Common::Geometry::buffer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1e296bf16ebcfcf6504de30d6f4684e1.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ac7d06d0d8528b109628fdce9c271e8bb.html">Template Function Core::Common::Geometry::degree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ac7d06d0d8528b109628fdce9c271e8bb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c.html">Function Core::Common::Geometry::flattened_simple</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1afc42fb42e0c128af4bbd9a6ff0a2f1fb.html">Function Core::Common::Geometry::geoDistance(Point const&amp;, Point const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1afc42fb42e0c128af4bbd9a6ff0a2f1fb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5.html">Function Core::Common::Geometry::geoDistance(Point const&amp;, Segment const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693.html">Template Function Core::Common::Geometry::geoDistance(G1 const&amp;, G2 const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a5ab9eedc4334c568a4668caad23b06a2.html">Template Function Core::Common::Geometry::geoLength</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a5ab9eedc4334c568a4668caad23b06a2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ad24d6a3cc02870a752a3fc443efbc6e2.html">Function Core::Common::Geometry::heading(Point const&amp;, Point const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ad24d6a3cc02870a752a3fc443efbc6e2.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1b68d0ba5810a3f793e41ce6c5b6f3df.html">Function Core::Common::Geometry::heading(Segment const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a1b68d0ba5810a3f793e41ce6c5b6f3df.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1acff476e8d69f05e2f4f2613f7f5a3e54.html">Function Core::Common::Geometry::headingDiff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1acff476e8d69f05e2f4f2613f7f5a3e54.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a4a8b73b0e0053d462c5d37b34c058792.html">Function Core::Common::Geometry::normalizeAngle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a4a8b73b0e0053d462c5d37b34c058792.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a5d1bdd46e4867fc326106762634266c4.html">Function Core::Common::Geometry::operator”” _lat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a5d1bdd46e4867fc326106762634266c4.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aaeef29187fc5cb0a1cd979f55a7a07a5.html">Function Core::Common::Geometry::operator”” _lon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aaeef29187fc5cb0a1cd979f55a7a07a5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1af302be0ebfa1d9634789d6a866f25572.html">Function Core::Common::Geometry::operator==</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1af302be0ebfa1d9634789d6a866f25572.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a2fe8eabf7fc79f09e7501a677055f270.html">Function Core::Common::Geometry::project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a2fe8eabf7fc79f09e7501a677055f270.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aec1ee754e14b29e04ff94a63785fe85f.html">Function Core::Common::Geometry::projectOntoLineString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aec1ee754e14b29e04ff94a63785fe85f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a995adf815139c8a77ecf2c0a81855ef6.html">Template Function Core::Common::Geometry::rad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a995adf815139c8a77ecf2c0a81855ef6.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a6084027d4f1e974ed84b3a121831255a.html">Function Core::Common::Geometry::relativeDistanceAlongLineString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a6084027d4f1e974ed84b3a121831255a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1adafe5e2bdab8f602851dc937ed16ea8e.html">Function Core::Common::Geometry::reversedHeading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1adafe5e2bdab8f602851dc937ed16ea8e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a2151fbc364765276e10915d74d986d7a.html">Function Core::Common::Geometry::reverseHaversine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a2151fbc364765276e10915d74d986d7a.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a34536817e710658ad9d4fc569cab424c.html">Function Core::Common::Geometry::snap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a34536817e710658ad9d4fc569cab424c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a54876e03d20fc050a6518dc12e75ed3f.html">Function Core::Common::Geometry::toGeoJson(LineString const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a54876e03d20fc050a6518dc12e75ed3f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123.html">Function Core::Common::Geometry::toGeoJson(Point const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596.html">Function Core::Common::Geometry::toLineString(nlohmann::json const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a8b190f4f0c4d64455f8aa30b647da6bf.html">Function Core::Common::Geometry::toLineString(std::string const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a8b190f4f0c4d64455f8aa30b647da6bf.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea.html">Function Core::Common::Geometry::toPoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a6a0017078b285b59298c96370339d830.html">Function Core::Common::Geometry::toWkt(Point const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a6a0017078b285b59298c96370339d830.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a312ff322c3ac5cd0b1062380f1b7cd2f.html">Function Core::Common::Geometry::toWkt(std::vector&lt;Point&gt; const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1a312ff322c3ac5cd0b1062380f1b7cd2f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ab22e06d68f78e54525991c50d7ce78a7.html">Function Core::Common::Geometry::toWkt(std::vector&lt;std::vector&lt;Point&gt;&gt; const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ab22e06d68f78e54525991c50d7ce78a7.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aed424eb5a026244ab4716de67aa30367.html">Function Core::Common::Geometry::trimmed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1aed424eb5a026244ab4716de67aa30367.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ac8fa068b576ae0a4bfaaca4bbb9594f5.html">Template Function Core::Common::Geometry::within</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Geometry_1ac8fa068b576ae0a4bfaaca4bbb9594f5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c.html">Template Function Core::Common::Postgres::getOptional(C const&amp;)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Postgres_1a3ded2b9f4a3ced6ef8c76de50e23139c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Postgres_1a63cee6281541db418598e5ef65d6a76c.html">Template Function Core::Common::Postgres::getOptional(C const&amp;, T)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Postgres_1a63cee6281541db418598e5ef65d6a76c.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a57ee7d6ea665eb25cdc85b267848d98f.html">Function Core::Common::Time::fromIsoString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a57ee7d6ea665eb25cdc85b267848d98f.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1aa9513c375cf8c5336ab33ff703d443df.html">Function Core::Common::Time::fromIsoZString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1aa9513c375cf8c5336ab33ff703d443df.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a41c5d3e8e31fd5cf541ed2887d633229.html">Function Core::Common::Time::fromString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a41c5d3e8e31fd5cf541ed2887d633229.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1ae53115c52904ccdd6aa8f7bc97c22539.html">Function Core::Common::Time::toIsoString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1ae53115c52904ccdd6aa8f7bc97c22539.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a20dd5b7c65d061a4982043c8f4191ecb.html">Function Core::Common::Time::toIsoZString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a20dd5b7c65d061a4982043c8f4191ecb.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a4a917d8851dd81f979ad7adcd5de38c5.html">Function Core::Common::Time::toString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Common_1_1Time_1a4a917d8851dd81f979ad7adcd5de38c5.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Graph_1_1Routing_1ac49454bb63f4996ca884044157cedcb9.html">Function Core::Graph::Routing::operator&lt;&lt;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Graph_1_1Routing_1ac49454bb63f4996ca884044157cedcb9.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceCore_1_1Graph_1_1Routing_1af821d1ac1d02d2cdea09946f582fd01d.html">Function Core::Graph::Routing::operator&gt;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceCore_1_1Graph_1_1Routing_1af821d1ac1d02d2cdea09946f582fd01d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1ad94e0ffe681fde0af0eb924a16ad6021.html">Template Function Generic::flipMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1ad94e0ffe681fde0af0eb924a16ad6021.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a2c0b64cb865c0c34cd1b739636f7c2d8.html">Function Generic::String::ltrim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a2c0b64cb865c0c34cd1b739636f7c2d8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a97d168fa959072bc21e37191616ac707.html">Function Generic::String::ltrimmed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a97d168fa959072bc21e37191616ac707.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a5949a9d0a7f234df485d807c33142c7d.html">Function Generic::String::readNextRow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a5949a9d0a7f234df485d807c33142c7d.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1aec057e190a4f54e9310cf401631faa9b.html">Function Generic::String::rtrim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1aec057e190a4f54e9310cf401631faa9b.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1af9d07af744b9c81a905c2044442545e7.html">Function Generic::String::rtrimmed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1af9d07af744b9c81a905c2044442545e7.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1aa441b0e95a716d0f78e98aa65b5229f8.html">Template Function Generic::String::split</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1aa441b0e95a716d0f78e98aa65b5229f8.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a3b48c5295cf52a14f590bb44ab169d93.html">Function Generic::String::trim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1a3b48c5295cf52a14f590bb44ab169d93.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceGeneric_1_1String_1ab3dcb33deeccc5fdeed185170bcc9769.html">Function Generic::String::trimmed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_namespaceGeneric_1_1String_1ab3dcb33deeccc5fdeed185170bcc9769.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1ac95ac34818905a8ac277fa6784576a0b.html">Variable Core::Common::Geometry::equatorRadiusKiloMeter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1ac95ac34818905a8ac277fa6784576a0b.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1aae8e1ef97ae7031583df66aff0b890ab.html">Variable Core::Common::Geometry::equatorRadiusMeter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1aae8e1ef97ae7031583df66aff0b890ab.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1a04088eed5b2876c93591c02ae4abb351.html">Variable Core::Common::Geometry::pi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1a04088eed5b2876c93591c02ae4abb351.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1ae3862da37616371c70fa87fce68bf314.html">Variable Core::Common::Geometry::piover180</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceCore_1_1Common_1_1Geometry_1ae3862da37616371c70fa87fce68bf314.html#variable-documentation">Variable Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="defines">
+<h3>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_MakeHashable_8h_1a95357c581ab8f84b2ec3150535e00fe0.html">Define MAKE_HASHABLE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_MakeHashable_8h_1a95357c581ab8f84b2ec3150535e00fe0.html#define-documentation">Define Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="typedefs">
+<h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1af51a1ab323659cca811c66e44a759873.html">Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1af51a1ab323659cca811c66e44a759873.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a43e7d1ab7184b076b5d0eaf44f7ca918.html">Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexAlgorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a43e7d1ab7184b076b5d0eaf44f7ca918.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a4ff99423d9382594339fa80a4616eb6a.html">Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexGeometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1a4ff99423d9382594339fa80a4616eb6a.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1ad111e0485b1bbc39ca6d3e11429f1826.html">Typedef anonymous_namespace_SamplingPointFinder.cpp::StreetIndexGeoindexValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceanon_ns_02SamplingPointFinder_8cpp_03_1ad111e0485b1bbc39ca6d3e11429f1826.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aaee6ab7819778719f42729a1a9cabf49.html">Typedef AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::ClusteredRouteMatrix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1aaee6ab7819778719f42729a1a9cabf49.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a262b545aa5db32add2f9cd5c1786f3a3.html">Typedef AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::SamplingPointCandidateSelectionPair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a262b545aa5db32add2f9cd5c1786f3a3.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1ae4deeb6124725af2a8464206e2d14188.html">Typedef AppComponents::Common::Matcher::Routing::SamplingPointSkipStrategy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1ae4deeb6124725af2a8464206e2d14188.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ac26f1c7b368af135b0360ad3a71f84c2.html">Typedef AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::PointGeoindex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ac26f1c7b368af135b0360ad3a71f84c2.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a7ad0e5dbf94fc918df1dc7f201df5e32.html">Typedef AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::PointGeoindexAlgorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a7ad0e5dbf94fc918df1dc7f201df5e32.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a.html">Typedef AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::PointGeoindexValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1abde2b8c7e43ac20faf5552d90a81413a.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a249855dd90c8417233fd150eb7385f7b.html">Typedef AppComponents::Common::Types::Graph::Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a249855dd90c8417233fd150eb7385f7b.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1affd879ea56a962cc9a45000b7953b519.html">Typedef AppComponents::Common::Types::Graph::GraphEdgeMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1affd879ea56a962cc9a45000b7953b519.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1aa31fd81e46787200e98ae39a0af7ffd8.html">Typedef AppComponents::Common::Types::Graph::GraphTriple</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1aa31fd81e46787200e98ae39a0af7ffd8.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a829fe0e30f351a2836c2abd63fb419cb.html">Typedef AppComponents::Common::Types::Graph::LemonDigraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a829fe0e30f351a2836c2abd63fb419cb.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a0962f43a803190e87b543edbf6ae0da8.html">Typedef AppComponents::Common::Types::Graph::NodeMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a0962f43a803190e87b543edbf6ae0da8.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a11299f69d926724f04d6da9b392bd0d5.html">Typedef AppComponents::Common::Types::Graph::StreetIndexMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Graph_1a11299f69d926724f04d6da9b392bd0d5.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ac9fa4e768c35390a54580ce8f9fd4219.html">Typedef AppComponents::Common::Types::Routing::Edge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ac9fa4e768c35390a54580ce8f9fd4219.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a0f1b2cb11433ef4e9326ad7728664c09.html">Typedef AppComponents::Common::Types::Routing::Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a0f1b2cb11433ef4e9326ad7728664c09.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html">Typedef AppComponents::Common::Types::Routing::RouteList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1ada94d0330db96a5c0aeb186321e2cc79.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a635288c9182853b5994a908b48b99109.html">Typedef AppComponents::Common::Types::Routing::SamplingPointList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Routing_1a635288c9182853b5994a908b48b99109.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1af8e55770f3a5ec102fa3a71591732388.html">Typedef AppComponents::Common::Types::Street::Highway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1af8e55770f3a5ec102fa3a71591732388.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1aef155a1d8ca325c53242fe6a439c1b12.html">Typedef AppComponents::Common::Types::Street::HighwayList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1aef155a1d8ca325c53242fe6a439c1b12.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a88ae03ee927352940f5da24b9c277d66.html">Typedef AppComponents::Common::Types::Street::NodePair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a88ae03ee927352940f5da24b9c277d66.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e.html">Typedef AppComponents::Common::Types::Street::SegmentList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1abfca3c1014a8ec0ebe1cd8142ab70c0e.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a89734e4ed3815ef449a2ee7a54b71dcb.html">Typedef AppComponents::Common::Types::Street::TravelDirectionList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Street_1a89734e4ed3815ef449a2ee7a54b71dcb.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1ac530e8ee7f073ec2019c527cdd8131b9.html">Typedef AppComponents::Common::Types::Track::Altitude</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1ac530e8ee7f073ec2019c527cdd8131b9.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a7b8e00ae554b186fe8cd97b3be40ae29.html">Typedef AppComponents::Common::Types::Track::Heading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a7b8e00ae554b186fe8cd97b3be40ae29.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1af391ef85f6172c5fa3a757a61b42d60a.html">Typedef AppComponents::Common::Types::Track::Point</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1af391ef85f6172c5fa3a757a61b42d60a.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a63ab2b80316a999a612cebaf7bfd4509.html">Typedef AppComponents::Common::Types::Track::Time</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a63ab2b80316a999a612cebaf7bfd4509.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a541300c0a3174c46eb6a8893843fca08.html">Typedef AppComponents::Common::Types::Track::Velocity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a541300c0a3174c46eb6a8893843fca08.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1ac64dd42beca83600b9d31cae68abe734.html">Typedef Core::Common::Geometry::Box</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1ac64dd42beca83600b9d31cae68abe734.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a11896a5ed2523a521161780673241709.html">Typedef Core::Common::Geometry::CoordinateSystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a11896a5ed2523a521161780673241709.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a2bda3e48be763b024617af20c11ef5f0.html">Typedef Core::Common::Geometry::LineString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a2bda3e48be763b024617af20c11ef5f0.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a22cc0ad0670f89b9fa2de231bf4783fb.html">Typedef Core::Common::Geometry::Polygon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1a22cc0ad0670f89b9fa2de231bf4783fb.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1aede34dc1fbb101b299fdc4349a7e1c3f.html">Typedef Core::Common::Geometry::Segment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1aede34dc1fbb101b299fdc4349a7e1c3f.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1abb8c7bdb9ed0022f23c8681f28e3ec11.html">Typedef Core::Common::Geometry::ValueType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Common_1_1Geometry_1abb8c7bdb9ed0022f23c8681f28e3ec11.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Graph_1_1Routing_1ad62b62f2ddfa1a63b383cc7dc9c4fed2.html">Typedef Core::Graph::Routing::CostFunction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Graph_1_1Routing_1ad62b62f2ddfa1a63b383cc7dc9c4fed2.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceCore_1_1Graph_1_1Routing_1a6691011ffa2ee5b1a777e5cdbf0d1534.html">Typedef Core::Graph::Routing::FilterFunction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef_namespaceCore_1_1Graph_1_1Routing_1a6691011ffa2ee5b1a777e5cdbf0d1534.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="namespace_anonymous_namespace_FlipMap.h.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
+      
+      
+        <a href="../content/Details/Matcher/Router.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../_sources/_api/library_root.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2018, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

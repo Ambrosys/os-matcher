@@ -1,0 +1,75 @@
+
+.. _file_src_AppComponents_Common_Types_Routing_Statistic.h:
+
+File Statistic.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Routing>` (``src/AppComponents/Common/Types/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Routing/Statistic.h``)
+-------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Routing_Statistic.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Matcher/Routing/Types.h`` (:ref:`file_src_AppComponents_Common_Matcher_Routing_Types.h`)
+
+- ``unordered_map``
+
+- ``unordered_set``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_BacktrackRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_PiecewiseRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_SkipRouter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_IWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_JsonRouteStatisticWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1CalculatedRouteStatistic`
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Routing_1_1RoutingStatistic`
+

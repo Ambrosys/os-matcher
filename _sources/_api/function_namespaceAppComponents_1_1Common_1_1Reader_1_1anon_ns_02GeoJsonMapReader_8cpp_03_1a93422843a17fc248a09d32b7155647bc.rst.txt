@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02GeoJsonMapReader_8cpp_03_1a93422843a17fc248a09d32b7155647bc:
+
+Function AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toTravelDirection
+===================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_GeoJsonMapReader.cpp::toTravelDirection(std::string const&)

@@ -1,0 +1,43 @@
+
+.. _program_listing_file_src_AppComponents_Common_Types_Routing_Statistic.h:
+
+Program Listing for File Statistic.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Types_Routing_Statistic.h>` (``src/AppComponents/Common/Types/Routing/Statistic.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include <AppComponents/Common/Matcher/Routing/Types.h>
+   
+   #include <unordered_map>
+   #include <unordered_set>
+   
+   namespace AppComponents::Common::Types::Routing {
+   
+   struct CalculatedRouteStatistic
+   {
+       // TODO: consider keeping whole Route
+       double cost;
+       double length;
+       size_t subRoutesCount;
+   };
+   
+   struct RoutingStatistic
+   {
+       std::unordered_map<Matcher::Routing::SamplingPointsSelection, CalculatedRouteStatistic> calculated;
+       std::vector<std::pair<Matcher::Routing::SamplingPointsSelection, bool>> visited;
+   };
+   
+   }  // namespace AppComponents::Common::Types::Routing

@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1acff476e8d69f05e2f4f2613f7f5a3e54:
+
+Function Core::Common::Geometry::headingDiff
+============================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::headingDiff(double, double)

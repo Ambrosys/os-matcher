@@ -1,0 +1,22 @@
+
+.. _namespace_Core:
+
+Namespace Core
+==============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Common`
+
+- :ref:`namespace_Core__Graph`

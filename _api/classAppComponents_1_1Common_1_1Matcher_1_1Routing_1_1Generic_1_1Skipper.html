@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="book-name" content="OS-Matcher"/>
+  <meta name="book-version" content=""/>
+  <meta name="book-release" content=""/>
+  <meta name="book-type" content="Manual"/>
+
+  
+  <title>Class Skipper &mdash; OS-Matcher  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/table_styling.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/jquery-ui/jquery-ui.min.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/t3more.css" type="text/css"/>
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+  
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css"/>
+  
+        <link rel="index" title="Index" href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="OS-Matcher  documentation" href="#"/>
+        <link rel="up" title="API documentation" href="library_root.html"/>
+        <link rel="next" title="Class PiecewiseRouter" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html"/>
+        <link rel="prev" title="Class SelectiveSkipper" href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html"/> 
+  <script src="../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        <ul class="sidebartop">
+
+          <li class="docsite">
+            <a href="https://docs.typo3.org"><img src="../_static/img/typo3-documentation.png" class="logo"/></a>
+          </li><li class="project">
+            <a href="../index.html">
+              OS-Matcher</a>
+          </li>
+          <li class="nolink search"><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search this project" id="searchinput"/>
+    <input type="hidden" name="check_keywords" value="yes"/>
+    <input type="hidden" name="area" value="default"/>
+  </form>
+</div>
+</li></ul>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">USAGE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Execution.html">Execute example matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#track">Track</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Execution.html#execution">Execution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-docker">Execution with Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Usage/Execution.html#execution-with-built-binary">Execution with built binary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Usage/Build.html">Build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#provision-conan-packages">Provision Conan packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-for-docker">Building for Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Usage/Build.html#building-os-matcher">Building <em>OS-Matcher</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OPERATIONAL DATA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/OperationalData/DataSelection/Index.html">Data selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html">Data structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#processed-data">Processed data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#example-router">Example: Router</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/DataStructures.html#type-listing">Type listing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html">Input data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#data-overview">Data overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#street-map">Street Map</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#input-filter">Input filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id1">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/OperationalData/DataSelection/InputData.html#id2">Street Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRACK POINT PROJECTION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/TrackPointProjection/Overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/TrackPointProjection/Overview.html#candidate-search">Candidate search</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MATCHING</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Overview/Index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Routing.html">Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#routing-routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#clustering">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Overview/Routing.html#final-evaluation">Final Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Overview/Matching.html">Matching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Matching/Algorithms/Index.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html">Dijkstra router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/6-DijkstraRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html">Directed candidate router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#single-edge-simple-case">Single edge, simple case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#other-cases">Other cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#identical-nodes">Identical nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/5-DirectedCandidateRouter.html#different-nodes">Different nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html">Sampling point router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#possible-routes-calculation">1. Possible routes calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#routes-clustering">2. Routes clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/4-SamplingPointRouter.html#route-selection">3. Route selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html">Backtrack router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/3-BacktrackRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html">Skip router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/2-SkipRouter.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html">Piecewise router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Matching/Algorithms/1-PiecewiseRouter.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DETAILS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../content/Details/Matcher/Index.html">Matcher</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html">SamplingPointFinder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/SamplingPointFinder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html">GraphBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/GraphBuilder.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Details/Matcher/Router.html">Router</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#output">Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/Details/Matcher/Router.html#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#defines">Defines</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Addendum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/Glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/Glossary.html#operational-data-details">Operational data details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Specifications.html">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../content/Specifications.html#general">General</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">OS-Matcher</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+          <li><a href="library_root.html">API documentation</a> &raquo;</li>
+    <li>Class Skipper</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.rst.txt" rel="nofollow">
+                <span class="fa fa-binoculars"/>&#32;View page source
+            </a>
+      </li>
+  </ul>
+  
+    <hr class="before-stealth-btn clear-both"/>
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
+          <span class="stealth-btn-text">Next</span>
+          <span class="fa fa-arrow-circle-right"/>
+      </a>
+    
+    
+      <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
+          <span class="fa fa-arrow-circle-left"/>
+          <span class="stealth-btn-text">Previous</span>
+      </a>
+    
+
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody" class="toBeIndexed">
+            
+  <div class="section" id="class-skipper">
+<span id="exhale-class-classappcomponents-1-1common-1-1matcher-1-1routing-1-1generic-1-1skipper"/><h1>Class Skipper<a class="headerlink" href="#class-skipper" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_src_AppComponents_Common_Matcher_Routing_Generic_Skipper.h.html#file-src-appcomponents-common-matcher-routing-generic-skipper-h"><span class="std std-ref">File Skipper.h</span></a></p></li>
+</ul>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7SkipperE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7SkipperE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7SkipperE"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper"/><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">AppComponents</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Common</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matcher</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Routing</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Generic</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Skipper</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7SkipperE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a06f8c30a3af282b58e1f1a5f02f39c5c"/><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Strategy</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16includeEdgeCostsE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16includeEdgeCostsE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16includeEdgeCostsE"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a06f8c30a3af282b58e1f1a5f02f39c5ca6e7d78ac00113aca7cb4a327840c9216"/><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">includeEdgeCosts</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16includeEdgeCostsE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16excludeEdgeCostsE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16excludeEdgeCostsE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16excludeEdgeCostsE"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a06f8c30a3af282b58e1f1a5f02f39c5caaf735238e92ef916c4dbd1a86b161f34"/><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">excludeEdgeCosts</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8Strategy16excludeEdgeCostsE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1ac39085f7f131b715d662e13227f84df4"/><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CostFunction</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper7SkipperE6size_t6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERK12CostFunctiond8Strategy">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper7SkipperE6size_t6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERK12CostFunctiond8Strategy"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper7SkipperE6size_t6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERK12CostFunctiond8Strategy"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::Skipper__s.s.s.s.std::unordered_set:s:CR.CostFunctionCR.double.Strategy"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a34f81d2c75c20e8a3b44d881f51a7d3e"/><span class="sig-name descname"><span class="n"><span class="pre">Skipper</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">target</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lowerBound</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">upperBound</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">blocklist</span></span>, <a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE" title="AppComponents::Common::Matcher::Routing::Generic::Skipper::CostFunction"><span class="n"><span class="pre">CostFunction</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">costFunction</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">costLimit</span></span>, <a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE" title="AppComponents::Common::Matcher::Routing::Generic::Skipper::Strategy"><span class="n"><span class="pre">Strategy</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">strategy</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper7SkipperE6size_t6size_t6size_t6size_tRKNSt13unordered_setI6size_tEERK12CostFunctiond8Strategy" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7isValidEv">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7isValidEv"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7isValidEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::isValidC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a8e944e16f15d8cb523193f90456549da"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7isValidEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6sourceEv">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6sourceEv"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6sourceEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::sourceC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a37f6edb1d820aee7c57cdc3d85a98bbf"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">source</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6sourceEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6targetEv">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6targetEv"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6targetEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::targetC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a7fab51b10a561c50a02671ec7c986001"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">target</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper6targetEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper4costEv">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing7Generic7Skipper4costEv"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing7Generic7Skipper4costEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::costC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a430fb6b5740d44f0c2072917af3558a0"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cost</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper4costEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7skippedEv">
+<span id="_CPPv3NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7skippedEv"/><span id="_CPPv2NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7skippedEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::skippedC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a73819e44d5d1a8fa83b0773ca74b8f6a"/><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">skipped</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13AppComponents6Common7Matcher7Routing7Generic7Skipper7skippedEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper4nextEv">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper4nextEv"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper4nextEv"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::next"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1aefc38941a15633e9f23342938c10bafa"/><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">next</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper4nextEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lowerBound_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lowerBound_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lowerBound_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::lowerBound___sC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1ad641cd2b2f2c2afbc0a7ce249b9d8e9a"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lowerBound_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lowerBound_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11upperBound_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper11upperBound_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper11upperBound_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::upperBound___sC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1aee7b0bd0f644140030ec8d38f6452233"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">upperBound_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11upperBound_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper10blocklist_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper10blocklist_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper10blocklist_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::blocklist___std::unordered_set:s:CR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a033594e32455b8bffc0e787c5c2128a1"/><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">blocklist_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper10blocklist_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper13costFunction_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper13costFunction_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper13costFunction_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::costFunction___CostFunctionCR"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1ae67249e7d4c245982370315d30789bb8"/><a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12CostFunctionE" title="AppComponents::Common::Matcher::Routing::Generic::Skipper::CostFunction"><span class="n"><span class="pre">CostFunction</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">costFunction_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper13costFunction_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper10costLimit_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper10costLimit_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper10costLimit_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::costLimit___doubleC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a0949063354d6a578df48349759869f2a"/><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">costLimit_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper10costLimit_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper9strategy_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper9strategy_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper9strategy_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::strategy___StrategyC"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a367cee016cbec8e46578fd0cc3a67f54"/><a class="reference internal" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8StrategyE" title="AppComponents::Common::Matcher::Routing::Generic::Skipper::Strategy"><span class="n"><span class="pre">Strategy</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strategy_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper9strategy_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8isValid_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper8isValid_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper8isValid_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::isValid___b"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1aa34238e4c5ffa3cffe0855e4ed07a26e"/><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8isValid_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastSource_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastSource_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastSource_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::lastSource___s"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a3d0424cda1d1ccc030683140ed043a8a"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastSource_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastSource_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastTarget_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastTarget_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastTarget_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::lastTarget___s"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a00f4819d6609de90a800982d0b67224c"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastTarget_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper11lastTarget_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentSource_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentSource_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentSource_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::currentSource___s"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a0bebe7b1f555627bb318e797b5b28bc0"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentSource_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentSource_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentTarget_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentTarget_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentTarget_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::currentTarget___s"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a9ab40608765dc4739f8e32ac0f75b0c8"/><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentTarget_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper14currentTarget_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12currentCost_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper12currentCost_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper12currentCost_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::currentCost___double"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1aea4a8d9591818bb882e87b5e35ff228b"/><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentCost_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper12currentCost_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8skipped_E">
+<span id="_CPPv3N13AppComponents6Common7Matcher7Routing7Generic7Skipper8skipped_E"/><span id="_CPPv2N13AppComponents6Common7Matcher7Routing7Generic7Skipper8skipped_E"/><span id="AppComponents::Common::Matcher::Routing::Generic::Skipper::skipped___std::unordered_set:s:"/><span class="target" id="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper_1a097215ba9a08ae81a82b228893a8a462"/><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">skipped_</span></span></span><a class="headerlink" href="#_CPPv4N13AppComponents6Common7Matcher7Routing7Generic7Skipper8skipped_E" title="Permalink to this definition">¶</a><br/></dt>
+<dd/></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div><!-- /.toBeIndexed -->
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1PiecewiseRouter.html" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"/></a>
+      
+      
+        <a href="classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1SelectiveSkipper.html" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"/> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="contentinfo">
+      <p class="show_source">
+        <a href="../_sources/_api/classAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1Generic_1_1Skipper.rst.txt" rel="nofollow">
+          <span class="fa fa-binoculars"/>&#32;View page source
+        </a>
+      </p>
+      <p class="show_copyright">
+            &copy; Copyright 2018, Ambrosys GmbH
+      </p>
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+      </p>
+      <p class="show_legalinfo">
+        <a href="https://typo3.org/legal-info/" rel="nofollow">
+          <span class="fa fa-legal"/>&#32;Legal Info
+        </a>
+      </p>
+
+
+
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+      <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+      <script type="text/javascript" src="../_static/jquery-ui/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+      <script type="text/javascript" src="../_static/js/t3autocomplete.js"></script>
+
+  
+
+  
+   
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   <script type="text/javascript" id="idPiwikScriptPlaceholder"></script></body>
+</html>

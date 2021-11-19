@@ -1,0 +1,71 @@
+
+.. _file_src_AppComponents_Common_Reader_GeoJsonMapReader.h:
+
+File GeoJsonMapReader.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Reader>` (``src/AppComponents/Common/Reader``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Reader/GeoJsonMapReader.h``)
+-------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Reader_GeoJsonMapReader.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``AppComponents/Common/Types/Street/Highway.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Highway.h`)
+
+- ``AppComponents/Common/Types/Street/NodePair.h`` (:ref:`file_src_AppComponents_Common_Types_Street_NodePair.h`)
+
+- ``AppComponents/Common/Types/Street/Segment.h`` (:ref:`file_src_AppComponents_Common_Types_Street_Segment.h`)
+
+- ``AppComponents/Common/Types/Street/TravelDirection.h`` (:ref:`file_src_AppComponents_Common_Types_Street_TravelDirection.h`)
+
+- ``AppComponents/Common/Types/Track/Point.h`` (:ref:`file_src_AppComponents_Common_Types_Track_Point.h`)
+
+- ``IReader.h`` (:ref:`file_src_AppComponents_Common_Reader_IReader.h`)
+
+- ``ambpipeline/Filter.h``
+
+- ``istream``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Reader_GeoJsonMapReader.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Reader`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classAppComponents_1_1Common_1_1Reader_1_1GeoJsonMapReader`
+

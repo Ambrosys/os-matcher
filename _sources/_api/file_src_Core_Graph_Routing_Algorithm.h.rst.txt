@@ -1,0 +1,74 @@
+
+.. _file_src_Core_Graph_Routing_Algorithm.h:
+
+File Algorithm.h
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Graph_Routing>` (``src/Core/Graph/Routing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/Core/Graph/Routing/Algorithm.h``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Core_Graph_Routing_Algorithm.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Core/Graph/Graph.h`` (:ref:`file_src_Core_Graph_Graph.h`)
+
+- ``Core/Graph/Routing/PathView.h`` (:ref:`file_src_Core_Graph_Routing_PathView.h`)
+
+- ``functional``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_Router.h`
+
+- :ref:`file_src_AppComponents_Common_Matcher_Routing_DirectedCandidateRouter.h`
+
+- :ref:`file_src_Core_Graph_Routing_Dijkstra.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_Core__Graph__Routing`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceCore_1_1Graph_1_1Routing_1ad62b62f2ddfa1a63b383cc7dc9c4fed2`
+
+- :ref:`exhale_typedef_namespaceCore_1_1Graph_1_1Routing_1a6691011ffa2ee5b1a777e5cdbf0d1534`
+

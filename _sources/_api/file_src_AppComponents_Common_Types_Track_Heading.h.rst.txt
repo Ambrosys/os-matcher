@@ -1,0 +1,74 @@
+
+.. _file_src_AppComponents_Common_Types_Track_Heading.h:
+
+File Heading.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_src_AppComponents_Common_Types_Track>` (``src/AppComponents/Common/Types/Track``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/AppComponents/Common/Types/Track/Heading.h``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_AppComponents_Common_Types_Track_Heading.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_src_AppComponents_Common_Matcher_SamplingPointFinder.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_IReader.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_CsvTrackReader.h`
+
+- :ref:`file_src_AppComponents_Common_Reader_JsonTrackReader.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_IWriter.h`
+
+- :ref:`file_src_AppComponents_Common_Writer_GeoJsonTrackWriter.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_AppComponents__Common__Types__Track`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structAppComponents_1_1Common_1_1Types_1_1Track_1_1HeadingList`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceAppComponents_1_1Common_1_1Types_1_1Track_1a7b8e00ae554b186fe8cd97b3be40ae29`
+

@@ -1,0 +1,231 @@
+/*
+ * Note: Some styles ideas are taken from the following theme:
+ * (customization based on t3SphinxThemeRtd theme)
+ * https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/Index.html
+ */
+
+
+/*
+ * Layout options
+ */
+
+/* Fit content to whole page width */
+.wy-nav-content {
+    max-width: none;
+}
+
+
+/*
+ * Un-brand TYPO3 and remove other unwanted elements
+ */
+
+/* "TYPO3 Documentation" title (top left) */
+.wy-side-nav-search li.docsite {
+    display: none;
+}
+
+/* "View page source" link (top right) */
+/*
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+    display: none;
+}
+*/
+
+/* Footer elements */
+footer p.show_source,
+footer p.show_sphinx,
+footer p.show_legalinfo {
+    display: none;
+}
+
+
+/*
+ * Adjust fonts
+ */
+
+/* Header elements */
+h1, h2, .rst-content p.caption, h3, h4, h5, h6, legend {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+/* Code blocks */
+.codeblock,
+.rst-content pre.literal-block,
+div[class^='highlight'] pre {
+    font-family: "IBM Plex Mono", "Source Code Pro", monospace;
+}
+
+/* Code blocks */
+div[class^='highlight'] pre {
+    color: black;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f0f0f0;
+}
+
+/* Glossary items */
+.rst-content dl.glossary > dt {
+    font-size: 100%;
+}
+
+
+/*
+ * Adjust sidebar
+ */
+
+/* Make the OS-Matcher title look like the "TYPO3 Documentation" title before */
+.wy-side-nav-search li.project {
+    background-color: #ff8700;
+}
+
+/* Search box */
+.wy-side-nav-search input[type=text] {
+    /*border-color: #ccc;*/
+    border: none;
+}
+
+/* Remove too many borders in expanded navigation tree items */
+.wy-menu-vertical li.on a,
+.wy-menu-vertical li.current>a {
+    border-bottom: none;
+}
+
+/* Add theme color to topic headlines */
+/* (like in customized typo3 theme) */
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+    color: #ff8700;
+}
+
+
+/*
+ * General
+ */
+
+/* Emphasize external links */
+a.reference.external::before {
+    content: "\2197 ";
+}
+
+/* Remove shadow on links for images (wrongly visible when image has with-shadow class and transparent background) */
+a.image-reference.with-shadow {
+    box-shadow: none;
+}
+
+
+/*
+ * Adjust main content
+ */
+
+/* Adjust h3 border and spacing */
+/* (like in customized typo3 theme) */
+.rst-content h3 {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 0.25em;
+    margin-bottom: 1em;
+}
+
+/* Adjust link colors */
+/* (like in customized typo3 theme) */
+.wy-nav-content a:not(.stealth-btn):visited {
+    color: #d67100;
+}
+.wy-nav-content a:not(.stealth-btn):hover {
+    color: #ff8700;
+}
+.wy-nav-content a:not(.stealth-btn) {
+    color: #d67100;
+}
+
+/* Code/literal blocks */
+.codeblock,
+.rst-content .literal-block,
+.rst-content pre.literal-block,
+div[class^='highlight'] pre {
+    border: none;
+}
+
+/* Adjust table header permalink symbol */
+table caption a.headerlink::before {
+    content: " ";
+}
+
+/* Adjust glossary items when having multiple terms for one definition */
+.rst-content dl:not(.docutils) dt + dt
+{
+    /* border-left: solid 3px #66b3ff; */
+    margin-left: 1em;
+}
+
+/* Adjust information boxes to match code block boxes */
+.admonition-title {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.admonition {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+/*
+ * Adjust spacing
+ */
+
+/* Lists */
+.rst-content .section ul li,
+.rst-content .section ol li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.rst-content .section ul li p:not(.admonition-title),
+.rst-content .section ol li p:not(.admonition-title) {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}
+
+/* Code blocks */
+div[class='highlight'] {
+    padding: 0;
+}
+div[class^='highlight'] pre {
+    padding: 1em;
+    margin-bottom: 0;
+}
+
+/* Code blocks when using :lineos: */
+table.highlighttable td {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+table.highlighttable td:first-child {
+    padding-left: 0;
+}
+
+/* Information boxes content */
+.admonition > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Glossary */
+.rst-content dl:not(.docutils) dt {
+    margin-bottom: 0;
+}
+
+/* Images */
+.rst-content .section>img,
+.rst-content .section>a>img {
+    margin-bottom: 0;
+}
+
+/* Footer */
+.rst-footer-buttons {
+    margin-top: 2em;
+}
+footer hr {
+    margin-bottom: 0;
+}
+footer .show_copyright {
+    margin-top: 0;
+}

@@ -1,0 +1,84 @@
+
+.. _program_listing_file_src_AppComponents_Common_Writer_IWriter.h:
+
+Program Listing for File IWriter.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Writer_IWriter.h>` (``src/AppComponents/Common/Writer/IWriter.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //
+   // Created by friedrich on 16.10.21.
+   //
+   
+   #ifndef OS_MATCHER_IWRITER_H
+   #define OS_MATCHER_IWRITER_H
+   
+   #include <AppComponents/Common/Types/Graph/EdgeMap.h>
+   #include <AppComponents/Common/Types/Routing/Edge.h>
+   #include <AppComponents/Common/Types/Routing/SamplingPoint.h>
+   #include <AppComponents/Common/Types/Routing/Statistic.h>
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Track/Heading.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   #include <AppComponents/Common/Types/Track/Time.h>
+   #include <AppComponents/Common/Types/Track/Velocity.h>
+   
+   #include <ostream>
+   namespace AppComponents::Common::Writer{
+   
+   
+   struct IRouteWriter {
+   
+       virtual bool operator()(
+           std::ostream &,
+           Types::Routing::RouteList const &,
+           Types::Graph::GraphEdgeMap const &,
+           Types::Street::SegmentList const &,
+           Types::Graph::NodeMap const &,
+           Types::Track::TimeList const &,
+           Types::Routing::SamplingPointList const &
+           )=0;
+   
+   };
+   
+   struct ITrackWriter {
+   
+       virtual bool operator()(
+           std::ostream &,
+           Types::Track::TimeList const &,
+           Types::Track::PointList const &,
+           Types::Track::HeadingList const &,
+           Types::Track::VelocityList const &
+           )=0;
+   
+   };
+   
+   struct IMapWriter {
+   
+       virtual bool operator()(
+           std::ostream &,
+           Types::Street::SegmentList const &,
+           Types::Street::NodePairList const &,
+           Types::Street::TravelDirectionList const &,
+           Types::Street::HighwayList const &
+           )=0;
+   
+   };
+   
+   struct IRouteStatisticWriter {
+        virtual bool operator() (
+           std::ostream &,
+           Types::Routing::RoutingStatistic const &,
+           Types::Routing::SamplingPointList const &,
+           Types::Track::TimeList const &
+           ) = 0;
+   };
+   } // namespace AppComponents::Common::Writer
+   
+   #endif  //OS_MATCHER_IWRITER_H

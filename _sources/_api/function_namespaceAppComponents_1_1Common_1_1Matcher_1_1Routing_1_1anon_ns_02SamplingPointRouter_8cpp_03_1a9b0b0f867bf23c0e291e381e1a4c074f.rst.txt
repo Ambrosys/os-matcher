@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Matcher_1_1Routing_1_1anon_ns_02SamplingPointRouter_8cpp_03_1a9b0b0f867bf23c0e291e381e1a4c074f:
+
+Function AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::cluster
+======================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Matcher_Routing_SamplingPointRouter.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Matcher::Routing::anonymous_namespace_SamplingPointRouter.cpp::cluster(std::vector<std::shared_ptr<Types::Routing::Route>> const&, double const, Types::Graph::GraphEdgeMap const&)

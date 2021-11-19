@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespaceCore_1_1Common_1_1Geometry_1a22cc0ad0670f89b9fa2de231bf4783fb:
+
+Typedef Core::Common::Geometry::Polygon
+=======================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: Core::Common::Geometry::Polygon

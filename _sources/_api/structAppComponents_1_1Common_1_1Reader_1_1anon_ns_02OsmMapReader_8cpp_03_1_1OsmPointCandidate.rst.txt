@@ -1,0 +1,17 @@
+.. _exhale_struct_structAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1_1OsmPointCandidate:
+
+Struct OsmPointCandidate
+========================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::OsmPointCandidate
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

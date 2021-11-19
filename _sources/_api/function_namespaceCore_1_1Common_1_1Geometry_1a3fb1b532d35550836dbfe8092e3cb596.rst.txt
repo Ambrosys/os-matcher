@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596:
+
+Function Core::Common::Geometry::toLineString(nlohmann::json const&)
+====================================================================
+
+- Defined in :ref:`file_src_Core_Common_Geometry_Conversion.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Core::Common::Geometry::toLineString(nlohmann::json const&)

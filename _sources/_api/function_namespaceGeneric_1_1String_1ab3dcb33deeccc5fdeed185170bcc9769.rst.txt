@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceGeneric_1_1String_1ab3dcb33deeccc5fdeed185170bcc9769:
+
+Function Generic::String::trimmed
+=================================
+
+- Defined in :ref:`file_src_Generic_String_Trim.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Generic::String::trimmed(std::string)

@@ -1,0 +1,26 @@
+.. _dir_src_Core_Common_Geometry:
+
+
+Directory Geometry
+==================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_src_Core_Common>` (``src/Core/Common``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``src/Core/Common/Geometry``
+
+
+Files
+-----
+
+- :ref:`file_src_Core_Common_Geometry_Conversion.cpp`
+- :ref:`file_src_Core_Common_Geometry_Conversion.h`
+- :ref:`file_src_Core_Common_Geometry_Helper.cpp`
+- :ref:`file_src_Core_Common_Geometry_Helper.h`
+- :ref:`file_src_Core_Common_Geometry_NumericConstants.h`
+- :ref:`file_src_Core_Common_Geometry_Types.cpp`
+- :ref:`file_src_Core_Common_Geometry_Types.h`
+
+

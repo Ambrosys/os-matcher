@@ -1,0 +1,67 @@
+
+.. _program_listing_file_src_AppComponents_Common_Reader_OsmMapReader.h:
+
+Program Listing for File OsmMapReader.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_AppComponents_Common_Reader_OsmMapReader.h>` (``src/AppComponents/Common/Reader/OsmMapReader.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * SPDX-FileCopyrightText: © 2018 Ambrosys GmbH
+    *
+    * SPDX-FileContributor: Fabian Sandoval Saldias <fabianvss@gmail.com>
+    *
+    * SPDX-License-Identifier: Apache-2.0
+    */
+   
+   #pragma once
+   
+   #include "IReader.h"
+   
+   #include <AppComponents/Common/Types/Street/Highway.h>
+   #include <AppComponents/Common/Types/Street/NodePair.h>
+   #include <AppComponents/Common/Types/Street/Segment.h>
+   #include <AppComponents/Common/Types/Street/TravelDirection.h>
+   #include <AppComponents/Common/Types/Track/Point.h>
+   
+   #include <Core/Common/Postgres/Connection.h>
+   
+   #include <ambpipeline/Filter.h>
+   
+   #include <unordered_set>
+   
+   namespace AppComponents::Common::Reader {
+   
+   class OsmMapReader : public IMapReader
+   {
+   public:
+       OsmMapReader(
+           Core::Common::Postgres::Connection & connection,
+           std::unordered_set<Types::Street::HighwayType> const & highwaySelection,
+           double fetchCorridor,
+           bool useSingleSearchCircle,
+           bool splitOnOverlappingPoints);
+   
+       bool operator()(Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+   
+       bool
+       operator()(Types::Track::PointList const &, Types::Street::SegmentList &, Types::Street::NodePairList &, Types::Street::TravelDirectionList &, Types::Street::HighwayList &);
+   
+       bool
+       init(Types::Track::PointList const &, double fetchCorridor, bool useSingleSearchCircle, std::optional<std::unordered_set<Types::Street::HighwayType>> const & highwaySelection);
+   
+   private:
+       Core::Common::Postgres::Connection & connection_;
+       std::unordered_set<Types::Street::HighwayType> highwaySelection_;
+       double const fetchCorridor_;
+       double searchRadius_;
+       std::string pointsString_;
+       bool const useSingleSearchCircle_;
+       bool const splitOnOverlappingPoints_;
+   };
+   
+   }  // namespace AppComponents::Common::Reader

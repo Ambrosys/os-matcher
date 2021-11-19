@@ -1,0 +1,26 @@
+.. _exhale_class_classCore_1_1Graph_1_1Routing_1_1RoutingAlgorithm:
+
+Class RoutingAlgorithm
+======================
+
+- Defined in :ref:`file_src_Core_Graph_Routing_Algorithm.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public Core::Graph::Routing::Dijkstra`` (:ref:`exhale_class_classCore_1_1Graph_1_1Routing_1_1Dijkstra`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Core::Graph::Routing::RoutingAlgorithm
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:
