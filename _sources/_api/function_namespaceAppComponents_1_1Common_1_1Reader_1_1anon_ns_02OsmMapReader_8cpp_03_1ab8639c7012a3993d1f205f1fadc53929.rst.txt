@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab8639c7012a3993d1f205f1fadc53929:
+
+Template Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::inner_douglas_peucker_
+=============================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::inner_douglas_peucker_(Iterator, Iterator, Distance const&, int&)

@@ -226,6 +226,90 @@ Program Listing for File OsmMapReader.cpp
            return {std::move(segmentList), std::move(nodePairList), std::move(travelDirectionList), std::move(highwayList)};
        }
    
+       template <typename Iterator, typename Distance>
+       static inline void inner_douglas_peucker_(Iterator begin,
+                                   Iterator end,
+                                   Distance const& max_dist,
+                                   int& n)
+       {
+   
+           std::size_t size = end - begin;
+   
+           // size must be at least 3
+           // because we want to consider a candidate point in between
+           if (size <= 2)
+           {
+               return;
+           }
+   
+           Iterator last = end - 1;
+   
+           // Find most far point, compare to the current segment
+           //geometry::segment<Point const> s(begin->p, last->p);
+           auto md(-1.0); // any value < 0
+           Iterator candidate = end;
+           for (Iterator it = begin + 1; it != last; ++it)
+           {
+   
+               auto dist = Core::Common::Geometry::geoDistance(it->p, Core::Common::Geometry::Segment(begin->p, last->p));
+   
+               if (md <  std::get<0>(dist))
+               {
+                   md = std::get<0>(dist);
+                   candidate = it;
+               }
+           }
+   
+           // If a point is found, set the include flag
+           // and handle segments in between recursively
+           if (max_dist < md && candidate != end)
+           {
+               candidate->included = true;
+               n++;
+   
+               inner_douglas_peucker_(begin, candidate + 1, max_dist, n);
+               inner_douglas_peucker_(candidate, end, max_dist, n);
+           }
+       }
+   
+       template <typename Distance>
+       static inline void douglas_peucker_(AppComponents::Common::Types::Track::PointList const & range,
+                                           AppComponents::Common::Types::Track::PointList & out,
+                                           Distance const & max_distance)
+       {
+   
+           typedef typename boost::range_value<AppComponents::Common::Types::Track::PointList>::type point_type;
+           typedef boost::geometry::strategy::simplify::detail::douglas_peucker_point<point_type> dp_point_type;
+   
+           // Copy coordinates, a vector of references to all points
+           std::vector<dp_point_type> ref_candidates(boost::begin(range),
+                                                     boost::end(range));
+   
+           // Include first and last point of line,
+           // they are always part of the line
+           int n = 2;
+           ref_candidates.front().included = true;
+           ref_candidates.back().included = true;
+   
+           // Get points, recursively, including them if they are further away
+           // than the specified distance
+           inner_douglas_peucker_(boost::begin(ref_candidates), boost::end(ref_candidates), max_distance, n);
+   
+           // Copy included elements to the output,
+           int index = 0;
+           for (auto it = boost::begin(ref_candidates); it != boost::end(ref_candidates); ++it, index++)
+           {
+               if (it->included)
+               {
+                   // copy-coordinates does not work because OutputIterator
+                   // does not model Point (??)
+                   //geometry::convert(*(it->p), *out);
+                   out.push_back(it->p);
+               }
+   
+           }
+       }
+   
    }  // namespace
    
    OsmMapReader::OsmMapReader(
@@ -247,15 +331,18 @@ Program Listing for File OsmMapReader.cpp
    {
        using namespace Core::Common;
    
-       // Note: For further development in @ambrosys:os-matcher-amb#38
-       size_t const eachNth = 1;
-   
-       double searchRadius;
        std::string pointsString;
        if (!useSingleSearchCircle_)
        {
-           searchRadius_ = fetchCorridor_;
-           pointsString_ = Geometry::toWkt(Geometry::flattened_simple(pointList, eachNth));
+           // Simplify Track
+           // ToDo: With correct type handling and inheritance the boost::geometry::simplify can be used directly
+           typedef boost::geometry::model::d2::point_xy<double> xy;
+           float maxDistance = 1.0; // GPS granularity is 2m, allow half of it since it can be left and right
+           AppComponents::Common::Types::Track::PointList simplified{};
+           douglas_peucker_(pointList, simplified, maxDistance);
+   
+           searchRadius_ = fetchCorridor_ + maxDistance;
+           pointsString_ = Geometry::toWkt(simplified);
        }
        else
        {

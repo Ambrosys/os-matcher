@@ -507,6 +507,90 @@
         <span class="k">return</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">segmentList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">nodePairList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">travelDirectionList</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">highwayList</span><span class="p">)};</span>
     <span class="p">}</span>
 
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iterator</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Distance</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">inner_douglas_peucker_</span><span class="p">(</span><span class="n">Iterator</span> <span class="n">begin</span><span class="p">,</span>
+                                <span class="n">Iterator</span> <span class="n">end</span><span class="p">,</span>
+                                <span class="n">Distance</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">max_dist</span><span class="p">,</span>
+                                <span class="kt">int</span><span class="o">&amp;</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">;</span>
+
+        <span class="c1">// size must be at least 3</span>
+        <span class="c1">// because we want to consider a candidate point in between</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">Iterator</span> <span class="n">last</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="c1">// Find most far point, compare to the current segment</span>
+        <span class="c1">//geometry::segment&lt;Point const&gt; s(begin-&gt;p, last-&gt;p);</span>
+        <span class="k">auto</span> <span class="n">md</span><span class="p">(</span><span class="mf">-1.0</span><span class="p">);</span> <span class="c1">// any value &lt; 0</span>
+        <span class="n">Iterator</span> <span class="n">candidate</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">begin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">last</span><span class="p">;</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="k">auto</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="o">::</span><span class="n">geoDistance</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">,</span> <span class="n">Core</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Segment</span><span class="p">(</span><span class="n">begin</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">,</span> <span class="n">last</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">));</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">md</span> <span class="o">&lt;</span>  <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">md</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dist</span><span class="p">);</span>
+                <span class="n">candidate</span> <span class="o">=</span> <span class="n">it</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// If a point is found, set the include flag</span>
+        <span class="c1">// and handle segments in between recursively</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">max_dist</span> <span class="o">&lt;</span> <span class="n">md</span> <span class="o">&amp;&amp;</span> <span class="n">candidate</span> <span class="o">!=</span> <span class="n">end</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">candidate</span><span class="o">-&gt;</span><span class="n">included</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="n">n</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="n">inner_douglas_peucker_</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">candidate</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_dist</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+            <span class="n">inner_douglas_peucker_</span><span class="p">(</span><span class="n">candidate</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">max_dist</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Distance</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">douglas_peucker_</span><span class="p">(</span><span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">range</span><span class="p">,</span>
+                                        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="o">&amp;</span> <span class="n">out</span><span class="p">,</span>
+                                        <span class="n">Distance</span> <span class="k">const</span> <span class="o">&amp;</span> <span class="n">max_distance</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="k">typedef</span> <span class="k">typename</span> <span class="nc">boost</span><span class="o">::</span><span class="n">range_value</span><span class="o">&lt;</span><span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span><span class="o">&gt;::</span><span class="n">type</span> <span class="n">point_type</span><span class="p">;</span>
+        <span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">strategy</span><span class="o">::</span><span class="n">simplify</span><span class="o">::</span><span class="n">detail</span><span class="o">::</span><span class="n">douglas_peucker_point</span><span class="o">&lt;</span><span class="n">point_type</span><span class="o">&gt;</span> <span class="n">dp_point_type</span><span class="p">;</span>
+
+        <span class="c1">// Copy coordinates, a vector of references to all points</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">dp_point_type</span><span class="o">&gt;</span> <span class="n">ref_candidates</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">range</span><span class="p">),</span>
+                                                  <span class="n">boost</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">range</span><span class="p">));</span>
+
+        <span class="c1">// Include first and last point of line,</span>
+        <span class="c1">// they are always part of the line</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="n">ref_candidates</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">included</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">ref_candidates</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">included</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+        <span class="c1">// Get points, recursively, including them if they are further away</span>
+        <span class="c1">// than the specified distance</span>
+        <span class="n">inner_douglas_peucker_</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">ref_candidates</span><span class="p">),</span> <span class="n">boost</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">ref_candidates</span><span class="p">),</span> <span class="n">max_distance</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+        <span class="c1">// Copy included elements to the output,</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">ref_candidates</span><span class="p">);</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">boost</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">ref_candidates</span><span class="p">);</span> <span class="o">++</span><span class="n">it</span><span class="p">,</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">included</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// copy-coordinates does not work because OutputIterator</span>
+                <span class="c1">// does not model Point (??)</span>
+                <span class="c1">//geometry::convert(*(it-&gt;p), *out);</span>
+                <span class="n">out</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">);</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+
 <span class="p">}</span>  <span class="c1">// namespace</span>
 
 <span class="n">OsmMapReader</span><span class="o">::</span><span class="n">OsmMapReader</span><span class="p">(</span>
@@ -528,15 +612,18 @@
 <span class="p">{</span>
     <span class="k">using</span> <span class="k">namespace</span> <span class="nn">Core</span><span class="o">::</span><span class="nn">Common</span><span class="p">;</span>
 
-    <span class="c1">// Note: For further development in @ambrosys:os-matcher-amb#38</span>
-    <span class="kt">size_t</span> <span class="k">const</span> <span class="n">eachNth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-    <span class="kt">double</span> <span class="n">searchRadius</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pointsString</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">useSingleSearchCircle_</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">searchRadius_</span> <span class="o">=</span> <span class="n">fetchCorridor_</span><span class="p">;</span>
-        <span class="n">pointsString_</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">toWkt</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">flattened_simple</span><span class="p">(</span><span class="n">pointList</span><span class="p">,</span> <span class="n">eachNth</span><span class="p">));</span>
+        <span class="c1">// Simplify Track</span>
+        <span class="c1">// ToDo: With correct type handling and inheritance the boost::geometry::simplify can be used directly</span>
+        <span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">geometry</span><span class="o">::</span><span class="n">model</span><span class="o">::</span><span class="n">d2</span><span class="o">::</span><span class="n">point_xy</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">xy</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">maxDistance</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="c1">// GPS granularity is 2m, allow half of it since it can be left and right</span>
+        <span class="n">AppComponents</span><span class="o">::</span><span class="n">Common</span><span class="o">::</span><span class="n">Types</span><span class="o">::</span><span class="n">Track</span><span class="o">::</span><span class="n">PointList</span> <span class="n">simplified</span><span class="p">{};</span>
+        <span class="n">douglas_peucker_</span><span class="p">(</span><span class="n">pointList</span><span class="p">,</span> <span class="n">simplified</span><span class="p">,</span> <span class="n">maxDistance</span><span class="p">);</span>
+
+        <span class="n">searchRadius_</span> <span class="o">=</span> <span class="n">fetchCorridor_</span> <span class="o">+</span> <span class="n">maxDistance</span><span class="p">;</span>
+        <span class="n">pointsString_</span> <span class="o">=</span> <span class="n">Geometry</span><span class="o">::</span><span class="n">toWkt</span><span class="p">(</span><span class="n">simplified</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">else</span>
     <span class="p">{</span>

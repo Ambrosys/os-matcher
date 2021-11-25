@@ -247,21 +247,4 @@ Program Listing for File Helper.cpp
        return newPoints;
    }
    
-   std::vector<Core::Common::Geometry::Point> flattened_simple(std::vector<Core::Common::Geometry::Point> const & points, size_t const keepEachNthPoint)
-   {
-       if (keepEachNthPoint == 1)
-           return points;
-       if (keepEachNthPoint == 0)
-           return {};
-   
-       std::vector<Core::Common::Geometry::Point> result;
-       for (size_t i = 0; i < points.size(); ++i)
-       {
-           if (i > 0 && i < points.size() - 2 && i % keepEachNthPoint != 0)
-               continue;
-           result.push_back(points[i]);
-       }
-       return result;
-   }
-   
    }  // namespace Core::Common::Geometry

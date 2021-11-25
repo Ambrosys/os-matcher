@@ -696,12 +696,22 @@ Functions
 .. toctree::
    :maxdepth: 5
 
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab801a40b2b46e0385c0a7ea7265e4d2e.rst
+
+.. toctree::
+   :maxdepth: 5
+
    function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df.rst
 
 .. toctree::
    :maxdepth: 5
 
    function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab8639c7012a3993d1f205f1fadc53929.rst
 
 .. toctree::
    :maxdepth: 5
@@ -766,7 +776,7 @@ Functions
 .. toctree::
    :maxdepth: 5
 
-   function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c.rst
+   function_namespaceCore_1_1Common_1_1Geometry_1aab3687efa3c6f5e82b172542cc946d5b.rst
 
 .. toctree::
    :maxdepth: 5

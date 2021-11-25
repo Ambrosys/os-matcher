@@ -38,13 +38,13 @@ Functions
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ac7d06d0d8528b109628fdce9c271e8bb`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afe8cab39ffd10629a58c9ec01877506c`
-
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693`
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1aab3687efa3c6f5e82b172542cc946d5b`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1afc42fb42e0c128af4bbd9a6ff0a2f1fb`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a42d9a73cd6e90b80a9d1f1da7bba7dd5`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a7d0b788f821924902ea057f34aaa0693`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a5ab9eedc4334c568a4668caad23b06a2`
 
@@ -80,17 +80,17 @@ Functions
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a4398392c3a2273626bccf307ac45d123`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596`
-
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a8b190f4f0c4d64455f8aa30b647da6bf`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea`
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a3fb1b532d35550836dbfe8092e3cb596`
 
-- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a6a0017078b285b59298c96370339d830`
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ae3a973f008e9992b4f9fe83c553cafea`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a312ff322c3ac5cd0b1062380f1b7cd2f`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1ab22e06d68f78e54525991c50d7ce78a7`
+
+- :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1a6a0017078b285b59298c96370339d830`
 
 - :ref:`exhale_function_namespaceCore_1_1Common_1_1Geometry_1aed424eb5a026244ab4716de67aa30367`
 

@@ -32,9 +32,13 @@ Functions
 ---------
 
 
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab801a40b2b46e0385c0a7ea7265e4d2e`
+
 - :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a96e45a01cb1d08af40824a75a13633df`
 
 - :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a059dbf5f055a6c343f140243a0489610`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab8639c7012a3993d1f205f1fadc53929`
 
 - :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1a2b68dcb242b90c15680f9d74558c1b7e`
 

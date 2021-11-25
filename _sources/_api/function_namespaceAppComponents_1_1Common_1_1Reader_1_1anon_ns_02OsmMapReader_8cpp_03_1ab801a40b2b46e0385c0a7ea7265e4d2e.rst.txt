@@ -1,0 +1,13 @@
+.. _exhale_function_namespaceAppComponents_1_1Common_1_1Reader_1_1anon_ns_02OsmMapReader_8cpp_03_1ab801a40b2b46e0385c0a7ea7265e4d2e:
+
+Template Function AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::douglas_peucker_
+=======================================================================================================
+
+- Defined in :ref:`file_src_AppComponents_Common_Reader_OsmMapReader.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: AppComponents::Common::Reader::anonymous_namespace_OsmMapReader.cpp::douglas_peucker_(AppComponents::Common::Types::Track::PointList const&, AppComponents::Common::Types::Track::PointList&, Distance const&)

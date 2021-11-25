@@ -17,6 +17,6 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8`
-
 - :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1adf3c7e5acd76caee1a0af8c6cc9be11a`
+
+- :ref:`exhale_function_namespaceAppComponents_1_1Common_1_1Writer_1_1anon_ns_02GeoJsonMapWriter_8cpp_03_1acf1ad20364d9050878ccd1e9ac6edec8`
